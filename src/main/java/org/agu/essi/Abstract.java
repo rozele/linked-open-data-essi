@@ -6,6 +6,8 @@ import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 
+//Added for commit test ***remove this comment
+
 /**
  * Container class for AGU abstract information
  * @author Eric Rozell and Tom Narock
