@@ -13,12 +13,27 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.io.File;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.PosixParser;
 
+/**
+ * Read a directory of XML files and validate against a schema
+ * @author Tom Narock
+ */
 public class ValidateXML {
 
-	boolean isValid = false;
+	public String aguSchema = "http://www.agu.org/focus_group/essi/schema/agu.xsd";
+	private boolean isValid = false;
 	
-	public boolean validate( Schema schema, String xmlFile) {
+	/**
+	 * Method to validate an XML file against a schema
+	 * @param schema schema object of the schema to use in XML validation
+	 * @param xmlFile full path and filename of the XML fiel to validate
+	 * @return true/false (valid XML/invalid XML)
+	 */
+	public boolean validate( Schema schema, String xmlFile ) {
 		
 	  try {
 		      // creating a Validator instance
@@ -42,6 +57,11 @@ public class ValidateXML {
 	  
 	}
 		
+	/**
+	 * Method to load a schema from a url
+	 * @param url location of the schema to load
+	 * @return schema a java Schema object
+	 */
 	public Schema load( String url ) {
 		
 		Schema schema = null;
@@ -98,17 +118,42 @@ public class ValidateXML {
 	
 	public static void main ( String args[] ) {
 	  
-		// Inputs 
-		// 0 = Directory of xml files to validate
-		
 		ValidateXML validate = new ValidateXML ();
 		
-		// load the agu schema
-		String spaseSchema = "http://www.agu.org/focus_group/essi/schema/agu.xsd";
-		Schema schema = validate.load( spaseSchema );
-		File dir = new File ( args[0] );
-		File[] files = dir.listFiles();
-		for (int i=0; i<files.length; i++) { validate.validate( schema, files[i].toString() ); };
+		// Object to deal with command line options (Apache CLI)
+	  	Options options = new Options();
+	  	options.addOption("xmlDirectory", true, "Directory of xml files to validate.");
+	  	options.addOption("schema",true, "(Optional) The schema to use in validation. If not specified then default AGU " +
+	  			"schema is used.");
+	  	  
+	  	// Parse the command line arguments
+	  	CommandLine cmd = null;
+	  	CommandLineParser parser = new PosixParser();
+	  	String schemaString;
+	  	try {
+	  	  cmd = parser.parse( options, args);
+	  	} catch ( Exception pe ) { System.out.println("Error parsing command line options: " + pe.toString()); }
+	  	  
+	  	// Check if the correct options were set
+	  	boolean error = false;
+	  	String errorMessage = null;
+	    if ( !cmd.hasOption("xmlDirectory") ) {
+	    	error = true;
+	  		errorMessage = "--xmlDirectory Not Set. Directory of xml files to validate.";
+	  	}
+	  	if ( !cmd.hasOption("schema")) { schemaString = validate.aguSchema; } else { schemaString = cmd.getOptionValue("schema"); }
+		
+	  	if ( error ) { System.out.println( errorMessage ); } else {
+	  		
+	  	  // load the schema
+		  Schema schema = validate.load( schemaString );
+		  
+		  // read and validate the xml files
+		  File dir = new File ( cmd.getOptionValue("xmlDirectory") );
+		  File[] files = dir.listFiles();
+		  for (int i=0; i<files.length; i++) { validate.validate( schema, files[i].toString() ); };
+	  	
+	  	}
 		
 	}
 	

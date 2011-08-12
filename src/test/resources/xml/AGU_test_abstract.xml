@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://www.agu.org/focus_group/essi/schema" 
+    xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+    <Meeting>Some AGU Meeting</Meeting>
+    <Section>Some Section</Section>
+    <Keywords>
+        <Keyword>keyword1</Keyword>
+        <Keyword>keyword2</Keyword>
+    </Keywords>
+    <Abstract>This is the text of my abstract</Abstract>
+    <Title>Title of my talk</Title>
+    <Session>IN000</Session>
+    <Hour>08:00</Hour>
+    <Authors>
+        <Author>
+            <Name>Author1</Name>
+            <Affiliations>
+                <Affiliation>Affiliation1 for Author 1</Affiliation>
+                <Affiliation>Affiliation2 for Author 2</Affiliation>
+            </Affiliations>
+        </Author>
+        <Author>
+            <Name>Author2</Name>
+            <Email>my.address@location.com</Email>
+            <Affiliations>
+                <Affiliation>Affiliation for Author 2</Affiliation>
+            </Affiliations>
+        </Author>
+    </Authors>
+</AGUAbstract>
