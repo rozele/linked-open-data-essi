@@ -83,7 +83,7 @@
           <target>1.5</target>
         </configuration>
       </plugin>
-      <plugin>
+      <!--<plugin>
         <groupId>org.jvnet.ws.wadl</groupId>
         <artifactId>wadl-maven-plugin</artifactId>
         <version>1.1-SNAPSHOT</version>
@@ -99,7 +99,7 @@
           <autopackaging>true</autopackaging>
         </configuration>
       </plugin>
-      <!--><plugin>
+      <plugin>
         <groupId>org.jvnet.ws.wadl</groupId>
         <artifactId>wadl-maven-plugin</artifactId>
         <version>1.1-SNAPSHOT</version>

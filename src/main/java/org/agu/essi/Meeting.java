@@ -33,7 +33,7 @@ public class Meeting {
 	@Override
 	public boolean equals(Object o)
 	{
-		if (o instanceof Meeting && ((Meeting)o).getName() == this._name)
+		if (o instanceof Meeting && ((Meeting)o).getName().equals(this._name))
 		{
 			return true;
 		}

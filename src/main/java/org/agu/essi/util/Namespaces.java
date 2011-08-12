@@ -13,4 +13,5 @@ public class Namespaces {
 	public static String dc = "http://purl.org/dc/elements/1.1/";
 	public static String xsd = "http://www.w3.org/2001/XMLSchema#";
 	public static String tw = "http://tw.rpi.edu/schema/";
+	public static String foaf = "http://xmlns.org/foaf/0.1/";
 }

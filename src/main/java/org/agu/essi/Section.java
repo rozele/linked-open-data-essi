@@ -24,8 +24,8 @@ public class Section {
 	@Override
 	public boolean equals(Object o)
 	{
-		if (o instanceof Section && ((Section)o).getName() == this._name 
-			&& ((Section)o).getMeeting() == this._meeting)
+		if (o instanceof Section && ((Section)o).getName().equals(this._name)
+			&& ((Section)o).getMeeting().equals(this._meeting))
 		{
 			return true;
 		}

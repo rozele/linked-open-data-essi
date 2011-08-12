@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.Namespaces;
+import org.agu.essi.util.Utils;
 
 /**
  * Container class for AGU abstract information
@@ -15,6 +16,7 @@ public class Abstract
 	private String _rawHtml;
 	private String _hour;
 	private String _sessionId;
+	private String _abstractId;
 	private String _title;
 	private String _abstract;
 	private Vector<Author> _authors;
@@ -38,7 +40,7 @@ public class Abstract
 		parseHtml();
 		_meeting = new Meeting(_meetingId);
 		_section = new Section(_sectionId, _meeting);
-		_session = new Session(_sessionId, _section);
+		_session = new Session(_sessionId.split("-")[0], _section);
 	}
 	
 	public Abstract(String title, String abstr, Session session, Vector<Author> authors, Vector<Keyword> keywords)
@@ -85,14 +87,14 @@ public class Abstract
 		// Hour (time of presentation)
 		index = _rawHtml.indexOf("<span class=\"hr\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index >= 0)
-			_hour = _rawHtml.substring(index+17, endIndex).trim();
+		_hour = _rawHtml.substring(index+17, endIndex).trim();
 		
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index >= 0)
-			_sessionId = _rawHtml.substring(index+17, endIndex).trim();
+		_abstractId = _rawHtml.substring(index+17, endIndex).trim();
+		_sessionId = _abstractId.split("-")[0];
+		
 		
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
@@ -219,19 +221,14 @@ public class Abstract
 	
 	private String writeToRDFXML()
 	{
-		StringWriter sw = new StringWriter();
-		sw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-		sw.write(writeEntities());
-		sw.write("<rdf:RDF xmlns=\"" + Namespaces.esipOwl + "\" " +
-				"         xmlns:rdf=\"" + Namespaces.rdf + "\"\n" +
-				"         xmlns:swc=\"" + Namespaces.swc + "\"\n" + 
-				"         xmlns:swrc=\"" + Namespaces.swrc + "\"\n" +
-				"         xmlns:dc=\"" + Namespaces.dc + "\"\n" +
-				"         xmlns:tw=\"" + Namespaces.tw + "\"\n" +
-				"         xml:base=\"" + Namespaces.esip + "\">\n");
+		StringWriter sw = new StringWriter();		
+		sw.write(Utils.writeXmlHeader());
+		sw.write(Utils.writeDocumentEntities());
+		sw.write(Utils.writeRdfHeader());
 		sw.write("  <rdf:Description rdf:about=\"" + EntityIdentifier.getNextAbstractId() + "\">\n");
 		sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
 		sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + _title + "</dc:title>\n");
+		sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _abstractId + "</dc:identifier>\n");
 		sw.write("    <swc:relatedToEvent rdf:resource=\"" + EntityIdentifier.getSessionId(_session) + "\" />\n");
 		sw.write("    <swrc:abstract rdf:datatype=\"&xsd;string\">" + _abstract + "</swrc:abstract>\n");
 		for (int i = 0; i < _keywords.size(); ++i)
@@ -244,19 +241,7 @@ public class Abstract
 		}
 		sw.write("  </rdf:Description>\n");
 		sw.write(writeAuthorRoles());
-		sw.write("</rdf:RDF>\n");
-		return sw.toString();
-	}
-	
-	private String writeEntities()
-	{
-		StringWriter sw = new StringWriter();
-		sw.write("<!DOCTYPE rdf:RDF [\n");
-		sw.write("  <!ENTITY owl \"" + Namespaces.owl + "\" >\n");
-		sw.write("  <!ENTITY esip \"" + Namespaces.esipOwl + "\" >\n");
-		sw.write("  <!ENTITY xsd \"" + Namespaces.xsd + "\" >\n");
-		sw.write("  <!ENTITY tw \"" + Namespaces.tw + "\" >\n");
-		sw.write("]>\n");
+		sw.write(Utils.writeRdfFooter());
 		return sw.toString();
 	}
 	
