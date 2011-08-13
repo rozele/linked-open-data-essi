@@ -27,6 +27,7 @@ import org.apache.commons.cli.PosixParser;
 
 import org.agu.essi.Abstract;
 import org.agu.essi.data.DataSource;
+import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 
@@ -48,9 +49,8 @@ public class Crawler implements DataSource {
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public Crawler ( String dir, String format ) {
+	public Crawler ( String dir ) {
 	  dataDir = dir;
-	  dataFormat = format;
 	  crawled = false;
 	  _abstracts = new Vector<Abstract>();
 	  aguDatabases = Utils.getAguDatabases();
@@ -63,26 +63,48 @@ public class Crawler implements DataSource {
 		 crawled = false;
 	}
 	
+	private void writeToRDFXML( )
+	{
+		FileWrite fw = new FileWrite();
+		for (int i = 0; i < _abstracts.size(); ++i)
+		{
+			Abstract abstr = _abstracts.get(i);
+			// replace spaces with _ for file name
+			String title = abstr.getId();
+			String meeting = abstr.getMeeting().getName();
+			title = title.replaceAll("\\s+", "_");
+			title = title.replaceAll("\\s", "_");
+			meeting = meeting.replaceAll("\\s", "_");
+			String file = dataDir + meeting + "_" + title + ".rdf";
+			fw.newFile(file, abstr.toString("rdf/xml"));
+		}
+		fw.newFile(dataDir + "people.rdf", EntityIdentifier.writePeople("rdf/xml"));
+		fw.newFile(dataDir + "organizations.rdf", EntityIdentifier.writeOrganizations("rdf/xml"));
+		fw.newFile(dataDir + "sessions.rdf", EntityIdentifier.writeSessions("rdf/xml"));
+		fw.newFile(dataDir + "sections.rdf", EntityIdentifier.writeSections("rdf/xml"));
+		fw.newFile(dataDir + "meetings.rdf", EntityIdentifier.writeMeetings("rdf/xml"));
+		fw.newFile(dataDir + "keywords.rdf", EntityIdentifier.writeKeywords("rdf/xml"));
+	}
+	
 	private void writeToXML ( ) 
 	{	
 		for (int i = 0; i < _abstracts.size(); ++i)
 		{
 			Abstract abstr = _abstracts.get(i);
 			// replace spaces with _ for file name
-			String title = abstr.getTitle();
+			String title = abstr.getId();
 			String meeting = abstr.getMeeting().getName();
 			title = title.replaceAll("\\s+", "_");
 			title = title.replaceAll("\\s", "_");
 			meeting = meeting.replaceAll("\\s", "_");
-			String fileExt = null;
-			if (dataFormat.equals("xml")) fileExt = ".xml";
-			else if (dataFormat.equals("rdf/xml")) fileExt = ".rdf";
-			String file = dataDir + meeting + "_" + title + fileExt;
+			String file = dataDir + meeting + "_" + title + ".xml";
 			FileWrite fw = new FileWrite();
-			fw.append(file, abstr.toString(dataFormat));
+			fw.newFile(file, abstr.toString("xml"));
 		}
 	}
 
+	
+	
 	// HTML parser - reads an AGU HTML page and extracts links to abstracts
     ParserCallback parserCallback = new ParserCallback() 
     {
@@ -175,14 +197,10 @@ public class Crawler implements DataSource {
 	    	error = true;
 	  		errorMessage = "--outputDirectory Not Set. Directory in which to store the retrieved abstracts.";
 	  	}
-	  	if ( !cmd.hasOption("outputFormat")) 
-	  	{
-	  		format = "xml";
-	  	} 
-	  	else 
+	  	if ( cmd.hasOption("outputFormat")) 
 	  	{
 	  		format = cmd.getOptionValue("outputFormat");
-	  	}
+	  	} 
 	    
 	    if ( error ) 
 	    { 
@@ -191,9 +209,16 @@ public class Crawler implements DataSource {
 	    else 
 	    {	
 	      // query AGU
-		  Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"), format);
+		  Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
 		  crawler.crawl();
-		  crawler.writeToXML();
+		  if (format != null && format.equals("rdf/xml"))
+		  {
+			  crawler.writeToRDFXML();
+		  }
+		  else 
+		  {
+			  crawler.writeToXML();
+		  }
 	    }
 	}
 

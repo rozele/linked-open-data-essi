@@ -6,8 +6,6 @@ import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 
-//Added for commit test ***remove this comment
-
 /**
  * Container class for AGU abstract information
  * @author Eric Rozell and Tom Narock
@@ -81,7 +79,12 @@ public class Abstract
 	{
 		return _meeting;
 	}
-		
+	
+	public String getId()
+	{
+		return _abstractId;
+	}
+	
 	private void parseHtml()
 	{
 		int index, endIndex, nextIndex, emIndex, emEndIndex, afIndex, afEndIndex;
@@ -200,6 +203,7 @@ public class Abstract
 		}
 		sw.write("  <Abstract>" + _abstract + "</Abstract>\n");
 		sw.write("  <Title>" + _title + "</Title>\n");
+		sw.write("  <Id>" + _abstractId + "</Id>\n");
 		if (_session != null)
 		{
 			sw.write("  <Session>" + _session.getId() + "</Session>\n");
@@ -239,7 +243,7 @@ public class Abstract
 		}
 		for (int i = 0; i < _authors.size(); ++i)
 		{
-			sw.write("    <tw:hasAgentWithRole rdf:nodeID=\"A"+i+"\">\n");
+			sw.write("    <tw:hasAgentWithRole rdf:nodeID=\"A"+i+"\" />\n");
 		}
 		sw.write("  </rdf:Description>\n");
 		sw.write(writeAuthorRoles());

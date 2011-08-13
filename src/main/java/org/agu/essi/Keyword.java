@@ -31,7 +31,16 @@ public class Keyword {
 	 */
 	public String getName()
 	{
-		return _name.split("  ")[1];
+		if (_name.split("  ").length > 1)
+		{
+			return _name.split("  ")[1];
+		}
+		else if (_name.split("[.*]").length > 1)
+		{
+			return _name.split("[.*]")[1].trim();
+		}
+		else return _name;
+		
 	}
 	
 	/**

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.agu.org/focus_group/essi/schema"
+  targetNamespace="http://www.agu.org/focus_group/essi/schema" elementFormDefault="qualified"> 
+  <xs:element name="AGUAbstract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Meeting" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Section" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Keywords" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Keyword" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Abstract" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Session" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Hour" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Authors" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Author" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Affiliations" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Affiliation" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>				
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>					
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
