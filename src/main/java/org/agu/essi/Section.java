@@ -2,7 +2,6 @@ package org.agu.essi;
 
 public class Section {
 	private String _name;
-	private String _id;
 	private Meeting _meeting;
 	
 	public Section(String name, Meeting meeting)

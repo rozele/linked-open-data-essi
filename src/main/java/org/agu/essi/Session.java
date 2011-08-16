@@ -5,7 +5,6 @@ package org.agu.essi;
  * @author Eric Rozell
  */
 public class Session {
-	private String _name;
 	private String _id;
 	private Section _section;
 	

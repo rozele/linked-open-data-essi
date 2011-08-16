@@ -4,6 +4,7 @@
     xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
     <Meeting>Some AGU Meeting</Meeting>
     <Section>Some Section</Section>
+    <Id>ID value</Id>
     <Keywords>
         <Keyword>keyword1</Keyword>
         <Keyword>keyword2</Keyword>

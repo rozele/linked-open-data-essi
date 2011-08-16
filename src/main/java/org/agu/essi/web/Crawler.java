@@ -41,9 +41,7 @@ public class Crawler implements DataSource {
 	private HashMap <String, String> aguDatabases;
 	
 	private String dataDir;
-	private String dataFormat;
 	private ParserDelegator parserDelegator = new ParserDelegator();
-	private Abstract abstr;
 	private Vector<Abstract> _abstracts;
 	boolean crawled;
 	
@@ -119,7 +117,7 @@ public class Crawler implements DataSource {
         			URL u = new URL( aguBaseURL + address ); 
         			HttpURLConnection http = (HttpURLConnection) u.openConnection();
         			StringBuilder builder = new StringBuilder();
-        			BufferedReader reader = new BufferedReader(new InputStreamReader(http.getInputStream()));
+        			BufferedReader reader = new BufferedReader(new InputStreamReader(http.getInputStream(),"UTF-8"));
         			while((line = reader.readLine()) != null) 
         			{ 
         				builder.append(line + " "); 
@@ -169,8 +167,8 @@ public class Crawler implements DataSource {
 		crawled = true;
 	}
 	
-	public static void main (String[] args) 
-	{	
+	public static void main (String[] args)  {
+		
 		// Object to deal with command line options (Apache CLI)
 	  	Options options = new Options();
 	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts.");
@@ -179,54 +177,36 @@ public class Crawler implements DataSource {
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
 	  	CommandLineParser parser = new PosixParser();
-	  	try 
-	  	{
-	  		cmd = parser.parse( options, args);
-	  	} 
-	  	catch ( Exception pe ) 
-	  	{ 
-	  		System.err.println("Error parsing command line options: " + pe.toString()); 
+	  	try {
+	      cmd = parser.parse( options, args);
+	  	} catch ( Exception pe ) { 
+	  	  System.err.println("Error parsing command line options: " + pe.toString()); 
 	  	}
 	  	  
 	  	// Check if the correct options were set
 	  	boolean error = false;
 	  	String errorMessage = null;
 	  	String format = null;
-	    if ( !cmd.hasOption("outputDirectory") ) 
-	    {
+	    if ( !cmd.hasOption("outputDirectory") ) {
 	    	error = true;
 	  		errorMessage = "--outputDirectory Not Set. Directory in which to store the retrieved abstracts.";
 	  	}
-	  	if ( cmd.hasOption("outputFormat")) 
-	  	{
-	  		format = cmd.getOptionValue("outputFormat");
-	  	} 
+	  	if ( cmd.hasOption("outputFormat")) { format = cmd.getOptionValue("outputFormat"); } 
 	    
-	    if ( error ) 
-	    { 
-	    	System.out.println(errorMessage); 
-	    } 
-	    else 
-	    {	
+	    if ( error ) { System.out.println(errorMessage); } else {	
+
 	      // query AGU
 		  Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
 		  crawler.crawl();
-		  if (format != null && format.equals("rdf/xml"))
-		  {
-			  crawler.writeToRDFXML();
-		  }
-		  else 
-		  {
-			  crawler.writeToXML();
-		  }
+		  if (format != null && format.equals("rdf/xml")) { crawler.writeToRDFXML(); } else { crawler.writeToXML(); }
+	    
 	    }
+	    
 	}
 
 	public Vector<Abstract> getAbstracts() {
-		if (!crawled)
-		{
-			this.crawl();
-		}
+		if (!crawled) { this.crawl(); }
 		return _abstracts;
 	}
+	
 }

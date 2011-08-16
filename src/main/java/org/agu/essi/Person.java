@@ -1,7 +1,5 @@
 package org.agu.essi;
 
-import java.io.StringWriter;
-
 /**
  * Container class for person information
  * @author Eric Rozell
