@@ -13,6 +13,10 @@ import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.io.BufferedWriter;
 
 import javax.swing.text.html.HTMLEditorKit.ParserCallback;
 import javax.swing.text.html.parser.ParserDelegator;
@@ -98,6 +102,14 @@ public class Crawler implements DataSource {
 			String file = dataDir + meeting + "_" + title + ".xml";
 			FileWrite fw = new FileWrite();
 			fw.newFile(file, abstr.toString("xml"));
+			//String data = abstr.toString("xml");
+			//try {
+			//  Writer out = new BufferedWriter(new OutputStreamWriter(
+			//    new FileOutputStream( file ), "UTF-8"));
+			//  out.write( data );			
+			//  out.close();
+			//} catch ( Exception e ) { System.out.println(e); }
+			
 		}
 	}
 

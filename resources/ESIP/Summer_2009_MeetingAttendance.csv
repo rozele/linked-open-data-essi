@@ -1,0 +1,163 @@
+N,prefix,first_Name,last_Name,Title,Company,Address_1,Address_2,City,Region,Address_3,postal_Code,Phone,fax,Email_Address,Meeting Attended
+1,,Richard,Allen,,US EPA,1200 Pennsylvania Ave. NW,,Washington,DC,,20460,202-566-0624,,allen.richard@epa.gov,Summer 2009
+2,,Ed,Armstrong,Senior Data Engineer,Jet Propulsion Laboratory,4800 Oak Grove Dr,MS 300/320F,Pasadena,CA,,91109-8099,818 393-6710,,Edward.M.Armstrong@jpl.nasa.gov,Summer 2009
+3,,John,Arvedson,Teacher,La Puente HIgh School,1550 E Woodbury Road,,Pasadena,CA,,91104,626-755-5714,,arvedson@aol.com,Summer 2009
+4,,Paula,Arvedson,Director,California State University,1550 E Woodbury Road,,Pasadena,CA,,91104,323-343-4358,,parveds@calstatela.edu,Summer 2009
+5,,Bruce,Bargmeyer,Staff Computer Scientist,Lawrence Berkeley National Laboratory,"1 Cyclotron Road, MS 50B-3239",,Berkeley,CA,,94720,510-495-2905,,bebargmeyer@lbl.gov,Summer 2009
+6,,Bruce,Barkstrom,Retired,Society of General Agitators,15 Josie Lane,,Asheville,NC,,28804,8283377128,,alicebarkstrom@verizon.net,Summer 2009
+7,,Carol,Barrett,Earth Science Teacher,Burroughs High School,500 E French Ave,,Ridgecrest,CA,,93555,760-375-4476,,sciteach59@yahoo.com,Summer 2009
+8,,Karl,Benedict,Director,"Earth Data Analysis Center, UNM",MSC 01 1110,1 University of New Mexico,Albuquerque,NM,,87131,505-277-3622,,kbene@edac.unm.edu,Summer 2009
+9,,Debra,Bereki,Science Educator/Student,UCSB,PO Box 390,,Fillmore,CA,,93016,(805) 524-2471,,berekid@education.ucsb.edu,Summer 2009
+10,,Luis,Bermudez,Coastal Research Technical Manager,SURA,1201 New York Ave. NW,Suite 430,Washington DC,DC,,20005,202-408-8211,,bermudez@sura.org,Summer 2009
+11,,Stephen,Berrick,Program Manager,NASA Headquarters,Earth Science Division (DK),"300 E Street SW, Mail Stop 3B74",Washington,DC,,20546,202-358-1757,,stephen.w.berrick@nasa.gov,Summer 2009
+12,,Andrew,Bingham,PO.DAAC Project Manager,Jet Proposulsion Laboratory,4800 Oak Grove Drive,,Pasadena,CA,,91109,818 354-1768,,andrew.bingham@jpl.nasa.gov,Summer 2009
+13,,Cristina,Bories,ECHO Project Manager,Raytheon,5700 Rivertech Ct,,Riverdale,MD,,20737,301 851 8457,,cristina_bories@raytheon.com,Summer 2009
+14,,Eliza,Bradley,,UCSB Geography Dept.,1832 Ellison Hall,,Santa Barbara,CA,,93106,805-893-4434,,ebradley@geog.ucsb.edu,Summer 2009
+15,,Barbara,Brooks,Management and Program Analyst,DOC/National Oceanic and Atmospheric Administration,"Silver Spring Metro Center, Bldg 1, Ex1",1335 East-West Highway,Silver Spring,MD,,20910,301-713-9286,,barbara.brooks@noaa.gov,Summer 2009
+16,,Amelia,Budge,"Manager, Program Development",Earth Data Analysis Center,MSC01 1110,1 University of New Mexico,Albuquerque,NM,,87131-0001,505-277-3622,,abudge@edac.unm.edu,Summer 2009
+17,,Morgan,Burke,,Foundation for Earth Science,6504 Woodshire Place,,Raleigh,NC,,27612,9198707140,,carolbmeyer@gmail.com,Summer 2009
+18,,Michael,Burnett,,Vangent,4250 N. Fairfax,,Arlington,VA,,22203,410-808-1970,,michael.burnett@vangent.com,Summer 2009
+19,,Bruce,Caron,Executive Director,The New Media Studio,417 Samarkand Drive,,Santa Barbara,CA,,93105,18059661100,,bruce@tnms.org,Summer 2009
+20,,Kenneth,Casey,Technical Director,NOAA National Oceanographic Data Center,1315 East-West Highway,SSMC3 4th floor,Silver Spring,MD,,20910,301-713-3272 x133,,kenneth.casey@noaa.gov,Summer 2009
+21,,Ming,Chang,,USEPA,"1200 Pennsylvania Ave, NW",MC 8105R,Washington,DC,,20460,202-566-0619,,chang.ming@epa.gov,Summer 2009
+22,,Bruce,Chapman,,JPL,4800 oak grove dr,,pasadena,CA,,91109,8183543603,,bruce.chapman@jpl.nasa.gov,Summer 2009
+23,,Jennifer,Checchio,,Kellogg School,475 Cambridge Drive,,Goleta,CA,,93117,805.681.1277,,jmchecchio@gmail.com,Summer 2009
+24,,Helen,Conover,Research Scientist,University of Alabama in Huntsville,Information Technology & Systems Center,,Huntsville,AL,,35899,256-961-7807,,hconover@itsc.uah.edu,Summer 2009
+25,,Carrie,Coombs,6th Grade Science Teacher,Twin Lakes Academy Middle School,8050 Point Meadows Rd.,,Jacksonville,FL,,32256,(904) 538-0825,,coombsc1@duvalschools.org,Summer 2009
+26,,Glenn,Cunningham,Member of Technical Staff,JPL,4800 Oak Grove Drive,MS 300-331,Pasadena,CA,,91109,8183548328,,Glenn.F.Cunningham@jpl.nasa.gov,Summer 2009
+27,,LuAnn,Dahlman,Education Specialist,NOAA Climate Program Office,8527 E. Mallory St.,,Mesa,AZ,,85207-1421,480-357-8864,,luann.dahlman@noaa.gov,Summer 2009
+28,,Clint,Dawson,earth/environmental science teacher,"Pacifica High School, Oxnard Ca.",600 East Gonzales,,Oxnard,CA,,93036,(805) 798-7569,,clint.dawson@ouhsd.k12.ca.us,Summer 2009
+29,,Chris,Doescher,Land Processes DAAC Mission Manager,USGS,47914 252nd Street,,Sioux Falls,SD,,57198-0001,605-594-2649,,cdoesch@usgs.gov,Summer 2009
+30,,Bradley,Doorn,,NASA,300 E Street SW,,Washington,DC,,20546,202-358-2187,,bradley.doorn@nasa.gov,Summer 2009
+31,,Robert,Downs,Sr. Staff Assoc. Officer of Research,"CIESIN, Columbia University",61 Route 9W,,Palisades,NY,,10964,845-365-8985,,rdowns@ciesin.columbia.edu,Summer 2009
+32,,Allan,Doyle,,MIT,265 Massachusetts Ave.,N51-205,Cambridge,MA,,2139,617 452 2111,,afdoyle@mit.edu,Summer 2009
+33,,Jeff,Dozier,Professor,University of California,Bren School of Environmental,Science and Management,Santa Barbara,CA,,93106-5131,805-893-5889,,dozier@bren.ucsb.edu,Summer 2009
+34,,Ruth,Duerr,,National Snow & Ice Data Center,University of Colorado,UCB 449,Boulder,CO,,80309,303-946-4842,,rduerr@nsidc.org,Summer 2009
+35,,Kristina,Duran,Science Teacher,Pioneer Valley High School,675 Panther Drive,,Santa Maria,CA,,93454,(805) 922-1305,,kduran@smjuhsd.org,Summer 2009
+36,,Tim,Dye,Senior Vice President,"Sonomoa Technology, Inc.",1455 N. MacDowell Blvd,,Petaluma,CA,,95405,707-665-9900,,tim@sonomatech.com,Summer 2009
+37,,Christine,Earls,6th grade Teacher,Peabody Charter School,2767 Miradero Dr # D,,Santa Barbara,CA,,93105,805 680-0788,,christyearls@hotmail.com,Summer 2009
+38,,Gregory,Ederer,Sr Programmer/Analyst,NASA/GSFC MODIS Support,7501 Forbes Blvd,Suite 150,Seabrook,MD,,20706-2253,301 352 2142,,gederer@saicmodis.com,Summer 2009
+39,,Yonsook,Enloe,,NASA/SGT Inc.,19 Stoney Heights Ct,,Clifton Park,NY,,12065,704-576-8552,,yonsook@mindspring.com,Summer 2009
+40,,Stefan,Falke,,Northrop Grumman & Washington University,Suite 1740,1010 Market Street,Saint Louis,MO,,63101,314-259-7908,,stefan.falke@gmail.com,Summer 2009
+41,,Mike,Folk,President,The HDF Group,1901 So. First St.,,Champaign,IL,,61820,217-244-0647,,mfolk@hdfgroup.org,Summer 2009
+42,,Kathy,Fontaine,,NASA,Goddard Space Flight Center,Code 417,Greenbelt,MD,,20771,301-286-8161,,kathy.fontaine@nasa.gov,Summer 2009
+43,,Gregg,Foti,Sea Surface Temperature/Salinity Data Engineer,JPL,4800 Oak Grove Dr.,300-320H,Pasadena,CA,,91109,818-354-2860,,gfoti@jpl.nasa.gov,Summer 2009
+44,,Peter,Fox,Professor,Tetherless World Constellation/ RPI,110 8th St,,Troy,NY,,12180,518.276.4862,,pfox@cs.rpi.edu,Summer 2009
+45,,James,Frew,,Bren School,University of California,,Santa Barbara,CA,,93106-5131,+1-805-893-7356,,frew@bren.ucsb.edu,Summer 2009
+46,,Lawrence,Friedl,Program Director,NASA Earth Science Division,Applied Sciences Program,NASA Headquarters (3B74),Washington,DC,,20546,202-358-1599,,lfriedl@nasa.gov,Summer 2009
+47,,James,Gallagher,,OPeNDAP,125 W. Granite St,,Butte,MT,,59701,406.782.8663,,jgallagher@opendap.org,Summer 2009
+48,,John,Garrett,,ADNET Systems at NASA,NASA/GSFC,Code 690.1,Greenbelt,MD,,21044,301-286-3575,,john.g.garrett@nasa.gov,Summer 2009
+49,,Joseph,Glassy,Software Engineer,"NTSG, Univ. of Montana","NTSG,NASA Measures CFC-429",University of Montana,"Missoula,MT",MT,,59802,406-532-3238,,joe.glassy@ntsg.umt.edu,Summer 2009
+50,,Michael,Goodman,Natural Disasters Area Lead,NASA HQ,3B58,300 E St SW,Washington,DC,,20546,202 358 1510,,michael.goodman@nasa.gov,Summer 2009
+51,,Matthew,Graham,,California Institute of Technology,Mail Code 158/79,,Pasadena,CA,,91125,626 395 8030,,mjg@caltech.edu,Summer 2009
+52,,Margaux,Granat,,UCSB TEP,6038 Geary Blvd,,San Francisco,CA,,94121,5303682290,,margauxgranat@yahoo.com,Summer 2009
+53,,Stephanie,Granger,,NASA/JPL,4800 Oak Grove Dr,MS 233-304A,Pasadena,CA,,91018,818-354-5683,,stephanie.l.granger@jpl.nasa.gov,Summer 2009
+54,,Ted,Habermann,,National Geophysical Data Center,"325 Broadway, E/GC",,Boulder,CO,,80305,303-497-6472,,ted.habermann@noaa.gov,Summer 2009
+55,,Brigitte,Haley,,Kellogg School,547 Lado Drive,,Santa Barbara,CA,,93111,805-448-9574,,bhaley@goleta.k12.ca.us,Summer 2009
+56,,Danny,Hardin,Sr. Research Scientist,University of Alabama Huntsville,301 Sparkman Dr.,,Huntsville,AL,,35899,256-961-7792,,dhardin@itsc.uah.edu,Summer 2009
+57,,Ernest,Hilsenrath,Program Manager/Scientist,NASA HQ,300 E St. SW,,Washington DC,DC,,20546,202-358-7231,,ernest.hilsenrath@nasa.gov,Summer 2009
+58,,Nancy,Hoebelheinrich,Data Analyst,InfoAnalytics,448 East Ellsworth Court,,San Mateo,CA,,94401,650-302-4493,,nhoebel@stanford.edu,Summer 2009
+59,,Les,Hook,,Oak Ridge National Laboratory,Mail Stop 6407,Oak Ridge National Laboratory,Oak Ridge,TN,,37831-6407,(865) 241-4846,,hookla@ornl.gov,Summer 2009
+60,,Hook,Hua,,Jet Propulsion Laboratory,4800 Oak Grove Drive,,Pasadena,CA,,91109,818-393-7182,,hook.hua@jpl.nasa.gov,Summer 2009
+61,,Patricia,Huff,,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8140",,Silver Spring,MD,,20910,301-713-1127,,patricia.huff@noaa.gov,Summer 2009
+62,,J.,Hughes,Principal Computer Scientist,Jet Propulsion Laboratory,MS 169-400,4800 Oak Grove Dr.,Pasadena,CA,,91109,818.642.5151,,steve.hughes@jpl.nasa.gov,Summer 2009
+63,,Charles,Hutchinson,,University of Arizona,1955 E. 6th street,,Tucson,AZ,,85719,520-621-8568,,chuck@ag.arizona.edu,Summer 2009
+64,,Marea,Inghram,,Brentwood School,100 S. Barrington Place,,Los Angeles,CA,,90034,310-889-2783,,minghram@bwscampus.com,Summer 2009
+65,,Nina,Jackson,,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8140",,Silver Spring,MD,,20910,301-713-9604,,nina.jackson@noaa.gov,Summer 2009
+66,,Greg,Janee,,"University of California, Santa Barbara",ICESS,UCSB,Santa Barbara,CA,,93106,805-893-8453,,gjanee@alexandria.ucsb.edu,Summer 2009
+67,,Tommy,Jasmin,Systems Developer,CIMSS/SSEC,University of Wisconsin,1225 W. Dayton St.,Madison,WI,,53706,608 263 8568,,tommy.jasmin@ssec.wisc.edu,Summer 2009
+68,,Mike,Jeffe,Senior Technical Engineer,"ERDAS, Inc.",5971 Kingstowne Village Parkway,#110,Alexandria,VA,,22315,858-705-3185,,mike.jeffe@erdas.com,Summer 2009
+69,,Susan,Johnson,Coordinator: Science and Mathematics Initiative,"University of California, Santa Barbara",Room 2328 Phelps Hall,,Santa Barbara,CA,,93106-9490,805-893-8091,,sjohnson@education.ucsb.edu,Summer 2009
+70,,David,Jones,"Founder, President & CEO","StormCenter Communications, Inc.",bwtech@UMBC Research & Technology Park,1450 S. Rolling Road,Halethorpe,MD,,21227,410-203-1316,,dave@stormcenter.com,Summer 2009
+71,,Menas,Kafatos,"Dean, Schmid College of Science",Chapman University,One University Dr.,Schmid College of Science,Orange,CA,,92866,714-289-2048,,kafatos@chapman.edu,Summer 2009
+72,,Marilyn,Kaminski,Deputy DAAC Manager,University of Colorado,UCB 449,,Boulder,CO,,80309,303-735-5408,,marilynk@nsidc.org,Summer 2009
+73,,David,Kendig,Systems Engineer,NOAA/NESDIS/CLASS,7855 Walker Drive,,Greenbelt,MD,,20770,240-542-1115,,david.kendig@noaa.gov,Summer 2009
+74,,Kristen,Kent,,Pioneer Valley High School,P.O. Box 3731,,San Lius  Obispo,CA,,93403-3731,805-441-7318,,khkent2250@aol.com,Summer 2009
+75,,SiriJodha,Khalsa,Research Scientist,National Snow and Ice Data Center,Univ. of Colorado,CB449,Boulder,CO,,80309-0449,1-303-492-1445,,sjsk@nsidc.org,Summer 2009
+76,,Eric,Kihn,Deputy Director,NOAA/NGDC,325 Broadway E/GC2,,Boulder,CO,,80305,303 497 6346,,eric.a.kihn@noaa.gov,Summer 2009
+77,,Steve,Kluge,,Bedford Central Schools (ret),34 Beacon Hill Road,,Ardsley,NY,,10502,914-393-8235,,steve.kluge@gmail.com,Summer 2009
+78,,Louis,Kouvaris,,NASA/GSFC,Code 613.5,,Greenbelt,MD,,20771,301-286-5001,,Louis.C.Kouvaris@nasa.gov,Summer 2009
+79,,Kwo-Sen,Kuo,,Caelum Research Corp,Mailstop 613.1,NASA GSFC,Greenbelt,MD,,20771,301-614-6277,,Kwo-Sen.Kuo@nasa.gov,Summer 2009
+80,,Marty,Landsfeld,Tecahnical Lead,The New Media Studio,417 Samarkand Drive,,Santa Barbara,CA,,93105,18059661100,,marty@tnms.org,Summer 2009
+81,,Suzanne,Lawrence,consultant,program advisor,942 Amiford Drive,,San Diego,CA,,92107,619-225-8654,,suzanne@suzannelawrence.net,Summer 2009
+82,,Tamara,Ledley,Senior Scientist,TERC / Climate Literacy Network,2067 Massachusetts Ave,,Cambridge,MA,,2140,617-873-9658,,Tamara_Ledley@terc.edu,Summer 2009
+83,,Chris,Lenhardt,DAAC Science Team Lead,Oak Ridge National Laboratory / DAARWG,"Box 2008, MS-6407",,Oak Ridge,TN,,37831,865-574-6332,,lenhardtc@ornl.gov,Summer 2009
+84,,Gregory,Leptoukh,,NASA/GSFC,"NASA GSFC, Code 610.2",,Greenbelt,MD,,20771,301-614-5253,,gregory.g.leptoukh@nasa.gov,Summer 2009
+85,,Joshua,Lieberman,,OGC,85 High Street,,Newton,MA,,2464,+1 617 297 2113,,josh@oklieb.net,Summer 2009
+86,,Francis,Lindsay,ESDIS Evolution Manager,NASA GSFC,Greenbelt,,Maryland,MD,,20771,301 614-5331,,francis.lindsay-1@nasa.gov,Summer 2009
+87,,Glynis,Lough,Research Scientist,Battelle,2111 Wilson Blvd,Ste 900,Arlington,VA,,22201,703.875.2118,,loughg@battelle.org,Summer 2009
+88,,Peggy,Lubchenco,Teacher/Science Outreach,Santa Barbara School District,280 Vereda Galeria,,Goleta,CA,,93117,805 680 4313,,plubchenco@gmail.com,Summer 2009
+89,,Clifford,Lynch,Executive Director,Coalition for Networked Information,21 Dupont Circle,,Washington,DC,,20036,202 296 5098,,cliff@cni.org,Summer 2009
+90,,Christopher,Lynnes,,NASA/GSFC,"NASA GSFC, Code 610.2","Bldg 32, Rm S150B",Greenbelt,MD,,20771,301-614-5185,,Christopher.S.Lynnes@nasa.gov,Summer 2009
+91,,Chris,Mattmann,Senior Computer Scientist,NASA Jet Propulsion Laboratory,4800 Oak Grove Drive,M/S 171-264,Pasadena,CA,,91109,818-354-8810,,chris.mattmann@jpl.nasa.gov,Summer 2009
+92,,David,McCabe,,US EPA,1200 Pennsylvania Ave. NW,,Washington,DC,,20460,202 564 0016,,davidcmccabe@gmail.com,Summer 2009
+93,,Kenneth,McDonald,Data Management Architect,"Dept of Commerce, NOAA, NESDIS","SSMC1, rm 55212",1335 East West Hwy,Silver Spring,MD,,20910,301-713-2789,,kenneth.mcdonald@noaa.gov,Summer 2009
+94,,John,McHenry,Chief Scientist,Baron Advanced Meteorological Systems,1021 Main Campus Drive,Suite 300,Raleigh,NC,,27606,919-515-0765,,john.mchenry@baronams.com,Summer 2009
+95,,Nirav,Merchant,,iPlant Collaborative,111 G Keatings Bioresearch Bldg.,,Tucson,AZ,,85721,520-621-8379,,nirav@email.arizona.edu,Summer 2009
+96,,Carol,Meyer,Executive Director,Foundation for Earth Science,6300 Creedmoor Road,Suite 170-315,Raleigh,NC,,27612,919-870-7140,,carolbmeyer@esipfed.org,Summer 2009
+97,,Kim,Miller,science teacher,Goleta Valley Junior High School,6100 Stow Canyon Road,,Goleta,CA,,93117,(805) 967-3486,,kmiller@gvjh.org,Summer 2009
+98,,David,Mintz,,U.S. EPA,109 T.W. Alexander Drive,,RTP,NC,,27711,919-541-5224,,mintz.david@epa.gov,Summer 2009
+99,,Paolo,Missier,Research Fellow,University of Manchester,Oxford rd,,Manchester,,,M139Pl,+44 789 186 6167,,pmissier@acm.org,Summer 2009
+100,,Andrew,Mitchell,,NASA/GSFC,ESDIS Code 423,,Greenbelt,MD,,20771,301-614-5189,,andrew.e.mitchell@nasa.gov,Summer 2009
+101,,Yvonne,Mondragon,,Etiwanda High School,2443 S. Parco Ave,,Ontario,CA,,91761,(909) 899-2531,,ydmondragon@roadrunner.com,Summer 2009
+102,,Margaret,Mooney,Earth Science Outreach Specialist,CIMSS/SSEC,University of Wisconsin,1225 W. Dayton,Madison,WI,,53706,608 265 2123,,margaret.mooney@ssec.wisc.edu,Summer 2009
+103,,Reagan,Moore,Director DICE Center,University of North Carolina at Chapel Hil,108 Homewood Drive,,Chapel Hill,NC,,27514,919 445 9592,,rwmoore@renci.org,Summer 2009
+104,,Stanley,Morain,Research Professor,Earth Data Analysis Center,MSC01 1110,1 University of New Mexico,Albuquerque,NM,,87131-0001,505-277-3622,,smorain@edac.unm.edu,Summer 2009
+105,,Steven,Morris,,NCSU Libraries,Campus Box 7111,,Raleigh,NC,,27609,919-515-1361,,steven_morris@ncsu.edu,Summer 2009
+106,,John,Moses,,NASA GSFC,ESDIS Project 423,,Greenbelt,MD,,20771,301-614-5308,,john.f.moses@nasa.gov,Summer 2009
+107,,William,Muldrow,Systems Analyst,Environmental Protection Agency,"1200 Pennsylvania Avenue, N.W.",,Washington,DC,,20460,(202) 566-0692,,muldrow.bill@epa.gov,Summer 2009
+108,,Stephen,Olding,,NASA GSFC,2750 Prosperity Ave,Suite 210,Fairfax,VA,,22031,703 246 0000,,solding@everware-cbdi.com,Summer 2009
+109,,Mark,Parsons,,National Snow and Ice Data Center,UCB449,University of Colorado,Boulder,CO,,80309,303-492-2359,,parsonsm@nsidc.org,Summer 2009
+110,,Jon,Polay,Manager of Federatl Sales & Strategic Accounts,"ERDAS, Inc.",5971 Kingstowne Village Parkway,#110,Alexandria,VA,,22315,631-258-3249,,jon.polay@erdas.com,Summer 2009
+111,,Robert,Prentice,Professional Research Assistant,CIRES/NGDC,325 Broadway mailstop E\GC2,,Boulder,CO,,80305,303-497-6468,,robert.f.prentice@noaa.gov,Summer 2009
+112,,Rahul,Ramachandran,Research Scientist,ITSC,University of Alabama in Huntsville,,Huntsville,AL,,35899,256-824-5157,,rramachandran@itsc.uah.edu,Summer 2009
+113,,Rob,Raskin,,Jet Propulsion Laboratory,"4800 Oak Grove Dr, 300-320",,Pasadena,CA,,91109,8183544228,,raskin@jpl.nasa.gov,Summer 2009
+114,,Victoria,Reich,Director LOCKSS Program,Stanford University Libraries,1450 Page Mill Road,,Palo Alto,CA,,94304,650 725 1134,,vreich@stanford.edu,Summer 2009
+115,,Rebecca,Reid,Teacher,Olive Grove Charter School,3180 Glengary Rd,,Santa Ynez,CA,,93460,805-350-0420,,trainerBecky@mac.com,Summer 2009
+116,,John,Relph,IT Specialist,NOAA/National Oceanographic Data Center,1315 East West Highway,"SSMC3, 4th floor",Silver Spring,MD,,20910,301-713-3284,,john.relph@noaa.gov,Summer 2009
+117,,Russ,Rew,,UCAR Unidata,P.O. Box 3000,,Boulder,CO,,80307-3000,303-497-8645,,russ@unidata.ucar.edu,Summer 2009
+118,,Tom,Richardson,Earth Science Teacher,Kern High School District,7117 Lucille Avenue,,Bakersfield,CA,,93308,661-817-6297,,drtrichardson@yahoo.com,Summer 2009
+119,,Erin,Robinson,Research Assistant,Washington University,1 Brookings Dr.,,St Louis,MO,,63105,314-935-6099,,emr1@wustl.edu,Summer 2009
+120,,Julie,Robinson,"Graduate Student Researcher, DigitalOcean: Sampling the Sea",UCSB Dept. of Film and Media Studies,"Center for Film, Television, and New Media",1015 Robertson Gym,Santa Barbara,CA,,93106-4010,(805) 893-2467,,jrobinson@bren.ucsb.edu,Summer 2009
+121,,Lauren,Rodriguez,,Peabody Charter,3018 Calle Noguera,,Santa Barbara,CA,,93105,805-563-1172,,lrodriguez@peabodycharter.org,Summer 2009
+122,,Brian,Rogan,Outreach & Partnership Coordinator,Foundation for Earth Science,15 Beecher Place,,Newton,MA,,2459,617 589 4252,,brian.rogan@earthsciencefoundation.org,Summer 2009
+123,,Jean,Rogers-O'Reilly,,"Science Matters, Santa Barbara School District",5650 West Camino Cielo,,Santa Barbara,CA,,93105,8059670290,,jrogersoreilly@gmail.com,Summer 2009
+124,,Rich,Scheffe,Science Advisor,U.S. EPA,c304-02,,RTP,NC,,27711,919-541-4650,,scheffe.rich@epa.gov,Summer 2009
+125,,Annette,Schloss,Research Scientist,University of New Hampshire,Complex Systems Research Center,446 Morse Hall,Durham,NH,,3824,603 862.0348,,annette.schloss@unh.edu,Summer 2009
+126,,Donald,Schulteis,,Ontario High School,1655 West Lisbon St.,,Upland,CA,,91784,909/988-7411,,doschulteis@verizon.net,Summer 2009
+127,,John,Scialdone,Manager - Data Center Services,CIESIN/SEDAC,Earth Institute @ Columbia University,"LDEO, 61 Route 9W, PO Box 1000",Palisades,NY,,10964,(845) 365-8978,,jscialdo@ciesin.columbia.edu,Summer 2009
+128,,Uma,Shankar,Research Associate,University of North Carolina-Institute for the Environment,"Bank of America Plaza, CB#6116",137 E. Franklin St,Chapel Hill,NC,,27599-611,(919) 966-2102,,ushankar@unc.edu,Summer 2009
+129,,Raj,Singh,,Open Geospatial Consortium,13 1/2 Cedar St,,Cambridge,MA,,2140,6176429372,,rsingh@opengeospatial.org,Summer 2009
+130,,Peter,Slaughter,Software Specialist,Environmental Information Lab,"Bren Hall, Rm 3007",University of California,Santa Barbara,CA,,93106,805 403 2188,,peter@bren.ucsb.edu,Summer 2009
+131,,Manny,Smith,,Chapman University,One University Dr.,,Orange,CA,,92866,714-289-2047,,esmith@chapman.edu,Summer 2009
+132,,William,Sonntag,Principal International & External Liaison,USEPA OEI,1200 PA Ave NW MC2810A,,Washington,DC,,20460,202 564 3871,,sonntag.william@epa.gov,Summer 2009
+133,,William,Sprigg,Professor,The University of Arizona,"1118 E. 4th. St., POBox 210081",,Tucson,AZ,,85721,520-626-8945,,wsprigg@u.arizona.edu,Summer 2009
+134,,Suzanne,Squires,teacher,Los Olivos School,2540 Alamo Pintado Avenue,P.O. Box 208,Los Olivos,CA,,93441-0208,805-688-4025,,lossquires@sbceo.org,Summer 2009
+135,,Thornton,Staples,"Director, Community Strategy & Alliances","DuraSpace, Inc.",unknown,,unknown,VA,,0,0000000000,,tstaples@fedora-commons.org,Summer 2009
+136,,Tyler,Stevens,Data Service Coordinator,NASA Global Change Master Directory (GCMD),Goddard Space Flight Center,,Greenbelt,MD,,20771,301-614-6898,,tyler.b.stevens@nasa.gov,Summer 2009
+137,,Kevin,Stewart,Technical Lead,Innovim,7501 Greenway Center Drive,Suite 660,Greenbelt,MD,,20770,3012868385,,kevin.stewart@nasa.gov,Summer 2009
+138,,Louis,Sweeny,,Ross and Associates,"1218 Third Avenue, Suite 1207",,Seattle,WA,,98101,206-447-1805,,louis.sweeny@ross-assoc.com,Summer 2009
+139,,Jason,Symonds,,NOAA,151 Patton Avenue,,Asheville,NC,,28801,828-271-4190,,jason.symonds@noaa.gov,Summer 2009
+140,,Donna,Taylor,teacher science,LAUSD,8612 Elburg Street,Unit D,Paramount,CA,,90723,3232435449,,donnalinks@yahoo.com,Summer 2009
+141,,Shelly,Thompson,teacher,West High,17024 Wilkie Ave.,,Torrance,CA,,90504,310-533-4299,,shellythompson@mac.com,Summer 2009
+142,,Curt,Tilmes,,NASA's Goddard Space Flight Center,Code 614.5,,Greenbelt,MD,,20771,301-614-5534,,curt.tilmes@nasa.gov,Summer 2009
+143,,Guy,Tomassoni,Branch Chief,USEPA - Office of Environmental Information,"1200 Pennsylvania Ave., NW",Mail Code 2842T,Washington,DC,,20460,2-20566-1937,,tomassoni.guy@epa.gov,Summer 2009
+144,,Adam,Truxler,Graduate Student,UCSB,842 E. Pleasant Valley Rd.,,Port Hueneme,CA,,93041,(310)9956826,,whykneeme@gmail.com,Summer 2009
+145,,Richard,Ullman,,NASA Goddard,Code 474,,Greenbelt,MD,,20771,301 713 4831,,richard.ullman@nasa.gov,Summer 2009
+146,,Wendy,Van Norden,teacher,Harvard-Westlake,5219 Norwich Avenue,,Sherman Oaks,CA,,91411,8189909085,,wvannorden@hw.com,Summer 2009
+147,,Edie,Walker,teacher,LAUSD/South Gate MS,1400 Firestone blvd.,,South Gate,CA,,90280,323-568-4000,,edie_walker@yahoo.com,Summer 2009
+148,,Kevin,Ward,NASA Earth Observations,NASA GSFC / SSAI,9025 SW 50th Ave.,,Portland,OR,,97219,503-246-1608,,kevin_ward@ssaihq.com,Summer 2009
+149,,Pamela,Whiffen,Gifted Science Specialist,Scottsdale Unified,4730 E. Piedmont,,Phoenix,AZ,,85044,602-502-6677,,pwpwr@aol.com,Summer 2009
+150,,John,White,AIRNow Program Manager,EPA,109 Alexander Dr,Mail Code C404-07,RTP,NC,,27711,919-541-2306,,white.johne@epa.gov,Summer 2009
+151,,Brian,Wilson,,Jet Propulsion Lab,MS 138-308,4800 Oak Grove Dr.,Pasadena,CA,,91109,818-354-2790,,Brian.Wilson@jpl.nasa.gov,Summer 2009
+152,,Bruce,Wilson,Group Leader,Oak Ridge National Laboratory,"Box 2008, MS-6407",,Oak Ridge,TN,,37831,865-574-6651,,wilsonbe@ornl.gov,Summer 2009
+153,,Dennis,Wingo,CEO,Skycorp Incorporated,603 Dement St. N.E.,,Huntsville,AL,,35801,310-403-1346,,wingod@earthlink.net,Summer 2009
+154,,Charles,Wooldridge,Chief of Staff/NESDIS,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8243",,Silver Spring,MD,,20910,301-713-9604,,charles.wooldridge@noaa.gov,Summer 2009
+155,,Zhangfan,Xing,,JPL,4800 Oak Grove Drive,,Pasadena,CA,,91109,(818)393-6422,,xing@pacific.jpl.nasa.gov,Summer 2009
+156,,Phil,Yang,Associate Professor,CISC/GMU,4400 University Dr,,Fairfax,VA,,22030,703-993-4742,,cyang3@gmu.edu,Summer 2009
+157,,Martin,Yapur,,NOAA,1335 E. W. HWY. SSMC1,,Silver Spring,MD,,20910,301-713-2789,,darlene.ward@noaa.gov,Summer 2009
+158,,Beth,Yeager,,"Gevirtz Graduate School, UC Santa Barbara",533 Camino De La Aldea,,Santa Barbara,CA,,93111,8058935734,,eyeager@education.ucsb.edu,Summer 2009
+159,,Steve,Young,Senior Advisor for GEOSS,US EPA,"1200 Pennsylvania Ave., NW",Mailcode: 2841T,Washington,DC,,20460,202-566-0608,,young.steve@epa.gov,Summer 2009
+160,,Tom,Yunck,,GeoOptics LLC,503 Continental Ct,,Pasadena,CA,,91103,713-296-0293,,tyunck@charter.net,Summer 2009
+161,,Daniel,Ziskin,Research Scientist,NGDC/NOAA,325 Broadway,,Boulder,CO,,80305,303-497-6469,,daniel.ziskin@noaa.gov,Summer 2009
+162,,Alexis,Zubrow,,"Institute for the Environment, UNC Chapel Hill",137 E Franklin St,,Chapel Hill,NC,,27599,(919)966-1395,,azubrow@unc.edu,Summer 2009

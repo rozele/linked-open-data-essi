@@ -10,21 +10,23 @@ import java.io.InputStreamReader;
 
 public class MeetingAttendance {
 	
-	static final Logger log = Logger.getLogger(org.esipfed.data.MeetingAttendance.class);  	
-	private FOAF foaf = new FOAF ();
+	static final Logger log = Logger.getLogger(org.esipfed.data.MeetingAttendance.class);  
 	
 	public static void main ( String[] args ) {
 	 
+	  FOAF foaf = new FOAF ();
+	  
 	  // directory containing ESIP CSV meeting attendee files
 	  File dir = new File(args[0]);
 	  File[] files = dir.listFiles();
 	  
 	  // loop over all the files
 	  String[] parts;
-	  String firstName;
-	  String lastName;
-	  String emailAddress;
-	  String phoneNumber;
+	  String firstName = "";
+	  String lastName = "";
+	  String emailAddress = "";
+	  String phoneNumber = "";
+	  String affiliation = "";
 	  for (int i=0; i<files.length; i++) {
 		  
 		// read the file line by line
@@ -33,12 +35,18 @@ public class MeetingAttendance {
 		    DataInputStream in = new DataInputStream( fstream );
 		    BufferedReader br = new BufferedReader( new InputStreamReader(in) );
 		    String strLine;
+		    int counter = 0; 
 		    while ( (strLine = br.readLine()) != null )   {
-		      parts = strLine.split(",");
-		      firstName = parts[1];
-		      lastName = parts[2];
-		      System.out.println( strLine );
-		      //or (int j=0; j<parts.length; j++) { System.out.println(j + " " + parts[j]); }
+		      if ( counter != 0 ) { // ignore the first line (header)
+		        parts = strLine.split(",");
+		        firstName = parts[2];
+		        lastName = parts[3];
+		        affiliation = parts[5];
+		        affiliation = affiliation.replace("\"", "");
+		        phoneNumber = parts[12];
+		        emailAddress = parts[14];
+		      }
+		      counter++;
 		    }
 		    in.close();
 		} catch (Exception e) { 
@@ -47,12 +55,12 @@ public class MeetingAttendance {
 			log.error(" ");
 		}
 			 
-		  // write FOAF
-	
-	// person
-	
-	// affiliation - don't write twice
-
+		// write FOAF
+		foaf.writePerson(firstName, lastName, emailAddress, phoneNumber);
+		
+		// affiliation - don't write twice
+		foaf.writeOrganization(org, orgID, orgMembers)
+		
 	  }
 	  
 	}

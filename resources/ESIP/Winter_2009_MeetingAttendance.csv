@@ -1,0 +1,111 @@
+N,prefix,first_Name,last_Name,Title,Company,Address_1,Address_2,City,Region,address_3,postal_Code,Phone,fax,Email_Address,Meeting Attended
+1,,Stephen,Ambrose,Deputy Project Manager ESDIS,NASA GSFC,"Bldg 32, Room 240C",,Greenbelt,MD,,20754,301-614-5372,,sambrose@nasa.gov,Winter 2009
+2,,Ed,Armstrong,Senior Data Engineer,Jet Propulsion Laboratory,4800 Oak Grove Dr,MS 300/320F,Pasadena,CA,,91109-8099,818 393-6710,,Edward.M.Armstrong@jpl.nasa.gov,Winter 2009
+3,,Mary,Armstrong,,Raytheon Information Solutions,5700 Rivertech Court,,Riverdale,MD,,20737,301-851-8439,,mary_s_armstrong@raytheon.com,Winter 2009
+4,,Joan,Aron,AAAS S&T Policy Fellow,US Environmental Protection Agency,Ronald Reagan Building,1300 Pennsylvania Ave NW,Washington,DC,,20004,202 564 0131,,joanaron@ymail.com,Winter 2009
+5,,Charles,Baker,Deputy Assistant Administrator,NOAA/NESDIS,"1335 East-West Highway,",SSMC#1 Rm 8300,Silver Spring,MD,,20910,301-713-2010,,charles.s.baker@noaa.gov,Winter 2009
+6,,Jeanne,Behnke,,NASA/GSFC,ESDIS Code 423,,Greenbelt,MD,,20771,301-614-5326,,jeanne.behnke-1@nasa.gov,Winter 2009
+7,,Karl,Benedict,Senior Research Scientist,"Earth Data Analysis Center, UNM",MSC 01 1110,1 University of New Mexico,Albuquerque,NM,,87131,505-277-3622,,kbene@edac.unm.edu,Winter 2009
+8,,Luis,Bermudez,Coastal Research Technical Manager,SURA,1201 New York Ave. NW,Suite 430,Washington DC,DC,,20005,202-408-8211,,bermudez@sura.org,Winter 2009
+9,,Fran,Boler,Data Group Manager,UNAVCO,6350 Nautilus Dr,,Boulder,CO,,80301,303.381.7453,,boler@unavco.org,Winter 2009
+10,,Michael,Brewer,Physical Scientist,NOAA's National Climatic Data Center,151 Patton Avenue,,Asheville,NC,,28801,828 271-4479,,michael.j.brewer@noaa.gov,Winter 2009
+11,,Michael,Burnett,,NASA/ECHO,786 Tremane Way,,Severna Park,MD,,21186,410 808 1970,,michael.burnett@vaugnet.com,Winter 2009
+12,,Bruce,Caron,Executive Director,The New Media Studio,417 Samarkand Drive,,Santa Barbara,CA,,93105,18059661100,,bruce@tnms.org,Winter 2009
+13,,Sarah,Carter,AAAS Fellow,EPA,1200 Pennsylvania Ave. NW,,Washington,DC,,20460,2025645572,,carter.sarah@epa.gov,Winter 2009
+14,,Kenneth,Casey,Technical Director,NOAA National Oceanographic Data Center,1315 East-West Highway,SSMC3 4th floor,Silver Spring,MD,,20910,301-713-3272 x133,,kenneth.casey@noaa.gov,Winter 2009
+15,,Saurabh,Channan,,Global Land Cover Facility,3139 AV Williams UMIACS,,College Park,MD,,20742,301-405-6753,,schannan@umiacs.umd.edu,Winter 2009
+16,,Donald,Collins,Oceanographer,NOAA/National Oceanographic Data Center,1315 East West Highway,SSMC3 4th floor,Silver Spring,MD,,20910-3282,301-713-3272,,donald.collins@noaa.gov,Winter 2009
+17,,Peter,Cornillon,,University of Rhode Island,Graduate School of Oceanography,,Narragansett,RI,,2882,401-874-6283,,pcornillon@me.com,Winter 2009
+18,,Paul,Davis,,Global Land Cover Facility,3139 AV Williams UMIACS,,College Park,MD,,20742,301-405-6753,,pdavis@umiacs.umd.edu,Winter 2009
+19,,Steve,Del Greco,,DOC/NOAA/NCDC,151 Patton Avenue,,Asheville,NC,,28801,828-271-4486,,beverly.morgan@noaa.gov,Winter 2009
+20,,Meixia,Deng,,George Mason University,4400 University Dr.,MSN: 6E1,Fairfax,VA,,22030,7039936113,,mdeng@gmu.edu,Winter 2009
+21,,Liping,Di,"Director, CSISS",George Mason University,"6301 Ivy Lane, Suite 620",,Greenbelt,MD,,20770,301-982-0795,,ldi@gmu.edu,Winter 2009
+22,,Chris,Doescher,Land Processes DAAC Mission Manager,USGS,47914 252nd Street,,Sioux Falls,SD,,57198-0001,605-594-2649,,cdoesch@usgs.gov,Winter 2009
+23,,James,Elder,Director,Campaign for Environmental Literacy,14 Jersey Lane,,Manchester,MA,,1944,978-526-7768,,jelderjr@aol.com,Winter 2009
+24,,Stefan,Falke,,Northrop Grumman & Washington University,Suite 1740,1010 Market Street,Saint Louis,MO,,63101,314-259-7908,,stefan.falke@gmail.com,Winter 2009
+25,,Gary,Foley,Executive for GEOSS,Office of the Science Advisor,109 TW Alexander Dr,,Research Triangle Park,NC,,27711,919-541-0711,,foley.gary@epa.gov,Winter 2009
+26,,Christopher,Fox,Center Director,National Geophysical Data Center,"325 Broadway, E/GC",,Boulder,CO,,80305,303-497-6215,,christopher.g.fox@noaa.gov,Winter 2009
+27,,Peter,Fox,Professor,Tetherless World Constellation/ RPI,110 8th St,,Troy,NY,,12180,518.276.4862,,pfox@cs.rpi.edu,Winter 2009
+28,,James,Frew,,Bren School,University of California,,Santa Barbara,CA,,93106-5131,+1-805-893-7356,,frew@bren.ucsb.edu,Winter 2009
+29,,Lawrence,Friedl,Program Director,NASA Earth Science Division,Applied Sciences Program,NASA Headquarters (3B74),Washington,DC,,20546,202-358-1599,,lfriedl@nasa.gov,Winter 2009
+30,,Joseph,Glassy,Software Engineer,"NTSG, Univ. of Montana","NTSG,NASA Measures CFC-429",University of Montana,"Missoula,MT",MT,,59802,406-532-3238,,joe.glassy@ntsg.umt.edu,Winter 2009
+31,,Michael,Goodman,Natural Disasters Area Lead,NASA HQ,3B58,300 E St SW,Washington,DC,,20546,202 358 1510,,michael.goodman@nasa.gov,Winter 2009
+32,,Sara,Graves,"Director, University Professor",University of Alabama in Huntsville,ITSC,"301 Sparkman Drive, TH S339A",Huntsville,AL,,35899,256-824-6064,,sgraves@itsc.uah.edu,Winter 2009
+33,,Margarita,Gregg,"Director, NODC",NOAA/National Oceanographic Data Center,1315 East West Highway,"SSMC3, 4th floor",Silver Spring,,,20910,301-713-3270,,margarita.gregg@noaa.gov,Winter 2009
+34,,Peter,Grimm,Physical Scientist,NOAA/NESDIS,1335 East-West Highway,,Silver Spring,MD,,20910,301713-0575,,peter.l.grimm@noaa.gov,Winter 2009
+35,,Ted,Habermann,,National Geophysical Data Center,"325 Broadway, E/GC",,Boulder,CO,,80305,303-497-6472,,ted.habermann@noaa.gov,Winter 2009
+36,,David,Han,,NASA / Goddard SPace Flight Center,8800 Greenbelt Rd,"Bldg. 6, Rm. S230",Greenbelt,MD,,20771,301-286-3617,,david.b.han@nasa.gov,Winter 2009
+37,,Carolyn,Harf,,University of Maryland,6624 32nd Place NW,,Washington,DC,,20015,202.841.0828,,chight@umd.edu,Winter 2009
+38,,Mahabaleshwara,Hegde,Technical Manager,ADNET Systems Inc,Code 610.2 NASA Goddrad Space Flight Center,,Greenbelt,MD,,20771,301-614-5190,,mahabaleshwa.s.hegde@nasa.gov,Winter 2009
+39,,Sara,Hisel-McCoy,,USEPA/OEI,"1200 Pennsylvania Avenue, NW",,Washington,DC,,20460,202-566-1649,,hisel-mccoy.sara@epa.gov,Winter 2009
+40,,Hook,Hua,,Jet Propulsion Laboratory,4800 Oak Grove Drive,,Pasadena,CA,,91109,818-393-7182,,hook.hua@jpl.nasa.gov,Winter 2009
+41,,Patricia,Huff,,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8140",,Silver Spring,MD,,20910,301-713-1127,,patricia.huff@noaa.gov,Winter 2009
+42,,Charles,Hutchinson,President,ESIP,1955 E. Sixth St.,Suite 208C,Tucson,AZ,,85719,520-621-8568,,chiyo@email.arizona.edu,Winter 2009
+43,,Nina,Jackson,,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8142",,Silver Spring,MD,,20910,301-713-9604,,nina.jackson@noaa.gov,Winter 2009
+44,,Tommy,Jasmin,,CIMSS/SSEC,University of Wisconsin,1225 W. Dayton,Madison,WI,,53706,608 263 8568,,tommy.jasmin@ssec.wisc.edu,Winter 2009
+45,,Jerry,Johnston,Geospatial Information Officer,US Environmental Protection Agency,1200 Pennsylvania Ave NW,MC 2810A,Washington,DC,,20460,202-564-3175,,johnston.jerry@epa.gov,Winter 2009
+46,,David,Jones,"Founder, President & CEO","StormCenter Communications, Inc.",bwtech@UMBC Research & Technology Park,1450 S. Rolling Road,Halethorpe,MD,,21227,410-203-1316,,dave@stormcenter.com,Winter 2009
+47,,Marilyn,Kaminski,Deputy DAAC Manager,University of Colorado,UCB 449,,Boulder,CO,,80309,303-735-5408,,marilynk@nsidc.org,Winter 2009
+48,,Ed,Kearns,,DOC/NOAA/NCDC,151 Patton Avenue,,Asheville,NC,,28801,828-271-4486,,beverly.morgan@noaa.gov,Winter 2009
+49,,Steven,Kempler,,NASA/GSFC,Code 610.2,,Greenbelt,MD,,20771,301-614-5765,,steven.j.kempler@nasa.gov,Winter 2009
+50,,David,Kendig,Systems Engineer,NOAA/NESDIS/CLASS,7855 Walker Drive,,Greenbelt,MD,,20770,240-542-1115,,david.kendig@noaa.gov,Winter 2009
+51,,Eric,Kihn,Deputy Director,NOAA/NGDC,325 Broadway E/GC2,,Boulder,CO,,80305,303 497 6346,,eric.a.kihn@noaa.gov,Winter 2009
+52,,Steve,Kluge,,Bedford Central Schools (ret),34 Beacon Hill Road,,Ardsley,NY,,10502,914-393-8235,,steve.kluge@gmail.com,Winter 2009
+53,,Anne,Koslosky,,NASA/GSFC,GSFC Code 423,,Greenbelt,,,20707,3016145024,,anne.koslosky@nasa.gov,Winter 2009
+54,,Louis,Kouvaris,,NASA/GSFC,Code 613.5,,Greenbelt,MD,,20771,301-286-5001,,Louis.C.Kouvaris@nasa.gov,Winter 2009
+55,,Arron,Layns,,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8243",,Silver Spring,MD,,20910,301-713-9604,,Arron.Layns@noaa.gov,Winter 2009
+56,,Tamara,Ledley,Senior Scientist,TERC,2067 Massachusetts Ave,,Cambridge,MA,,2140,617-873-9658,,tamara_ledley@terc.edu,Winter 2009
+57,,Clint,Lemmons,I.T. Specialist,USEPA,1200 Pennsylvania Ave. N.W.,4606M,Washington,DC,,20460,2025644623,,lemmons.clint@epa.gov,Winter 2009
+58,,Chris,Lenhardt,DAAC Science Team Lead,Oak Ridge National Laboratory / DAARWG,"Box 2008, MS-6407",,Oak Ridge,TN,,37831,865-574-6332,,lenhardtc@ornl.gov,Winter 2009
+59,,Alan,Leonardi,,NOAA Research,"1315 East West Highway, R/PPE",,Silver Spring,MD,,20910,301-734-1184,,alan.leonardi@noaa.gov,Winter 2009
+60,,Francis,Lindsay,ESDIS Evolution Manager,NASA GSFC,Greenbelt,,Maryland,MD,,20771,301 614-5331,,francis.lindsay-1@nasa.gov,Winter 2009
+61,,Christopher,Lynnes,,NASA GSFC,"NASA GSFC, Code 610.2","Bldg 32, Rm S150B",Greenbelt,MD,,20771,301-614-5185,,chris.lynnes@nasa.gov,Winter 2009
+62,,John,Lyon,,U.S. Environmental Protection Agency,Ronald Reagan Bldg.,1200 Pennsylvania Avenue,Washington,,,20460,202-564-9991,,lyon.johng@epa.gov,Winter 2009
+63,,Martha,Maiden,"Program Executive, Earth Science Data Systems",NASA Headquarters,300 E Street SW,Mail Suite 3B74,Washington,WA,,20546,202 358-1078,,martha.e.maiden@nasa.gov,Winter 2009
+64,,James,Marshall,,NASA Goddard Space Flight Center,Mailstop 614.9,,Greenbelt,MD,,20771,301-286-7544,,james.j.marshall@nasa.gov,Winter 2009
+65,,David,McCabe,Physical Scientist,EPA,1200 Pennsylvania Ave NW,MC 8104R,Washington,DC,,20460,202 564 0016,,mccabe.david@epa.gov,Winter 2009
+66,,Lewis,McCulloch,System Engineer,NOAA/Integrity Applications Inc.,1335 East West Highway,"SSMC 1, Rm 5211",Silver Spring,MD,,20910,301-713-3104,,lewis.mcculloch@noaa.gov,Winter 2009
+67,,Kenneth,McDonald,Data Management Architect,"Dept of Commerce, NOAA, NESDIS","SSMC1, rm 55212",1335 East West Hwy,Silver Spring,MD,,20910,301-713-2789,,kenneth.mcdonald@noaa.gov,Winter 2009
+68,,Carol,Meyer,Executive Director,Foundation for Earth Science,6504 Woodshire Place,,Raleigh,NC,,27612,9198707140,,carol.meyer@earthsciencefoundation.org,Winter 2009
+69,,Karen,Moe,,NASA ESTO,GSFC MS 407,8800 Greenbelt Rd,Greenbelt,MD,,20771,301-286-2978,,karen.moe@nasa.gov,Winter 2009
+70,,Sadredin,Moosavi,Professor,Tulane University,6823 St. Charles Avenue,,New Orleans,LA,,70118,5048623168,,smoosavi@tulane.edu,Winter 2009
+71,,John,Moses,Ground System Engineer,NASA/GSFC,ESDIS Code 423,,Greenbelt,MD,,20771,301-614-5308,,john.f.moses@nasa.gov,Winter 2009
+72,,Kevin,Murphy,,NASA GSFC (ESDIS),ESDIS Project Code 423,NASA GSFC,Greenbelt,MD,,20771,3016145580,,kevin.j.murphy@nasa.gov,Winter 2009
+73,,Carey,Noll,,NASA GSFC,Code 690,,Greenbelt,MD,,20771,301-614-6542,,carey.noll@nasa.gov,Winter 2009
+74,,Stephen,Olding,,NASA GSFC,2750 Prosperity Ave,Suite 210,Fairfax,VA,,22031,703 246 0000,,solding@everware-cbdi.com,Winter 2009
+75,,Tim,Owen,,DOC/NOAA/NCDC,151 Patton Avenue,,Asheville,NC,,28801,828-271-4486,,beverly.morgan@noaa.gov,Winter 2009
+76,,Mark,Parsons,,National Snow and Ice Data Center,UCB449,University of Colorado,Boulder,CO,,80309,303-492-2359,,parsonsm@nsidc.org,Winter 2009
+77,,George,Percivall,Chief Architect,Open Geospatial Consortium,1804 Stonegate Ave,,Crofton,MD,,21114,301 560 6439,,gpercivall@opengeospatial.org,Winter 2009
+78,,Dan,Pisut,,NOAA Visualization Lab,1335 East-West Hwy,SSMC1 rm 5232,Silver Spring,MD,,20910,3107130933,,dan.pisut@noaa.gov,Winter 2009
+79,,Will,Pozzi,WaterNet Project Manager,Center for Research in Environment and Water (CREW),4041 Powder Mill Road,,Calverton,MD,,20705,240-247-1448,,wpozzi@iges.org,Winter 2009
+80,,Kusuma,Prabhakara,,University of Maryland,200 5th Street,,Laurel,MD,,20707,240-460-0458,,kusumaprabhak@gmail.com,Winter 2009
+81,,Ana,Prados,,UMBC,NASA GSFC,Code 610.2,Greenbelt,MD,,20771,301-614-5494,,ana.i.prados@nasa.gov,Winter 2009
+82,,Sean,Raffuse,Fire Sciences Program Coordinator,"Sonoma Technology, Inc.",1455 N. McDowell Blvd.,Suite D,Petaluma,CA,,94954,707-665-9900,,sraffuse@sonomatech.com,Winter 2009
+83,,Rahul,Ramachandran,Research Scientist,ITSC,University of Alabama in Huntsville,,Huntsville,AL,,35899,256-824-5157,,rramachandran@itsc.uah.edu,Winter 2009
+84,,H.,Ramapriyan,,NASA/GSFC,ESDIS Code 423,,Greenbelt,MD,,20771,301-614-5356,,hampapuram.k.ramapriyan@nasa.gov,Winter 2009
+85,,Robert,Rank,Project Manager,NOAA/NESDIS/OSD,4231 Suitland Rd.,NSOF Room 1144,Suitland,MD,,20746,301-817-4593,,robert.rank@noaa.gov,Winter 2009
+86,,Ananth,Rao,Principal Engineer,"SGT, Inc.",7701 Greenbelt Road,Suite 400,Greenbelt,MD,,20770,(301) 286-4795,,arao@sgt-inc.com,Winter 2009
+87,,Rob,Raskin,,Jet Propulsion Laboratory,"4800 Oak Grove Dr, 300-320",,Pasadena,CA,,91109,8183544228,,raskin@jpl.nasa.gov,Winter 2009
+88,,Patricia,Reiff,Prof,Rice University,6100 Main St.,Rice Space Inst. MS 108,Houston,TX,,77005,713-348-4634,,reiff@rice.edu,Winter 2009
+89,,John,Relph,IT Specialist,NOAA/National Oceanographic Data Center,1315 East West Highway,"SSMC3, 4th floor",Silver Spring,MD,,20910,301-713-3284,,john.relph@noaa.gov,Winter 2009
+90,,Scott,Ritz,Atmospheric Scientist,"WYLE, Inc.",NASA Goddard Space Flight Center,Code 610.2,Greenbelt,MD,,20771,301-614-5126,,scott.a.ritz@nasa.gov,Winter 2009
+91,,Erin,Robinson,Research Assistant,Washington University,1 Brookings Dr.,,St Louis,MO,,63105,314-935-6099,,emr1@wustl.edu,Winter 2009
+92,,Brian,Rogan,Program Manager,Museum of Science,Science Park,,Boston,MA,,2114,617 589 4252,,brogan@mos.org,Winter 2009
+93,,Glenn,Rutledge,,DOC/NOAA/NCDC,151 Patton Avenue,,Asheville,NC,,28801,828-271-4486,,beverly.morgan@noaa.gov,Winter 2009
+94,,Annette,Schloss,Research Scientist,University of New Hampshire,Complex Systems Research Center,446 Morse Hall,Durham,NH,,3824,603 862.0348,,annette.schloss@unh.edu,Winter 2009
+95,,John,Scialdone,Manager - Data Center Services,CIESIN/SEDAC,Earth Institute @ Columbia University,"LDEO, 61 Route 9W, PO Box 1000",Palisades,NY,,10964,(845) 365-8978,,jscialdo@ciesin.columbia.edu,Winter 2009
+96,,Ramesh,Singh,Professor,George Mason University,4400 Univ Drive,,Fairfax,VA,,22030,7033628199,,rpiitkanpur@gmail.com,Winter 2009
+97,,Tyler,Stevens,Data Service Coordinator,NASA Global Change Master Directory (GCMD),Goddard Space Flight Center,,Greenbelt,MD,,20771,301-614-6898,,tyler.b.stevens@nasa.gov,Winter 2009
+98,,Richard,Strub,Programmer,Adnet Systems,164 Rollins Ave,Suite 303,Rockville,MD,,20852,301 614 5293,,richard.f.strub@nasa.gov,Winter 2009
+99,,William,Teng,,NASA GES DISC (Wyle),Code 610.2,,Greenbelt,MD,,20771,301-614-5164,,william.l.teng@nasa.gov,Winter 2009
+100,,Charles,Thompson,,JPL,4800 Oak Grove Drive,Mail Stop 300-320,Pasadena,CA,,91109-8099,8183549602,,charles.k.thompson@jpl.nasa.gov,Winter 2009
+101,,Terry,Tielking,Deputy Director,NOAA/National Oceanographic Data Center,1315 East West Highway,SSMC3 4th floor,Silver Spring,MD,,20910,301-713-3270,,terry.tielking@noaa.gov,Winter 2009
+102,,Paul,Uhlir,"Director, Board on Research Data and Information",The National Academies,500 Fifth Street NW,Keck-511,Washington,DC,,20001,202-334-1531,,puhlir@nas.edu,Winter 2009
+103,,Anne,Waple,communications manager,US Global Change Research Program/Climate Change Science Program,"1717 Pennsylvania Ave, suite 250",,Washington DC,,,20006,202-419-3463,,awaple@usgcrp.gov,Winter 2009
+104,,John,Wilbanks,,creative commons,c.o mit csail,,cambridge,MA,,2116,617 938 3475,,wilbanks@creativecommons.org,Winter 2009
+105,,Brian,Wilson,,Jet Propulsion Lab,MS 138-308,4800 Oak Grove Dr.,Pasadena,CA,,91109,818-354-2790,,Brian.Wilson@jpl.nasa.gov,Winter 2009
+106,,Bruce,Wilson,Environmental Informatics Leader,Oak Ridge National Laboratory,"Box 2008, MS-6407",,Oak Ridge,TN,,37831,865-574-6651,,wilsonbe@ornl.gov,Winter 2009
+107,,Charles,Wooldridge,Chief of Staff/NESDIS,NOAA Satellite & Information Service,"1335 East-West Highway, Rm. 8243",,Silver Spring,MD,,20910,301-713-9604,,charles.wooldridge@noaa.gov,Winter 2009
+108,,Zhangfan,Xing,,JPL,4800 Oak Grove Drive,,Pasadena,CA,,91109,(818)393-6422,,xing@pacific.jpl.nasa.gov,Winter 2009
+109,,Phil,Yang,Associate Professor,CISC/GMU,4400 University Dr,,Fairfax,VA,,22030,703-993-4742,,cyang3@gmu.edu,Winter 2009
+110,,Steve,Young,Senior Advisor for GEOSS,US EPA,"1200 Pennsylvania Ave., NW",Mailcode: 2841T,Washington,DC,,20460,202-566-0608,,young.steve@epa.gov,Winter 2009

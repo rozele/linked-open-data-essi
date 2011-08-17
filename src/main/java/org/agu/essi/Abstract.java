@@ -63,13 +63,13 @@ public class Abstract
 		}
 		else if (format.equals("rdf/xml"))
 		{
-			return writeToRDFXML();
+			return ""; //return writeToRDFXML();
 		}
 		else 
 		{
 			return this.toString();
 		}
-	}
+	} 
 	
 	public String getTitle()
 	{
@@ -193,6 +193,7 @@ public class Abstract
 		sw.write("<AGUAbstract " + xmlNS + " xsi:schemaLocation=\"" + aguSchema + "\">\n");
 		sw.write("  <Meeting>" + _meeting.getName() + "</Meeting>\n");
 		sw.write("  <Section>" + _section.getName() + "</Section>\n");
+		sw.write("  <Id>" + _abstractId + "</Id>\n");
 		if (_keywords.size() >= 0)
 		{
 			sw.write("  <Keywords>\n");
@@ -204,7 +205,6 @@ public class Abstract
 		}
 		sw.write("  <Abstract>" + _abstract + "</Abstract>\n");
 		sw.write("  <Title>" + _title + "</Title>\n");
-		sw.write("  <Id>" + _abstractId + "</Id>\n");
 		if (_session != null)
 		{
 			sw.write("  <Session>" + _session.getId() + "</Session>\n");
@@ -225,8 +225,9 @@ public class Abstract
 		sw.write("</AGUAbstract>");
 		return sw.toString();
 	}
+
 	
-	private String writeToRDFXML()
+	/*private String writeToRDFXML()
 	{
 		StringWriter sw = new StringWriter();		
 		sw.write(Utils.writeXmlHeader());
@@ -250,7 +251,7 @@ public class Abstract
 		sw.write(writeAuthorRoles());
 		sw.write(Utils.writeRdfFooter());
 		return sw.toString();
-	}
+	}*/
 	
 	private String writeAuthorRoles()
 	{
