@@ -63,7 +63,7 @@ public class Abstract
 		}
 		else if (format.equals("rdf/xml"))
 		{
-			return ""; //return writeToRDFXML();
+			return writeToRDFXML();
 		}
 		else 
 		{
@@ -125,7 +125,7 @@ public class Abstract
 			if ((emIndex < nextIndex || nextIndex == -1) && emIndex >= 0)
 			{
 				emEndIndex = _rawHtml.indexOf("<br>", emIndex);
-				String email = Utils.removeSpecialChars(Utils.clean(_rawHtml.substring(emIndex+17, emEndIndex).trim()));
+				String email = Utils.clean(_rawHtml.substring(emIndex+17, emEndIndex).trim());
 				a.getPerson().addEmail(email);
 			}
 

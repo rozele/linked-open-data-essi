@@ -4,7 +4,7 @@ import org.agu.essi.util.Namespaces;
 
 public class TWC {
 	
-	public String hasAttendee () {
+	/*public String hasAttendee () {
 		
 	  StringBuilder str = new StringBuilder();
 	  str.append( "<rdf:RDF\n" );
@@ -24,6 +24,6 @@ public class TWC {
 	  str.append( "  </foaf:hasAttendee>  \n" );
 	  str.append( "</rdf:RDF> \n" );
 	
-	}
+	}*/
 	
 }

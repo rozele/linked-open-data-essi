@@ -1,4 +1,4 @@
-dpackage org.esipfed.data;
+package org.esipfed.data;
 
 import org.apache.log4j.Logger;
 import java.io.File;
@@ -59,7 +59,7 @@ public class MeetingAttendance {
 		foaf.writePerson(firstName, lastName, emailAddress, phoneNumber);
 		
 		// affiliation - don't write twice
-		foaf.writeOrganization(org, orgID, orgMembers)
+		//foaf.writeOrganization(org, orgID, orgMembers)
 		
 	  }
 	  
