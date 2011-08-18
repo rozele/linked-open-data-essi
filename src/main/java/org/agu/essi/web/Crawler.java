@@ -113,8 +113,6 @@ public class Crawler implements DataSource {
 		}
 	}
 
-	
-	
 	// HTML parser - reads an AGU HTML page and extracts links to abstracts
     ParserCallback parserCallback = new ParserCallback() 
     {

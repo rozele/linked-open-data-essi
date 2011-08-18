@@ -44,7 +44,7 @@ public class Abstract
 		_session = new Session(_sessionId.split("-")[0], _section);
 	}
 	
-	public Abstract(String title, String abstr, Session session, Vector<Author> authors, Vector<Keyword> keywords)
+	public Abstract(String title, String abstr, String id, String hour, Session session, Vector<Author> authors, Vector<Keyword> keywords)
 	{
 		_title = title;
 		_abstract = abstr;
@@ -93,19 +93,19 @@ public class Abstract
 		// Hour (time of presentation)
 		index = _rawHtml.indexOf("<span class=\"hr\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_hour = _rawHtml.substring(index+17, endIndex).trim();
+		_hour = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_abstractId = _rawHtml.substring(index+17, endIndex).trim();
+		_abstractId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		_sessionId = _abstractId.split("-")[0];
 		
 		
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_title = _rawHtml.substring(index+17, endIndex).trim();
+		_title = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 
 
 		// Authors
@@ -116,7 +116,8 @@ public class Abstract
 			endIndex = _rawHtml.indexOf("<br>", index);
 			nextIndex = _rawHtml.indexOf("<span class=\"au\">", endIndex);
 
-			String name = _rawHtml.substring(index+17, endIndex).trim();
+			String name = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+			
 			a = new Author(name);
 		  
 			// Author email
@@ -124,7 +125,7 @@ public class Abstract
 			if ((emIndex < nextIndex || nextIndex == -1) && emIndex >= 0)
 			{
 				emEndIndex = _rawHtml.indexOf("<br>", emIndex);
-				String email = _rawHtml.substring(emIndex+17, emEndIndex).trim();
+				String email = Utils.removeSpecialChars(Utils.clean(_rawHtml.substring(emIndex+17, emEndIndex).trim()));
 				a.getPerson().addEmail(email);
 			}
 
@@ -152,7 +153,7 @@ public class Abstract
 			if (afIndex < nextIndex && nextIndex >= 0 && afIndex >= 0)
 			{
 				afEndIndex = _rawHtml.indexOf("<br>", afIndex);
-				String affiliation = _rawHtml.substring(afIndex+17, afEndIndex).trim();
+				String affiliation = Utils.clean(_rawHtml.substring(afIndex+17, afEndIndex).trim());
 				a.addAffiliation(affiliation);
 			}
 
@@ -162,26 +163,27 @@ public class Abstract
 		// Abstract
 		index = _rawHtml.indexOf("<span class=\"ab\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_abstract = _rawHtml.substring(index+17, endIndex).trim();
+		_abstract = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 
 		// Keywords
 		index = _rawHtml.indexOf("<span class=\"de\">");
 		while (index >= 0) 
 		{
 			endIndex = _rawHtml.indexOf("<br>", index);
-			_keywords.add( new Keyword(_rawHtml.substring(index+17, endIndex).trim()) );
+			_keywords.add( new Keyword(Utils.clean(_rawHtml.substring(index+17, endIndex).trim())) );
 			index = _rawHtml.indexOf("<span class=\"de\">", endIndex);
 		}
 		
 		// Section
 		index = _rawHtml.indexOf("<span class=\"sc\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_sectionId = _rawHtml.substring(index+17, endIndex).trim();
+		_sectionId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		
 		// AGU Meeting the abstract was submitted to
 		index = _rawHtml.indexOf("<span class=\"mn\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_meetingId = _rawHtml.substring(index+17, endIndex).trim();
+		_meetingId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		
 	}
 	
 	private String writeToXML()
@@ -233,7 +235,7 @@ public class Abstract
 		sw.write(Utils.writeXmlHeader());
 		sw.write(Utils.writeDocumentEntities());
 		sw.write(Utils.writeRdfHeader());
-		sw.write("  <rdf:Description rdf:about=\"" + EntityIdentifier.getNextAbstractId() + "\">\n");
+		sw.write("  <rdf:Description rdf:about=\"" + EntityIdentifier.getAbstractId(this) + "\">\n");
 		sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
 		sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + _title + "</dc:title>\n");
 		sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _abstractId + "</dc:identifier>\n");

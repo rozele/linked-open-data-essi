@@ -3,14 +3,21 @@ package org.agu.essi.util;
 import java.io.StringWriter;
 import java.util.Vector;
 
+import org.agu.essi.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.apache.tools.ant.types.RegularExpression;
 
+/**
+ * Utilities class to get unique identifiers (URIs) for entities in abstracts
+ * @author Eric Rozell
+ */
 public class EntityIdentifier {
 	
+	//Stores unique identifiers
 	private static String meetingBaseId = Namespaces.esip + "Meeting_";
 	private static String sectionBaseId = Namespaces.esip + "Section_";	
 	private static String personBaseId = Namespaces.esip + "Person_";
@@ -24,8 +31,12 @@ public class EntityIdentifier {
 	private static Vector<Session> sessions = new Vector<Session>();
 	private static Vector<Section> sections = new Vector<Section>();
 	private static Vector<Keyword> keywords = new Vector<Keyword>();
-	private static Integer abstractCount = 0;
 	
+	/**
+	 * Gets an existing identifier for a meeting, if available, otherwise creates a new identifier
+	 * @param meeting a Meeting instance
+	 * @return a new or existing identifier for the input meeting
+	 */
 	public static String getMeetingId(Meeting meeting)
 	{
 		if (meetings.contains(meeting))
@@ -40,6 +51,11 @@ public class EntityIdentifier {
 		}
 	}
 
+	/**
+	 * Gets an existing identifier for a meeting section, if available, otherwise creates a new identifier
+	 * @param section a Section instance
+	 * @return a new or existing identifier for the input section
+	 */
 	public static String getSectionId(Section section)
 	{
 		if (sections.contains(section))
@@ -54,11 +70,47 @@ public class EntityIdentifier {
 		}
 	}	
 	
-	public static String getNextAbstractId()
+	/**
+	 * Gets an existing identifier for an abstract, if available, otherwise creates a new identifier
+	 * @param abstr an Abstract instance
+	 * @return a new or existing identifier for the input abstract
+	 */
+	//this is a hack
+	public static String getAbstractId(Abstract abstr)
 	{
-		return abstractBaseId + (++abstractCount);
+		Meeting meeting = abstr.getMeeting();
+		String id = abstr.getId();
+		
+		String[] tokens = meeting.getName().split(" ");
+		int mid = -1;
+		int year = -1;
+		for (int i = 0; i < tokens.length; ++i)
+		{
+			try
+			{
+				year = Integer.parseInt(tokens[i]);
+			}
+			catch (NumberFormatException e) 
+			{
+				if (tokens[i].equals("Fall"))
+				{
+					mid = 0;
+				}
+				else if (tokens[i].equals("Joint"))
+				{
+					mid = 1;
+				}
+			}
+		}
+		String mstr = (mid > 0) ? "JM_" : "FM_";
+		return abstractBaseId + mstr + year + id; 
 	}
 	
+	/**
+	 * Gets an existing identifier for a person, if available, otherwise creates a new identifier
+	 * @param person a Person instance
+	 * @return a new or existing identifier for the input person
+	 */
 	public static String getPersonId(Person person)
 	{
 		if (people.contains(person))
@@ -73,6 +125,11 @@ public class EntityIdentifier {
 		}
 	}
 	
+	/**
+	 * Gets an existing identifier for a meeting session, if available, otherwise creates a new identifier
+	 * @param session a Session instance
+	 * @return a new or existing identifier for the input session
+	 */
 	public static String getSessionId(Session session)
 	{
 		if (sessions.contains(session))
@@ -87,6 +144,11 @@ public class EntityIdentifier {
 		}
 	}
 	
+	/**
+	 * Gets an existing identifier for an organization, if available, otherwise creates a new identifier
+	 * @param org a plain text description of an organization
+	 * @return a new or existing identifier for the input organization
+	 */
 	public static String getOrganizationId(String org)
 	{
 		if (organizations.contains(org))
@@ -129,7 +191,7 @@ public class EntityIdentifier {
 				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Person\" />\n");
 				sw.write("    <foaf:name rdf:datatype=\"&xsd;string\">" + p.getName() + "</foaf:name>\n");
-				sw.write("    <foaf:mbox rdf:resource=\"mailto:" + p.getEmail() + "\" />\n");
+				sw.write("    <foaf:mbox>" + p.getEmail() + "</foaf:mbox>\n");
 				sw.write("  </rdf:Description>\n");
 			}
 			sw.write(Utils.writeRdfFooter());

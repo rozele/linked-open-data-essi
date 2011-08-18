@@ -39,7 +39,9 @@ public class FileWrite {
     
    public void newFile (String file, String line){
 	     try{
-	       // create new file 
+	       // create new file
+	    	 if ((new File(file).exists()))
+	    		System.err.println("File: " + file + " already exists.  Overwriting.");
 	       FileWriter fstream = new FileWriter(file);
 	       BufferedWriter out = new BufferedWriter(fstream);
 	       out.write(line + "\n");
