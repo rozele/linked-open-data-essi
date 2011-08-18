@@ -163,6 +163,11 @@ public class EntityIdentifier {
 		}
 	}
 	
+	/**
+	 * Gets an existing identifier for a keyword, if available, otherwise creates a new identifier
+	 * @param keyword a Keyword instance
+	 * @return a new or existing identifier for the input keyword
+	 */
 	public static String getKeywordId(Keyword keyword)
 	{
 		if (keywords.contains(keyword))
@@ -177,6 +182,11 @@ public class EntityIdentifier {
 		}
 	}
 	
+	/**
+	 * Writes instance data for each 
+	 * @param format
+	 * @return
+	 */
 	public static String writePeople(String format)
 	{
 		if (format.equals("rdf/xml"))

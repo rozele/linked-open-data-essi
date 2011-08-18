@@ -218,5 +218,9 @@ public class Crawler implements DataSource {
 		if (!crawled) { this.crawl(); }
 		return _abstracts;
 	}
+
+	public boolean hasUniqueIdentifiers() {
+		return false;
+	}
 	
 }

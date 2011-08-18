@@ -229,7 +229,7 @@ public class Abstract
 	}
 
 	
-	/*private String writeToRDFXML()
+	private String writeToRDFXML()
 	{
 		StringWriter sw = new StringWriter();		
 		sw.write(Utils.writeXmlHeader());
@@ -253,7 +253,7 @@ public class Abstract
 		sw.write(writeAuthorRoles());
 		sw.write(Utils.writeRdfFooter());
 		return sw.toString();
-	}*/
+	}
 	
 	private String writeAuthorRoles()
 	{

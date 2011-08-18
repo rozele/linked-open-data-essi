@@ -17,7 +17,7 @@ public class TWC {
 	  str.append( "  <tw:hasAttendee rdf:about=\"" + meetingID + "> \n" );
 	  str.append( "    <foaf:name>" + org + "</foaf:name> \n" );
 	  str.append( "    <foaf:member>\n" );
-	  for ( int i=0; i<orgMembers.size(); i++ ) { 
+	  for ( int i=0; i< orgMembers.size(); i++ ) { 
 	    str.append( "      <foaf:Person rdf:about=\"" + orgMembers.get(i) + "\"></foaf:Person>\n" );
 	  }
 	  str.append( "    </foaf:member>\n" );
