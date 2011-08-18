@@ -3,9 +3,11 @@ package org.agu.essi;
 import java.io.StringWriter;
 import java.util.Vector;
 
+import org.agu.essi.util.AbstractType;
 import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 /**
  * Container class for AGU abstract information
@@ -27,6 +29,7 @@ public class Abstract
 	private Meeting _meeting;
 	private Section _section;
 	private Session _session;
+	private AbstractType _type;
 	
 	
 	/**
@@ -98,9 +101,10 @@ public class Abstract
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		_abstractId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		String[] parts = _rawHtml.substring(index+17, endIndex).trim().split(" ");
+		_abstractId = Utils.clean(parts[0]);
 		_sessionId = _abstractId.split("-")[0];
-		
+		_type = getAbstractType((parts.length > 1) ? parts[1] : null);
 		
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
@@ -276,5 +280,33 @@ public class Abstract
 			sw.write("  </rdf:Description>\n");
 		}
 		return sw.toString();
+	}
+	
+	private AbstractType getAbstractType(String s)
+	{
+		if (s != null)
+		{
+			if (s.toLowerCase().contains("poster"))
+			{
+				return AbstractType.POSTER;
+			}
+			else if (s.toLowerCase().contains("invited"))
+			{
+				return AbstractType.PRESENTATION;
+			}	
+			else if (s.toLowerCase().contains("withdrawn"))
+			{
+				return AbstractType.WITHDRAWN;
+			}
+			else
+			{
+				return AbstractType.DEFAULT;
+			}
+			
+		}
+		else
+		{
+			return AbstractType.DEFAULT;
+		}
 	}
 }

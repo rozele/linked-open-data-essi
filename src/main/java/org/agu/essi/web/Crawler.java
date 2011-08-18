@@ -95,6 +95,8 @@ public class Crawler implements DataSource {
 			Abstract abstr = _abstracts.get(i);
 			// replace spaces with _ for file name
 			String title = abstr.getId();
+			if (title.contains("Integrating"))
+				System.out.println("here");
 			String meeting = abstr.getMeeting().getName();
 			title = title.replaceAll("\\s+", "_");
 			title = title.replaceAll("\\s", "_");

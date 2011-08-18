@@ -33,8 +33,8 @@ public class Utils {
 	//this is a hack dat
 	public static String fixSpecialChars(String s)
 	{
-		s = s.replaceAll("&quot;", ""/*"&#34;"*/);
-		s = s.replaceAll("&apos;", ""/*"&#39;"*/);
+		//s = s.replaceAll("&quot;", ""/*"&#34;"*/);
+		//s = s.replaceAll("&apos;", ""/*"&#39;"*/);
 		s = s.replaceAll("\\p{Cntrl}", "");
 		return s;
 	}
