@@ -103,7 +103,7 @@ public class EntityIdentifier {
 			}
 		}
 		String mstr = (mid > 0) ? "JM_" : "FM_";
-		return abstractBaseId + mstr + year + id; 
+		return abstractBaseId + mstr + year + "_" + id; 
 	}
 	
 	/**
