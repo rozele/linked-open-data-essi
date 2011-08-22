@@ -9,7 +9,6 @@ import org.agu.essi.Meeting;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
-import org.apache.tools.ant.types.RegularExpression;
 
 /**
  * Utilities class to get unique identifiers (URIs) for entities in abstracts

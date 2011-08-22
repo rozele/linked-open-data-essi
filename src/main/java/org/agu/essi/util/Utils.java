@@ -2,9 +2,6 @@ package org.agu.essi.util;
 
 import java.io.StringWriter;
 import java.util.HashMap;
-import java.util.Vector;
-
-import org.agu.essi.Abstract;
 import org.apache.commons.lang.StringEscapeUtils;
 
 /**

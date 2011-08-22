@@ -1,6 +1,6 @@
 package org.esipfed.owl;
 
-import org.agu.essi.util.Namespaces;
+//import org.agu.essi.util.Namespaces;
 
 public class TWC {
 	
