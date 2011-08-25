@@ -8,8 +8,18 @@ import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 import org.esipfed.Person;
 
+/**
+ * Class for the creation of FOAF profiles
+ * @author Tom Narock
+ */
 public class FOAF {
 	
+	/**
+	 * Method to search through a set of Person objects and 
+	 * group people by the organization they work for
+	 * @param people Vector of Person objects
+	 * @return HashMap <String, Vector <String>> where key/value is Organization/People affiliated
+	 */
 	public HashMap <String, Vector <String>> createOrgMap( Vector <Person> people ) {
 
 		Vector <String> pV;
@@ -36,6 +46,12 @@ public class FOAF {
 		
 	}	
 			
+	/**
+	 * Method to take a Person object and 
+	 * write it out as a FOAF string
+	 * @param person Person object
+	 * @return String FOAF Person profile
+	 */
 	public String writePerson ( Person person ) {
 				  
       StringBuilder str = new StringBuilder();
@@ -56,6 +72,11 @@ public class FOAF {
 
 	}
 	
+	/**
+	 * Method to write FOAF Organization profile 
+	 * @param HashMap organization/affiliated people hash map
+	 * @return String FOAF organization profile
+	 */
 	public String writeOrganization ( HashMap <String, Vector <String>> orgs ) {
 				  
 	  Vector <String> people;

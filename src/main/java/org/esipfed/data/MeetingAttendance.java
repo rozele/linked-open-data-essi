@@ -13,10 +13,19 @@ import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 import org.esipfed.Person;
 
+/**
+ * Class to read ESIP Meeting Attendance 
+ * data and write it out as FOAF RDF
+ * @author Tom Narock
+ */
 public class MeetingAttendance {
 	
 	static final Logger log = Logger.getLogger(org.esipfed.data.MeetingAttendance.class);  
 	
+	/**
+	 * Main Method 
+	 * @param args (directory containing ESIP data, FOAF Person output filename, FOAF Organization output filename)
+	 */
 	public static void main ( String[] args ) {
 	 
 	  // input arguments 

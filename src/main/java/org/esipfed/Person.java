@@ -16,10 +16,9 @@ public class Person {
     private Vector <String> _emailAddresses = new Vector <String> ();
     
 	/**
-	 * Construct Person instance from name
+	 * Construct Person instance from name, affiation and email address
 	 * @param firstName first name of person
 	 * @param lastName last name of person
-	 * @param phoneNumber phone number of person
 	 * @param affiliation affiliation of person
 	 * @param emailAddress email address of person
 	 */

@@ -30,7 +30,7 @@ public class ValidateXML {
 	/**
 	 * Method to validate an XML file against a schema
 	 * @param schema schema object of the schema to use in XML validation
-	 * @param xmlFile full path and filename of the XML fiel to validate
+	 * @param xmlFile full path and filename of the XML file to validate
 	 * @return true/false (valid XML/invalid XML)
 	 */
 	public boolean validate( Schema schema, String xmlFile ) {

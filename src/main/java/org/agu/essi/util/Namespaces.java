@@ -1,5 +1,9 @@
 package org.agu.essi.util;
 
+/**
+ * Container class for all namespaces used throughout project
+ * @author Eric Rozell
+ */
 public class Namespaces {
 	public static String esip = "http://esipfed.org/essi-lod/instances/";
 	public static String esipOwl = "http://esipfed.org/essi-lod/ontology#";

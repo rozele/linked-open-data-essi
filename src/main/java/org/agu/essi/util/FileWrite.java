@@ -5,8 +5,18 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Utility class for writing text to a file
+ * @author Tom Narock
+ */
 public class FileWrite {
 	
+	/**
+	 * Method to append a string to a file
+	 * @param file full path and filename of file to write to
+	 * @param line string to write to the file
+	 * @param b boolean true = prepend date/time to line, false = don't prepend date/time
+	 */
    public void append (String file, String line, boolean b) {
 		  
 		String dateStr = null;
@@ -26,6 +36,11 @@ public class FileWrite {
 	    }catch (Exception e){ }
    }
 	  
+   /**
+	 * Method to append a string to a file
+	 * @param file full path and filename of file to write to
+	 * @param line string to write to the file
+	 */
    public void append (String file, String line){
      try{
        // append to file, create if doesn't exist 
@@ -37,6 +52,11 @@ public class FileWrite {
      }catch (Exception e){ }
    }
     
+   /**
+	 * Method to create a new file and write to it
+	 * @param file full path and filename of file to write to
+	 * @param line string to write to the file
+	 */
    public void newFile (String file, String line){
 	     try{
 	       // create new file
