@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Vector;
 import org.esipfed.owl.FOAF;
+import org.esipfed.owl.TWC;
 import java.io.FileInputStream;
 import java.io.DataInputStream;
 import java.io.BufferedReader;
@@ -24,7 +25,8 @@ public class MeetingAttendance {
 	
 	/**
 	 * Main Method 
-	 * @param args (directory containing ESIP data, FOAF Person output filename, FOAF Organization output filename)
+	 * @param args (directory containing ESIP data, FOAF Person output filename, FOAF Organization output filename, FOAF Meeting
+	 * output filename)
 	 */
 	public static void main ( String[] args ) {
 	 
@@ -32,8 +34,10 @@ public class MeetingAttendance {
       File dir = new File(args[0]);
 	  String personFileName = args[1];
 	  String orgFileName = args[2];
+	  String meetFileName = args[3];
 	  
 	  FOAF foaf = new FOAF ();
+	  TWC twc = new TWC ();
 	  int index = 1;
 	  FileWrite fw = new FileWrite();
 	  Vector <Person> people = new Vector <Person> ();
@@ -41,12 +45,16 @@ public class MeetingAttendance {
 	  // write RDF/XML header information
 	  StringBuilder strPeople = new StringBuilder();  
 	  StringBuilder strOrg = new StringBuilder();    
+	  StringBuilder strMeet = new StringBuilder();
       strPeople.append( Utils.writeXmlHeader() );
       strPeople.append( Utils.writeDocumentEntities() );
 	  strPeople.append( Utils.writeRdfHeader() );
       strOrg.append( Utils.writeXmlHeader() );
       strOrg.append( Utils.writeDocumentEntities() );
 	  strOrg.append( Utils.writeRdfHeader() );
+	  strMeet.append( Utils.writeXmlHeader() );
+      strMeet.append( Utils.writeDocumentEntities() );
+	  strMeet.append( Utils.writeRdfHeader() );
 	  
 	  // directory containing ESIP CSV meeting attendee files
 	  File[] files = dir.listFiles();
@@ -57,6 +65,7 @@ public class MeetingAttendance {
 	  String lastName = "";
 	  String emailAddress = "";
 	  String affiliation = "";
+	  String meeting = "";
 	  boolean exists;
 	  for (int i=0; i<files.length; i++) {
 		  
@@ -75,9 +84,10 @@ public class MeetingAttendance {
 		        affiliation = parts[5];
 		        affiliation = affiliation.replace("\"", ""); // some affiliations in original ESIP data have erroneous " values
 		        emailAddress = parts[14];
+		        meeting = parts[15];
 		        
 		        // create a new person object
-		        Person p = new Person(firstName, lastName, affiliation, emailAddress);
+		        Person p = new Person(firstName, lastName, affiliation, emailAddress, meeting);
 		        
 		        // create an id for this person
 		        p.createID(index);
@@ -85,7 +95,7 @@ public class MeetingAttendance {
 		        
 		        // does this person already exist?
 		        //  if yes, then add the email address and affiliation to the existing person
-		        exists = p.exists( people, affiliation, emailAddress );
+		        exists = p.exists( people, affiliation, emailAddress, meeting );
 		        if ( !exists ) { people.add(p); }
 		        
 		      }
@@ -105,18 +115,20 @@ public class MeetingAttendance {
 	    Person person = people.get(i);
 	    strPeople.append( foaf.writePerson(person) );
 	  }
-	  strPeople.append( Utils.writeRdfFooter() );
-	  
-	  // write to file
+	  strPeople.append( Utils.writeRdfFooter() );	  
 	  fw.newFile( personFileName, strPeople.toString() );
 	  
-	  // create organizational data
+	  // create/write Organizational RDF
 	  HashMap <String, Vector <String>> orgs = foaf.createOrgMap(people);
 	  strOrg.append( foaf.writeOrganization(orgs) );
-	  strOrg.append( Utils.writeRdfFooter() );
-	  
-	  // write organization RDF to file
+	  strOrg.append( Utils.writeRdfFooter() );	  
 	  fw.newFile( orgFileName, strOrg.toString() );
+	  
+	  // create/write Meeting RDF
+	  HashMap <String, Vector <String>> meetings = twc.createMeetingMap(people);
+	  strMeet.append( twc.writeMeetings(meetings) );
+	  strMeet.append( Utils.writeRdfFooter() );
+	  fw.newFile( meetFileName, strMeet.toString() );
 
 	}
 	

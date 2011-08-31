@@ -14,6 +14,7 @@ public class Person {
     private String _id;
     private Vector <String> _affiliations = new Vector <String> ();
     private Vector <String> _emailAddresses = new Vector <String> ();
+    private Vector <String> _meetingsAttended = new Vector <String> ();
     
 	/**
 	 * Construct Person instance from name, affiation and email address
@@ -21,12 +22,14 @@ public class Person {
 	 * @param lastName last name of person
 	 * @param affiliation affiliation of person
 	 * @param emailAddress email address of person
+	 * @param meeting ESIP meeting this person attended
 	 */
-	public Person(String firstName, String lastName, String affiliation, String emailAddress) {
+	public Person(String firstName, String lastName, String affiliation, String emailAddress, String meeting) {
 		_firstName = firstName;
 		_lastName = lastName;
 		_affiliations.add( affiliation );
 		_emailAddresses.add( emailAddress );
+		_meetingsAttended.add( meeting );
 	}
 	
 	/**
@@ -46,6 +49,12 @@ public class Person {
 	 * @param email email of person
 	 */
 	public void addEmail(String email) { _emailAddresses.add( email ); }
+	
+	/**
+	 * Method to add a meeting attended to an existing person
+	 * @param meeting meeting attended
+	 */
+	public void addMeeting(String meeting) { _meetingsAttended.add( meeting ); }
 	
 	/**
 	 * Method to add an affiliation for an existing person
@@ -78,6 +87,12 @@ public class Person {
 	public Vector <String> getEmail() { return _emailAddresses; }
 	
 	/**
+	 * Method to get meetings attended
+	 * @return meetings attended
+	 */
+	public Vector <String> getMeetings() { return _meetingsAttended; }
+	
+	/**
 	 * Method to test for the existence of an affiliation
 	 * @return true/false
 	 */
@@ -94,10 +109,18 @@ public class Person {
 	}
 	
 	/**
+	 * Method to test for the existence of a meeting
+	 * @return true/false
+	 */
+	public boolean hasMeeting( String value ) { 
+	  if ( this._meetingsAttended.contains(value) ) { return true; } else { return false; }	
+	}
+	
+	/**
 	 * Equality method for Person
 	 * @return true if names are equivalent, false otherwise
 	 */
-	public boolean exists( Vector <Person> people, String affiliation, String email ) {
+	public boolean exists( Vector <Person> people, String affiliation, String email, String meeting ) {
 
 	  boolean result = false;
 	  for ( int i=0; i<people.size(); i++ ) {
@@ -107,6 +130,7 @@ public class Person {
 		  result = true;
 		  if ( !p.hasAffiliation(affiliation) ) { p.addAffiliation( affiliation ); }
 		  if ( !p.hasEmail(email) ) { p.addEmail( email ); }
+		  if ( !p.hasMeeting(meeting) ) { p.addMeeting( meeting ); }
 		  break;
 	    } 
 	  } // end for
