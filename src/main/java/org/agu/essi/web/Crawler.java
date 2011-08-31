@@ -24,6 +24,7 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
+import org.apache.log4j.Logger;
 
 import org.agu.essi.Abstract;
 import org.agu.essi.data.DataSource;
@@ -33,6 +34,8 @@ import org.agu.essi.util.Utils;
 
 public class Crawler implements DataSource {
 	
+	static final Logger log = Logger.getLogger(org.agu.essi.web.Crawler.class);  
+
 	// AGU Variables - location of, and access to, AGU Abstract Database
 	private String aguBaseURL = "http://www.agu.org/";
 	private String aguApplicationURL = "cgi-bin/SFgate/SFgate?application=";
@@ -194,7 +197,7 @@ public class Crawler implements DataSource {
 	  	}
 	  	if ( cmd.hasOption("outputFormat")) { format = cmd.getOptionValue("outputFormat"); } 
 	    
-	    if ( error ) { System.out.println(errorMessage); } else {	
+	    if ( error ) { log.error(errorMessage); } else {	
 
 	      // query AGU
 		  Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
