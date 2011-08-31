@@ -85,6 +85,21 @@
     </dependency>
   </dependencies>
   <build>
+  
+    <!-- log4j searches for the properties file under the Maven directory target/classes -->
+    <!-- the <resources> statements below tell Maven to copy the log4j properties file -->
+    <!-- from the source directory to the targe/classes directory during each build. -->
+    <!-- this ensures the build uses the latest version of the properties file and that -->
+    <!-- the properties file is included in the svn repository -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>log4j.properties</include>
+        </includes>
+      </resource>
+    </resources>
+    
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
