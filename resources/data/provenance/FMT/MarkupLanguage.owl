@@ -1,0 +1,22 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <Format rdf:about="http://essi.agu.org/provenance/FMT/MarkupLanguage.owl#MarkupLanguage">
+        <hasDescription>
+            <Information rdf:ID="MarkupLanguageInformation">
+                <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >A mark-up language is a modern system for annotating a text in a way that is syntactically distinguishable from that text. 
+                    The idea and terminology evolved from the "marking up" of manuscripts, i.e. the revision instructions by editors, traditionally 
+                    written with a blue pencil on authors' manuscripts. Examples are typesetting instructions such as those found in troff and LaTeX, 
+                    and structural markers such as XML tags.</hasRawString>
+                <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+                <hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://en.wikipedia.org/wiki/Markup_language</hasURL>
+            </Information>
+        </hasDescription>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Markup Language</hasName>
+    </Format>
+</rdf:RDF>

@@ -1,0 +1,56 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://inference-web.org/2.0/pml-justification.owl#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <NodeSet rdf:about="http://essi.agu.org/provenance/AGU_Abstracts.owl#answer">
+        <hasConclusion>
+            <pmlp:Information rdf:ID="AGUAbstractInformation">
+                <pmlp:hasCreationDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                    >2011-08-05T09:56:00Z</pmlp:hasCreationDateTime>
+                <pmlp:hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://linked-open-data-essi.googlecode.com/files/abstracts-rdf.tar.gz</pmlp:hasURL>
+                <pmlp:hasFormat rdf:resource="http://essi.agu.org/provenance/FMT/MarkupLanguage.owl#MarkupLanguage"/>
+                <pmlp:hasFormat rdf:resource="http://essi.agu.org/provenance/FMT/Zip.owl#Zip"/>
+            </pmlp:Information>
+        </hasConclusion>
+        <isConsequentOf>
+            <InferenceStep rdf:ID="AGUAbstractInferenceStep0">
+                <hasInferenceEngine rdf:resource="http://essi.agu.org/provenance/IE/AGU_Abstract_Collection.owl#AbstractCollection"/>
+                <hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >0</hasIndex>
+                <hasSourceUsage>
+                    <pmlp:SourceUsage rdf:ID="AGU">
+                        <pmlp:hasSource rdf:resource="http://essi.agu.org/provenance/ORG/AGU.owl#AGU"/>
+                    </pmlp:SourceUsage>
+                </hasSourceUsage>
+            </InferenceStep>
+         </isConsequentOf>
+         <isConsequentOf>
+            <InferenceStep rdf:ID="AGUAbstractInferenceStep1">
+                <hasInferenceEngine rdf:resource="http://essi.agu.org/provenance/IE/AGU_Abstract_Release.owl#AbstractRelease"/>
+                <hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >1</hasIndex>
+                <hasSourceUsage>
+                    <pmlp:SourceUsage rdf:ID="AGU">
+                        <pmlp:hasSource rdf:resource="http://essi.agu.org/provenance/ORG/AGU.owl#AGU"/>
+                    </pmlp:SourceUsage>
+                </hasSourceUsage>
+            </InferenceStep>
+          </isConsequentOf>
+          <isConsequentOf>
+            <InferenceStep rdf:ID="AGUAbstractInferenceStep2">
+                <hasInferenceEngine rdf:resource="http://essi.agu.org/provenance/IE/AGU_Abstract_Conversion.owl#AbstractConversion"/>
+                <hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >2</hasIndex>
+                <hasSourceUsage>
+                    <pmlp:SourceUsage rdf:ID="FundingFriday">
+                        <pmlp:hasSource rdf:resource="http://essi.agu.org/provenance/ORGEVT/FundingFriday.owl#FundingFriday"/>
+                    </pmlp:SourceUsage>
+                </hasSourceUsage>
+            </InferenceStep>
+        </isConsequentOf>
+    </NodeSet>
+</rdf:RDF>
+

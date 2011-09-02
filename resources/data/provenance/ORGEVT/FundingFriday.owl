@@ -1,0 +1,34 @@
+<rdf:RDF
+    xmlns="http://essi.agu.org/provenance/abstract_provenance.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#">
+    <OrganizationalEvent rdf:about="http://essi.agu.org/provenance/ORGEVT/FundingFriday.owl#FundingFriday">
+        <pmlp:hasDescription>
+            <pmlp:Information rdf:ID="FundingFridayDescriptionInformation">
+                <pmlp:hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >FUNding Friday is an annual mini-competition established by the Earth Science Information Partnership (ESIP) in 2008 at the 
+                    Summer Meeting in Durham, NH. Several $5,000 awards are given to members to fund small projects that are inspired by ESIP 
+                    collaboration or participation. In 2009, the ESIP Federation created a student competition with awards of $3,000.
+                    
+                    This competition serves several purposes:
+                    
+                    * promotes and rewards new collaborations or bridges between ESIP projects and technologies, so that novel outcomes can be explored.
+                    * fosters small-scale projects of real value by supporting programmer salary, travel—whatever is needed to realize the proposed work.
+                    * showcases how the ESIP Federation can leverage current technologies and member skills to add new services with a modest amount of 
+                    effort(and funding).
+                    * rewards members who are looking to explore new collaborations and new ideas inspired by other Federation member activities. 
+                </pmlp:hasRawString>
+                <pmlp:hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+                <pmlp:hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://wiki.esipfed.org/index.php/FUNding_Friday_Projects</pmlp:hasURL>
+                <pmlp:hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://wiki.esipfed.org/index.php/Linked_Open_Research_Data_for_Earth_and_Space_Science_Informatics</pmlp:hasURL>
+            </pmlp:Information>
+        </pmlp:hasDescription>
+        <pmlp:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ESIP Funding Friday</pmlp:hasName>
+    </OrganizationalEvent>
+</rdf:RDF>

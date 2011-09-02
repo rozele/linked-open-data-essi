@@ -1,0 +1,26 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <InferenceEngine rdf:about="http://essi.agu.org/provenance/IE/AGU_Abstract_Release.owl#AbstractRelease">
+        <hasDescription>
+            <Information rdf:ID="AbstractReleaseInformation">
+                <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Release of Informatics specific search interface to AGU abstracts.</hasRawString>
+                <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+                <hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.agu.org/focus_group/essi/abstracts/essi_search.html</hasURL>
+            </Information>
+        </hasDescription>
+        <hasInferenceEngineRule rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ESSI AGU Abstract Interface</hasName>
+        <hasAuthorList>
+            <AgentList rdf:ID="AbstractReleaseList">
+                <ds:first rdf:resource="http://essi.agu.org/provenance/PER/JonSears.owl#JonSears"/>
+            </AgentList>
+        </hasAuthorList>
+    </InferenceEngine>
+</rdf:RDF>

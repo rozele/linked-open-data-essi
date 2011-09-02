@@ -1,0 +1,25 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns="http://inference-web.org/2.0/pml-justification.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <pmlp:Organization rdf:about="http://essi.agu.org/provenance/ORG/AGU.owl#AGU">
+        <pmlp:hasDescription>
+            <pmlp:Information rdf:ID="AGUInformation">
+                <pmlp:hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >The American Geophysical Union (AGU), which was established in 1919 by the National Research Council and for more 
+                    than 50 years operated as an unincorporated affiliate of the National Academy of Sciences, is now a nonprofit 
+                    corporation chartered under the laws of the District of Columbia. The Union is dedicated to the furtherance of 
+                    the geophysical sciences through the individual efforts of its members and in cooperation with other national 
+                    and international scientific organizations.</pmlp:hasRawString>
+                <pmlp:hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+                <hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.agu.org/about/</hasURL>
+            </pmlp:Information>
+        </pmlp:hasDescription>
+        <pmlp:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >American Geophyiscal Union (AGU)</pmlp:hasName>
+    </pmlp:Organization>
+</rdf:RDF>

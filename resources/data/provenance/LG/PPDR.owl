@@ -1,0 +1,24 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#">
+    <Language rdf:about="http://essi.agu.org/provenance/LG/PPDR.owl#PPDR">
+        <hasDescription>
+            <Information>
+                <hasReferenceSourceUsage>
+                    <SourceUsage>
+                        <hasSource rdf:resource="http://inference-web.org/registry/PUB/PPDR.owl#PPDR"/>
+                        <hasUsageDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+                            >2004-05-03T08:39:14-08:00</hasUsageDateTime>
+                    </SourceUsage>
+                    
+                </hasReferenceSourceUsage>
+            </Information>
+        </hasDescription>        
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Proof Protocol for Deductive Reasoning (PPDR)</hasName>
+    </Language>
+</rdf:RDF>

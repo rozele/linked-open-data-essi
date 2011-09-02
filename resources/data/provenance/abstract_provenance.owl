@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:pmlj="http://inference-web.org/2.0/pml-justification.owl#"
+    xmlns="http://essi.agu.org/provenance/abstract_provenance.owl#"
+  xml:base="http://essi.agu.org/provenance/abstract_provenance.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/JGRANT.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/NS/AGU_Abstracts.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/RMcCOOL.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/EMILLER.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/FGLEB.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/RGUHA.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/JCARROLL.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/IE/AbstractCollection.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/IE/AbstractConversion.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/JJENKINS.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/IW-USER.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/ORG/AGU.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/RFIKES.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/JTP-TEAM.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/DBRICKLEY.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/DLM.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/GEONUSR.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/2.0/pml-justification.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/LG/English.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/FMANOLA.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/GKLYNE.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/PER/TomNarock.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/FMT/Zip.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/LG/PPDR.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/FMT/MarkupLanguage.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/RSWICK.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/DAML-TEAM.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/KSL.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/ORGEVT/FundingFriday.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/PER/EricRozell.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/KBALOGLU.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/IE/AbstractRelease.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/OLASSILA.owl"/>
+    <owl:imports rdf:resource="http://www.agu.org/focus_group/essi/provenance/PER/JonSears.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/RDF-TEAM.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/DBECKETT.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/PPS.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/ORG/UTEP-TEAM.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PUB/PPDR.owl"/>
+    <owl:imports rdf:resource="http://inference-web.org/registry/PER/PHAYES.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="OrganizationalEvent">
+    <rdfs:subClassOf rdf:resource="http://inference-web.org/2.0/pml-provenance.owl#Agent"/>
+  </owl:Class>
+  <rdf:Description rdf:about="http://essi.agu.org/provenance/IE/AGU_Abstract_Collection.owl#AbstractCollection">
+    <pmlp:hasInferenceEngineRule rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl#Told"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://essi.agu.org/provenance/IE/AGU_Abstract_Conversion.owl#AbstractConversion">
+    <pmlp:hasInferenceEngineRule rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl#Told"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://essi.agu.org/provenance/IE/AGU_Abstract_Release.owl#AbstractRelease">
+    <pmlp:hasInferenceEngineRule rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl#Told"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4, Build 533)  http://protege.stanford.edu -->

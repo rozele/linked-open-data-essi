@@ -1,0 +1,34 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#">
+  <DeclarativeRule rdf:about="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl#Told">
+    <hasContent>
+      <Information rdf:ID="ToldContentInformation">
+        <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >|- p;; (Sent p)</hasRawString>
+        <hasLanguage rdf:resource="http://essi.agu.org/provenance/LG/PPDR.owl#PPDR"/>
+      </Information>
+    </hasContent>
+    <hasDescription>
+      <Information rdf:ID="ToldDescriptionInformation">
+        <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Direct assertion of a sentence, possibly by loading a sentence (or a set of sentences) from an existing knowledge base.</hasRawString>
+        <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+      </Information>
+    </hasDescription>
+    <hasRuleExample>
+      <Information rdf:ID="ToldRuleExampleInformation">
+        <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >One might load the statement from the wines ontology that
+RedWine is a subclass of Wine.</hasRawString>
+        <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+      </Information>
+    </hasRuleExample>
+    <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Direct assertion</hasName>
+  </DeclarativeRule>
+</rdf:RDF>

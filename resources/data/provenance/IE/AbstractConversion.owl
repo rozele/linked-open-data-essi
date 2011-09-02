@@ -1,0 +1,29 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:ds="http://inference-web.org/2.0/ds.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <InferenceEngine rdf:about="http://essi.agu.org/provenance/IE/AGU_Abstract_Conversion.owl#AbstractConversion">
+        <hasDescription>
+            <Information rdf:ID="AbstractConversionInformation">
+                <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >AGU Abstracts exported from web interface and written to XML.</hasRawString>
+                <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+            </Information>
+        </hasDescription>
+        <hasInferenceEngineRule rdf:resource="http://www.agu.org/focus_group/essi/provenance/RUL/Told.owl"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >AGU Abstract Conversion to XML and RDF</hasName>
+        <hasAuthorList>
+            <AgentList rdf:ID="AbstractConversionList0">
+                <ds:first rdf:resource="http://essi.agu.org/provenance/PER/EricRozell.owl#EricRozell"/>
+                <ds:rest>
+	          <AgentList rdf:ID="AbstractConversionList1">
+                    <ds:first rdf:resource="http://essi.agu.org/provenance/PER/TomNarock.owl#TomNarock"/>
+                  </AgentList>
+                </ds:rest>
+            </AgentList>
+        </hasAuthorList>
+    </InferenceEngine>
+</rdf:RDF>

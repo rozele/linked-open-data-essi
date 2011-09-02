@@ -1,0 +1,19 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:pmlp="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#">
+    <Person rdf:about="http://essi.agu.org/provenance/PER/JonSears.owl#JonSears">
+        <isMemberOf rdf:resource="http://essi.agu.org/provenance/ORG/AGU.owl#AGU"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Jon Sears</hasName>
+        <hasDescription>
+            <Information>
+                <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Publisher, Secondary Services - American Geophysical Union</hasRawString>
+                <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+            </Information>
+        </hasDescription>
+    </Person>
+</rdf:RDF>

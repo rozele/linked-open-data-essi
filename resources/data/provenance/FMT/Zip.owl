@@ -1,0 +1,19 @@
+<rdf:RDF
+    xmlns="http://inference-web.org/2.0/pml-provenance.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <Format rdf:about="http://essi.agu.org/provenance/FMT/Zip.owl#Zip">
+        <hasDescription>
+            <Information rdf:ID="ZipInformation">
+                <hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >The ZIP file format is a data compression and archive format.</hasRawString>
+                <hasLanguage rdf:resource="http://inference-web.org/registry/LG/English.owl#English"/>
+                <hasURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://en.wikipedia.org/wiki/ZIP_%28file_format%29</hasURL>
+            </Information>
+        </hasDescription>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ZIP</hasName>
+    </Format>
+</rdf:RDF>
