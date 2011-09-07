@@ -40,6 +40,7 @@ public class Utils {
 	{
 		StringWriter sw = new StringWriter();
 		sw.write("<rdf:RDF xmlns=\"" + Namespaces.esipOwl + "\"\n");
+		sw.write("         xmlns:owl=\"" + Namespaces.owl + "\"\n");
 		sw.write("         xmlns:rdf=\"" + Namespaces.rdf + "\"\n");
 		sw.write("         xmlns:swc=\"" + Namespaces.swc + "\"\n");
 		sw.write("         xmlns:swrc=\"" + Namespaces.swrc + "\"\n");

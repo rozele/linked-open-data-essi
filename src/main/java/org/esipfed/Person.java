@@ -39,6 +39,12 @@ public class Person {
 	public void createID(int index) { _id = Namespaces.esip + "ESIP_Person_" + index; }
 	
 	/**
+	 * Method to set an id for an existing person
+	 * @param id a string id to use
+	 */
+	public void setID(String id) { _id = id; }
+	
+	/**
 	 * Method to get an id for an existing person
 	 * @return id the id of the person
 	 */
