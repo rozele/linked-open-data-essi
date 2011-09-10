@@ -14,8 +14,8 @@ public class Namespaces {
 	public static String swc = "http://data.semanticweb.org/ns/swc/ontology#";
 	public static String swrc = "http://swrc.ontoware.org/ontology#";
 	public static String owl = "http://www.w3.org/2002/07/owl#";
-	public static String dc = "http://purl.org/dc/elements/1.1/";
+	public static String dc = "http://purl.org/dc/terms/";
 	public static String xsd = "http://www.w3.org/2001/XMLSchema#";
 	public static String tw = "http://tw.rpi.edu/schema/";
-	public static String foaf = "http://xmlns.org/foaf/0.1/";
+	public static String foaf = "http://xmlns.com/foaf/0.1/";
 }
