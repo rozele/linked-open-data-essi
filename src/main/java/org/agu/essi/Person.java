@@ -1,5 +1,7 @@
 package org.agu.essi;
 
+import java.util.regex.*;
+
 /**
  * Container class for person information
  * @author Eric Rozell
@@ -7,6 +9,7 @@ package org.agu.essi;
 public class Person {
 	private String _name;
 	private String _email;
+	private boolean _primary;
 	
 	/**
 	 * Construct Person instance from name
@@ -14,7 +17,17 @@ public class Person {
 	 */
 	public Person(String name)
 	{
-		_name = name;
+		Pattern p = Pattern.compile("(\\*\\s*)?(.*)");
+		Matcher m = p.matcher(name);
+		if (!m.group(1).equals(""))
+		{
+			_primary = true;
+		}
+		else
+		{
+			_primary = false;
+		}
+		_name = m.group(2);
 	}
 	
 	/**
@@ -24,7 +37,17 @@ public class Person {
 	 */
 	public Person(String name, String email)
 	{
-		_name = name;
+		Pattern p = Pattern.compile("(\\*\\s*)?(.*)");
+		Matcher m = p.matcher(name);
+		if (!m.group(1).equals(""))
+		{
+			_primary = true;
+		}
+		else
+		{
+			_primary = false;
+		}
+		_name = m.group(2);
 		_email = email;
 	}
 	
@@ -34,8 +57,7 @@ public class Person {
 	 */
 	public void addEmail(String email)
 	{
-		_email = email;
-	}
+		_email = email;	}
 	
 	/**
 	 * Method to get author name

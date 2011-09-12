@@ -1,5 +1,7 @@
 package org.agu.essi;
 
+import java.util.regex.*;
+
 /**
  * Container class for AGU keywords
  * @author Eric Rozell
@@ -18,11 +20,20 @@ public class Keyword {
 	
 	/**
 	 * Method to get the keyword number
+	 * TODO: make a good regex to take care of this...
 	 * @return number of keyword
 	 */
 	public String getId()
 	{
-		return _name.split("  ")[0];
+		//Pattern p1 = Pattern.compile("\[(.*)\]\s+(.*)\s+(\((\d*)(,\s*(\d*)\))?");
+		if (_name.split("  ").length > 1)
+		{
+			return _name.split("  ")[0];
+		}
+		else
+		{
+			return _name;
+		}
 	}
 	
 	/**
