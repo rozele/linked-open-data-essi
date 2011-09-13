@@ -19,15 +19,23 @@ public class Person {
 	{
 		Pattern p = Pattern.compile("(\\*\\s*)?(.*)");
 		Matcher m = p.matcher(name);
-		if (!m.group(1).equals(""))
+		boolean matched = m.find();
+		if (matched)
 		{
-			_primary = true;
+			if (m.group(1) != null)
+			{
+				_primary = true;
+			}
+			else
+			{
+				_primary = false;
+			}
+			_name = m.group(2);
 		}
 		else
 		{
-			_primary = false;
+			_name = name;
 		}
-		_name = m.group(2);
 	}
 	
 	/**
@@ -39,15 +47,23 @@ public class Person {
 	{
 		Pattern p = Pattern.compile("(\\*\\s*)?(.*)");
 		Matcher m = p.matcher(name);
-		if (!m.group(1).equals(""))
+		boolean matched = m.find();
+		if (matched)
 		{
-			_primary = true;
+			if (m.group(1) != null)
+			{
+				_primary = true;
+			}
+			else
+			{
+				_primary = false;
+			}
+			_name = m.group(2);
 		}
 		else
 		{
-			_primary = false;
+			_name = name;
 		}
-		_name = m.group(2);
 		_email = email;
 	}
 	

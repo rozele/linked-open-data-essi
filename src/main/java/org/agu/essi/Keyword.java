@@ -1,5 +1,6 @@
 package org.agu.essi;
 
+import java.util.Vector;
 import java.util.regex.*;
 
 /**
@@ -8,6 +9,8 @@ import java.util.regex.*;
  */
 public class Keyword {
 	private String _name;
+	private String _id;
+	private Vector<String> _altIds;
 	
 	/**
 	 * Constructs keyword from raw abstract HTML content
@@ -15,7 +18,51 @@ public class Keyword {
 	 */
 	public Keyword(String name)
 	{
-		_name = name;
+		_altIds = new Vector<String>();
+		Pattern p1 = Pattern.compile("(\\[(\\d+)\\])?\\s*(.*?)(\\s*\\((.*)\\))");
+		Pattern p2 = Pattern.compile("(\\[(\\d+)\\])?\\s*(.*)");
+		
+		//check first pattern
+		Matcher m = p1.matcher(name);
+		boolean matched = m.find();
+		if (matched)
+		{
+			_id = m.group(2);
+			_name = m.group(3);
+			String[] list = m.group(5).split(",");
+			for (int i = 0; i < list.length; ++i)
+			{
+				_altIds.add(list[i].trim());
+			}
+			if (_id == null && _altIds.size() > 0)
+			{
+				_id = _altIds.get(0);
+			}
+			else if (_id == null)
+			{
+				_id = _name;
+			}
+		}
+		else
+		{	
+			//check second pattern
+			m = p2.matcher(name);
+			matched = m.find();
+			if (matched)
+			{
+				_id = m.group(2);
+				_name = m.group(3);
+				if (_id == null)
+				{
+					_id = _name;
+				}
+			}
+			else
+			{
+				_name = name;
+				_id = name;
+			}
+		}
 	}
 	
 	/**
@@ -25,15 +72,7 @@ public class Keyword {
 	 */
 	public String getId()
 	{
-		//Pattern p1 = Pattern.compile("\[(.*)\]\s+(.*)\s+(\((\d*)(,\s*(\d*)\))?");
-		if (_name.split("  ").length > 1)
-		{
-			return _name.split("  ")[0];
-		}
-		else
-		{
-			return _name;
-		}
+		return _id;
 	}
 	
 	/**
@@ -42,15 +81,7 @@ public class Keyword {
 	 */
 	public String getName()
 	{
-		if (_name.split("  ").length > 1)
-		{
-			return _name.split("  ")[1];
-		}
-		else if (_name.split("[.*]").length > 1)
-		{
-			return _name.split("[.*]")[1].trim();
-		}
-		else return _name;
+		return _name;
 		
 	}
 	
