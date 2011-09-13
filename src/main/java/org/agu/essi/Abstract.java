@@ -271,7 +271,7 @@ public class Abstract
 			sw.write("        <rdf:type rdf:resource=\"&tw;Author\" />\n");
 			for (int j = 0; j < a.getAffiliations().size(); ++j)
 			{
-				String org = a.getAffiliations().get(j);
+				Organization org = a.getAffiliations().get(j);
 				sw.write("        <swrc:affiliation rdf:resource=\"" + EntityIdentifier.getOrganizationId(org) + "\" />\n");
 			}
 			sw.write("        <tw:index rdf:datatype=\"&xsd;positiveInteger\">"+(i+1)+"</tw:index>\n");

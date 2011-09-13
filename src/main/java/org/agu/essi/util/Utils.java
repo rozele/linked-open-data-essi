@@ -72,6 +72,7 @@ public class Utils {
 		sw.write("  <!ENTITY foaf \"" + Namespaces.foaf + "\" >\n");
 		sw.write("  <!ENTITY swrc \"" + Namespaces.swrc + "\" >\n");
 		sw.write("  <!ENTITY swc \"" + Namespaces.swc + "\" >\n");
+		sw.write("  <!ENTITY geo \"" + Namespaces.geo + "\" >\n");
 		sw.write("]>\n");
 		return sw.toString();	
 	}
@@ -80,17 +81,17 @@ public class Utils {
 	{
 		HashMap <String, String> aguDatabases = new HashMap <String, String> ();
 		aguDatabases.put( "fm10", "/data/epubs/wais/indexes/fm10/fm10");	
-		aguDatabases.put( "ja10", "/data/epubs/wais/indexes/ja10/ja10");	
-		aguDatabases.put( "fm09", "/data/epubs/wais/indexes/fm09/fm09");	
-		aguDatabases.put( "ja09", "/data/epubs/wais/indexes/ja09/ja09");	
-		aguDatabases.put( "fm08", "/data/epubs/wais/indexes/fm08/fm08");	
-		aguDatabases.put( "ja08", "/data/epubs/wais/indexes/ja08/ja08");	
-		aguDatabases.put( "fm07", "/data/epubs/wais/indexes/fm07/fm07");	
-		aguDatabases.put( "sm07", "/data/epubs/wais/indexes/sm07/sm07");	
-		aguDatabases.put( "fm06", "/data/epubs/wais/indexes/fm06/fm06");	
-		aguDatabases.put( "sm06", "/data/epubs/wais/indexes/sm06/sm06");	
-		aguDatabases.put( "fm05", "/data/epubs/wais/indexes/fm05/fm05");	
-		aguDatabases.put( "sm05", "/data/epubs/wais/indexes/sm05/sm05");
+		//aguDatabases.put( "ja10", "/data/epubs/wais/indexes/ja10/ja10");	
+		//aguDatabases.put( "fm09", "/data/epubs/wais/indexes/fm09/fm09");	
+		//aguDatabases.put( "ja09", "/data/epubs/wais/indexes/ja09/ja09");	
+		//aguDatabases.put( "fm08", "/data/epubs/wais/indexes/fm08/fm08");	
+		//aguDatabases.put( "ja08", "/data/epubs/wais/indexes/ja08/ja08");	
+		//aguDatabases.put( "fm07", "/data/epubs/wais/indexes/fm07/fm07");	
+		//aguDatabases.put( "sm07", "/data/epubs/wais/indexes/sm07/sm07");	
+		//aguDatabases.put( "fm06", "/data/epubs/wais/indexes/fm06/fm06");	
+		//aguDatabases.put( "sm06", "/data/epubs/wais/indexes/sm06/sm06");	
+		//aguDatabases.put( "fm05", "/data/epubs/wais/indexes/fm05/fm05");	
+		//aguDatabases.put( "sm05", "/data/epubs/wais/indexes/sm05/sm05");
 		return aguDatabases;
 	}	
 }

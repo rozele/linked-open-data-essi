@@ -6,6 +6,7 @@ import java.util.Vector;
 import org.agu.essi.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
+import org.agu.essi.Organization;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
@@ -26,7 +27,7 @@ public class EntityIdentifier {
 	private static String keywordBaseId = Namespaces.esip + "Keyword_";
 	private static Vector<Person> people = new Vector<Person>();
 	private static Vector<Meeting> meetings = new Vector<Meeting>();
-	private static Vector<String> organizations = new Vector<String>();
+	private static Vector<Organization> organizations = new Vector<Organization>();
 	private static Vector<Session> sessions = new Vector<Session>();
 	private static Vector<Section> sections = new Vector<Section>();
 	private static Vector<Keyword> keywords = new Vector<Keyword>();
@@ -148,7 +149,7 @@ public class EntityIdentifier {
 	 * @param org a plain text description of an organization
 	 * @return a new or existing identifier for the input organization
 	 */
-	public static String getOrganizationId(String org)
+	public static String getOrganizationId(Organization org)
 	{
 		if (organizations.contains(org))
 		{
@@ -248,10 +249,24 @@ public class EntityIdentifier {
 			sw.write(Utils.writeRdfHeader());
 			for(int i = 0; i < organizations.size(); ++i)
 			{
-				String o = organizations.get(i);
+				Organization o = organizations.get(i);
 				sw.write("  <rdf:Description rdf:about=\"" + organizationBaseId + (i + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Organization\" />\n");
 				sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + o + "</dc:description>\n");
+				if (o.getCoordinates() != null)
+				{
+					sw.write("    <foaf:based_near>");
+					sw.write("      <rdf:Description>");
+					sw.write("        <rdf:type rdf:resource=\"&geo;SpatialThing\" />");
+					sw.write("        <geo:lat rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLat() + "</geo:lat>");
+					sw.write("        <geo:long rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLng() + "</geo:long>");
+					sw.write("      </rdf:Description>");
+					sw.write("    </foaf:based_near>");
+				}
+				if (o.getGeoNamesId() != null)
+				{
+					sw.write("    <foaf:based_near rdf:resource=\"" + o.getGeoNamesId() + "\"/>");
+				}
 				sw.write("  </rdf:Description>\n");
 			}
 			sw.write(Utils.writeRdfFooter());

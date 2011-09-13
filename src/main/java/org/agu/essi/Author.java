@@ -10,7 +10,7 @@ import java.util.Vector;
 public class Author {
 	// container variables
 	private Person _person;
-	private Vector <String> _affiliations;
+	private Vector <Organization> _affiliations;
 	
 	/**
 	 * Constructor based on author name
@@ -19,7 +19,7 @@ public class Author {
 	public Author(String name)
 	{
 		_person = new Person(name);
-		_affiliations = new Vector<String>();
+		_affiliations = new Vector<Organization>();
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class Author {
 	public Author(String name, String email)
 	{
 		_person = new Person(name, email);
-		_affiliations = new Vector<String>();
+		_affiliations = new Vector<Organization>();
 	}
 	
 	/**
@@ -42,8 +42,8 @@ public class Author {
 	public Author(String name, String email, String affiliation)
 	{
 		_person = new Person(name, email);
-		_affiliations = new Vector<String>();
-		_affiliations.add(affiliation);
+		_affiliations = new Vector<Organization>();
+		_affiliations.add(new Organization(affiliation));
 	}
 	
 	/**
@@ -52,7 +52,7 @@ public class Author {
 	 */
 	public void addAffiliation(String affiliation)
 	{
-		_affiliations.add(affiliation);
+		_affiliations.add(new Organization(affiliation));
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class Author {
 	 * Method to get author affiliations
 	 * @return affiliations of author
 	 */
-	public Vector<String> getAffiliations()
+	public Vector<Organization> getAffiliations()
 	{
 		return _affiliations;
 	}
@@ -93,6 +93,7 @@ public class Author {
 	 * Override of the toString method
 	 * @return stringified author
 	 */
+	@Override
 	public String toString()
 	{
 		return _person.toString();
