@@ -47,6 +47,7 @@ public class Utils {
 		sw.write("         xmlns:dc=\"" + Namespaces.dc + "\"\n");
 		sw.write("         xmlns:tw=\"" + Namespaces.tw + "\"\n");
 		sw.write("         xmlns:foaf=\"" + Namespaces.foaf + "\"\n");
+		sw.write("         xmlns:geo=\"" + Namespaces.geo + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.esip + "\">\n");
 		return sw.toString();
 	}

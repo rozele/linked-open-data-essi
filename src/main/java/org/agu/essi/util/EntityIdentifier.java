@@ -255,17 +255,17 @@ public class EntityIdentifier {
 				sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + o + "</dc:description>\n");
 				if (o.getCoordinates() != null)
 				{
-					sw.write("    <foaf:based_near>");
-					sw.write("      <rdf:Description>");
-					sw.write("        <rdf:type rdf:resource=\"&geo;SpatialThing\" />");
-					sw.write("        <geo:lat rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLat() + "</geo:lat>");
-					sw.write("        <geo:long rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLng() + "</geo:long>");
-					sw.write("      </rdf:Description>");
-					sw.write("    </foaf:based_near>");
+					sw.write("    <foaf:based_near>\n");
+					sw.write("      <rdf:Description>\n");
+					sw.write("        <rdf:type rdf:resource=\"&geo;SpatialThing\" />\n");
+					sw.write("        <geo:lat rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLat() + "</geo:lat>\n");
+					sw.write("        <geo:long rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLng() + "</geo:long>\n");
+					sw.write("      </rdf:Description>\n");
+					sw.write("    </foaf:based_near>\n");
 				}
 				if (o.getGeoNamesId() != null)
 				{
-					sw.write("    <foaf:based_near rdf:resource=\"" + o.getGeoNamesId() + "\"/>");
+					sw.write("    <foaf:based_near rdf:resource=\"" + o.getGeoNamesId() + "\"/>\n");
 				}
 				sw.write("  </rdf:Description>\n");
 			}

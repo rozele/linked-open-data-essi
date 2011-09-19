@@ -195,7 +195,7 @@ public class Abstract
 		StringWriter sw = new StringWriter();
 		String xmlNS = "xmlns:xsi=\"" + Namespaces.xsi + "\" xmlns=\"" + Namespaces.essiSchema + "\"";
 		String aguSchema = Namespaces.essiSchema + " " + Namespaces.essiXsd;
-		sw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+		sw.write(Utils.writeXmlHeader());
 		sw.write("<AGUAbstract " + xmlNS + " xsi:schemaLocation=\"" + aguSchema + "\">\n");
 		sw.write("  <Meeting>" + _meeting.getName() + "</Meeting>\n");
 		sw.write("  <Section>" + _section.getName() + "</Section>\n");
@@ -231,7 +231,6 @@ public class Abstract
 		sw.write("</AGUAbstract>");
 		return sw.toString();
 	}
-
 	
 	private String writeToRDFXML()
 	{
@@ -302,7 +301,6 @@ public class Abstract
 			{
 				return AbstractType.DEFAULT;
 			}
-			
 		}
 		else
 		{

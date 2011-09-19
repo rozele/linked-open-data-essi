@@ -20,6 +20,7 @@ public class Organization
 	private String _org;
 	private GeocoderResult _geocode;
 	private GeocoderGeometry _geometry;
+	private String _geonames;
 	private boolean googled;
 	
 	public Organization(String orgString)
@@ -53,7 +54,11 @@ public class Organization
 			getGeocode();
 			googled = true;
 		}
-		if (_geometry != null)
+		if (_geonames != null)
+		{
+			return _geonames;
+		}
+		else if (_geometry != null)
 		{
 			try 
 			{
@@ -61,7 +66,8 @@ public class Organization
 				Iterator<Toponym> iterator = l.iterator();
 				if (iterator.hasNext())
 				{
-					return "http://sws.geonames.org/" + iterator.next().getGeoNameId() + "/";
+					_geonames = "http://sws.geonames.org/" + iterator.next().getGeoNameId() + "/";
+					return _geonames;
 				}
 				else
 				{
