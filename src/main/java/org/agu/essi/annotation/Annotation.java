@@ -1,4 +1,4 @@
-package org.agu.essi.util;
+package org.agu.essi.annotation;
 
 public interface Annotation 
 {

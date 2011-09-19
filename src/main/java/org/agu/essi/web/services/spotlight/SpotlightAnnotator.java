@@ -10,8 +10,8 @@ import java.util.Vector;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.agu.essi.util.AnnotatedText;
-import org.agu.essi.util.Annotation;
+import org.agu.essi.annotation.AnnotatedText;
+import org.agu.essi.annotation.Annotation;
 import org.agu.essi.util.Utils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

@@ -3,7 +3,6 @@ package org.agu.essi;
 import java.io.StringWriter;
 import java.util.Vector;
 
-import org.agu.essi.util.AbstractType;
 import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;

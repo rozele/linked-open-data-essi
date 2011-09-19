@@ -21,4 +21,5 @@ public interface DataSource {
 	 * @return true if the source already has unique identifiers, false otherwise
 	 */
 	public boolean hasUniqueIdentifiers();
+
 }

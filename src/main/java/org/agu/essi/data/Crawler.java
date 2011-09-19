@@ -1,4 +1,4 @@
-package org.agu.essi.web;
+package org.agu.essi.data;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -27,14 +27,13 @@ import org.apache.commons.cli.PosixParser;
 import org.apache.log4j.Logger;
 
 import org.agu.essi.Abstract;
-import org.agu.essi.data.DataSource;
 import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 
 public class Crawler implements DataSource {
 	
-	static final Logger log = Logger.getLogger(org.agu.essi.web.Crawler.class);  
+	static final Logger log = Logger.getLogger(org.agu.essi.data.Crawler.class);  
 
 	// AGU Variables - location of, and access to, AGU Abstract Database
 	private String aguBaseURL = "http://www.agu.org/";
