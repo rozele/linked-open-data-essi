@@ -60,11 +60,11 @@ public class Abstract
 	
 	public String toString(String format)
 	{
-		if (format.equals("xml"))
+		if (Utils.isXmlFormat(format))
 		{
 			return writeToXML();
 		}
-		else if (format.equals("rdf/xml"))
+		else if (Utils.isRdfFormat(format))
 		{
 			return writeToRDFXML();
 		}

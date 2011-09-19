@@ -1,6 +1,7 @@
 package org.agu.essi.web.services.spotlight;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -11,12 +12,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.agu.essi.util.AnnotatedText;
 import org.agu.essi.util.Annotation;
+import org.agu.essi.util.Utils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+/**
+ * Class for annotating text with DBPedia Spotlight and writing those annotations in RDF
+ * @author Eric Rozell
+ */
 public class SpotlightAnnotator implements AnnotatedText
 {
 	private static String annotationService = "http://spotlight.dbpedia.org/rest/annotate";
@@ -25,9 +31,14 @@ public class SpotlightAnnotator implements AnnotatedText
 	private double confidence = 0.0;
 	private int support = 0;
 	
+	/**
+	 * Constructor for annotator from free text
+	 * @param t the free text to be annotated
+	 */
 	public SpotlightAnnotator(String t)
 	{
 		text = t;
+		annotate();
 	}
 	
 	public String getText() 
@@ -40,7 +51,7 @@ public class SpotlightAnnotator implements AnnotatedText
 		return annotations;
 	}
 
-	private void makeSpotlightRequest()
+	private void annotate()
 	{
 		String loc = annotationService + "?text=" + text + "&confidence=" + confidence + "&support=" + support;
 		try 
@@ -76,7 +87,25 @@ public class SpotlightAnnotator implements AnnotatedText
 		catch (Exception e)
 		{
 			e.printStackTrace();
+		}	
+	}
+	
+	public String toString(String format)
+	{
+		if (Utils.isRdfFormat(format))
+		{
+			return writeToRdfXml();
 		}
+		else 
+		{
+			return toString();
+		}
+	}
+	
+	private String writeToRdfXml()
+	{
+		StringWriter sw = new StringWriter();
+		return sw.toString();
 		
 	}
 }

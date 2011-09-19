@@ -36,6 +36,16 @@ public class Utils {
 		return s;
 	}
 	
+	public static boolean isRdfFormat(String format)
+	{
+		return format.equals("rdf/xml") || format.equals("application/rdf+xml");
+	}
+	
+	public static boolean isXmlFormat(String format)
+	{
+		return format.equals("xml") || format.equals("application/xml") || format.equals("text/xml");
+	}
+	
 	public static String writeRdfHeader()
 	{
 		StringWriter sw = new StringWriter();
