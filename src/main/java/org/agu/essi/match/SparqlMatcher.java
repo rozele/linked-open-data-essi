@@ -7,9 +7,15 @@ import org.agu.essi.Organization;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.agu.essi.util.Queries;
+import org.agu.essi.util.Utils;
 
-public class SparqlMatcher implements Matcher {
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 
+public class SparqlMatcher implements Matcher 
+{
 	private MemoryMatcher newMatches;
 	private String endpoint;
 	
@@ -17,6 +23,7 @@ public class SparqlMatcher implements Matcher {
 	{
 		newMatches = new MemoryMatcher();
 		endpoint = ep;
+		setStartIndices();
 	}
 	
 	public String getMeetingId(Meeting m)
@@ -59,6 +66,31 @@ public class SparqlMatcher implements Matcher {
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	private void setStartIndices()
+	{
+		ResultSet peopleResults = Utils.sparqlSelect(Queries.countPeopleQuery, endpoint);
+		if (peopleResults.hasNext())
+		{
+			QuerySolution solution = peopleResults.next();
+			RDFNode node = solution.get("count");
+			newMatches.setPeopleStartIndex(Integer.parseInt(node.toString()));
+		}
+		ResultSet organizationsResults = Utils.sparqlSelect(Queries.countOrganizationsQuery, endpoint);
+		if (organizationsResults.hasNext())
+		{
+			QuerySolution solution = organizationsResults.next();
+			RDFNode node = solution.get("count");
+			newMatches.setOrganizationsStartIndex(Integer.parseInt(node.toString()));
+		}
+		ResultSet keywordsResults = Utils.sparqlSelect(Queries.countKeywordsQuery, endpoint);
+		if (keywordsResults.hasNext())
+		{
+			QuerySolution solution = keywordsResults.next();
+			RDFNode node = solution.get("count");
+			newMatches.setKeywordsStartIndex(Integer.parseInt(node.toString()));
+		}
 	}
 
 }

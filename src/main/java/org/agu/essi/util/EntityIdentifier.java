@@ -15,7 +15,8 @@ import org.agu.essi.Session;
  * Utilities class to get unique identifiers (URIs) for entities in abstracts
  * @author Eric Rozell
  */
-public class EntityIdentifier {
+public class EntityIdentifier 
+{
 	
 	//Stores unique identifiers
 	private static String meetingBaseId = Namespaces.esip + "Meeting_";

@@ -4,6 +4,12 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import org.apache.commons.lang.StringEscapeUtils;
 
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.ResultSet;
+
 /**
  * Utility functions
  * @author Eric Rozell
@@ -27,13 +33,18 @@ public class Utils {
 		}
 	}
 	
-	//this is a hack dat
+	//this is a hack
 	public static String fixSpecialChars(String s)
 	{
-		//s = s.replaceAll("&quot;", ""/*"&#34;"*/);
-		//s = s.replaceAll("&apos;", ""/*"&#39;"*/);
 		s = s.replaceAll("\\p{Cntrl}", "");
 		return s;
+	}
+	
+	public static ResultSet sparqlSelect(String q, String ep)
+	{
+		Query query = QueryFactory.create(q);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(ep, query);
+		return qexec.execSelect();
 	}
 	
 	public static boolean isRdfFormat(String format)
@@ -59,6 +70,20 @@ public class Utils {
 		sw.write("         xmlns:foaf=\"" + Namespaces.foaf + "\"\n");
 		sw.write("         xmlns:geo=\"" + Namespaces.geo + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.esip + "\">\n");
+		return sw.toString();
+	}
+	
+	public static String writeSparqlPrefixes()
+	{
+		StringWriter sw = new StringWriter();
+		sw.write("PREFIX owl: <" + Namespaces.owl + ">\n");
+		sw.write("PREFIX esip: <" + Namespaces.esipOwl + ">\n");
+		sw.write("PREFIX xsd: <" + Namespaces.xsd + ">\n");
+		sw.write("PREFIX tw: <" + Namespaces.tw + ">\n");
+		sw.write("PREFIX foaf: <" + Namespaces.foaf + ">\n");
+		sw.write("PREFIX swrc: <" + Namespaces.swrc + ">\n");
+		sw.write("PREFIX swc: <" + Namespaces.swc + ">\n");
+		sw.write("PREFIX geo: <" + Namespaces.geo + ">\n");
 		return sw.toString();
 	}
 	
