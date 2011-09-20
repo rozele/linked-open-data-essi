@@ -11,7 +11,7 @@ import org.agu.essi.Section;
 import org.agu.essi.Session;
 import org.agu.essi.util.Namespaces;
 
-public class MemoryMatcher implements Matcher 
+public class MemoryMatcher implements EntityMatcher 
 {
 	//Stores unique identifier bases
 	private static String meetingBaseId = Namespaces.esip + "Meeting_";

@@ -14,7 +14,7 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 
-public class SparqlMatcher implements Matcher 
+public class SparqlMatcher implements EntityMatcher 
 {
 	private MemoryMatcher newMatches;
 	private String endpoint;
