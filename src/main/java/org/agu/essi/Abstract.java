@@ -3,10 +3,10 @@ package org.agu.essi;
 import java.io.StringWriter;
 import java.util.Vector;
 
-import org.agu.essi.util.EntityIdentifier;
+import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
-import org.springframework.context.annotation.ScopedProxyMode;
+import org.agu.essi.util.exception.EntityMatcherRequiredException;
 
 /**
  * Container class for AGU abstract information
@@ -30,6 +30,8 @@ public class Abstract
 	private Session _session;
 	private AbstractType _type;
 	
+	// the EntityMatcher used for the abstract
+	private EntityMatcher matcher;
 	
 	/**
 	 * @constructor 
@@ -57,7 +59,7 @@ public class Abstract
 		_keywords = keywords;
 	}
 	
-	public String toString(String format)
+	public String toString(String format) throws EntityMatcherRequiredException
 	{
 		if (Utils.isXmlFormat(format))
 		{
@@ -86,6 +88,16 @@ public class Abstract
 	public String getId()
 	{
 		return _abstractId;
+	}
+	
+	public AbstractType getAbstractType()
+	{
+		return _type;
+	}
+	
+	public void setEntityMatcher(EntityMatcher m)
+	{
+		matcher = m;
 	}
 	
 	private void parseHtml()
@@ -231,30 +243,37 @@ public class Abstract
 		return sw.toString();
 	}
 	
-	private String writeToRDFXML()
+	private String writeToRDFXML() throws EntityMatcherRequiredException
 	{
-		StringWriter sw = new StringWriter();		
-		sw.write(Utils.writeXmlHeader());
-		sw.write(Utils.writeDocumentEntities());
-		sw.write(Utils.writeRdfHeader());
-		sw.write("  <rdf:Description rdf:about=\"" + EntityIdentifier.getAbstractId(this) + "\">\n");
-		sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
-		sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + _title + "</dc:title>\n");
-		sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _abstractId + "</dc:identifier>\n");
-		sw.write("    <swc:relatedToEvent rdf:resource=\"" + EntityIdentifier.getSessionId(_session) + "\" />\n");
-		sw.write("    <swrc:abstract rdf:datatype=\"&xsd;string\">" + _abstract + "</swrc:abstract>\n");
-		for (int i = 0; i < _keywords.size(); ++i)
+		if (matcher == null)
 		{
-			sw.write("    <swc:hasTopic rdf:resource=\"" + EntityIdentifier.getKeywordId(_keywords.get(i)) + "\" />\n");
+			throw new EntityMatcherRequiredException();
 		}
-		for (int i = 0; i < _authors.size(); ++i)
+		else
 		{
-			sw.write("    <tw:hasAgentWithRole rdf:nodeID=\"A"+i+"\" />\n");
+			StringWriter sw = new StringWriter();		
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			sw.write("  <rdf:Description rdf:about=\"" + matcher.getAbstractId(this) + "\">\n");
+			sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
+			sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + _title + "</dc:title>\n");
+			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _abstractId + "</dc:identifier>\n");
+			sw.write("    <swc:relatedToEvent rdf:resource=\"" + matcher.getSessionId(_session) + "\" />\n");
+			sw.write("    <swrc:abstract rdf:datatype=\"&xsd;string\">" + _abstract + "</swrc:abstract>\n");
+			for (int i = 0; i < _keywords.size(); ++i)
+			{
+				sw.write("    <swc:hasTopic rdf:resource=\"" + matcher.getKeywordId(_keywords.get(i)) + "\" />\n");
+			}
+			for (int i = 0; i < _authors.size(); ++i)
+			{
+				sw.write("    <tw:hasAgentWithRole rdf:nodeID=\"A"+i+"\" />\n");
+			}
+			sw.write("  </rdf:Description>\n");
+			sw.write(writeAuthorRoles());
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
 		}
-		sw.write("  </rdf:Description>\n");
-		sw.write(writeAuthorRoles());
-		sw.write(Utils.writeRdfFooter());
-		return sw.toString();
 	}
 	
 	private String writeAuthorRoles()
@@ -263,14 +282,15 @@ public class Abstract
 		for (int i = 0; i < _authors.size(); ++i)
 		{
 			Author a = _authors.get(i);
-			sw.write("  <rdf:Description rdf:about=\"" + EntityIdentifier.getPersonId(a.getPerson()) + "\">\n");
+			sw.write("  <rdf:Description rdf:about=\"" + matcher.getPersonId(a.getPerson()) + "\">\n");
 			sw.write("    <tw:hasRole>\n");
 			sw.write("      <rdf:Description rdf:nodeID=\"A"+i+"\">\n");
 			sw.write("        <rdf:type rdf:resource=\"&tw;Author\" />\n");
+
 			for (int j = 0; j < a.getAffiliations().size(); ++j)
 			{
 				Organization org = a.getAffiliations().get(j);
-				sw.write("        <swrc:affiliation rdf:resource=\"" + EntityIdentifier.getOrganizationId(org) + "\" />\n");
+				sw.write("        <tw:withAffiliation rdf:resource=\"" + matcher.getOrganizationId(org) + "\" />\n");
 			}
 			sw.write("        <tw:index rdf:datatype=\"&xsd;positiveInteger\">"+(i+1)+"</tw:index>\n");
 			sw.write("      </rdf:Description>\n");

@@ -2,6 +2,8 @@ package org.agu.essi;
 
 import java.io.StringWriter;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Container class for AGU abstract author roles
@@ -11,6 +13,7 @@ public class Author {
 	// container variables
 	private Person _person;
 	private Vector <Organization> _affiliations;
+	private boolean _corresponding;
 	
 	/**
 	 * Constructor based on author name
@@ -20,6 +23,7 @@ public class Author {
 	{
 		_person = new Person(name);
 		_affiliations = new Vector<Organization>();
+		checkCorresponding(name);
 	}
 	
 	/**
@@ -31,6 +35,7 @@ public class Author {
 	{
 		_person = new Person(name, email);
 		_affiliations = new Vector<Organization>();
+		checkCorresponding(name);
 	}
 	
 	/**
@@ -44,6 +49,12 @@ public class Author {
 		_person = new Person(name, email);
 		_affiliations = new Vector<Organization>();
 		_affiliations.add(new Organization(affiliation));
+		checkCorresponding(name);
+	}
+	
+	public void addEmail(String email)
+	{
+		_person.addEmail(email);
 	}
 	
 	/**
@@ -71,6 +82,11 @@ public class Author {
 	public Vector<Organization> getAffiliations()
 	{
 		return _affiliations;
+	}
+	
+	public boolean isCorresponding()
+	{
+		return _corresponding;
 	}
 	
 	/**
@@ -130,6 +146,28 @@ public class Author {
 		else
 		{
 			return this.toString();
+		}
+	}
+	
+	private void checkCorresponding(String name)
+	{
+		Pattern p = Pattern.compile("(\\*\\s*)?(.*)");
+		Matcher m = p.matcher(name);
+		boolean matched = m.find();
+		if (matched)
+		{
+			if (m.group(1) != null)
+			{
+				_corresponding = true;
+			}
+			else
+			{
+				_corresponding = false;
+			}
+		}
+		else
+		{
+			_corresponding = false;
 		}
 	}
 }

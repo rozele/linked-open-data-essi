@@ -3,6 +3,8 @@ package org.agu.essi.data;
 import java.util.Vector;
 
 import org.agu.essi.Abstract;
+import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.util.exception.SourceNotReadyException;
 
 /**
  * Interface for specifying sources of AGU abstracts
@@ -14,12 +16,23 @@ public interface DataSource {
 	 * @return a Vector of Abstract instances
 	 */
 	/* TODO: add exception when source is not ready */
-	public Vector<Abstract> getAbstracts();
+	public Vector<Abstract> getAbstracts() throws SourceNotReadyException;
 	
 	/**
-	 * Method to specify if URIs have already been generated for the data source
-	 * @return true if the source already has unique identifiers, false otherwise
+	 * Method to determine if source is ready for use
+	 * @return true if source is ready
 	 */
-	public boolean hasUniqueIdentifiers();
-
+	public boolean ready();
+	
+	/**
+	 * Method to set the EntityMatcher
+	 * @param m an instance of EntityMatcher
+	 */
+	public void setEntityMatcher(EntityMatcher m);
+	
+	/**
+	 * Method to get the EntityMatcher
+	 * @return an instance of EntityMatcher
+	 */
+	public EntityMatcher getEntityMatcher();
 }

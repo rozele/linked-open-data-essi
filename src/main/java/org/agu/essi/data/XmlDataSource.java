@@ -1,10 +1,10 @@
 package org.agu.essi.data;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Vector;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.agu.essi.Abstract;
 import org.agu.essi.Meeting;
@@ -12,18 +12,16 @@ import org.agu.essi.Session;
 import org.agu.essi.Section;
 import org.agu.essi.Keyword;
 import org.agu.essi.Author;
-import org.apache.tools.ant.filters.StringInputStream;
-import org.codehaus.plexus.util.xml.XmlStreamReader;
-import org.codehaus.plexus.util.xml.Xpp3Dom;
-import org.codehaus.plexus.util.xml.Xpp3DomBuilder;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
-
-import com.sun.org.apache.xml.internal.resolver.readers.XCatalogReader;
+import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.util.exception.SourceNotReadyException;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 
 public class XmlDataSource implements DataSource {
 	private String directory;
 	private Vector<Abstract> abstracts;
 	private boolean extracted;
+	private EntityMatcher matcher;
 	
 	public XmlDataSource()
 	{
@@ -40,8 +38,26 @@ public class XmlDataSource implements DataSource {
 		extracted = true;
 	}
 	
-	public Vector<Abstract> getAbstracts() {
-		return null;
+	public Vector<Abstract> getAbstracts() throws SourceNotReadyException 
+	{	
+		if (!extracted)
+		{
+			throw new SourceNotReadyException();
+		}
+		else
+		{
+			return abstracts;
+		}
+	}
+	
+	public void setEntityMatcher(EntityMatcher m)
+	{
+		matcher = m;
+	}
+	
+	public EntityMatcher getEntityMatcher()
+	{
+		return matcher;
 	}
 	
 	public void setDirectory(String dir) throws Exception
@@ -51,12 +67,12 @@ public class XmlDataSource implements DataSource {
 		extracted = true;
 	}
 	
-	public static Abstract parseAbstractXml(String xml) throws Exception
+	private static Abstract parseAbstractXml(File xml) throws Exception
 	{
 		//Variables to build abstract from
-		String meeting = null;
-		String  session = null;
-		String section = null;
+		Meeting meeting = null;
+		Section section = null;
+		Session session = null;
 		Vector<Author> authors = new Vector<Author>();
 		Vector<Keyword> keywords = new Vector<Keyword>();
 		String title = null;
@@ -65,87 +81,118 @@ public class XmlDataSource implements DataSource {
 		String abstr = null;
 		Abstract abs = null;
 		
-		//This is temporary, we should find a better DOM implementation
-		XmlStreamReader reader = new XmlStreamReader(new StringInputStream(xml));
-		Xpp3Dom dom = Xpp3DomBuilder.build(reader);
-		Xpp3Dom[] nodes = dom.getChildren();
-		for (int i = 0; i < nodes.length; ++i)
-		{
-			if (nodes[i].getName().equals("Meeting"))
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document dom = db.parse(xml);
+		
+			//get meeting
+			NodeList nl = dom.getElementsByTagName("Meeting");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				meeting = nodes[i].getValue();
+				meeting = new Meeting(nl.item(i).getTextContent());
 			}
-			else if (nodes[i].getName().equals("Section"))
+		
+			//get section
+			nl = dom.getElementsByTagName("Section");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				section = nodes[i].getValue();
+				section = new Section(nl.item(i).getTextContent(), meeting);
 			}
-			else if (nodes[i].getName().equals("Keywords"))
+			
+			//get session
+			nl = dom.getElementsByTagName("Session");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				Xpp3Dom[] keywordNodes = nodes[i].getChildren();
-				for (int j = 0; j < keywordNodes.length; ++j)
+				session = new Session(nl.item(i).getTextContent(), section);
+			}
+			
+			//get keywords
+			nl = dom.getElementsByTagName("Keywords");
+			for (int i = 0; i < nl.getLength(); ++i)
+			{
+				NodeList childNodes = nl.item(i).getChildNodes();
+				for (int j = 0; j < childNodes.getLength(); ++j)
 				{
-					keywords.add(new Keyword(keywordNodes[j].getValue()));
+					keywords.add(new Keyword(childNodes.item(j).getTextContent()));
 				}
 			}
-			else if (nodes[i].getName().equals("Abstract"))
+			
+			//get abstract
+			nl = dom.getElementsByTagName("Abstract");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				abstr = nodes[i].getValue();
+				abstr = nl.item(i).getTextContent();
 			}
-			else if (nodes[i].getName().equals("Title"))
+			
+			//get title
+			nl = dom.getElementsByTagName("Title");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				title = nodes[i].getValue();
+				title = nl.item(i).getTextContent();
 			}
-			else if (nodes[i].getName().equals("Id"))
+			
+			//get id
+			nl = dom.getElementsByTagName("Id");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				id = nodes[i].getValue();
+				id = nl.item(i).getTextContent();
 			}
-			else if (nodes[i].getName().equals("Session"))
+			
+			//get hour
+			nl = dom.getElementsByTagName("Hour");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				session = nodes[i].getValue();
+				hour = nl.item(i).getTextContent();
 			}
-			else if (nodes[i].getName().equals("Hour"))
+	
+			//get authors
+			nl = dom.getElementsByTagName("Authors");
+			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				hour = nodes[i].getValue();
-			}
-			else if (nodes[i].getName().equals("Authors"))
-			{
-				Xpp3Dom[] authorNodes = nodes[i].getChildren();
-				for (int j = 0; j < authorNodes.length; ++j)
+				NodeList childNodes = nl.item(i).getChildNodes();
+				for (int j = 0; j < childNodes.getLength(); ++j)
 				{
-					Xpp3Dom[] info = authorNodes[j].getChildren();
 					String name = null, email = null;
 					Vector<String> affiliations = new Vector<String>();
-					for (int k = 0; k < info.length; ++k)
+					NodeList info = childNodes.item(j).getChildNodes();
+					for (int k = 0; k < info.getLength(); ++k)
 					{
-						if (info[k].getName().equals("Name"))
+						if (info.item(k).getLocalName().equals("Name"))
 						{
-							name = info[k].getValue();
+							name = info.item(k).getTextContent();
 						}
-						else if (info[k].getName().equals("Email"))
+						else if (info.item(k).getLocalName().equals("Email"))
 						{
-							email = info[k].getValue();
+							email = info.item(k).getTextContent();
 						}
-						else if (info[k].getName().equals("Affiliations"))
+						else if (info.item(k).getLocalName().equals("Affiliations"))
 						{
-							Xpp3Dom[] affiliationNodes = info[k].getChildren();
-							for (int l = 0; l < affiliationNodes.length; ++l)
+							NodeList affiliationNodes = info.item(k).getChildNodes();
+							for (int l = 0; l < affiliationNodes.getLength(); ++l)
 							{
-								affiliations.add(affiliationNodes[l].getValue());
+								affiliations.add(affiliationNodes.item(l).getTextContent());
 							}
 						}
 					}
-					Author a = new Author(name, email);
-					for (int k = 0; k < affiliations.size(); ++k)
+					if (name != null)
 					{
-						a.addAffiliation(affiliations.get(k));
+						Author a = new Author(name);
+						if (email != null) a.addEmail(email);
+						for (int k = 0; k < affiliations.size(); ++k)
+						{
+							a.addAffiliation(affiliations.get(k));
+						}
+						authors.add(a);
 					}
-					authors.add(a);
 				}
 			}
-			Meeting m = new Meeting(meeting);
-			Section sec = new Section(section,m);
-			Session s = new Session(session,sec);
-			abs = new Abstract(title, abstr, id, hour, s, authors, keywords);
+			abs = new Abstract(title, abstr, id, hour, session, authors, keywords);
+		}
+		catch (Exception e)
+		{
+			System.err.println("Error parsing XML file at " + xml.getAbsolutePath());
+			e.printStackTrace();
 		}
 		return abs;
 	}
@@ -156,18 +203,11 @@ public class XmlDataSource implements DataSource {
 		if (f.isDirectory())
 		{
 			File[] files = f.listFiles();
-			String content = "";
 			for (int i = 0; i < files.length; ++i)
 			{
-				BufferedReader br = new BufferedReader(new FileReader(files[i]));
-				String line = br.readLine();
-				while (line != null)
-				{
-					content += line + "\n";
-					line = br.readLine();
-				}
-				abstracts.add(XmlDataSource.parseAbstractXml(content));
+				abstracts.add(XmlDataSource.parseAbstractXml(files[i]));
 			}
+			extracted = true;
 		}
 		else
 		{
@@ -178,7 +218,7 @@ public class XmlDataSource implements DataSource {
 	public static void main(String[] args)
 	{
     	String dir = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/xml/";
-    	String output = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/compare/";
+    	//String output = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/compare/";
     	try
     	{
     		XmlDataSource data = new XmlDataSource(dir);
@@ -188,7 +228,8 @@ public class XmlDataSource implements DataSource {
     	catch (Exception e) {}
 	}
 
-	public boolean hasUniqueIdentifiers() {
-		return false;
+	public boolean ready() 
+	{
+		return extracted;
 	}
 }

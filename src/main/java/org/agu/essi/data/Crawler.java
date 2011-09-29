@@ -27,12 +27,20 @@ import org.apache.commons.cli.PosixParser;
 import org.apache.log4j.Logger;
 
 import org.agu.essi.Abstract;
+import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.match.MemoryMatcher;
 import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
+import org.agu.essi.util.exception.EntityMatcherRequiredException;
+import org.agu.essi.util.exception.SourceNotReadyException;
 
-public class Crawler implements DataSource {
-	
+/**
+ * Web Crawler for AGU abstract data
+ * @author Eric Rozell and Tom Narock
+ */
+public class Crawler implements DataSource 
+{	
 	static final Logger log = Logger.getLogger(org.agu.essi.data.Crawler.class);  
 
 	// AGU Variables - location of, and access to, AGU Abstract Database
@@ -42,33 +50,58 @@ public class Crawler implements DataSource {
 	  "fieldsel_2_name=sc&fieldsel_2_content=Informatics&maxhits=10000&desc=+&requestm=POST";
 	private HashMap <String, String> aguDatabases;
 	
+	// directory to write output
 	private String dataDir;
+	
+	// HTML parser
 	private ParserDelegator parserDelegator = new ParserDelegator();
+	
+	// container for crawled abstracts
 	private Vector<Abstract> _abstracts;
+
+	// true if crawling has occurred
 	boolean crawled;
+	
+	// holds the EntityMatcher for the data source
+	private EntityMatcher matcher;
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public Crawler ( String dir ) {
-	  dataDir = dir;
-	  crawled = false;
-	  _abstracts = new Vector<Abstract>();
-	  aguDatabases = Utils.getAguDatabases();
+	public Crawler ( String dir ) 
+	{
+		dataDir = dir;
+		crawled = false;
+		_abstracts = new Vector<Abstract>();
+		aguDatabases = Utils.getAguDatabases();
+		crawl();
 	}
 	
 	public Crawler ()
 	{
 		_abstracts = new Vector<Abstract>();
-		 aguDatabases = Utils.getAguDatabases();
-		 crawled = false;
+		aguDatabases = Utils.getAguDatabases();
+		crawled = false;
+		crawl();
 	}
 	
-	private void writeToRDFXML( )
+	public void setEntityMatcher(EntityMatcher m)
 	{
+		matcher = m;
+	}
+	
+	public EntityMatcher getEntityMatcher()
+	{
+		return matcher;
+	}
+	
+	private void writeToRDFXML( ) throws EntityMatcherRequiredException
+	{
+		if (matcher == null) matcher = new MemoryMatcher();
 		FileWrite fw = new FileWrite();
 		for (int i = 0; i < _abstracts.size(); ++i)
 		{
 			Abstract abstr = _abstracts.get(i);
+			abstr.setEntityMatcher(matcher);
 			// replace spaces with _ for file name
 			String title = abstr.getId();
 			String meeting = abstr.getMeeting().getName();
@@ -86,7 +119,7 @@ public class Crawler implements DataSource {
 		fw.newFile(dataDir + "keywords.rdf", EntityIdentifier.writeKeywords("rdf/xml"));
 	}
 	
-	private void writeToXML ( ) 
+	private void writeToXML ( ) throws EntityMatcherRequiredException 
 	{	
 		for (int i = 0; i < _abstracts.size(); ++i)
 		{
@@ -107,7 +140,7 @@ public class Crawler implements DataSource {
 	}
 
 	// HTML parser - reads an AGU HTML page and extracts links to abstracts
-    ParserCallback parserCallback = new ParserCallback() 
+    private ParserCallback parserCallback = new ParserCallback() 
     {
         public void handleStartTag(Tag tag, MutableAttributeSet attribute, int pos) 
         {
@@ -146,7 +179,7 @@ public class Crawler implements DataSource {
     };
     
     // call the AGU interface and extract abstracts from all available meetings
-	public void crawl ( ) 
+	private void crawl ( ) 
 	{    
 		String url = null;
 		Set <Map.Entry<String, String>> databases = aguDatabases.entrySet();
@@ -170,8 +203,25 @@ public class Crawler implements DataSource {
 		crawled = true;
 	}
 	
-	public static void main (String[] args)  {
-		
+	public Vector<Abstract> getAbstracts() throws SourceNotReadyException 
+	{
+		if (!crawled) 
+		{ 
+			throw new SourceNotReadyException();
+		}
+		else
+		{
+			return _abstracts;
+		}
+	}
+
+	public boolean ready() 
+	{
+		return crawled;
+	}
+
+	public static void main (String[] args)  
+	{	
 		// Object to deal with command line options (Apache CLI)
 	  	Options options = new Options();
 	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts.");
@@ -180,40 +230,51 @@ public class Crawler implements DataSource {
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
 	  	CommandLineParser parser = new PosixParser();
-	  	try {
-	      cmd = parser.parse( options, args);
-	  	} catch ( Exception pe ) { 
-	  	  System.err.println("Error parsing command line options: " + pe.toString()); 
+	  	try 
+	  	{
+	  		cmd = parser.parse( options, args);
+	  	} 
+	  	catch ( Exception pe ) { 
+	  		log.error("Error parsing command line options: " + pe.toString()); 
+	  		pe.printStackTrace();
 	  	}
 	  	  
 	  	// Check if the correct options were set
 	  	boolean error = false;
-	  	String errorMessage = null;
 	  	String format = null;
-	    if ( !cmd.hasOption("outputDirectory") ) {
+	  	
+	  	// output directory
+	    if ( !cmd.hasOption("outputDirectory") ) 
+	    {
 	    	error = true;
-	  		errorMessage = "--outputDirectory Not Set. Directory in which to store the retrieved abstracts.";
+	  		log.error("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
 	  	}
-	  	if ( cmd.hasOption("outputFormat")) { format = cmd.getOptionValue("outputFormat"); } 
 	    
-	    if ( error ) { log.error(errorMessage); } else {	
-
-	      // query AGU
-		  Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
-		  crawler.crawl();
-		  if (format != null && format.equals("rdf/xml")) { crawler.writeToRDFXML(); } else { crawler.writeToXML(); }
+	    // output format
+	  	if ( cmd.hasOption("outputFormat")) 
+	  	{ 
+	  		format = cmd.getOptionValue("outputFormat"); 
+	  	} 
 	    
+	    if (!error)
+	    {	
+	    	// query AGU
+	    	Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
+    		try {
+    			if (format != null && format.equals("rdf/xml")) 
+    			{ 
+	    			crawler.writeToRDFXML();
+    			} 
+    			else 
+    			{ 
+    				crawler.writeToXML(); 
+    			}
+    		}
+    		catch (EntityMatcherRequiredException e) 
+    		{
+    			log.error("EntityMatcher not set. Required for RDF output formats.");
+    			e.printStackTrace();
+    		} 
 	    }
-	    
 	}
-
-	public Vector<Abstract> getAbstracts() {
-		if (!crawled) { this.crawl(); }
-		return _abstracts;
-	}
-
-	public boolean hasUniqueIdentifiers() {
-		return false;
-	}
-	
 }

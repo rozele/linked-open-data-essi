@@ -9,7 +9,6 @@ import java.util.regex.*;
 public class Person {
 	private String _name;
 	private String _email;
-	private boolean _primary;
 	
 	/**
 	 * Construct Person instance from name
@@ -22,14 +21,6 @@ public class Person {
 		boolean matched = m.find();
 		if (matched)
 		{
-			if (m.group(1) != null)
-			{
-				_primary = true;
-			}
-			else
-			{
-				_primary = false;
-			}
 			_name = m.group(2);
 		}
 		else
@@ -50,14 +41,6 @@ public class Person {
 		boolean matched = m.find();
 		if (matched)
 		{
-			if (m.group(1) != null)
-			{
-				_primary = true;
-			}
-			else
-			{
-				_primary = false;
-			}
 			_name = m.group(2);
 		}
 		else
@@ -73,7 +56,8 @@ public class Person {
 	 */
 	public void addEmail(String email)
 	{
-		_email = email;	}
+		_email = email;	
+	}
 	
 	/**
 	 * Method to get author name
