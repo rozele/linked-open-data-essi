@@ -205,7 +205,10 @@ public class XmlDataSource implements DataSource {
 			File[] files = f.listFiles();
 			for (int i = 0; i < files.length; ++i)
 			{
-				abstracts.add(XmlDataSource.parseAbstractXml(files[i]));
+				if (files[i].isFile())
+				{
+					abstracts.add(XmlDataSource.parseAbstractXml(files[i]));
+				}
 			}
 			extracted = true;
 		}

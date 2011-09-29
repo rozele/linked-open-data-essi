@@ -75,9 +75,13 @@ public class MemoryMatcher implements EntityMatcher
 				{
 					mid = 0;
 				}
-				else if (tokens[i].equals("Joint"))
+				else if (tokens[i].equals("Joint") || tokens[i].equals("Assembly"))
 				{
 					mid = 1;
+				}
+				else if (tokens[i].equals("Americas"))
+				{
+					mid = 2;
 				}
 			}
 		}
@@ -113,9 +117,13 @@ public class MemoryMatcher implements EntityMatcher
 				{
 					mid = 0;
 				}
-				else if (tokens[i].equals("Joint"))
+				else if (tokens[i].equals("Joint") || tokens[i].equals("Assembly"))
 				{
 					mid = 1;
+				}
+				else if (tokens[i].equals("Americas"))
+				{
+					mid = 2;
 				}
 			}
 		}
