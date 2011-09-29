@@ -301,7 +301,10 @@ public class MemoryMatcher implements EntityMatcher
 				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Person\" />\n");
 				sw.write("    <foaf:name rdf:datatype=\"&xsd;string\">" + p.getName() + "</foaf:name>\n");
-				sw.write("    <foaf:mbox>" + p.getEmail() + "</foaf:mbox>\n");
+				if (p.getEmail() != null)
+				{
+					sw.write("    <foaf:mbox>" + p.getEmail() + "</foaf:mbox>\n");
+				}
 				sw.write("  </rdf:Description>\n");
 			}
 			sw.write(Utils.writeRdfFooter());
