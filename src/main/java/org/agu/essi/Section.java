@@ -10,8 +10,9 @@ public class Section {
 	
 	public Section(String name, Meeting meeting)
 	{
-		Pattern p = Pattern.compile("(.*?)\\s*\\((.*)\\)");
-		Matcher m = p.matcher(name);
+		Pattern p1 = Pattern.compile("(.*?)\\s*\\((.*)\\)");
+		Pattern p2 = Pattern.compile("(.*?)\\s*[(.*)]");
+		Matcher m = p1.matcher(name);
 		boolean matched = m.find();
 		if (matched)
 		{
@@ -20,8 +21,17 @@ public class Section {
 		}
 		else
 		{
-			_name = name;
-			_id = name;
+			m = p2.matcher(name);
+			matched = m.find();
+			if (matched)
+			{
+				_name = m.group(1);
+				_id = m.group(2);
+			}
+			else
+			{
+				_name = name;
+			}
 		}
 		_meeting = meeting;
 	}
