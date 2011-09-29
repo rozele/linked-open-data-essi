@@ -12,8 +12,17 @@ public class Section {
 	{
 		Pattern p = Pattern.compile("(.*?)\\s*\\((.*)\\)");
 		Matcher m = p.matcher(name);
-		_name = m.group(1);
-		_id = m.group(2);
+		boolean matched = m.find();
+		if (matched)
+		{
+			_name = m.group(1);
+			_id = m.group(2);
+		}
+		else
+		{
+			_name = name;
+			_id = name;
+		}
 		_meeting = meeting;
 	}
 	
