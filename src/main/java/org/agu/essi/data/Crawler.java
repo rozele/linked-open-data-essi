@@ -10,6 +10,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
@@ -29,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.agu.essi.Abstract;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.match.MemoryMatcher;
-import org.agu.essi.util.EntityIdentifier;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
@@ -111,12 +111,12 @@ public class Crawler implements DataSource
 			String file = dataDir + meeting + "_" + title + ".rdf";
 			fw.newFile(file, abstr.toString("rdf/xml"));
 		}
-		fw.newFile(dataDir + "people.rdf", EntityIdentifier.writePeople("rdf/xml"));
-		fw.newFile(dataDir + "organizations.rdf", EntityIdentifier.writeOrganizations("rdf/xml"));
-		fw.newFile(dataDir + "sessions.rdf", EntityIdentifier.writeSessions("rdf/xml"));
-		fw.newFile(dataDir + "sections.rdf", EntityIdentifier.writeSections("rdf/xml"));
-		fw.newFile(dataDir + "meetings.rdf", EntityIdentifier.writeMeetings("rdf/xml"));
-		fw.newFile(dataDir + "keywords.rdf", EntityIdentifier.writeKeywords("rdf/xml"));
+		fw.newFile(dataDir + "people.rdf", matcher.writeNewPeople("rdf/xml"));
+		fw.newFile(dataDir + "organizations.rdf", matcher.writeNewOrganizations("rdf/xml"));
+		fw.newFile(dataDir + "sessions.rdf", matcher.writeNewSessions("rdf/xml"));
+		fw.newFile(dataDir + "sections.rdf", matcher.writeNewSections("rdf/xml"));
+		fw.newFile(dataDir + "meetings.rdf", matcher.writeNewMeetings("rdf/xml"));
+		fw.newFile(dataDir + "keywords.rdf", matcher.writeNewKeywords("rdf/xml"));
 	}
 	
 	private void writeToXML ( ) throws EntityMatcherRequiredException 
@@ -193,7 +193,11 @@ public class Crawler implements DataSource
 				String localFilename = dataDir + me.getKey() + ".html";
 				FileOutputStream fos = new FileOutputStream( localFilename );
 				fos.getChannel().transferFrom(rbc, 0, 1 << 24);	      
-				parserDelegator.parse(new FileReader( localFilename ), parserCallback, false);		  
+				parserDelegator.parse(new FileReader( localFilename ), parserCallback, false);
+				
+				//delete HTML file when finished
+				File file = new File(localFilename);
+				file.delete();
 			} 
 			catch (Exception e) 
 			{ 

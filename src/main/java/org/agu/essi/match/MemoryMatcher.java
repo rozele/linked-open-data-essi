@@ -1,5 +1,9 @@
 package org.agu.essi.match;
 
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.Vector;
 
 import org.agu.essi.Abstract;
@@ -10,6 +14,7 @@ import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
 import org.agu.essi.util.Namespaces;
+import org.agu.essi.util.Utils;
 
 public class MemoryMatcher implements EntityMatcher 
 {
@@ -26,6 +31,9 @@ public class MemoryMatcher implements EntityMatcher
 	private Vector<Person> people;
 	private Vector<Organization> organizations;
 	private Vector<Keyword> keywords;
+	private HashMap<String,Session> sessions;
+	private HashMap<String,Section> sections;
+	private HashMap<String,Meeting> meetings;
 	
 	//start index for URIs
 	private int peopleStartIdx;
@@ -37,6 +45,9 @@ public class MemoryMatcher implements EntityMatcher
 		people = new Vector<Person>();
 		organizations = new Vector<Organization>();
 		keywords = new Vector<Keyword>();
+		sessions = new HashMap<String,Session>();
+		sections = new HashMap<String,Section>();
+		meetings = new HashMap<String,Meeting>();
 		organizationsStartIdx = 0;
 		keywordsStartIdx = 0;
 		peopleStartIdx = 0;
@@ -70,8 +81,13 @@ public class MemoryMatcher implements EntityMatcher
 				}
 			}
 		}
-		String mstr = (mid > 0) ? "JM_" : "FM_";
-		return meetingBaseId + mstr + year; 
+		String mstr = (mid > 0) ? "JA_" : "FM_";
+		String id = meetingBaseId + mstr + year;
+		if (!meetings.containsKey(id))
+		{
+			meetings.put(id, meeting);
+		}
+		return id;
 	}
 
 	/**
@@ -103,8 +119,13 @@ public class MemoryMatcher implements EntityMatcher
 				}
 			}
 		}
-		String mstr = (mid > 0) ? "JM_" : "FM_";
-		return sectionBaseId + mstr + year + "_" + section.getId(); 
+		String mstr = (mid > 0) ? "JA_" : "FM_";
+		String id = sectionBaseId + mstr + year + "_" + section.getId();
+		if (!sections.containsKey(id))
+		{
+			sections.put(id, section);
+		}
+		return id;
 	}	
 	
 	/**
@@ -191,8 +212,13 @@ public class MemoryMatcher implements EntityMatcher
 				}
 			}
 		}
-		String mstr = (mid > 0) ? "JM_" : "FM_";
-		return sessionBaseId + mstr + year + "_" + session.getId(); 
+		String mstr = (mid > 0) ? "JA_" : "FM_";
+		String id = sessionBaseId + mstr + year + "_" + session.getId();
+		if (!sessions.containsKey(id))
+		{
+			sessions.put(id, session);
+		}
+		return id;
 	}
 	
 	/**
@@ -246,5 +272,188 @@ public class MemoryMatcher implements EntityMatcher
 	public void setOrganizationsStartIndex(int idx)
 	{
 		organizationsStartIdx = idx;
+	}
+	
+	/**
+	 * Writes instance data for each person
+	 * @param format
+	 * @return
+	 */
+	public String writeNewPeople(String format)
+	{
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			for(int i = 0; i < people.size(); ++i)
+			{
+				Person p = people.get(i);
+				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + 1) + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&foaf;Person\" />\n");
+				sw.write("    <foaf:name rdf:datatype=\"&xsd;string\">" + p.getName() + "</foaf:name>\n");
+				sw.write("    <foaf:mbox>" + p.getEmail() + "</foaf:mbox>\n");
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	public String writeNewKeywords(String format)
+	{
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			for(int i = 0; i < keywords.size(); ++i)
+			{
+				Keyword k = keywords.get(i);
+				sw.write("  <rdf:Description rdf:about=\"" + keywordBaseId + (i + 1) + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
+				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + k.getId() + "</dc:identifier>\n");
+				sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + k.getName() + "</dc:subject>\n");
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	public String writeNewOrganizations(String format)
+	{
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			for(int i = 0; i < organizations.size(); ++i)
+			{
+				Organization o = organizations.get(i);
+				sw.write("  <rdf:Description rdf:about=\"" + organizationBaseId + (i + 1) + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&foaf;Organization\" />\n");
+				sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + o + "</dc:description>\n");
+				/*if (o.getCoordinates() != null)
+				{
+					sw.write("    <foaf:based_near>\n");
+					sw.write("      <rdf:Description>\n");
+					sw.write("        <rdf:type rdf:resource=\"&geo;SpatialThing\" />\n");
+					sw.write("        <geo:lat rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLat() + "</geo:lat>\n");
+					sw.write("        <geo:long rdf:datatype=\"&xsd;float\">" + o.getCoordinates().getLng() + "</geo:long>\n");
+					sw.write("      </rdf:Description>\n");
+					sw.write("    </foaf:based_near>\n");
+				}
+				if (o.getGeoNamesId() != null)
+				{
+					sw.write("    <foaf:based_near rdf:resource=\"" + o.getGeoNamesId() + "\"/>\n");
+				}*/
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
+	}
+
+	public String writeNewSessions(String format)
+	{
+		Set<String> keys = sessions.keySet();
+		Iterator<String> iter = keys.iterator();
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			while(iter.hasNext())
+			{
+				String id = iter.next();
+				Session s = sessions.get(id);
+				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&swc;SessionEvent\" />\n");
+				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + s.getId() + "</dc:identifier>\n");
+				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getSectionId(s.getSection()) + "\" />\n");
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	public String writeNewSections(String format)
+	{
+		Set<String> keys = sections.keySet();
+		Iterator<String> iter = keys.iterator();
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			while(iter.hasNext())
+			{
+				String id = iter.next();
+				Section s = sections.get(id);
+				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&swrc;Meeting\" />\n");
+				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + s.getName() + "</swrc:eventTitle>\n");
+				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + s.getId() + "</dc:identifier>\n");
+				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getMeetingId(s.getMeeting()) + "\" />\n");
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	public String writeNewMeetings(String format)
+	{
+		Set<String> keys = meetings.keySet();
+		Iterator<String> iter = keys.iterator();
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write(Utils.writeXmlHeader());
+			sw.write(Utils.writeDocumentEntities());
+			sw.write(Utils.writeRdfHeader());
+			while(iter.hasNext())
+			{
+				String id = iter.next();
+				Meeting m = meetings.get(id);
+				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
+				sw.write("    <rdf:type rdf:resource=\"&swrc;Meeting\" />\n");
+				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + m.getName() + "</swrc:eventTitle>\n");
+				sw.write("  </rdf:Description>\n");
+			}
+			sw.write(Utils.writeRdfFooter());
+			return sw.toString();
+		}
+		else 
+		{
+			return null;
+		}
 	}
 }

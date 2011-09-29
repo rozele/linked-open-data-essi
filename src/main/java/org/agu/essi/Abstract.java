@@ -6,6 +6,7 @@ import java.util.Vector;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
+import org.agu.essi.util.exception.AbstractParserException;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 
 /**
@@ -36,8 +37,9 @@ public class Abstract
 	/**
 	 * @constructor 
 	 * @param text raw HTML for the abstract
+	 * @throws AbstractParserException 
 	 */
-	public Abstract(String text)
+	public Abstract(String text) throws AbstractParserException
 	{
 		_rawHtml = text;
 		_authors = new Vector<Author>();
@@ -100,18 +102,26 @@ public class Abstract
 		matcher = m;
 	}
 	
-	private void parseHtml()
+	private void parseHtml() throws AbstractParserException
 	{
 		int index, endIndex, nextIndex, emIndex, emEndIndex, afIndex, afEndIndex;
 		
 		// Hour (time of presentation)
 		index = _rawHtml.indexOf("<span class=\"hr\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		_hour = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		String[] parts = _rawHtml.substring(index+17, endIndex).trim().split(" ");
 		_abstractId = Utils.clean(parts[0]);
 		_sessionId = _abstractId.split("-")[0];
@@ -120,11 +130,19 @@ public class Abstract
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		_title = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 
 
 		// Authors
 		index = _rawHtml.indexOf("<span class=\"au\">");
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		while (index >= 0) 
 		{
 			Author a = null;
@@ -178,6 +196,10 @@ public class Abstract
 		// Abstract
 		index = _rawHtml.indexOf("<span class=\"ab\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		_abstract = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 
 		// Keywords
@@ -192,11 +214,19 @@ public class Abstract
 		// Section
 		index = _rawHtml.indexOf("<span class=\"sc\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		_sectionId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		
 		// AGU Meeting the abstract was submitted to
 		index = _rawHtml.indexOf("<span class=\"mn\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
+		if (index < 0)
+		{
+			throw new AbstractParserException();
+		}
 		_meetingId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 		
 	}

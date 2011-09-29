@@ -93,4 +93,34 @@ public class SparqlMatcher implements EntityMatcher
 		}
 	}
 
+	public String writeNewPeople(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String writeNewSessions(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String writeNewSections(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String writeNewMeetings(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String writeNewKeywords(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String writeNewOrganizations(String format) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

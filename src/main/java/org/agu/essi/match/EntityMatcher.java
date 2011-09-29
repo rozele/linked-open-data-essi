@@ -62,5 +62,48 @@ public interface EntityMatcher
 	 * @return a unique identifier for the abstract
 	 */
 	public String getAbstractId(Abstract a);
+
+	/**
+	 * Method to output information about new Person instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewPeople(String format);
+
+	/**
+	 * Method to output information about new Session instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewSessions(String format);
+
+	/**
+	 * Method to output information about new Section instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewSections(String format);
+
+	/**
+	 * Method to output information about new Meeting instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewMeetings(String format);
+
+	/**
+	 * Method to output information about new Keyword instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewKeywords(String format);
+	
+	/**
+	 * Method to output information about new Organization instances
+	 * @param format output format
+	 * @return
+	 */
+	public String writeNewOrganizations(String format);
+	
 	
 }
