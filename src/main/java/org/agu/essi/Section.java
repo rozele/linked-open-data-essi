@@ -11,7 +11,7 @@ public class Section {
 	public Section(String name, Meeting meeting)
 	{
 		Pattern p1 = Pattern.compile("(.*?)\\s*\\((.*)\\)");
-		Pattern p2 = Pattern.compile("(.*?)\\s*[(.*)]");
+		Pattern p2 = Pattern.compile("(.*?)\\s*\\[(.*)\\]");
 		Matcher m = p1.matcher(name);
 		boolean matched = m.find();
 		if (matched)

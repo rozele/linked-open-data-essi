@@ -14,7 +14,6 @@ import org.agu.essi.Keyword;
 import org.agu.essi.Author;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.FileWrite;
-import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -249,7 +248,7 @@ public class XmlDataSource implements DataSource {
 	  	  
 	  	// Check if the correct options were set
 	  	boolean error = false;
-	  	String format = null;
+	  	//String format = null;
 	  	String output = null;
 	  	String input = null;
 	  	
@@ -278,7 +277,7 @@ public class XmlDataSource implements DataSource {
 	    // output format
 	  	if ( cmd.hasOption("outputFormat")) 
 	  	{ 
-	  		format = cmd.getOptionValue("outputFormat"); 
+	  		//format = cmd.getOptionValue("outputFormat"); 
 	  	} 
 	    
 	    if (!error)
