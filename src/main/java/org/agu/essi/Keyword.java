@@ -112,21 +112,4 @@ public class Keyword {
 	{
 		return _name;
 	}
-	
-	/**
-	 * A stringify method that enables multiple output formats
-	 * @param format a specification for output format (e.g., "xml", "rdf/xml", etc.)
-	 * @return stringified Keyword in specified format
-	 */
-	public String toString(String format)
-	{
-		if (format.equals("xml"))
-		{
-			return "<Keyword>" + _name + "</Keyword>";
-		}
-		else
-		{
-			return this.toString();
-		}
-	}
 }

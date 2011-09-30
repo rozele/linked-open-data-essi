@@ -55,8 +55,10 @@ public class Abstract
 	{
 		_title = title;
 		_abstract = abstr;
+		_abstractId = id;
+		_hour = hour;
 		_session = session;
-		_section = _session.getSection();
+		_section = session.getSection();
 		_meeting = _section.getMeeting();
 		_authors = authors;
 		_keywords = keywords;
@@ -114,7 +116,7 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
-		_hour = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		_hour = _rawHtml.substring(index+17, endIndex).trim();
 		
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
@@ -124,7 +126,7 @@ public class Abstract
 			throw new AbstractParserException();
 		}
 		String[] parts = _rawHtml.substring(index+17, endIndex).trim().split(" ");
-		_abstractId = Utils.clean(parts[0]);
+		_abstractId = parts[0];
 		_sessionId = _abstractId.split("-")[0];
 		_type = getAbstractType((parts.length > 1) ? parts[1] : null);
 		
@@ -135,7 +137,7 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
-		_title = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		_title = _rawHtml.substring(index+17, endIndex).trim();
 
 
 		// Authors
@@ -151,7 +153,7 @@ public class Abstract
 			endIndex = _rawHtml.indexOf("<br>", index);
 			nextIndex = _rawHtml.indexOf("<span class=\"au\">", endIndex);
 			
-			String name = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+			String name = _rawHtml.substring(index+17, endIndex).trim();
 			boolean add = false;
 			
 			if (identifier.containsKey(name))
@@ -170,7 +172,7 @@ public class Abstract
 			if ((emIndex < nextIndex || nextIndex == -1) && emIndex >= 0)
 			{
 				emEndIndex = _rawHtml.indexOf("<br>", emIndex);
-				String email = Utils.clean(_rawHtml.substring(emIndex+17, emEndIndex).trim());
+				String email = _rawHtml.substring(emIndex+17, emEndIndex).trim();
 				a.getPerson().addEmail(email);
 			}
 		  
@@ -179,7 +181,7 @@ public class Abstract
 			if (afIndex < nextIndex && nextIndex >= 0 && afIndex >= 0)
 			{
 				afEndIndex = _rawHtml.indexOf("<br>", afIndex);
-				String affiliation = Utils.clean(_rawHtml.substring(afIndex+17, afEndIndex).trim());
+				String affiliation = _rawHtml.substring(afIndex+17, afEndIndex).trim();
 				a.addAffiliation(affiliation);
 			}
 
@@ -198,14 +200,14 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
-		_abstract = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		_abstract = _rawHtml.substring(index+17, endIndex).trim();
 
 		// Keywords
 		index = _rawHtml.indexOf("<span class=\"de\">");
 		while (index >= 0) 
 		{
 			endIndex = _rawHtml.indexOf("<br>", index);
-			_keywords.add( new Keyword(Utils.clean(_rawHtml.substring(index+17, endIndex).trim())) );
+			_keywords.add( new Keyword(_rawHtml.substring(index+17, endIndex).trim()) );
 			index = _rawHtml.indexOf("<span class=\"de\">", endIndex);
 		}
 		
@@ -216,7 +218,7 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
-		_sectionId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		_sectionId = _rawHtml.substring(index+17, endIndex).trim();
 		
 		// AGU Meeting the abstract was submitted to
 		index = _rawHtml.indexOf("<span class=\"mn\">");
@@ -225,7 +227,7 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
-		_meetingId = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+		_meetingId = _rawHtml.substring(index+17, endIndex).trim();
 		
 	}
 	
@@ -236,27 +238,27 @@ public class Abstract
 		String aguSchema = Namespaces.essiSchema + " " + Namespaces.essiXsd;
 		sw.write(Utils.writeXmlHeader());
 		sw.write("<AGUAbstract " + xmlNS + " xsi:schemaLocation=\"" + aguSchema + "\">\n");
-		sw.write("  <Meeting>" + _meeting.getName() + "</Meeting>\n");
-		sw.write("  <Section>" + _section.getName() + "</Section>\n");
-		sw.write("  <Id>" + _abstractId + "</Id>\n");
+		sw.write("  <Meeting>" + Utils.cleanXml(_meeting.getName()) + "</Meeting>\n");
+		sw.write("  <Section>" + Utils.cleanXml(_section.getName()) + "</Section>\n");
+		sw.write("  <Id>" + Utils.cleanXml(_abstractId) + "</Id>\n");
 		if (_keywords.size() >= 0)
 		{
 			sw.write("  <Keywords>\n");
 			for (int i=0; i < _keywords.size(); i++) 
 			{ 
-				sw.write("    <Keyword>" + _keywords.get(i) + "</Keyword>\n"); 
+				sw.write("    <Keyword>" + Utils.cleanXml(_keywords.get(i).toString()) + "</Keyword>\n"); 
 			}
 			sw.write("  </Keywords>\n");
 		}
-		sw.write("  <Abstract>" + _abstract + "</Abstract>\n");
-		sw.write("  <Title>" + _title + "</Title>\n");
+		sw.write("  <Abstract>" + Utils.cleanXml(_abstract) + "</Abstract>\n");
+		sw.write("  <Title>" + Utils.cleanXml(_title) + "</Title>\n");
 		if (_session != null)
 		{
-			sw.write("  <Session>" + _session.getId() + "</Session>\n");
+			sw.write("  <Session>" + Utils.cleanXml(_session.getId()) + "</Session>\n");
 		}
 		if (_hour != null)
 		{
-			sw.write("  <Hour>" + _hour + "</Hour>\n");
+			sw.write("  <Hour>" + Utils.cleanXml(_hour) + "</Hour>\n");
 		}
 		if (_authors.size() >= 0)
 		{
@@ -285,10 +287,10 @@ public class Abstract
 			sw.write(Utils.writeRdfHeader());
 			sw.write("  <rdf:Description rdf:about=\"" + matcher.getAbstractId(this) + "\">\n");
 			sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
-			sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + _title + "</dc:title>\n");
-			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _abstractId + "</dc:identifier>\n");
+			sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(_title) + "</dc:title>\n");
+			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(_abstractId) + "</dc:identifier>\n");
 			sw.write("    <swc:relatedToEvent rdf:resource=\"" + matcher.getSessionId(_session) + "\" />\n");
-			sw.write("    <swrc:abstract rdf:datatype=\"&xsd;string\">" + _abstract + "</swrc:abstract>\n");
+			sw.write("    <swrc:abstract rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(_abstract) + "</swrc:abstract>\n");
 			for (int i = 0; i < _keywords.size(); ++i)
 			{
 				sw.write("    <swc:hasTopic rdf:resource=\"" + matcher.getKeywordId(_keywords.get(i)) + "\" />\n");

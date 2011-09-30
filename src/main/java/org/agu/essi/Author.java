@@ -5,6 +5,8 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.agu.essi.util.Utils;
+
 /**
  * Container class for AGU abstract author roles
  * @author Eric Rozell
@@ -50,11 +52,6 @@ public class Author {
 		_affiliations = new Vector<Organization>();
 		_affiliations.add(new Organization(affiliation));
 		checkCorresponding(name);
-	}
-	
-	public void addEmail(String email)
-	{
-		_person.addEmail(email);
 	}
 	
 	/**
@@ -126,17 +123,17 @@ public class Author {
 		{
 			StringWriter sw = new StringWriter();
 			sw.write("<Author>");
-			sw.write("<Name>" + _person.getName() + "</Name>");
+			sw.write("<Name>" + Utils.cleanXml(_person.getName()) + "</Name>");
 			if (_person.getEmail() != null)
 			{
-				sw.write("<Email>" + _person.getEmail() + "</Email>");
+				sw.write("<Email>" + Utils.cleanXml(_person.getEmail()) + "</Email>");
 			}
 			if (_affiliations.size() > 0)
 			{
 				sw.write("<Affiliations>");
 				for (int i = 0; i < _affiliations.size(); ++i)
 				{
-					sw.write("<Affiliation>" + _affiliations.get(i) + "</Affiliation>");
+					sw.write("<Affiliation>" + Utils.cleanXml(_affiliations.get(i).toString()) + "</Affiliation>");
 				}
 				sw.write("</Affiliations>");
 			}

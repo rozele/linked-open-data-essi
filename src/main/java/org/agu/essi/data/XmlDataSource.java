@@ -13,8 +13,10 @@ import org.agu.essi.Section;
 import org.agu.essi.Keyword;
 import org.agu.essi.Author;
 import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.exception.SourceNotReadyException;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class XmlDataSource implements DataSource {
@@ -143,44 +145,47 @@ public class XmlDataSource implements DataSource {
 			}
 	
 			//get authors
-			nl = dom.getElementsByTagName("Authors");
+			nl = dom.getElementsByTagName("Author");
 			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				NodeList childNodes = nl.item(i).getChildNodes();
-				for (int j = 0; j < childNodes.getLength(); ++j)
+				String name = null, email = null;
+				Vector<String> affiliations = new Vector<String>();
+				NodeList info = nl.item(i).getChildNodes();
+				for (int j = 0; j < info.getLength(); ++j)
 				{
-					String name = null, email = null;
-					Vector<String> affiliations = new Vector<String>();
-					NodeList info = childNodes.item(j).getChildNodes();
-					for (int k = 0; k < info.getLength(); ++k)
+					if (info.item(j).getNodeType() == Node.ELEMENT_NODE)
 					{
-						if (info.item(k).getLocalName().equals("Name"))
+						if (info.item(j).getNodeName().equals("Name"))
 						{
-							name = info.item(k).getTextContent();
+							name = info.item(j).getTextContent();
 						}
-						else if (info.item(k).getLocalName().equals("Email"))
+						else if (info.item(j).getNodeName().equals("Email"))
 						{
-							email = info.item(k).getTextContent();
+							email = info.item(j).getTextContent();
 						}
-						else if (info.item(k).getLocalName().equals("Affiliations"))
+						else if (info.item(j).getNodeName().equals("Affiliations"))
 						{
-							NodeList affiliationNodes = info.item(k).getChildNodes();
-							for (int l = 0; l < affiliationNodes.getLength(); ++l)
+							NodeList affiliationNodes = info.item(j).getChildNodes();
+							for (int k = 0; k < affiliationNodes.getLength(); ++k)
 							{
-								affiliations.add(affiliationNodes.item(l).getTextContent());
+								if (affiliationNodes.item(k).getNodeType() == Node.ELEMENT_NODE &&
+										affiliationNodes.item(k).getNodeName().equals("Affiliation"))
+								{
+									affiliations.add(affiliationNodes.item(k).getTextContent());
+								}
 							}
 						}
 					}
-					if (name != null)
+				}
+				if (name != null)
+				{
+					Author a = new Author(name);
+					if (email != null) a.getPerson().addEmail(email);
+					for (int k = 0; k < affiliations.size(); ++k)
 					{
-						Author a = new Author(name);
-						if (email != null) a.addEmail(email);
-						for (int k = 0; k < affiliations.size(); ++k)
-						{
-							a.addAffiliation(affiliations.get(k));
-						}
-						authors.add(a);
+						a.addAffiliation(affiliations.get(k));
 					}
+					authors.add(a);
 				}
 			}
 			abs = new Abstract(title, abstr, id, hour, session, authors, keywords);
@@ -217,14 +222,28 @@ public class XmlDataSource implements DataSource {
 	public static void main(String[] args)
 	{
     	String dir = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/xml/";
-    	//String output = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/compare/";
+    	String output = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/compare/";
     	try
     	{
     		XmlDataSource data = new XmlDataSource(dir);
     		Vector<Abstract> abstracts = data.getAbstracts();
-    		System.out.println(abstracts.get(0).toString("xml"));
+    		FileWrite fw = new FileWrite();
+    		for (int i = 0; i < abstracts.size(); ++i)
+    		{
+    			Abstract abstr = abstracts.get(i);
+    			String title = abstr.getId();
+    			String meeting = abstr.getMeeting().getName();
+    			title = title.replaceAll("\\s+", "_");
+    			title = title.replaceAll("\\s", "_");
+    			meeting = meeting.replaceAll("\\s", "_");
+    			String file = output + meeting + "_" + title + ".xml";
+    			fw.newFile(file, abstr.toString("xml"));
+    		}
     	}
-    	catch (Exception e) {}
+    	catch (Exception e) 
+    	{
+    		e.printStackTrace();
+    	}
 	}
 
 	public boolean ready() 

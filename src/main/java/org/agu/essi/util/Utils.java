@@ -16,7 +16,7 @@ import com.hp.hpl.jena.query.ResultSet;
  */
 public class Utils {
 	
-	public static String clean(String s)
+	public static String cleanXml(String s)
 	{
 		return fixSpecialChars(iconv(StringEscapeUtils.escapeXml(s),"UTF-8"));
 	}
