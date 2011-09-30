@@ -11,7 +11,7 @@ public class Namespaces {
 	public static String essiXsd = "http://www.agu.org/focus_group/essi/schema/agu.xsd";
 	public static String essiSchema = "http://www.agu.org/focus_group/essi/schema";
 	public static String rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
-	public static String swc = "htdtp://data.semanticweb.org/ns/swc/ontology#";
+	public static String swc = "http://data.semanticweb.org/ns/swc/ontology#";
 	public static String swrc = "http://swrc.ontoware.org/ontology#";
 	public static String owl = "http://www.w3.org/2002/07/owl#";
 	public static String dc = "http://purl.org/dc/terms/";
