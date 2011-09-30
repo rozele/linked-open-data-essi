@@ -90,7 +90,7 @@ public class FOAF {
 
 	      str.append( "  <rdf:Description rdf:about=\"" + Namespaces.esip + "ESIP_Organization_" + index + "\"> \n" );	  
 	      str.append( "    <rdf:type rdf:resource=\"&foaf;Organization\" /> \n" );
-	      str.append( "    <foaf:name>" + Utils.clean(key) + "</foaf:name> \n" );
+	      str.append( "    <foaf:name>" + Utils.cleanXml(key) + "</foaf:name> \n" );
 	      people = orgs.get(key);
 	      for ( int i=0; i<people.size(); i++ ) { 
 		    str.append( "    <foaf:member>\n" );
