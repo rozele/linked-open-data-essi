@@ -14,7 +14,13 @@ import org.agu.essi.Keyword;
 import org.agu.essi.Author;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.FileWrite;
+import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.PosixParser;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -24,6 +30,8 @@ public class XmlDataSource implements DataSource {
 	private Vector<Abstract> abstracts;
 	private boolean extracted;
 	private EntityMatcher matcher;
+	
+	static final Logger log = Logger.getLogger(org.agu.essi.data.XmlDataSource.class);  
 	
 	public XmlDataSource()
 	{
@@ -221,29 +229,82 @@ public class XmlDataSource implements DataSource {
 	
 	public static void main(String[] args)
 	{
-    	String dir = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/xml/";
-    	String output = "/Users/rozele/Projects/linked-open-data-essi/trunk/resources/data/compare/";
-    	try
-    	{
-    		XmlDataSource data = new XmlDataSource(dir);
-    		Vector<Abstract> abstracts = data.getAbstracts();
-    		FileWrite fw = new FileWrite();
-    		for (int i = 0; i < abstracts.size(); ++i)
-    		{
-    			Abstract abstr = abstracts.get(i);
-    			String title = abstr.getId();
-    			String meeting = abstr.getMeeting().getName();
-    			title = title.replaceAll("\\s+", "_");
-    			title = title.replaceAll("\\s", "_");
-    			meeting = meeting.replaceAll("\\s", "_");
-    			String file = output + meeting + "_" + title + ".xml";
-    			fw.newFile(file, abstr.toString("xml"));
-    		}
-    	}
-    	catch (Exception e) 
-    	{
-    		e.printStackTrace();
-    	}
+    	// Object to deal with command line options (Apache CLI)
+	  	Options options = new Options();
+	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts.");
+	  	options.addOption("outputFormat",true,"Serialization format for the resulting data");
+	  	options.addOption("inputDirectory",true,"Directory from which to retrieve existing abstract XML.");
+	  	  
+	  	// Parse the command line arguments
+	  	CommandLine cmd = null;
+	  	CommandLineParser parser = new PosixParser();
+	  	try 
+	  	{
+	  		cmd = parser.parse( options, args);
+	  	} 
+	  	catch ( Exception pe ) { 
+	  		log.error("Error parsing command line options: " + pe.toString()); 
+	  		pe.printStackTrace();
+	  	}
+	  	  
+	  	// Check if the correct options were set
+	  	boolean error = false;
+	  	String format = null;
+	  	String output = null;
+	  	String input = null;
+	  	
+	  	// output directory
+	    if ( !cmd.hasOption("outputDirectory") ) 
+	    {
+	    	error = true;
+	  		log.error("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
+	  	}
+	    else
+	    {
+	    	output = cmd.getOptionValue("outputDirectory");
+	    }
+	    
+	    //input directory
+	    if ( !cmd.hasOption("inputDirectory") )
+	    {
+	    	error = true;
+	    	log.error("--inputDirectory Not Set. Directory from which to retrieve existing abstract XML.");
+	    }
+	    else
+	    {
+	    	input = cmd.getOptionValue("inputDirectory");
+	    }
+	    
+	    // output format
+	  	if ( cmd.hasOption("outputFormat")) 
+	  	{ 
+	  		format = cmd.getOptionValue("outputFormat"); 
+	  	} 
+	    
+	    if (!error)
+	    {	
+	    	try
+	    	{
+	    		XmlDataSource data = new XmlDataSource(input);
+	    		Vector<Abstract> abstracts = data.getAbstracts();
+	    		FileWrite fw = new FileWrite();
+	    		for (int i = 0; i < abstracts.size(); ++i)
+	    		{
+	    			Abstract abstr = abstracts.get(i);
+	    			String title = abstr.getId();
+	    			String meeting = abstr.getMeeting().getName();
+	    			title = title.replaceAll("\\s+", "_");
+	    			title = title.replaceAll("\\s", "_");
+	    			meeting = meeting.replaceAll("\\s", "_");
+	    			String file = output + meeting + "_" + title + ".xml";
+	    			fw.newFile(file, abstr.toString("xml"));
+	    		}
+	    	}
+	    	catch (Exception e) 
+	    	{
+	    		e.printStackTrace();
+	    	}
+	    }
 	}
 
 	public boolean ready() 
