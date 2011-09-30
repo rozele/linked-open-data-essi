@@ -1,6 +1,7 @@
 package org.agu.essi;
 
 import java.io.StringWriter;
+import java.util.HashMap;
 import java.util.Vector;
 
 import org.agu.essi.match.EntityMatcher;
@@ -143,15 +144,26 @@ public class Abstract
 		{
 			throw new AbstractParserException();
 		}
+		HashMap<String,Author> identifier = new HashMap<String,Author>();
 		while (index >= 0) 
 		{
 			Author a = null;
 			endIndex = _rawHtml.indexOf("<br>", index);
 			nextIndex = _rawHtml.indexOf("<span class=\"au\">", endIndex);
-
-			String name = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
 			
-			a = new Author(name);
+			String name = Utils.clean(_rawHtml.substring(index+17, endIndex).trim());
+			boolean add = false;
+			
+			if (identifier.containsKey(name))
+			{
+				a = identifier.get(name);
+			}
+			else
+			{
+				a = new Author(name);
+				identifier.put(name,a);
+				add = true;
+			}
 		  
 			// Author email
 			emIndex = _rawHtml.indexOf("<span class=\"em\">", endIndex);
@@ -161,25 +173,6 @@ public class Abstract
 				String email = Utils.clean(_rawHtml.substring(emIndex+17, emEndIndex).trim());
 				a.getPerson().addEmail(email);
 			}
-
-			// if an author has two affiliations then their name is listed twice in 
-			// the AGU abstract. here, we check for this and keep a name only once
-			try 
-			{
-				if (!_authors.contains(a))
-				{
-					_authors.add(a);
-				}
-				else
-				{
-					int idx = _authors.indexOf(a);
-					a = _authors.elementAt(idx);
-				}
-			}
-			catch (NullPointerException n)
-			{
-				System.out.println("Error.");
-			}
 		  
 			// Author affiliation
 			afIndex = _rawHtml.indexOf("<span class=\"af\">", endIndex);
@@ -188,6 +181,11 @@ public class Abstract
 				afEndIndex = _rawHtml.indexOf("<br>", afIndex);
 				String affiliation = Utils.clean(_rawHtml.substring(afIndex+17, afEndIndex).trim());
 				a.addAffiliation(affiliation);
+			}
+
+			if (add)
+			{
+				_authors.add(a);
 			}
 
 			index = nextIndex;

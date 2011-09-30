@@ -108,14 +108,10 @@ public class XmlDataSource implements DataSource {
 			}
 			
 			//get keywords
-			nl = dom.getElementsByTagName("Keywords");
+			nl = dom.getElementsByTagName("Keyword");
 			for (int i = 0; i < nl.getLength(); ++i)
 			{
-				NodeList childNodes = nl.item(i).getChildNodes();
-				for (int j = 0; j < childNodes.getLength(); ++j)
-				{
-					keywords.add(new Keyword(childNodes.item(j).getTextContent()));
-				}
+				keywords.add(new Keyword(nl.item(i).getTextContent()));
 			}
 			
 			//get abstract
