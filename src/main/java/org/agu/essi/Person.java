@@ -96,7 +96,7 @@ public class Person {
 		if (o instanceof Person)
 		{
 			Person p = (Person)o;
-			if (p.getEmail() != null && this._email != null && p.getEmail().equals(this._email))
+			if (p.getEmail() != null && this._email != null && p.getEmail().equalsIgnoreCase(this._email))
 			{
 				return true;
 			}
