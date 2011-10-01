@@ -1,5 +1,6 @@
 package org.agu.essi;
 
+import java.io.StringWriter;
 import java.util.Vector;
 import java.util.regex.*;
 
@@ -10,7 +11,8 @@ import java.util.regex.*;
 public class Keyword {
 	private String _name;
 	private String _id;
-	private Vector<String> _altIds;
+	private Vector<String> _related;
+	private Keyword _parent;
 	
 	/**
 	 * Constructs keyword from raw abstract HTML content
@@ -18,9 +20,9 @@ public class Keyword {
 	 */
 	public Keyword(String name)
 	{
-		_altIds = new Vector<String>();
-		Pattern p1 = Pattern.compile("(\\[(\\d+)\\])?\\s*(.*?)(\\s*\\((.*)\\))");
-		Pattern p2 = Pattern.compile("(\\[(\\d+)\\])?\\s*(.*)");
+		_related = new Vector<String>();
+		Pattern p1 = Pattern.compile("(\\[?(\\d+)\\]?)?\\s*(.*?)(\\s*\\((.*)\\))");
+		Pattern p2 = Pattern.compile("(\\[?(\\d+)\\]?)?\\s*(.*)");
 		
 		//check first pattern
 		Matcher m = p1.matcher(name);
@@ -32,11 +34,11 @@ public class Keyword {
 			String[] list = m.group(5).split(",");
 			for (int i = 0; i < list.length; ++i)
 			{
-				_altIds.add(list[i].trim());
+				_related.add(list[i].trim());
 			}
-			if (_id == null && _altIds.size() > 0)
+			if (_id == null && _related.size() > 0)
 			{
-				_id = _altIds.get(0);
+				_id = _related.get(0);
 			}
 			else if (_id == null)
 			{
@@ -81,8 +83,16 @@ public class Keyword {
 	 */
 	public String getName()
 	{
-		return _name;
-		
+		return _name;	
+	}
+	
+	/**
+	 * Sets a broader Keyword
+	 * @param p a parent Keyword
+	 */
+	public void setParent(Keyword p)
+	{
+		_parent = p;
 	}
 	
 	/**
@@ -111,5 +121,37 @@ public class Keyword {
 	public String toString()
 	{
 		return _name;
+	}
+	
+	/**
+	 * Method to stringify Keyword in specific format
+	 * @param format the output format
+	 * @return
+	 */
+	public String toString(String format)
+	{
+		if (format.equals("rdf/xml"))
+		{
+			StringWriter sw = new StringWriter();
+			sw.write("  <rdf:Description rdf:about=\"&esip;Keyword_" + _id + "\">\n");
+			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />");
+			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
+			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
+			if (_parent != null)
+			{
+				sw.write("    <skos:broadMatch rdf:resource=\"&esip;Keyword_" + _parent.getId() + "\" />\n");
+			}
+			for (int i = 0; i < _related.size(); ++i)
+			{
+				sw.write("    <skos:related rdf:resource=\"&esip;Keyword_" + _related.get(i) + "\" />\n");
+
+			}
+			sw.write("  </rdf:Description>\n");
+			return sw.toString();
+		}
+		else
+		{
+			return toString();
+		}
 	}
 }

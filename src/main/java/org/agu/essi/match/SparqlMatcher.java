@@ -84,13 +84,6 @@ public class SparqlMatcher implements EntityMatcher
 			RDFNode node = solution.get("count");
 			newMatches.setOrganizationsStartIndex(Integer.parseInt(node.toString()));
 		}
-		ResultSet keywordsResults = Utils.sparqlSelect(Queries.countKeywordsQuery, endpoint);
-		if (keywordsResults.hasNext())
-		{
-			QuerySolution solution = keywordsResults.next();
-			RDFNode node = solution.get("count");
-			newMatches.setKeywordsStartIndex(Integer.parseInt(node.toString()));
-		}
 	}
 
 	public String writeNewPeople(String format) {

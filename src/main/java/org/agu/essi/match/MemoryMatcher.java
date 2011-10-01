@@ -13,6 +13,7 @@ import org.agu.essi.Organization;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.agu.essi.util.KeywordParser;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 
@@ -30,7 +31,7 @@ public class MemoryMatcher implements EntityMatcher
 	//index registers for objects
 	private Vector<Person> people;
 	private Vector<Organization> organizations;
-	private Vector<Keyword> keywords;
+	private HashMap<String,Keyword> keywords;
 	private HashMap<String,Session> sessions;
 	private HashMap<String,Section> sections;
 	private HashMap<String,Meeting> meetings;
@@ -38,19 +39,21 @@ public class MemoryMatcher implements EntityMatcher
 	//start index for URIs
 	private int peopleStartIdx;
 	private int organizationsStartIdx;
-	private int keywordsStartIdx;
+
+	//location of keywords index
+	private static String keywordsIndex = "./resources/keywords/AGU_index_terms.txt";
 	
 	public MemoryMatcher()
 	{
 		people = new Vector<Person>();
 		organizations = new Vector<Organization>();
-		keywords = new Vector<Keyword>();
+		keywords = new HashMap<String,Keyword>();
 		sessions = new HashMap<String,Session>();
 		sections = new HashMap<String,Section>();
 		meetings = new HashMap<String,Meeting>();
 		organizationsStartIdx = 0;
-		keywordsStartIdx = 0;
 		peopleStartIdx = 0;
+		addKeywordSource(keywordsIndex);
 	}
 	
 	/**
@@ -255,26 +258,17 @@ public class MemoryMatcher implements EntityMatcher
 	 */
 	public String getKeywordId(Keyword keyword)
 	{
-		if (keywords.contains(keyword))
+		String id = keywordBaseId + keyword.getId();
+		if (!keywords.containsKey(id))
 		{
-			int idx = keywords.indexOf(keyword);
-			return keywordBaseId + (keywordsStartIdx + idx + 1);
+			keywords.put(id,keyword);
 		}
-		else
-		{
-			keywords.add(keyword);
-			return keywordBaseId + (keywordsStartIdx + keywords.size());
-		}
+		return id;
 	}
 	
 	public void setPeopleStartIndex(int idx)
 	{
 		peopleStartIdx = idx;
-	}
-	
-	public void setKeywordsStartIndex(int idx)
-	{
-		keywordsStartIdx = idx;
 	}
 	
 	public void setOrganizationsStartIndex(int idx)
@@ -324,14 +318,12 @@ public class MemoryMatcher implements EntityMatcher
 			sw.write(Utils.writeXmlHeader());
 			sw.write(Utils.writeDocumentEntities());
 			sw.write(Utils.writeRdfHeader());
-			for(int i = 0; i < keywords.size(); ++i)
+			Set<String> keys = keywords.keySet();
+			Iterator<String> iter = keys.iterator();
+			while (iter.hasNext())
 			{
-				Keyword k = keywords.get(i);
-				sw.write("  <rdf:Description rdf:about=\"" + keywordBaseId + (i + 1) + "\">\n");
-				sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
-				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(k.getId()) + "</dc:identifier>\n");
-				sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(k.getName()) + "</dc:subject>\n");
-				sw.write("  </rdf:Description>\n");
+				Keyword k = keywords.get(iter.next());
+				sw.write(k.toString("rdf/xml"));
 			}
 			sw.write(Utils.writeRdfFooter());
 			return sw.toString();
@@ -466,5 +458,18 @@ public class MemoryMatcher implements EntityMatcher
 		{
 			return null;
 		}
+	}
+	
+	public void addKeywordSource(String src)
+	{
+		Vector<Keyword> k = KeywordParser.parseTerms(src);
+		for (int i = 0; i < k.size(); ++i)
+		{
+			String id = keywordBaseId + k.get(i).getId();
+			if (!keywords.containsKey(id))
+			{
+				keywords.put(id,k.get(i));
+			}
+		}		
 	}
 }

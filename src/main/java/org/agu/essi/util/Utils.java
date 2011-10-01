@@ -69,6 +69,7 @@ public class Utils {
 		sw.write("         xmlns:tw=\"" + Namespaces.tw + "\"\n");
 		sw.write("         xmlns:foaf=\"" + Namespaces.foaf + "\"\n");
 		sw.write("         xmlns:geo=\"" + Namespaces.geo + "\"\n");
+		sw.write("         xmlns:skos=\"" + Namespaces.skos + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.esip + "\">\n");
 		return sw.toString();
 	}
@@ -84,6 +85,7 @@ public class Utils {
 		sw.write("PREFIX swrc: <" + Namespaces.swrc + ">\n");
 		sw.write("PREFIX swc: <" + Namespaces.swc + ">\n");
 		sw.write("PREFIX geo: <" + Namespaces.geo + ">\n");
+		sw.write("PREFIX skos: <" + Namespaces.skos + ">\n");		
 		return sw.toString();
 	}
 	
@@ -109,6 +111,7 @@ public class Utils {
 		sw.write("  <!ENTITY swrc \"" + Namespaces.swrc + "\" >\n");
 		sw.write("  <!ENTITY swc \"" + Namespaces.swc + "\" >\n");
 		sw.write("  <!ENTITY geo \"" + Namespaces.geo + "\" >\n");
+		sw.write("  <!ENTITY skos \"" + Namespaces.skos + "\" >\n");
 		sw.write("]>\n");
 		return sw.toString();	
 	}
