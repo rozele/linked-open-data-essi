@@ -2,6 +2,10 @@ package org.agu.essi.util;
 
 import java.io.StringWriter;
 import java.util.HashMap;
+
+import org.agu.essi.AbstractType;
+import org.agu.essi.Meeting;
+import org.agu.essi.MeetingType;
 import org.apache.commons.lang.StringEscapeUtils;
 
 import com.hp.hpl.jena.query.Query;
@@ -45,6 +49,13 @@ public class Utils {
 		Query query = QueryFactory.create(q);
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(ep, query);
 		return qexec.execSelect();
+	}
+	
+	public static boolean sparqlAsk(String q, String ep)
+	{
+		Query query = QueryFactory.create(q);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(ep, query);
+		return qexec.execAsk();
 	}
 	
 	public static boolean isRdfFormat(String format)
@@ -132,5 +143,72 @@ public class Utils {
 		aguDatabases.put( "fm05", "/data/epubs/wais/indexes/fm05/fm05");	
 		aguDatabases.put( "sm05", "/data/epubs/wais/indexes/sm05/sm05");
 		return aguDatabases;
-	}	
+	}
+	
+	public static AbstractType getAbstractType(String s)
+	{
+		if (s != null)
+		{
+			if (s.toLowerCase().contains("poster"))
+			{
+				return AbstractType.POSTER;
+			}
+			else if (s.toLowerCase().contains("invited"))
+			{
+				return AbstractType.PRESENTATION;
+			}	
+			else if (s.toLowerCase().contains("withdrawn"))
+			{
+				return AbstractType.WITHDRAWN;
+			}
+			else
+			{
+				return AbstractType.DEFAULT;
+			}
+		}
+		else
+		{
+			return AbstractType.DEFAULT;
+		}
+	}
+	
+	public static MeetingType getMeetingType(Meeting meeting)
+	{
+		String[] tokens = meeting.getName().split(" ");
+		int mid = -1;
+		for (int i = 0; i < tokens.length; ++i)
+		{
+			if (tokens[i].equals("Fall"))
+			{
+				mid = 0;
+			}
+			else if (tokens[i].equals("Joint") || tokens[i].equals("Assembly"))
+			{
+				mid = 1;
+			}
+			else if (tokens[i].equals("Americas"))
+			{
+				mid = 2;
+			}
+		}
+		MeetingType mt = MeetingType.FALL;
+		if (mid == 1) mt = MeetingType.SPRING;
+		if (mid == 2) mt = MeetingType.AMERICAS;
+		return mt;
+	}
+	
+	public static int getMeetingYear(Meeting meeting)
+	{
+		String[] tokens = meeting.getName().split(" ");
+		int year = -1;
+		for (int i = 0; i < tokens.length; ++i)
+		{
+			try
+			{
+				year = Integer.parseInt(tokens[i]);
+			}
+			catch (NumberFormatException e) {}
+		}
+		return year;
+	}
 }

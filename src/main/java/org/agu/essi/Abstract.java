@@ -51,6 +51,16 @@ public class Abstract
 		_session = new Session(_sessionId.split("-")[0], _section);
 	}
 	
+	/**
+	 * @constructor
+	 * @param title
+	 * @param abstr
+	 * @param id
+	 * @param hour
+	 * @param session
+	 * @param authors
+	 * @param keywords
+	 */
 	public Abstract(String title, String abstr, String id, String hour, Session session, Vector<Author> authors, Vector<Keyword> keywords)
 	{
 		_title = title;
@@ -128,7 +138,7 @@ public class Abstract
 		String[] parts = _rawHtml.substring(index+17, endIndex).trim().split(" ");
 		_abstractId = parts[0];
 		_sessionId = _abstractId.split("-")[0];
-		_type = getAbstractType((parts.length > 1) ? parts[1] : null);
+		_type = Utils.getAbstractType((parts.length > 1) ? parts[1] : null);
 		
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
@@ -329,31 +339,5 @@ public class Abstract
 		}
 		return sw.toString();
 	}
-	
-	private AbstractType getAbstractType(String s)
-	{
-		if (s != null)
-		{
-			if (s.toLowerCase().contains("poster"))
-			{
-				return AbstractType.POSTER;
-			}
-			else if (s.toLowerCase().contains("invited"))
-			{
-				return AbstractType.PRESENTATION;
-			}	
-			else if (s.toLowerCase().contains("withdrawn"))
-			{
-				return AbstractType.WITHDRAWN;
-			}
-			else
-			{
-				return AbstractType.DEFAULT;
-			}
-		}
-		else
-		{
-			return AbstractType.DEFAULT;
-		}
-	}
+
 }

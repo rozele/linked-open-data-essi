@@ -9,6 +9,7 @@ import java.util.Vector;
 import org.agu.essi.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
+import org.agu.essi.MeetingType;
 import org.agu.essi.Organization;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
@@ -63,33 +64,9 @@ public class MemoryMatcher implements EntityMatcher
 	 */
 	public String getMeetingId(Meeting meeting)
 	{	
-		String[] tokens = meeting.getName().split(" ");
-		int mid = -1;
-		int year = -1;
-		for (int i = 0; i < tokens.length; ++i)
-		{
-			try
-			{
-				year = Integer.parseInt(tokens[i]);
-			}
-			catch (NumberFormatException e) 
-			{
-				if (tokens[i].equals("Fall"))
-				{
-					mid = 0;
-				}
-				else if (tokens[i].equals("Joint") || tokens[i].equals("Assembly"))
-				{
-					mid = 1;
-				}
-				else if (tokens[i].equals("Americas"))
-				{
-					mid = 2;
-				}
-			}
-		}
-		String mstr = (mid > 0) ? "JA_" : "FM_";
-		String id = meetingBaseId + mstr + year;
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		String id = meetingBaseId + mt + ((year > 0) ? "_" + year : "");
 		if (!meetings.containsKey(id))
 		{
 			meetings.put(id, meeting);
@@ -105,33 +82,9 @@ public class MemoryMatcher implements EntityMatcher
 	public String getSectionId(Section section)
 	{
 		Meeting meeting = section.getMeeting();
-		String[] tokens = meeting.getName().split(" ");
-		int mid = -1;
-		int year = -1;
-		for (int i = 0; i < tokens.length; ++i)
-		{
-			try
-			{
-				year = Integer.parseInt(tokens[i]);
-			}
-			catch (NumberFormatException e) 
-			{
-				if (tokens[i].equals("Fall"))
-				{
-					mid = 0;
-				}
-				else if (tokens[i].equals("Joint") || tokens[i].equals("Assembly"))
-				{
-					mid = 1;
-				}
-				else if (tokens[i].equals("Americas"))
-				{
-					mid = 2;
-				}
-			}
-		}
-		String mstr = (mid > 0) ? "JA_" : "FM_";
-		String id = sectionBaseId + mstr + year + "_" + section.getId();
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		String id = sectionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + section.getId();
 		if (!sections.containsKey(id))
 		{
 			sections.put(id, section);
@@ -149,30 +102,9 @@ public class MemoryMatcher implements EntityMatcher
 	{
 		Meeting meeting = abstr.getMeeting();
 		String id = abstr.getId();
-		
-		String[] tokens = meeting.getName().split(" ");
-		int mid = -1;
-		int year = -1;
-		for (int i = 0; i < tokens.length; ++i)
-		{
-			try
-			{
-				year = Integer.parseInt(tokens[i]);
-			}
-			catch (NumberFormatException e) 
-			{
-				if (tokens[i].equals("Fall"))
-				{
-					mid = 0;
-				}
-				else if (tokens[i].equals("Joint"))
-				{
-					mid = 1;
-				}
-			}
-		}
-		String mstr = (mid > 0) ? "JM_" : "FM_";
-		return abstractBaseId + mstr + year + "_" + id; 
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		return abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + id; 
 	}
 	
 	/**
@@ -202,29 +134,9 @@ public class MemoryMatcher implements EntityMatcher
 	public String getSessionId(Session session)
 	{
 		Meeting meeting = session.getSection().getMeeting();
-		String[] tokens = meeting.getName().split(" ");
-		int mid = -1;
-		int year = -1;
-		for (int i = 0; i < tokens.length; ++i)
-		{
-			try
-			{
-				year = Integer.parseInt(tokens[i]);
-			}
-			catch (NumberFormatException e) 
-			{
-				if (tokens[i].equals("Fall"))
-				{
-					mid = 0;
-				}
-				else if (tokens[i].equals("Joint"))
-				{
-					mid = 1;
-				}
-			}
-		}
-		String mstr = (mid > 0) ? "JA_" : "FM_";
-		String id = sessionBaseId + mstr + year + "_" + session.getId();
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		String id = sessionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + session.getId();
 		if (!sessions.containsKey(id))
 		{
 			sessions.put(id, session);

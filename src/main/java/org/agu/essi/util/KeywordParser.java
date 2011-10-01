@@ -2,9 +2,7 @@ package org.agu.essi.util;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Vector;
 
@@ -21,7 +19,6 @@ public class KeywordParser {
 	public static Vector<Keyword> parseTerms(String loc)
 	{
 		File f = new File(loc);
-		StringWriter sw = new StringWriter();
 		Vector<Keyword> terms = new Vector<Keyword>();
 		try 
 		{
