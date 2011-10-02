@@ -135,7 +135,6 @@ public class Crawler implements DataSource
 			String file = dataDir + meeting + "_" + title + ".xml";
 			FileWrite fw = new FileWrite();
 			fw.newFile(file, abstr.toString("xml"));
-			
 		}
 	}
 
