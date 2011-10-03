@@ -2,7 +2,7 @@ package org.agu.essi.data;
 
 import java.util.Vector;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.exception.SourceNotReadyException;
 

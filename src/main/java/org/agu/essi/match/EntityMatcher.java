@@ -64,6 +64,13 @@ public interface EntityMatcher
 	public String getAbstractId(Abstract a);
 
 	/**
+	 * Method to get unique ID of an abstract
+	 * @param a an abstract
+	 * @return a unique identifier for the abstract
+	 */
+	public String getAbstractId(org.agu.essi.abstracts.Abstract a);
+	
+	/**
 	 * Method to output information about new Person instances
 	 * @param format output format
 	 * @return

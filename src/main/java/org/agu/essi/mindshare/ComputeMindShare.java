@@ -1,7 +1,7 @@
 package org.agu.essi.mindshare;
 
 import org.agu.essi.data.XmlDataSource;
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.Author;
 import org.agu.essi.Keyword;
 import java.util.Vector;

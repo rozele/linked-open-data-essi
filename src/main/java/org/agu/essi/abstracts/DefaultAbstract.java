@@ -8,7 +8,6 @@ import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
-import org.agu.essi.match.EntityMatcher;
 
 /**
  * Extension of Abstract for a basic constructor
@@ -17,16 +16,12 @@ import org.agu.essi.match.EntityMatcher;
 public class DefaultAbstract extends Abstract 
 {
 	// containers for abstract info
-	private String _rawHtml;
 	private String _hour;
-	private String _sessionId;
 	private String _abstractId;
 	private String _title;
 	private String _abstract;
 	private Vector<Author> _authors;
 	private Vector<Keyword> _keywords;
-	private String _sectionId;
-	private String _meetingId;
 	private Meeting _meeting;
 	private Section _section;
 	private Session _session;
@@ -39,6 +34,56 @@ public class DefaultAbstract extends Abstract
 	{
 		_authors = new Vector<Author>();
 		_keywords = new Vector<Keyword>();
+	}
+	
+	public void setTitle(String t)
+	{
+		_title = t;
+	}
+	
+	public void setAbstract(String a)
+	{
+		_abstract = a;
+	}
+	
+	public void setId(String id)
+	{
+		_abstractId = id;
+	}
+	
+	public void addAuthor(Author a)
+	{
+		_authors.add(a);
+	}
+	
+	public void addAuthors(Vector<Author> a)
+	{
+		_authors.addAll(a);
+	}
+	
+	public void addKeyword(Keyword k)
+	{
+		_keywords.add(k);
+	}
+	
+	public void addKeywords(Vector<Keyword> k)
+	{
+		_keywords.addAll(k);
+	}
+	
+	public void setSession(Session s)
+	{
+		_session = s;
+	}
+	
+	public void setAbstractType(AbstractType at)
+	{
+		_type = at;
+	}
+	
+	public void setHour(String h)
+	{
+		_hour = h;
 	}
 	
 	/**
@@ -65,51 +110,63 @@ public class DefaultAbstract extends Abstract
 	}
 	
 	@Override
-	public String getTitle() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getTitle() 
+	{
+		return _title;
 	}
 
 	@Override
-	public Meeting getMeeting() {
-		// TODO Auto-generated method stub
-		return null;
+	public Meeting getMeeting() 
+	{
+		return _meeting;
 	}
 
 	@Override
-	public String getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getId() 
+	{
+		return _abstractId;
 	}
 
 	@Override
-	public Session getSession() {
-		// TODO Auto-generated method stub
-		return null;
+	public Session getSession() 
+	{
+		return _session;
 	}
 
 	@Override
-	public String getAbstract() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAbstract() 
+	{
+		return _abstract;
 	}
 
 	@Override
-	public AbstractType getAbstractType() {
-		// TODO Auto-generated method stub
-		return null;
+	public AbstractType getAbstractType() 
+	{
+		return _type;
 	}
 
 	@Override
-	public Vector<Keyword> getKeywords() {
-		// TODO Auto-generated method stub
-		return null;
+	public Vector<Keyword> getKeywords() 
+	{
+		return _keywords;
 	}
 
 	@Override
-	public Vector<Author> getAuthors() {
-		// TODO Auto-generated method stub
-		return null;
+	public Vector<Author> getAuthors() 
+	{
+		return _authors;
+	}
+
+	@Override
+	public Section getSection() 
+	{
+		return _section;
+	}
+
+	@Override
+	public String getHour() 
+	{
+		return _hour;
 	}
 
 }

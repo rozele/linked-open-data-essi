@@ -27,7 +27,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
 import org.apache.log4j.Logger;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
+import org.agu.essi.abstracts.HtmlAbstract;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.match.MemoryMatcher;
 import org.agu.essi.util.FileWrite;
@@ -157,7 +158,7 @@ public class Crawler implements DataSource
         			{ 
         				builder.append(line + " "); 
         			}
-        			_abstracts.add(new Abstract(builder.toString()));
+        			_abstracts.add(new HtmlAbstract(builder.toString()));
         		} 
         		catch ( Exception e ) 
         		{ 

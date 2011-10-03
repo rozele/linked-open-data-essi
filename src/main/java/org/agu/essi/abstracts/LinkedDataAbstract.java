@@ -6,56 +6,78 @@ import org.agu.essi.AbstractType;
 import org.agu.essi.Author;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
+import org.agu.essi.Section;
 import org.agu.essi.Session;
 
 public class LinkedDataAbstract extends Abstract {
 
 	@Override
-	public String getTitle() {
+	public String getTitle() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Meeting getMeeting() {
+	public Meeting getMeeting() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getId() {
+	public String getId() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Session getSession() {
+	public Session getSession() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getAbstract() {
+	public String getAbstract() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public AbstractType getAbstractType() {
+	public AbstractType getAbstractType() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Vector<Keyword> getKeywords() {
+	public Vector<Keyword> getKeywords() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Vector<Author> getAuthors() {
+	public Vector<Author> getAuthors() 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public Section getSection() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getHour() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

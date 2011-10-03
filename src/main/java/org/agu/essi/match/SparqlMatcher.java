@@ -126,6 +126,15 @@ public class SparqlMatcher implements EntityMatcher
 		return id;
 	}
 	
+	public String getAbstractId(org.agu.essi.abstracts.Abstract abstr)
+	{
+		Meeting meeting = abstr.getMeeting();
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		String id = abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + abstr.getId();
+		return id;
+	}
+	
 	private void setStartIndices()
 	{
 		ResultSet peopleResults = Utils.sparqlSelect(Queries.countPeopleQuery, endpoint);

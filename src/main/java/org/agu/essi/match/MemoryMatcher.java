@@ -97,8 +97,21 @@ public class MemoryMatcher implements EntityMatcher
 	 * @param abstr an Abstract instance
 	 * @return a new or existing identifier for the input abstract
 	 */
-	//this is a hack
 	public String getAbstractId(Abstract abstr)
+	{
+		Meeting meeting = abstr.getMeeting();
+		String id = abstr.getId();
+		MeetingType mt = Utils.getMeetingType(meeting);
+		int year = Utils.getMeetingYear(meeting);
+		return abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + id; 
+	}
+	
+	/**
+	 * Gets an existing identifier for an abstract, if available, otherwise creates a new identifier
+	 * @param abstr an Abstract instance
+	 * @return a new or existing identifier for the input abstract
+	 */
+	public String getAbstractId(org.agu.essi.abstracts.Abstract abstr)
 	{
 		Meeting meeting = abstr.getMeeting();
 		String id = abstr.getId();

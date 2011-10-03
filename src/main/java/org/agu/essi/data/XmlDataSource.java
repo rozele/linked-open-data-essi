@@ -6,7 +6,8 @@ import java.util.Vector;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
+import org.agu.essi.abstracts.DefaultAbstract;
 import org.agu.essi.Meeting;
 import org.agu.essi.Session;
 import org.agu.essi.Section;
@@ -195,7 +196,7 @@ public class XmlDataSource implements DataSource {
 					authors.add(a);
 				}
 			}
-			abs = new Abstract(title, abstr, id, hour, session, authors, keywords);
+			abs = new DefaultAbstract(title, abstr, id, hour, session, authors, keywords);
 		}
 		catch (Exception e)
 		{

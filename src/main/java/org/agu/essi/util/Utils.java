@@ -58,7 +58,7 @@ public class Utils {
 		return qexec.execAsk();
 	}
 	
-	public static boolean isRdfFormat(String format)
+	public static boolean isRdfXmlFormat(String format)
 	{
 		return format.equals("rdf/xml") || format.equals("application/rdf+xml");
 	}

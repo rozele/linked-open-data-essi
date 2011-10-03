@@ -80,7 +80,7 @@ public class Abstract
 		{
 			return writeToXML();
 		}
-		else if (Utils.isRdfFormat(format))
+		else if (Utils.isRdfXmlFormat(format))
 		{
 			return writeToRDFXML();
 		}

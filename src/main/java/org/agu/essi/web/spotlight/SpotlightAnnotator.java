@@ -92,7 +92,7 @@ public class SpotlightAnnotator implements AnnotatedText
 	
 	public String toString(String format)
 	{
-		if (Utils.isRdfFormat(format))
+		if (Utils.isRdfXmlFormat(format))
 		{
 			return writeToRdfXml();
 		}
