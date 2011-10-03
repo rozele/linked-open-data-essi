@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Vector;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.MeetingType;
@@ -105,13 +105,14 @@ public class MemoryMatcher implements EntityMatcher
 		int year = Utils.getMeetingYear(meeting);
 		return abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + id; 
 	}
-	
+
 	/**
+	 * @deprecated Deprecated method for deprecated class, org.agu.essi.Abstract
 	 * Gets an existing identifier for an abstract, if available, otherwise creates a new identifier
 	 * @param abstr an Abstract instance
 	 * @return a new or existing identifier for the input abstract
 	 */
-	public String getAbstractId(org.agu.essi.abstracts.Abstract abstr)
+	public String getAbstractId(org.agu.essi.Abstract abstr)
 	{
 		Meeting meeting = abstr.getMeeting();
 		String id = abstr.getId();

@@ -1,6 +1,6 @@
 package org.agu.essi.match;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.Organization;
@@ -62,13 +62,14 @@ public interface EntityMatcher
 	 * @return a unique identifier for the abstract
 	 */
 	public String getAbstractId(Abstract a);
-
+	
 	/**
+	 * @deprecated Deprecated method for deprecated class, org.agu.essi.Abstract
 	 * Method to get unique ID of an abstract
 	 * @param a an abstract
 	 * @return a unique identifier for the abstract
 	 */
-	public String getAbstractId(org.agu.essi.abstracts.Abstract a);
+	public String getAbstractId(org.agu.essi.Abstract a);
 	
 	/**
 	 * Method to output information about new Person instances

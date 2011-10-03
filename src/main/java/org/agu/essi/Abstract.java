@@ -11,6 +11,7 @@ import org.agu.essi.util.exception.AbstractParserException;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 
 /**
+ * @deprecated Deprecated class, use org.agu.essi.abstracts.Abstract instead
  * Container class for AGU abstract information
  * @author Eric Rozell and Tom Narock
  */

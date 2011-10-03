@@ -1,6 +1,6 @@
 package org.agu.essi.match;
 
-import org.agu.essi.Abstract;
+import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.MeetingType;
@@ -116,7 +116,7 @@ public class SparqlMatcher implements EntityMatcher
 		}
 		return id;
 	}
-
+	
 	public String getAbstractId(Abstract abstr)
 	{
 		Meeting meeting = abstr.getMeeting();
@@ -125,8 +125,11 @@ public class SparqlMatcher implements EntityMatcher
 		String id = abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + abstr.getId();
 		return id;
 	}
-	
-	public String getAbstractId(org.agu.essi.abstracts.Abstract abstr)
+
+	/**
+	 * @deprecated Deprecated method for deprecated class, org.agu.essi.Abstract
+	 */
+	public String getAbstractId(org.agu.essi.Abstract abstr)
 	{
 		Meeting meeting = abstr.getMeeting();
 		MeetingType mt = Utils.getMeetingType(meeting);
