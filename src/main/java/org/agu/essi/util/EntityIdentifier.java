@@ -12,6 +12,7 @@ import org.agu.essi.Section;
 import org.agu.essi.Session;
 
 /**
+ * @deprecated Deprecated class, use the interface org.agu.essi.match.EntityMatcher instead
  * Utilities class to get unique identifiers (URIs) for entities in abstracts
  * @author Eric Rozell
  */
@@ -72,6 +73,7 @@ public class EntityIdentifier
 	}	
 	
 	/**
+	 * @deprecated Deprecated method for deprecated class, org.agu.essi.Abstracts
 	 * Gets an existing identifier for an abstract, if available, otherwise creates a new identifier
 	 * @param abstr an Abstract instance
 	 * @return a new or existing identifier for the input abstract
