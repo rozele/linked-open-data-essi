@@ -95,6 +95,11 @@ public class Abstract
 		return _title;
 	}
 	
+	public Vector <Keyword> getKeywords() 
+	{
+		return _keywords;
+	}
+	
 	public String getAbstractText()
 	{
 		return _abstract;
