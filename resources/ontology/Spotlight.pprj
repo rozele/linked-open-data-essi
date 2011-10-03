@@ -1,4 +1,4 @@
-; Wed Sep 28 07:03:36 EDT 2011
+; Thu Sep 29 11:39:47 EDT 2011
 ; 
 ;+ (version "3.4")
 ;+ (build "Build 533")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Spotlight_ProjectKB_Class332]
-		[Spotlight_ProjectKB_Class333]
-		[Spotlight_ProjectKB_Class334]
-		[Spotlight_ProjectKB_Class335]
-		[Spotlight_ProjectKB_Class336]))
+		[Spotlight_ProjectKB_Class342]
+		[Spotlight_ProjectKB_Class343]
+		[Spotlight_ProjectKB_Class344]
+		[Spotlight_ProjectKB_Class345]
+		[Spotlight_ProjectKB_Class346]))
 
 ([CLSES_TAB] of  Widget
 
@@ -5740,33 +5740,33 @@
 	(property_list [Spotlight_ProjectKB_Class34])
 	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
 
-([Spotlight_ProjectKB_Class332] of  String
+([Spotlight_ProjectKB_Class34] of  Property_List
+)
+
+([Spotlight_ProjectKB_Class342] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
 
-([Spotlight_ProjectKB_Class333] of  String
+([Spotlight_ProjectKB_Class343] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([Spotlight_ProjectKB_Class334] of  String
+([Spotlight_ProjectKB_Class344] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([Spotlight_ProjectKB_Class335] of  String
+([Spotlight_ProjectKB_Class345] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Thing")
 	(string_value "%3ANAME"))
 
-([Spotlight_ProjectKB_Class336] of  String
+([Spotlight_ProjectKB_Class346] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
-
-([Spotlight_ProjectKB_Class34] of  Property_List
-)
 
 ([Spotlight_ProjectKB_Class35] of  Widget
 
