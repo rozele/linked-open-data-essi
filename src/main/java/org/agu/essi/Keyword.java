@@ -4,11 +4,14 @@ import java.io.StringWriter;
 import java.util.Vector;
 import java.util.regex.*;
 
+import org.agu.essi.util.Namespaces;
+
 /**
  * Container class for AGU keywords
  * @author Eric Rozell
  */
 public class Keyword {
+	private String _orig;
 	private String _name;
 	private String _id;
 	private Vector<String> _related;
@@ -20,6 +23,7 @@ public class Keyword {
 	 */
 	public Keyword(String name)
 	{
+		_orig = name;
 		_related = new Vector<String>();
 		Pattern p1 = Pattern.compile("(\\[?(\\d+)\\]?)?\\s*(.*?)(\\s*\\((.*)\\))");
 		Pattern p2 = Pattern.compile("(\\[?(\\d+)\\]?)?\\s*(.*)");
@@ -120,7 +124,7 @@ public class Keyword {
 	@Override
 	public String toString()
 	{
-		return _name;
+		return _orig;
 	}
 	
 	/**
@@ -133,7 +137,7 @@ public class Keyword {
 		if (format.equals("rdf/xml"))
 		{
 			StringWriter sw = new StringWriter();
-			sw.write("  <rdf:Description rdf:about=\"&esip;Keyword_" + _id + "\">\n");
+			sw.write("  <rdf:Description rdf:about=\"" + Namespaces.esip + "Keyword_" + _id + "\">\n");
 			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
 			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
 			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
