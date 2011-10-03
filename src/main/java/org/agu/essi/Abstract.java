@@ -100,6 +100,11 @@ public class Abstract
 		return _keywords;
 	}
 	
+	public Vector <Author> getAuthors() 
+	{
+		return _authors;
+	}
+	
 	public String getAbstractText()
 	{
 		return _abstract;
