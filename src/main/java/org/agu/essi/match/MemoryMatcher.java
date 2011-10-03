@@ -42,7 +42,7 @@ public class MemoryMatcher implements EntityMatcher
 	private int organizationsStartIdx;
 
 	//location of keywords index
-	private static String keywordsIndex = "./resources/keywords/AGU_index_terms.txt";
+	private static String keywordsIndex = "http://www.agu.org/pubs/authors/manuscript_tools/journals/index_terms/AGU_index_terms.txt";
 	
 	public MemoryMatcher()
 	{
