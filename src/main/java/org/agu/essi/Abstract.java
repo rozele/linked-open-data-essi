@@ -95,6 +95,11 @@ public class Abstract
 		return _title;
 	}
 	
+	public String getAbstractText()
+	{
+		return _abstract;
+	}
+	
 	public Meeting getMeeting()
 	{
 		return _meeting;
