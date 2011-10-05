@@ -25,7 +25,7 @@ public class SpotlightAnnotatorTest {
 		  annotations = spotlight.getAnnotations();
 		  for ( int j=0; j<annotations.size(); j++ ) {
 		    Annotation a = annotations.get(j);
-		    System.out.println( a.getAnnotation() + " " + a.getIndex() + " " + a.getConfidence() );
+		    System.out.println( a.getAnnotation() + " " + a.getSurfaceForm() );
 		  }
 		  // for each annotation, write to rdf/xml
 		}
