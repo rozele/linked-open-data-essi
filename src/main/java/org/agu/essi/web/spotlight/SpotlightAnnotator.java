@@ -33,7 +33,7 @@ public class SpotlightAnnotator implements AnnotatedText
 	private static String annotationEncoding = "text/xml; charset=\"utf-8\"";
 	private String text;
 	private Vector <Annotation> annotations = new Vector <Annotation> ();
-	private double confidence = 0.0;
+	private double confidence = 0.5;
 	private int support = 0;
 	
 	/**
@@ -92,7 +92,7 @@ public class SpotlightAnnotator implements AnnotatedText
     	    e.printStackTrace();
     	} catch (Exception e) { e.printStackTrace(); }	
         
-    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();    	
     	try {
         
     	  DocumentBuilder db = dbf.newDocumentBuilder();
@@ -111,7 +111,10 @@ public class SpotlightAnnotator implements AnnotatedText
 	{
 		if (Utils.isRdfXmlFormat(format))
 		{
-			return writeToRdfXml();
+			String a1 = writeAnnotationTextToRdfXml ();
+			String a2 = writeAnnotationProvenanceToRdfXml ();
+			String a3 = writeAnnotationToRdfXml ();
+			return a1+a2+a3;
 		}
 		else 
 		{
@@ -119,9 +122,77 @@ public class SpotlightAnnotator implements AnnotatedText
 		}
 	}
 	
-	private String writeToRdfXml()
+	public String writeSpotlightAgentRDF () {
+		
+		StringWriter sw = new StringWriter();
+		 <rdf:Description rdf:about="http://spotlight.dbpedia.org/rest/annotate">
+
+	        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	        <foaf:name>Paolo Ciccarese</foaf:name>
+
+	    </rdf:Description> 
+	    
+	}
+	
+	private String writeAnnotationTextToRdfXml () {
+	
+		<rdf:Description rdf:about="http://esipfed.org/essi-lod/instances/annotation_selection_001">
+        <rdf:type rdf:resource="&essi;ESSIselector"/>
+        <aos:exact>surface form text here</aos:exact>
+	<essi:support/>
+	<essi:dbPediaConcept />
+	<essi:dbPediaSupport />
+	<essi:dbPediaType />
+	<essi:dbPediaSimilarityScore />
+	<essi:dbPediaPercentOfSecondRank />
+        <aof:onDocument rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
+        <ao:onSourceDocument rdf:resource="http://esipfed.org/essi-lod/instances/source_doc_001"/>
+    </rdf:Description>
+    	return sw;
+	}
+	
+	private String writeAnnotationProvenanceToRdfXml () {
+	
+		    <rdf:Description rdf:about="http://esipfed.org/essi-lod/instances/source_doc_001">
+		        <rdf:type rdf:resource="&pav;SourceDocument"/>
+		        <pav:retrievedFrom rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
+		        <pav:sourceAccessedOn>2010-03-26</pav:sourceAccessedOn>
+		    </rdf:Description> 
+		    
+	}
+	
+	private String writeAnnotationToRdfXml( String annotationID, Vector <String> anotationURIs,  )
 	{
 		StringWriter sw = new StringWriter();
+		
+		sw.append( Utils.writeXmlHeader() );
+	    sw.append( Utils.writeDocumentEntities() );
+		sw.append( Utils.writeRdfHeader() );
+
+		sw.append( "<rdf:Description rdf:about=\"" + annotationID + "\">" );
+
+		  	
+		        <rdf:type rdf:resource="&aot;ExactQualifier"/>
+		        <rdf:type rdf:resource="&aot;Qualifier"/>
+		        <rdf:type rdf:resource="&ao;Annotation"/>
+		        <rdf:type rdf:resource="&ann;Annotation"/>
+
+		        // reference to the text that was annotated - an AO  Selector instance
+		        <ao:context rdf:resource="http://esipfed.org/essi-lod/instances/annotation_selection_001"/>
+		        <ao:context rdf:resource="http://esipfed.org/essi-lod/instances/annotation_selection_002"/>
+
+			// a reference to the AGU abstract we are annotating
+		        <aof:annotatesDocument rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
+
+			// abstract has the following DBpedia concepts
+		        <ao:hasTopic rdf:resource="http://dbpedia.uri.../concept1"/>
+		        <ao:hasTopic rdf:resource="http://dbpedia.uri.../concept2"/>
+
+		        <pav:createdBy rdf:resource="http://spotlight.dbpedia.org/rest/annotate"/>
+		        <pav:createdOn>2011-10-01</pav:createdOn>
+
+		    </rdf:Description> 
+
 		return sw.toString();
 		
 	}
