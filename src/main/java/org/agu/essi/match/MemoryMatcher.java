@@ -315,6 +315,7 @@ public class MemoryMatcher implements EntityMatcher
 				Session s = sessions.get(id);
 				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&swc;SessionEvent\" />\n");
+				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId() + ", " + s.getSection().getMeeting().getName()) + "</swrc:eventTitle>\n");
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getSectionId(s.getSection()) + "\" />\n");
 				sw.write("  </rdf:Description>\n");
@@ -344,7 +345,7 @@ public class MemoryMatcher implements EntityMatcher
 				Section s = sections.get(id);
 				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&swrc;Meeting\" />\n");
-				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getName()) + "</swrc:eventTitle>\n");
+				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getName() + ", " + s.getMeeting().getName()) + "</swrc:eventTitle>\n");
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getMeetingId(s.getMeeting()) + "\" />\n");
 				sw.write("  </rdf:Description>\n");

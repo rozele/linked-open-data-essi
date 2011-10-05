@@ -40,7 +40,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = meetingBaseId + mt + ((year > 0) ? "_" + year : "");
-		if (!Utils.sparqlAsk(Queries.askMeetingQuery.replaceAll("$uri", id), endpoint))
+		if (!Utils.sparqlAsk(Queries.askMeetingQuery(id), endpoint))
 		{
 			newMatches.getMeetingId(meeting);
 		}
@@ -53,7 +53,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = sectionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + section.getId();
-		if (!Utils.sparqlAsk(Queries.askSectionQuery.replaceAll("$uri", id), endpoint))
+		if (!Utils.sparqlAsk(Queries.askSectionQuery(id), endpoint))
 		{
 			newMatches.getSectionId(section);
 		}
@@ -66,7 +66,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = sessionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + session.getId();
-		if (!Utils.sparqlAsk(Queries.askSessionQuery.replaceAll("$uri", id), endpoint))
+		if (!Utils.sparqlAsk(Queries.askSessionQuery(id), endpoint))
 		{
 			newMatches.getSessionId(session);
 		}
@@ -75,7 +75,7 @@ public class SparqlMatcher implements EntityMatcher
 
 	public String getPersonId(Person person)
 	{
-		ResultSet personResults = Utils.sparqlSelect(Queries.selectPersonQuery.replaceAll("$email", person.getEmail()), endpoint);
+		ResultSet personResults = Utils.sparqlSelect(Queries.selectPersonQuery(person.getEmail()), endpoint);
 		String id = null;
 		if (personResults.hasNext())
 		{
@@ -92,7 +92,7 @@ public class SparqlMatcher implements EntityMatcher
 
 	public String getOrganizationId(Organization organization)
 	{
-		ResultSet organizationResults = Utils.sparqlSelect(Queries.selectOrganizationQuery.replaceAll("$description",organization.toString()), endpoint);
+		ResultSet organizationResults = Utils.sparqlSelect(Queries.selectOrganizationQuery(organization.toString()), endpoint);
 		String id = null;
 		if (organizationResults.hasNext())
 		{
@@ -110,7 +110,7 @@ public class SparqlMatcher implements EntityMatcher
 	public String getKeywordId(Keyword keyword)
 	{
 		String id = keywordBaseId + keyword.getId();
-		if (!Utils.sparqlAsk(Queries.askKeywordQuery.replaceAll("$uri", id), endpoint))
+		if (!Utils.sparqlAsk(Queries.askKeywordQuery(id), endpoint))
 		{
 			newMatches.getKeywordId(keyword);
 		}
@@ -185,5 +185,4 @@ public class SparqlMatcher implements EntityMatcher
 	{
 		return newMatches.writeNewOrganizations(format);
 	}
-
 }

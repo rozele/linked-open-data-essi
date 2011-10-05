@@ -168,5 +168,4 @@ public class DefaultAbstract extends Abstract
 	{
 		return _hour;
 	}
-
 }

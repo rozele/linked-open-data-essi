@@ -234,5 +234,4 @@ public class HtmlAbstract extends Abstract
 	{
 		return _hour;
 	}
-
 }
