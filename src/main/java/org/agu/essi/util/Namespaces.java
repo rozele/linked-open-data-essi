@@ -20,4 +20,5 @@ public class Namespaces {
 	public static String foaf = "http://xmlns.com/foaf/0.1/";
 	public static String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
 	public static String skos = "http://www.w3.org/2004/02/skos/core#";
+	public static String anno = "http://purl.org/annotations/DBpedia/Spotlight";
 }
