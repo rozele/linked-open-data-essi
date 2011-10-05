@@ -23,6 +23,10 @@ public class SpotlightAnnotatorTest {
 		for ( int i=0; i<abstracts.size(); i++ ) {
 		  spotlight = new SpotlightAnnotator ( abstracts.get(i).getAbstract() );
 		  annotations = spotlight.getAnnotations();
+		  for ( int j=0; j<annotations.size(); j++ ) {
+		    Annotation a = annotations.get(j);
+		    System.out.println( a.getAnnotation() + " " + a.getIndex() + " " + a.getConfidence() );
+		  }
 		  // for each annotation, write to rdf/xml
 		}
 		

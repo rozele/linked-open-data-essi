@@ -1,11 +1,9 @@
 package org.agu.essi.web.spotlight;
 
-import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.Vector;
 
 import org.agu.essi.annotation.Annotation;
-import org.agu.essi.util.Utils;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -17,7 +15,7 @@ public class SpotlightAnnotation implements Annotation
 	private double similarity;
 	private double secondRankPct;
 	private int support;
-	private Vector<String> types;
+	private Vector <String> types;
 	
 	public SpotlightAnnotation(Node xml)
 	{
@@ -64,4 +62,5 @@ public class SpotlightAnnotation implements Annotation
 	public String getAnnotation() {
 		return uri;
 	}
+
 }
