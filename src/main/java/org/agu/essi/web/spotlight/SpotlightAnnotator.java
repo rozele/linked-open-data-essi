@@ -107,6 +107,7 @@ public class SpotlightAnnotator implements AnnotatedText
         
 	}
 	
+	/*
 	public String toString(String format)
 	{
 		if (Utils.isRdfXmlFormat(format))
@@ -196,4 +197,5 @@ public class SpotlightAnnotator implements AnnotatedText
 		return sw.toString();
 		
 	}
+	*/
 }
