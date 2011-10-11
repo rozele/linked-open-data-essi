@@ -35,6 +35,8 @@ import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
+import org.agu.essi.web.spotlight.SpotlightAnnotator;
+import org.agu.essi.web.spotlight.SpotlightAnnotation;
 
 /**
  * Web Crawler for AGU abstract data
@@ -47,12 +49,23 @@ public class Crawler implements DataSource
 	// AGU Variables - location of, and access to, AGU Abstract Database
 	private String aguBaseURL = "http://www.agu.org/";
 	private String aguApplicationURL = "cgi-bin/SFgate/SFgate?application=";
-	private String aguURLOptions = "listenv=table&multiple=1&range=0&fieldsel_1_name=&fieldsel_2_tie=and&" +
-	  "fieldsel_2_name=sc&fieldsel_2_content=Informatics&maxhits=10000&desc=+&requestm=POST";
+	// AGU meeting day - IN1* = all abstracts for Monday, IN2* = all abstracts for Tuesday, etc.
+	// Due to AGU server limits on results, we step through each day individuall to ensure
+	// that we get all the meeting abstracts
+	private String[] aguDayOfWeek = {"IN1*","IN2*","IN3*","IN4*","IN5*"};
+	private String aguURLOptions1 = "fieldsel_1_content=";
+	private String aguURLOptions2 = "&fieldsel_1_name=an&fieldsel_1_tie=and&" + 
+		"fieldsel_2_content=Informatics&fieldsel_2_name=sc&maxhits=500&desc=+&requestm=POST";
+	//private String aguURLOptions = "listenv=table&multiple=1&range=0&fieldsel_1_name=&fieldsel_2_tie=and&" +
+	//  "fieldsel_2_name=sc&fieldsel_2_content=Informatics&maxhits=10000&desc=+&requestm=POST";
 	private HashMap <String, String> aguDatabases;
 	
 	// directory to write output
 	private String dataDir;
+	
+	// annotate with DBpedia Spotlight
+	private boolean annotate = true;
+	private Vector <String> annotationRDF = new Vector <String> ();
 	
 	// HTML parser
 	private ParserDelegator parserDelegator = new ParserDelegator();
@@ -68,19 +81,21 @@ public class Crawler implements DataSource
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public Crawler ( String dir ) 
+	public Crawler ( String dir, boolean a ) 
 	{
 		dataDir = dir;
 		crawled = false;
 		_abstracts = new Vector<Abstract>();
+		annotate = a;
 		aguDatabases = Utils.getAguDatabases();
 		crawl();
 	}
 	
-	public Crawler ()
+	public Crawler ( boolean a )
 	{
 		_abstracts = new Vector<Abstract>();
 		aguDatabases = Utils.getAguDatabases();
+		annotate = a;
 		crawled = false;
 		crawl();
 	}
@@ -93,6 +108,45 @@ public class Crawler implements DataSource
 	public EntityMatcher getEntityMatcher()
 	{
 		return matcher;
+	}
+	
+	private void annotationsToRDF( Vector <org.agu.essi.annotation.Annotation> annotations, 
+		SpotlightAnnotator annotator, Abstract a ) throws EntityMatcherRequiredException
+	{
+		Vector <String> dbpediaURIs = new Vector <String> ();
+		Vector <String> allSurfaceForms = new Vector <String> ();
+		if (matcher == null) matcher = new MemoryMatcher();
+		
+		// provenance rdf about which abstract we are annotating and the date accessed
+		annotationRDF.add( annotator.writeAnnotationProvenanceToRdfXml( matcher.getAbstractId(a) ) ); 
+		  
+		// loop over each annotation associated with this abstract
+		for ( int i=0; i<annotations.size(); i++ ) {
+			
+		  SpotlightAnnotation sa = (SpotlightAnnotation) annotations.get(i);
+		  dbpediaURIs.add(sa.getURI());
+		  allSurfaceForms.add(sa.getSurfaceForm());
+		  
+		  // rdf about the specific annotation - surface form, dbpedia type, etc.
+		  annotationRDF.add( annotator.writeAnnotationTextToRdfXml( sa.getSurfaceForm(), sa.getDBpediaTypes(), 
+			sa.getSimilarityScore(), sa.getPercentSecondRank(), matcher.getAbstractId(a) ) );
+		  
+		}		
+
+		// rdf about all dbpedia URIs and all text selector URIs related to this abstract
+		annotationRDF.add( annotator.writeAnnotationToRdfXml( matcher.getAbstractId(a), dbpediaURIs, allSurfaceForms ) );
+		
+	}
+	
+	private void writeAnnotationToRDFXML( String format, Vector <String> annotationRDF ) {
+		FileWrite fw = new FileWrite();
+		if (format.equals("rdf/xml")) {
+		  fw.newFile(dataDir + "spotlight_annotations.rdf", Utils.writeXmlHeader());
+		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeDocumentEntities());
+		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeRdfHeader());
+		  for ( int i=0; i<annotationRDF.size(); i++ ) { fw.append(dataDir + "spotlight_annotations.rdf", annotationRDF.get(i)); }
+		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeRdfFooter());
+		} else {  }
 	}
 	
 	private void writeToRDFXML( ) throws EntityMatcherRequiredException
@@ -158,7 +212,17 @@ public class Crawler implements DataSource
         			{ 
         				builder.append(line + " "); 
         			}
-        			_abstracts.add(new HtmlAbstract(builder.toString()));
+        			Abstract a = new HtmlAbstract(builder.toString());
+        			_abstracts.add( a );
+        			
+        			if ( annotate ) {
+        			  System.out.println("creating annotation...");
+        			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
+        			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
+        			  annotationsToRDF( annotations, annotator, a );
+        			          			  
+        			} // end if annotate
+        			
         		} 
         		catch ( Exception e ) 
         		{ 
@@ -183,11 +247,16 @@ public class Crawler implements DataSource
 	{    
 		String url = null;
 		Set <Map.Entry<String, String>> databases = aguDatabases.entrySet();
+		// loop over all the AGU meetings
 		for (Map.Entry<String, String> me : databases) 
 		{
-			try 
-			{
-				url = aguBaseURL + aguApplicationURL + me.getKey() + "&database=" + me.getValue() + "&" + aguURLOptions;
+			// loop over each day within those meetings
+			for ( int i=0; i<aguDayOfWeek.length; i++ ) {
+				System.out.println("Working on day " + aguDayOfWeek[i] + " of meeting " + me.getKey());
+			  try 
+			  {
+				url = aguBaseURL + aguApplicationURL + me.getKey() + "&database=" + me.getValue() + "&" + aguURLOptions1 + 
+				  aguDayOfWeek[i] + aguURLOptions2;
 				URL u = new URL( url ); 
 				ReadableByteChannel rbc = Channels.newChannel( u.openStream() );
 				String localFilename = dataDir + me.getKey() + ".html";
@@ -198,11 +267,12 @@ public class Crawler implements DataSource
 				//delete HTML file when finished
 				File file = new File(localFilename);
 				file.delete();
-			} 
-			catch (Exception e) 
-			{ 
+			  } 
+			  catch (Exception e) 
+			  { 
 				e.printStackTrace(); 
-			} 
+			  } 
+			} // end inner loop over the days of the week
 		}
 		crawled = true;
 	}
@@ -228,8 +298,9 @@ public class Crawler implements DataSource
 	{	
 		// Object to deal with command line options (Apache CLI)
 	  	Options options = new Options();
-	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts.");
-	  	options.addOption("outputFormat",true,"Serialization format for the resulting data");
+	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts");
+	  	options.addOption("outputFormat", true, "Serialization format for the resulting data");
+	  	options.addOption("noAnnotations", false, "Turns off calls to DBpedia Spotlight annotation service");
 	  	  
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
@@ -259,15 +330,35 @@ public class Crawler implements DataSource
 	  	{ 
 	  		format = cmd.getOptionValue("outputFormat"); 
 	  	} 
-	    
-	    if (!error)
+	  	
+	  	// annotate or not
+	  	boolean annotate = true;
+	  	if ( cmd.hasOption("noAnnotations")) { annotate = false; }
+
+	  	if (!error)
 	    {	
+	    	
 	    	// query AGU
-	    	Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"));
+	    	Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"), annotate );
+	    	
+	    	// annotations
+		  	if ( annotate ) { 
+		  	  // write the DBpedia Source annotation
+		  	  String source = SpotlightAnnotator.writeSpotlightAgentRDF();
+		  	  FileWrite fw = new FileWrite ();
+		  	  String test = cmd.getOptionValue("outputDirectory").substring(cmd.getOptionValue("outputDirectory").length()-1);
+		  	  String path = cmd.getOptionValue("outputDirectory");
+		  	  if ( !test.equals(java.io.File.separator) ) { path = path + java.io.File.separator; }
+		  	  System.out.println("Spotlight Agent path: " + path);
+		  	  fw.newFile( path, source );
+		  	}
+		  	
+	    	// output abstracts and annotations
     		try {
     			if (format != null && format.equals("rdf/xml")) 
     			{ 
 	    			crawler.writeToRDFXML();
+	    			if ( annotate ) { crawler.writeAnnotationToRDFXML(format, crawler.annotationRDF); }
     			} 
     			else 
     			{ 

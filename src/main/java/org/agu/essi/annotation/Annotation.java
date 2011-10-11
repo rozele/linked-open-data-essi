@@ -21,12 +21,6 @@ public interface Annotation
 	public double getConfidence();
 	
 	/**
-	 * Method to get the support in the annotation
-	 * @return an informative score for the annotation
-	 */
-	public int getSupport();
-	
-	/**
 	 * Method to get a string representation of the assigned annotation
 	 * @return a string representative of the annotation
 	 */

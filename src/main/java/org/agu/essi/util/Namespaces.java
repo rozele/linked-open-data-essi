@@ -20,5 +20,11 @@ public class Namespaces {
 	public static String foaf = "http://xmlns.com/foaf/0.1/";
 	public static String geo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
 	public static String skos = "http://www.w3.org/2004/02/skos/core#";
-	public static String anno = "http://purl.org/annotations/DBpedia/Spotlight";
+	public static String dbanno = "http://purl.org/annotations/DBpedia/Spotlight";
+	public static String aos = "http://purl.org/ao/selectors/";
+	public static String aof = "http://purl.org/ao/foaf/";
+	public static String ao = "http://purl.org/ao/";
+	public static String pav = "http://purl.org/pav/";
+	public static String aot = "http://purl.org/ao/types/";
+	public static String aocore = "http://purl.org/ao/core/";
 }

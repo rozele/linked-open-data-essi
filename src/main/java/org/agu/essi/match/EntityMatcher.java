@@ -10,10 +10,11 @@ import org.agu.essi.Session;
 
 /**
  * A Matcher interface which should be implemented for individual data sources
- * @author Eric Rozell
+ * @author Eric Rozell and Tom Narock
  */
 public interface EntityMatcher 
 {
+	
 	/**
 	 * Method to get unique ID of a meeting
 	 * @param m a Meeting

@@ -11,6 +11,8 @@ import java.net.UnknownHostException;
 import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 import java.util.Vector;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,6 +37,7 @@ public class SpotlightAnnotator implements AnnotatedText
 	private Vector <Annotation> annotations = new Vector <Annotation> ();
 	private double confidence = 0.5;
 	private int support = 0;
+	private StringBuilder date;
 	
 	/**
 	 * Constructor for annotator from free text
@@ -43,6 +46,9 @@ public class SpotlightAnnotator implements AnnotatedText
 	public SpotlightAnnotator(String t)
 	{
 		text = t;
+		Date dateNow = new Date ();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+        date = new StringBuilder( dateFormat.format( dateNow ) );
 		annotate();
 	}
 	
@@ -107,95 +113,115 @@ public class SpotlightAnnotator implements AnnotatedText
         
 	}
 	
-	/*
-	public String toString(String format)
-	{
-		if (Utils.isRdfXmlFormat(format))
-		{
-			String a1 = writeAnnotationTextToRdfXml ();
-			String a2 = writeAnnotationProvenanceToRdfXml ();
-			String a3 = writeAnnotationToRdfXml ();
-			return a1+a2+a3;
-		}
-		else 
-		{
-			return toString();
-		}
-	}
-	
-	public String writeSpotlightAgentRDF () {
+	/**
+	 * Returns the DBpedia Spotlight service as an RDF FOAF Agent.
+	 * This Agent RDF can be used as the source for annotation RDF.
+	 * @return sw RDF/XML String
+	 */
+	public static String writeSpotlightAgentRDF () {
 		
-		StringWriter sw = new StringWriter();
-		 <rdf:Description rdf:about="http://spotlight.dbpedia.org/rest/annotate">
-
-	        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-	        <foaf:name>Paolo Ciccarese</foaf:name>
-
-	    </rdf:Description> 
-	    
-	}
-	
-	private String writeAnnotationTextToRdfXml () {
-	
-		<rdf:Description rdf:about="http://esipfed.org/essi-lod/instances/annotation_selection_001">
-        <rdf:type rdf:resource="&essi;ESSIselector"/>
-        <aos:exact>surface form text here</aos:exact>
-	<essi:support/>
-	<essi:dbPediaConcept />
-	<essi:dbPediaSupport />
-	<essi:dbPediaType />
-	<essi:dbPediaSimilarityScore />
-	<essi:dbPediaPercentOfSecondRank />
-        <aof:onDocument rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
-        <ao:onSourceDocument rdf:resource="http://esipfed.org/essi-lod/instances/source_doc_001"/>
-    </rdf:Description>
-    	return sw;
-	}
-	
-	private String writeAnnotationProvenanceToRdfXml () {
-	
-		    <rdf:Description rdf:about="http://esipfed.org/essi-lod/instances/source_doc_001">
-		        <rdf:type rdf:resource="&pav;SourceDocument"/>
-		        <pav:retrievedFrom rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
-		        <pav:sourceAccessedOn>2010-03-26</pav:sourceAccessedOn>
-		    </rdf:Description> 
-		    
-	}
-	
-	private String writeAnnotationToRdfXml( String annotationID, Vector <String> anotationURIs,  )
-	{
 		StringWriter sw = new StringWriter();
 		
 		sw.append( Utils.writeXmlHeader() );
 	    sw.append( Utils.writeDocumentEntities() );
 		sw.append( Utils.writeRdfHeader() );
+		
+		sw.append( "<rdf:Description rdf:about=\"http://spotlight.dbpedia.org/rest/annotate\">" );
+	    sw.append( "  <rdf:type rdf:resource=\"http://xmlns.com/foaf/0.1/Agent\"/>" );
+	    sw.append( "  <foaf:name>DBpedia Spotlight Service</foaf:name>" );
+	    sw.append( "</rdf:Description>" );
+	    
+		sw.append( Utils.writeRdfFooter() );
+	    return sw.toString();
+	    
+	}
+	
+	public String writeAnnotationTextToRdfXml ( String surfaceForm, Vector <String> dbpediaTypes, 
+		double similarityScore, double psr, String abstractURI ) {
+	
+		StringWriter sw = new StringWriter();
+		String sdURI = abstractURI.replace("Abstract", "SourceDocument");
+		String dataType = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\"";
+		String sfURI = surfaceForm.replace(" ", "_");
+		String annTextURI = abstractURI.replace("Abstract", "AnnotationTextSelector_" + sfURI);
+		
+		sw.append( Utils.writeXmlHeader() );
+	    sw.append( Utils.writeDocumentEntities() );
+		sw.append( Utils.writeRdfHeader() );
+		
+		sw.append( "<rdf:Description rdf:about=\"" + annTextURI + "\">" );
+		sw.append( "  <rdf:type rdf:resource=\"&dbanno;DBpediaSpotlightSelector\"/>" );
+		 
+		sw.append( "  <aos:exact " + dataType + ">" + surfaceForm + "</aos:exact>" );
+		sw.append( "  <dbanno:dbpediaConcept " + dataType + ">" + "<dbanno:dbpediaConcept/>" );
+		sw.append( "  <dbanno:dbpediaSupport " + dataType + ">" + support + "<dbanno:dbpediaSupport/>" );
+		for ( int i=0; i<dbpediaTypes.size(); i++ ) {
+		  sw.append( "  <dbanno:dbpediaType " + dataType + ">" + dbpediaTypes.get(i) + "<dbanno:dbpediaType/>" );
+		}
+		sw.append( "  <dbanno:dbpediaSimilarityScore " + dataType + ">"+ similarityScore + "<dbanno:dbpediaSimilarityScore/>" );
+		sw.append( "  <dbanno:dbpediaPercentOfSecondRank " + dataType + ">" + psr +  "<dbanno:dbpediaPercentOfSecondRank/>" );
+		sw.append( "  <aof:onDocument rdf:resource=\"" + abstractURI + "\"/>" );
+		sw.append( "  <ao:onSourceDocument rdf:resource=\"" + sdURI + "\"/>" );
+		sw.append( "</rdf:Description>" );
+    
+		sw.append( Utils.writeRdfFooter() );
+		return sw.toString();
+    
+	}
+	
+	public String writeAnnotationProvenanceToRdfXml ( String abstractURI ) {
+	
+		StringWriter sw = new StringWriter();
+		String sdURI = abstractURI.replace("Abstract", "SourceDocument");
+		sw.append( "<rdf:Description rdf:about=\"" + sdURI + "\">" );
+		sw.append( "  <rdf:type rdf:resource=\"&pav;SourceDocument\"/>" );
+		sw.append( "  <pav:retrievedFrom rdf:resource=\"" + abstractURI + "\"/>" );
+		sw.append( "  <pav:sourceAccessedOn>" + date + "</pav:sourceAccessedOn>" );
+		sw.append( "</rdf:Description>" ); 
+		    
+		sw.append( Utils.writeRdfFooter() );
+	    return sw.toString();
+		    
+	}
+	
+	public String writeAnnotationToRdfXml( String abstractURI, Vector <String> dbpediaURIs, Vector <String> surfaceForms )
+	{
+		StringWriter sw = new StringWriter();
+		String annotationURI = abstractURI.replace("Abstract","Annotation");
+		
+		sw.append( Utils.writeXmlHeader() );
+	    sw.append( Utils.writeDocumentEntities() );
+		sw.append( Utils.writeRdfHeader() );
 
-		sw.append( "<rdf:Description rdf:about=\"" + annotationID + "\">" );
+		sw.append( "<rdf:Description rdf:about=\"" + annotationURI + "\">" );
+		sw.append( "  <rdf:type rdf:resource=\"&aot;ExactQualifier\"/>" );
+		sw.append( "  <rdf:type rdf:resource=\"&aot;Qualifier\"/>" );
+		sw.append( "  <rdf:type rdf:resource=\"&ao;Annotation\"/>" );
+		sw.append( "  <rdf:type rdf:resource=\"&aocore;Annotation\"/>" );
 
-		  	
-		        <rdf:type rdf:resource="&aot;ExactQualifier"/>
-		        <rdf:type rdf:resource="&aot;Qualifier"/>
-		        <rdf:type rdf:resource="&ao;Annotation"/>
-		        <rdf:type rdf:resource="&ann;Annotation"/>
+		// reference to the text that was annotated - an AO Selector instance
+		for ( int i=0; i<surfaceForms.size(); i++ ) {
+		  String sfURI = surfaceForms.get(i).replace(" ", "_");
+		  String annTextURI = abstractURI.replace("Abstract", "AnnotationTextSelector_" + sfURI);
+		  sw.append( "  <ao:context rdf:resource=\"" + annTextURI + "\"/>" );
+		}
 
-		        // reference to the text that was annotated - an AO  Selector instance
-		        <ao:context rdf:resource="http://esipfed.org/essi-lod/instances/annotation_selection_001"/>
-		        <ao:context rdf:resource="http://esipfed.org/essi-lod/instances/annotation_selection_002"/>
+		// a reference to the AGU abstract we are annotating
+		sw.append( "  <aof:annotatesDocument rdf:resource=\" + abstractURI + \"/>" );
 
-			// a reference to the AGU abstract we are annotating
-		        <aof:annotatesDocument rdf:resource="http://esipfed.org/essi-lod/instances/abstract_001"/>
+		// abstract has the following DBpedia concepts
+		for ( int i=0; i<dbpediaURIs.size(); i++ ) {
+		  sw.append( "  <ao:hasTopic rdf:resource=\"" + dbpediaURIs.get(i) + "\"/>" );
+		}
 
-			// abstract has the following DBpedia concepts
-		        <ao:hasTopic rdf:resource="http://dbpedia.uri.../concept1"/>
-		        <ao:hasTopic rdf:resource="http://dbpedia.uri.../concept2"/>
+		// reference to dbpedia spotlight rdf and creation date
+		sw.append( "  <pav:createdBy rdf:resource=\"http://spotlight.dbpedia.org/rest/annotate\"/>" );
+		sw.append( "  <pav:createdOn>" + date + "</pav:createdOn>" );
 
-		        <pav:createdBy rdf:resource="http://spotlight.dbpedia.org/rest/annotate"/>
-		        <pav:createdOn>2011-10-01</pav:createdOn>
-
-		    </rdf:Description> 
+		sw.append( "</rdf:Description>");
 
 		return sw.toString();
 		
 	}
-	*/
+
 }

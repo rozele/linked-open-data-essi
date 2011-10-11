@@ -27,8 +27,24 @@ public class SpotlightAnnotation implements Annotation
 		surfaceForm = sf; index = idx; similarity = sim; secondRankPct = pct; support = sup; types = t;
 	}
 	
+	public double getSimilarityScore() {
+		return similarity;
+	}
+	
+	public double getPercentSecondRank() {
+		return secondRankPct;
+	}
+	
+	public String getAnnotation() {
+		return this.toString();
+	}
+	
 	public String getSurfaceForm() {
 		return surfaceForm;
+	}
+	
+	public Vector <String> getDBpediaTypes() {
+		return types;
 	}
 
 	public int getIndex() {
@@ -68,7 +84,7 @@ public class SpotlightAnnotation implements Annotation
 			new Vector<String>(Arrays.asList(nm.getNamedItem("types").getTextContent().split(","))) : null;
 	}
 
-	public String getAnnotation() {
+	public String getURI() {
 		return uri;
 	}
 
