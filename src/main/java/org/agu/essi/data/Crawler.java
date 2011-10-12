@@ -226,7 +226,7 @@ public class Crawler implements DataSource
         		} 
         		catch ( Exception e ) 
         		{ 
-        			System.err.println("File at " + address + " does not contain AGU abstract HTML.");
+        			//System.err.println("File at " + address + " does not contain AGU abstract HTML.");
         		}
         	}
         }
@@ -259,7 +259,7 @@ public class Crawler implements DataSource
 				  aguDayOfWeek[i] + aguURLOptions2;
 				URL u = new URL( url ); 
 				ReadableByteChannel rbc = Channels.newChannel( u.openStream() );
-				String localFilename = dataDir + me.getKey() + ".html";
+				String localFilename = dataDir + me.getKey() + "_day" + i + ".html";
 				FileOutputStream fos = new FileOutputStream( localFilename );
 				fos.getChannel().transferFrom(rbc, 0, 1 << 24);	      
 				parserDelegator.parse(new FileReader( localFilename ), parserCallback, false);
@@ -300,7 +300,8 @@ public class Crawler implements DataSource
 	  	Options options = new Options();
 	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts");
 	  	options.addOption("outputFormat", true, "Serialization format for the resulting data");
-	  	options.addOption("noAnnotations", false, "Turns off calls to DBpedia Spotlight annotation service");
+	  	options.addOption("annotate", false, "Turns on calls to DBpedia Spotlight annotation service (default is to not annotate" +
+	  			"while crawling)");
 	  	  
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
@@ -332,8 +333,8 @@ public class Crawler implements DataSource
 	  	} 
 	  	
 	  	// annotate or not
-	  	boolean annotate = true;
-	  	if ( cmd.hasOption("noAnnotations")) { annotate = false; }
+	  	boolean annotate = false;
+	  	if ( cmd.hasOption("annotate")) { annotate = true; }
 
 	  	if (!error)
 	    {	
