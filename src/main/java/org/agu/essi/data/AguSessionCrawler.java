@@ -40,7 +40,6 @@ public class AguSessionCrawler implements DataSource
 	private boolean _crawled;
 	private String _dataDir;
 	private Vector<Abstract> _abstracts;
-	private Vector<String> _abstractLinks;
 	
 	//AGU URLs
 	private static String sessionsTemplate = "http://www.agu.org/cgi-bin/sessions5?meeting={meeting}&sec={sectionId}";
@@ -78,7 +77,6 @@ public class AguSessionCrawler implements DataSource
 			_matcher = new MemoryMatcher();
 		}
 		Vector<String> meetings = Utils.getAguMeetings();
-		_abstractLinks = new Vector<String>();
 		for (int i = 0; i < meetings.size(); ++i)
 		{
 			String[] arr = meetings.get(i).split(";");
@@ -109,7 +107,6 @@ public class AguSessionCrawler implements DataSource
 			}
 		}
 		_crawled = true;
-		System.out.println(_abstractLinks.size());
 	}
 	
 	private void parseSectionResponse(String content, String meetingId, String sectionId)
@@ -180,15 +177,15 @@ public class AguSessionCrawler implements DataSource
 	{
 		Pattern p = Pattern.compile("<font size=-1>  <a href=\"(.{20,30}?)\">Abstract</a></font>");
 		Matcher m = p.matcher(content);
-		//Vector<String> abstractLinks = new Vector<String>();
+		Vector<String> abstractLinks = new Vector<String>();
 		while(m.find())
 		{
-			_abstractLinks.add(m.group(1));
+			abstractLinks.add(m.group(1));
 		}
 		
-		for (int i = 0; i < _abstractLinks.size(); ++i)
+		for (int i = 0; i < abstractLinks.size(); ++i)
 		{
-			//getAbstractResponse(_abstractLinks.get(i));
+			getAbstractResponse(abstractLinks.get(i));
 		}
 	}
 	
