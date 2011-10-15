@@ -40,9 +40,19 @@ public class AguSessionCrawler implements DataSource
 	private boolean _crawled;
 	private String _dataDir;
 	private Vector<Abstract> _abstracts;
+	private Vector<String> _abstractLinks;
 	
+	//AGU URLs
 	private static String sessionsTemplate = "http://www.agu.org/cgi-bin/sessions5?meeting={meeting}&sec={sectionId}";
 	private static String baseUrl = "http://www.agu.org";
+	
+	//regex variables
+	private static String sessionUrlRegex = "(.{50,60})";
+	private static String sessionNameRegex = "(.{0,200})";
+	private static String sessionIdRegex = "([A-Z0-9]{4,6})";
+	private static String sessionLocationRegex = "(.{0,80})";
+	private static String sessionConvenersRegex = "(.{0,200})";
+
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
@@ -68,6 +78,7 @@ public class AguSessionCrawler implements DataSource
 			_matcher = new MemoryMatcher();
 		}
 		Vector<String> meetings = Utils.getAguMeetings();
+		_abstractLinks = new Vector<String>();
 		for (int i = 0; i < meetings.size(); ++i)
 		{
 			String[] arr = meetings.get(i).split(";");
@@ -87,7 +98,6 @@ public class AguSessionCrawler implements DataSource
 					response += Utils.unescapeHtml(line);
 				}
 				parseSectionResponse(response, meetingId, sectionId);
-				_crawled = true;
 			} 
 			catch (MalformedURLException e) 
 			{
@@ -98,6 +108,8 @@ public class AguSessionCrawler implements DataSource
 				e.printStackTrace();
 			}
 		}
+		_crawled = true;
+		System.out.println(_abstractLinks.size());
 	}
 	
 	private void parseSectionResponse(String content, String meetingId, String sectionId)
@@ -117,7 +129,9 @@ public class AguSessionCrawler implements DataSource
 		}
 		
 		//Get Session Links
-		Pattern p2 = Pattern.compile("<tr><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(\\d+?)</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B><a href=\"(.+?)\">(.+?)</a></B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(.+?)</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(.+?)<br /><i>Presiding:</i>\\s*<em>(.+?)</em>");
+		Pattern p2 = Pattern.compile("<tr><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(\\d+?)</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B><a href=\"" + sessionUrlRegex 
+				+ "\">" + sessionIdRegex + "</a></B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" + sessionLocationRegex + "</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" 
+				+ sessionNameRegex + "<br /><i>Presiding:</i>\\s*<em>" + sessionConvenersRegex + "</em>");
 		m = p2.matcher(content);
 		Vector<Session> sessions = new Vector<Session>();
 		Vector<String> sessionLinks = new Vector<String>();
@@ -166,15 +180,15 @@ public class AguSessionCrawler implements DataSource
 	{
 		Pattern p = Pattern.compile("<font size=-1>  <a href=\"(.{20,30}?)\">Abstract</a></font>");
 		Matcher m = p.matcher(content);
-		Vector<String> abstractLinks = new Vector<String>();
+		//Vector<String> abstractLinks = new Vector<String>();
 		while(m.find())
 		{
-			abstractLinks.add(m.group(1));
+			_abstractLinks.add(m.group(1));
 		}
 		
-		for (int i = 0; i < abstractLinks.size(); ++i)
+		for (int i = 0; i < _abstractLinks.size(); ++i)
 		{
-			getAbstractResponse(abstractLinks.get(i));
+			//getAbstractResponse(_abstractLinks.get(i));
 		}
 	}
 	
@@ -245,6 +259,8 @@ public class AguSessionCrawler implements DataSource
 			Abstract abstr = _abstracts.get(i);
 			// replace spaces with _ for file name
 			String title = abstr.getId();
+			if (title.contains("Integrating"))
+				System.out.println("here");
 			String meeting = abstr.getMeeting().getName();
 			title = title.replaceAll("\\s+", "_");
 			title = title.replaceAll("\\s", "_");
