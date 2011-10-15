@@ -317,13 +317,13 @@ public class MemoryMatcher implements EntityMatcher
 				sw.write("    <rdf:type rdf:resource=\"&swc;SessionEvent\" />\n");
 				if (s.getName() != null)
 				{
-					sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + s.getName() + "</swrc:eventTitle>\n");
+					sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getName()) + "</swrc:eventTitle>\n");
 				}
 				if (s.getLocation() != null)
 				{
 					sw.write("    <swrc:hasLocation>");
 					sw.write("      <swc:MeetingRoomPlace>");
-					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + s.getLocation() + "</dc:description>");
+					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getLocation()) + "</dc:description>");
 					sw.write("      </swc:MeetingRoomPlace>");
 					sw.write("    </swrc:hasLocation>");
 				}
