@@ -28,7 +28,7 @@ public class Utils {
 	
 	public static String unescapeHtml(String s)
 	{
-		return fixSpecialChars(StringEscapeUtils.unescapeHtml(s));
+	    return fixSpecialChars(iconv(StringEscapeUtils.unescapeHtml(s),"UTF-8"));
 	}
 	
 	public static String iconv(String s, String format)
@@ -47,8 +47,7 @@ public class Utils {
 	public static String fixSpecialChars(String s)
 	{
 		s = s.replaceAll("\\p{Cntrl}", "");
-		s = s.replaceAll("Ê"," ");
-		s = s.replaceAll(" "," ");
+		s = s.replaceAll("Â "," ");
 		return s;
 	}
 	
