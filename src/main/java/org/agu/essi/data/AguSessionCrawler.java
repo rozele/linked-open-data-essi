@@ -175,7 +175,7 @@ public class AguSessionCrawler implements DataSource
 	
 	private void parseSessionResponse(String content)
 	{
-		Pattern p = Pattern.compile("<font size=-1>  <a href=\"(.{20,30}?)\">Abstract</a></font>");
+		Pattern p = Pattern.compile("<font size=-1>  <a href=\"(.{20,30}?)\">Abstract</a></font>");
 		Matcher m = p.matcher(content);
 		Vector<String> abstractLinks = new Vector<String>();
 		while(m.find())
