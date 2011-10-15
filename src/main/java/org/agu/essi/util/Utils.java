@@ -173,10 +173,11 @@ public class Utils {
 		return meetings;
 	}
 	
-	public static Vector<String> getMissedAbstracts()
+	public static Vector<String> skippedAbstracts()
 	{
 		Vector<String> abstracts = new Vector<String>();
-		abstracts.add("http://www.agu.org/cgi-bin/wais?rr=IN13A-19");
+		abstracts.add("/cgi-bin/wais?rr=IN13A-19");
+		abstracts.add("/cgi-bin/SFgate/SFgate?language=English&verbose=0&listenv=table&application=multismfm&convert=&converthl=&refinequery=&formintern=&formextern=&transquery=sc%3dinformatics%20and%20in42a-06&_lines=&multiple=0&descriptor=%2fdata%2fepubs%2fwais%2findexes%2ffm06%2ffm06%7c216%7c3905%7cNASA%27s%20Earth%20Science%20Gateway:%20A%20Platform%20for%20Interoperable%20Services%20in%20Support%20of%20the%20GEOSS%20Architecture%7cHTML%7clocalhost:0%7c%2fdata%2fepubs%2fwais%2findexes%2ffm06%2ffm06%7c21243172%2021247077%20%2fdata2%2fepubs%2fwais%2fdata%2ffm06%2ffm06.txt");
 		return abstracts;
 	}
 	

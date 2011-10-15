@@ -76,6 +76,8 @@ public class AguSessionCrawler implements DataSource
 		{
 			_matcher = new MemoryMatcher();
 		}
+		
+		//crawl AGU Session pages
 		Vector<String> meetings = Utils.getAguMeetings();
 		for (int i = 0; i < meetings.size(); ++i)
 		{
@@ -105,6 +107,13 @@ public class AguSessionCrawler implements DataSource
 			{
 				e.printStackTrace();
 			}
+		}
+		
+		//crawl abstracts known to be skipped
+		Vector<String> skipped = Utils.skippedAbstracts();
+		for (int i = 0; i < skipped.size(); i++)
+		{
+			getAbstractResponse(skipped.get(i));
 		}
 		_crawled = true;
 	}
