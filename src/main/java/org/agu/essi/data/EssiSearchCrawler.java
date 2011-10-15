@@ -42,9 +42,9 @@ import org.agu.essi.web.spotlight.SpotlightAnnotation;
  * Web Crawler for AGU abstract data
  * @author Eric Rozell and Tom Narock
  */
-public class Crawler implements DataSource 
+public class EssiSearchCrawler implements DataSource 
 {	
-	static final Logger log = Logger.getLogger(org.agu.essi.data.Crawler.class);  
+	static final Logger log = Logger.getLogger(org.agu.essi.data.EssiSearchCrawler.class);  
 
 	// AGU Variables - location of, and access to, AGU Abstract Database
 	private String aguBaseURL = "http://www.agu.org/";
@@ -81,7 +81,7 @@ public class Crawler implements DataSource
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public Crawler ( String dir, boolean a ) 
+	public EssiSearchCrawler ( String dir, boolean a ) 
 	{
 		dataDir = dir;
 		crawled = false;
@@ -91,7 +91,7 @@ public class Crawler implements DataSource
 		crawl();
 	}
 	
-	public Crawler ( boolean a )
+	public EssiSearchCrawler ( boolean a )
 	{
 		_abstracts = new Vector<Abstract>();
 		aguDatabases = Utils.getAguDatabases();
@@ -340,7 +340,7 @@ public class Crawler implements DataSource
 	    {	
 	    	
 	    	// query AGU
-	    	Crawler crawler = new Crawler ( cmd.getOptionValue("outputDirectory"), annotate );
+	    	EssiSearchCrawler crawler = new EssiSearchCrawler ( cmd.getOptionValue("outputDirectory"), annotate );
 	    	
 	    	// annotations
 		  	if ( annotate ) { 

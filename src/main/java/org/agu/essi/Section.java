@@ -3,10 +3,22 @@ package org.agu.essi;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Section {
+/**
+ * Container class for AGU Section information
+ * @author Eric Rozell
+ */
+public class Section 
+{
 	private String _name;
 	private String _id;
 	private Meeting _meeting;
+
+	public Section(String name, String id, Meeting meeting)
+	{
+		_name = name;
+		_id = id;
+		_meeting = meeting;
+	}
 	
 	public Section(String name, Meeting meeting)
 	{

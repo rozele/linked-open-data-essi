@@ -10,7 +10,8 @@ import org.agu.essi.util.Namespaces;
  * Container class for AGU keywords
  * @author Eric Rozell
  */
-public class Keyword {
+public class Keyword 
+{
 	private String _orig;
 	private String _name;
 	private String _id;

@@ -6,7 +6,8 @@ import java.util.regex.*;
  * Container class for person information
  * @author Eric Rozell
  */
-public class Person {
+public class Person 
+{
 	private String _name;
 	private String _email;
 	
@@ -74,7 +75,16 @@ public class Person {
 	 */
 	public String getLastName()
 	{
-		return _name.split(",")[0];
+		String[] arr = _name.split(",");
+		if (arr.length > 1)
+		{
+			return arr[0];
+		}
+		else
+		{
+			arr = _name.split(" ");
+			return arr[arr.length - 1];
+		}
 	}
 	
 	/**

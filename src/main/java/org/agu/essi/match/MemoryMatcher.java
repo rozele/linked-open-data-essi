@@ -315,7 +315,18 @@ public class MemoryMatcher implements EntityMatcher
 				Session s = sessions.get(id);
 				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&swc;SessionEvent\" />\n");
-				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId() + ", " + s.getSection().getMeeting().getName()) + "</swrc:eventTitle>\n");
+				if (s.getName() != null)
+				{
+					sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + s.getName() + "</swrc:eventTitle>\n");
+				}
+				if (s.getLocation() != null)
+				{
+					sw.write("    <swrc:hasLocation>");
+					sw.write("      <swc:MeetingRoomPlace>");
+					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + s.getLocation() + "</dc:description>");
+					sw.write("      </swc:MeetingRoomPlace>");
+					sw.write("    </swrc:hasLocation>");
+				}
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getSectionId(s.getSection()) + "\" />\n");
 				sw.write("  </rdf:Description>\n");
@@ -345,7 +356,7 @@ public class MemoryMatcher implements EntityMatcher
 				Section s = sections.get(id);
 				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&swrc;Meeting\" />\n");
-				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getName() + ", " + s.getMeeting().getName()) + "</swrc:eventTitle>\n");
+				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getName()) + "</swrc:eventTitle>\n");
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getMeetingId(s.getMeeting()) + "\" />\n");
 				sw.write("  </rdf:Description>\n");
@@ -376,6 +387,10 @@ public class MemoryMatcher implements EntityMatcher
 				sw.write("  <rdf:Description rdf:about=\"" + id + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&swrc;Meeting\" />\n");
 				sw.write("    <swrc:eventTitle rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(m.getName()) + "</swrc:eventTitle>\n");
+				if (m.getId() != null)
+				{
+					sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(m.getId()) + "</dc:identifier>\n");					
+				}
 				sw.write("  </rdf:Description>\n");
 			}
 			sw.write(Utils.writeRdfFooter());

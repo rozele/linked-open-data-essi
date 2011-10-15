@@ -2,6 +2,7 @@ package org.agu.essi.util;
 
 import java.io.StringWriter;
 import java.util.HashMap;
+import java.util.Vector;
 
 import org.agu.essi.AbstractType;
 import org.agu.essi.Meeting;
@@ -23,6 +24,11 @@ public class Utils {
 	public static String cleanXml(String s)
 	{
 		return fixSpecialChars(iconv(StringEscapeUtils.escapeXml(s),"UTF-8"));
+	}
+	
+	public static String unescapeHtml(String s)
+	{
+		return StringEscapeUtils.unescapeHtml(s);
 	}
 	
 	public static String iconv(String s, String format)
@@ -146,6 +152,24 @@ public class Utils {
 		aguDatabases.put( "fm05", "/data/epubs/wais/indexes/fm05/fm05");	
 		aguDatabases.put( "sm05", "/data/epubs/wais/indexes/sm05/sm05");
 		return aguDatabases;
+	}
+	
+	public static Vector<String> getAguMeetings()
+	{
+		Vector<String> meetings = new Vector<String>();
+		meetings.add( "fm10;IN");
+		/*meetings.add( "ja10;IN");
+		meetings.add( "fm09;IN");
+		meetings.add( "ja09;IN");
+		meetings.add( "fm08;IN");
+		meetings.add( "ja08;IN");
+		meetings.add( "fm07;IN");
+		meetings.add( "sm07;IN");
+		meetings.add( "fm06;IN");
+		meetings.add( "sm06;IN");
+		meetings.add( "fm05;IN");
+		meetings.add( "sm05;IN");*/
+		return meetings;
 	}
 	
 	public static AbstractType getAbstractType(String s)

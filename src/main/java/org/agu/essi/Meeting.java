@@ -6,6 +6,7 @@ package org.agu.essi;
  */
 public class Meeting {
 	private String _name;
+	private String _id;
 	
 	/**
 	 * Construct Meeting instance from name
@@ -17,12 +18,32 @@ public class Meeting {
 	}
 	
 	/**
+	 * Construct Meeting instance from name
+	 * @param name name of meeting
+	 * @param id ID for meeting
+	 */
+	public Meeting(String name, String id)
+	{
+		_name = name;
+		_id = id;
+	}
+	
+	/**
 	 * Method to get meeting name
 	 * @return name of meeting
 	 */
 	public String getName()
 	{
 		return _name;
+	}
+	
+	/**
+	 * Method to get meeting ID
+	 * @return ID of meeting
+	 */	
+	public String getId()
+	{
+		return _id != null ? _id.toUpperCase() : _id;
 	}
 	
 	/**
