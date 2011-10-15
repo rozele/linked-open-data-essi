@@ -160,7 +160,7 @@ public class Utils {
 		Vector<String> meetings = new Vector<String>();
 		meetings.add( "fm10;IN");
 		meetings.add( "ja10;IN");
-		/*meetings.add( "fm09;IN");
+		meetings.add( "fm09;IN");
 		meetings.add( "ja09;IN");
 		meetings.add( "fm08;IN");
 		meetings.add( "ja08;IN");
@@ -169,8 +169,15 @@ public class Utils {
 		meetings.add( "fm06;IN");
 		meetings.add( "sm06;IN");
 		meetings.add( "fm05;IN");
-		meetings.add( "sm05;IN");*/
+		meetings.add( "sm05;IN");
 		return meetings;
+	}
+	
+	public static Vector<String> getMissedAbstracts()
+	{
+		Vector<String> abstracts = new Vector<String>();
+		abstracts.add("http://www.agu.org/cgi-bin/wais?rr=IN13A-19");
+		return abstracts;
 	}
 	
 	public static AbstractType getAbstractType(String s)

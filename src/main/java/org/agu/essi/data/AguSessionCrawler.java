@@ -50,7 +50,7 @@ public class AguSessionCrawler implements DataSource
 	private static String sessionNameRegex = "(.{0,200})";
 	private static String sessionIdRegex = "([A-Z0-9]{4,6})";
 	private static String sessionLocationRegex = "(.{0,80})";
-	private static String sessionConvenersRegex = "(.{0,200})";
+	private static String sessionConvenersRegex = "(.{0,350}?)";
 
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
@@ -128,13 +128,14 @@ public class AguSessionCrawler implements DataSource
 		//Get Session Links
 		Pattern p2 = Pattern.compile("<tr><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(\\d+?)</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B><a href=\"" + sessionUrlRegex 
 				+ "\">" + sessionIdRegex + "</a></B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" + sessionLocationRegex + "</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" 
-				+ sessionNameRegex + "<br /><i>Presiding:</i>\\s*<em>" + sessionConvenersRegex + "</em>");
+				+ sessionNameRegex + "(<br />|<br>\\s*<br>|<br>(<I>|<i>)?(\\(.+?\\))(</i>)?\\s*<br>)<i>Presiding:</i>\\s*<em>" + sessionConvenersRegex + "(</em>|<br></span>)");
 		m = p2.matcher(content);
 		Vector<Session> sessions = new Vector<Session>();
 		Vector<String> sessionLinks = new Vector<String>();
 		while (m.find())
 		{
-			Session s = new Session(m.group(5), m.group(3), m.group(4), m.group(6), section);
+			String title = m.group(5) + ((m.group(8) != null) ? " " + m.group(8) : "");
+			Session s = new Session(title, m.group(3), m.group(4), m.group(10), section);
 			sessions.add(s);
 			_matcher.getSessionId(s);
 			sessionLinks.add(m.group(2));
@@ -161,7 +162,6 @@ public class AguSessionCrawler implements DataSource
 				response += Utils.unescapeHtml(line);
 			}
 			parseSessionResponse(response);
-			_crawled = true;
 		} 
 		catch (MalformedURLException e) 
 		{
@@ -212,7 +212,6 @@ public class AguSessionCrawler implements DataSource
 				System.err.println("File at " + link + " does not contain AGU abstract HTML.");
 				e.printStackTrace();
 			}
-			_crawled = true;
 		} 
 		catch (MalformedURLException e) 
 		{
