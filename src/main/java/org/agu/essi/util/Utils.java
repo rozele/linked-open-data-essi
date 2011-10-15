@@ -48,6 +48,7 @@ public class Utils {
 	{
 		s = s.replaceAll("\\p{Cntrl}", "");
 		s = s.replaceAll("Ê"," ");
+		s = s.replaceAll(" "," ");
 		return s;
 	}
 	
