@@ -159,8 +159,8 @@ public class Utils {
 	{
 		Vector<String> meetings = new Vector<String>();
 		meetings.add( "fm10;IN");
-		/*meetings.add( "ja10;IN");
-		meetings.add( "fm09;IN");
+		meetings.add( "ja10;IN");
+		/*meetings.add( "fm09;IN");
 		meetings.add( "ja09;IN");
 		meetings.add( "fm08;IN");
 		meetings.add( "ja08;IN");
