@@ -137,14 +137,14 @@ public class AguSessionCrawler implements DataSource
 		//Get Session Links
 		Pattern p2 = Pattern.compile("<tr><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>(\\d+?)</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B><a href=\"" + sessionUrlRegex 
 				+ "\">" + sessionIdRegex + "</a></B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" + sessionLocationRegex + "</B></td><td align=\"left\" valign=\"top\" bgcolor=\"#D1EBDB\"><B>" 
-				+ sessionNameRegex + "(<br />|<br>\\s*<br>|<br>(<I>|<i>)?(\\(.+?\\))(</i>)?\\s*<br>)<i>Presiding:</i>\\s*<em>" + sessionConvenersRegex + "(</em>|<br></span>)");
+				+ sessionNameRegex + "<br( /)?>(((<I>|<i>)?(\\(.+?\\))(</i>)?)?\\s*(<br( /)?>)?)?<i>Presiding:</i>\\s*<em>" + sessionConvenersRegex + "(</em>|<br></span>)");
 		m = p2.matcher(content);
 		Vector<Session> sessions = new Vector<Session>();
 		Vector<String> sessionLinks = new Vector<String>();
 		while (m.find())
 		{
-			String title = m.group(5) + ((m.group(8) != null) ? " " + m.group(8) : "");
-			Session s = new Session(title, m.group(3), m.group(4), m.group(10), section);
+			String title = m.group(5) + ((m.group(10) != null) ? " " + m.group(10) : "");
+			Session s = new Session(title, m.group(3), m.group(4), m.group(14), section);
 			sessions.add(s);
 			_matcher.getSessionId(s);
 			sessionLinks.add(m.group(2));

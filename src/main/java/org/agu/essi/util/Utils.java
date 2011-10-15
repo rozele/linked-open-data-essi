@@ -143,7 +143,7 @@ public class Utils {
 		aguDatabases.put( "fm10", "/data/epubs/wais/indexes/fm10/fm10");	
 		aguDatabases.put( "ja10", "/data/epubs/wais/indexes/ja10/ja10");	
 		aguDatabases.put( "fm09", "/data/epubs/wais/indexes/fm09/fm09");	
-		aguDatabases.put( "ja09", "/data/epubs/wais/indexes/ja09/ja09");	
+		aguDatabases.put( "ja09", "/data/epubs/wais/indexes/ja09/ja09");
 		aguDatabases.put( "fm08", "/data/epubs/wais/indexes/fm08/fm08");	
 		aguDatabases.put( "ja08", "/data/epubs/wais/indexes/ja08/ja08");	
 		aguDatabases.put( "fm07", "/data/epubs/wais/indexes/fm07/fm07");	
