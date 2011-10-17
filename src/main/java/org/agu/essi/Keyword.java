@@ -144,11 +144,11 @@ public class Keyword
 			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
 			if (_parent != null)
 			{
-				sw.write("    <skos:broadMatch rdf:resource=\"&esip;Keyword_" + _parent.getId() + "\" />\n");
+				sw.write("    <skos:broadMatch rdf:resource=\"" + Namespaces.esip + "Keyword_" + _parent.getId() + "\" />\n");
 			}
 			for (int i = 0; i < _related.size(); ++i)
 			{
-				sw.write("    <skos:related rdf:resource=\"&esip;Keyword_" + _related.get(i) + "\" />\n");
+				sw.write("    <skos:related rdf:resource=\"" + Namespaces.esip + "Keyword_" + _related.get(i) + "\" />\n");
 
 			}
 			sw.write("  </rdf:Description>\n");
