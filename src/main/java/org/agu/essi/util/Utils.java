@@ -158,18 +158,18 @@ public class Utils {
 	public static Vector<String[]> getAguMeetings()
 	{
 		Vector<String[]> meetings = new Vector<String[]>();
-		/*meetings.add( new String[] { "fm10","IN" } );
+		meetings.add( new String[] { "fm10","IN" } );
 		meetings.add( new String[] { "ja10","IN" } );
 		meetings.add( new String[] { "fm09","IN" } );
-		meetings.add( new String[] { "ja09","IN" } );*/
+		meetings.add( new String[] { "ja09","IN" } );
 		meetings.add( new String[] { "fm08","IN" } );
-		/*meetings.add( new String[] { "ja08","IN" } );
+		meetings.add( new String[] { "ja08","IN" } );
 		meetings.add( new String[] { "fm07","IN" } );
 		meetings.add( new String[] { "sm07","IN" } );
 		meetings.add( new String[] { "fm06","IN" } );
 		meetings.add( new String[] { "sm06","IN" } );
 		meetings.add( new String[] { "fm05","IN" } );
-		meetings.add( new String[] { "sm05","IN" } );*/
+		meetings.add( new String[] { "sm05","IN" } );
 		return meetings;
 	}
 	
