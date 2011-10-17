@@ -78,10 +78,10 @@ public class AguSessionCrawler implements DataSource
 		}
 		
 		//crawl AGU Session pages
-		Vector<String> meetings = Utils.getAguMeetings();
+		Vector<String[]> meetings = Utils.getAguMeetings();
 		for (int i = 0; i < meetings.size(); ++i)
 		{
-			String[] arr = meetings.get(i).split(";");
+			String[] arr = meetings.get(i);
 			String meetingId = arr[0];
 			String sectionId = arr[1];
 			String loc = sessionsTemplate.replaceAll("\\{meeting\\}", meetingId);

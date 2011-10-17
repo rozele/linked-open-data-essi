@@ -321,11 +321,11 @@ public class MemoryMatcher implements EntityMatcher
 				}
 				if (s.getLocation() != null)
 				{
-					sw.write("    <swrc:hasLocation>");
-					sw.write("      <swc:MeetingRoomPlace>");
-					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getLocation()) + "</dc:description>");
-					sw.write("      </swc:MeetingRoomPlace>");
-					sw.write("    </swrc:hasLocation>");
+					sw.write("    <swrc:hasLocation>\n");
+					sw.write("      <swc:MeetingRoomPlace>\n");
+					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getLocation()) + "</dc:description>\n");
+					sw.write("      </swc:MeetingRoomPlace>\n");
+					sw.write("    </swrc:hasLocation>\n");
 				}
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getSectionId(s.getSection()) + "\" />\n");

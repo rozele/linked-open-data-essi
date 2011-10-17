@@ -35,6 +35,9 @@ public class Session
 	public Session(String name, String id, String location, String conveners, Section section)
 	{
 		_name = name;
+		_name = _name.replaceAll("<br( /)?>", " ");
+		_name = _name.replaceAll("<i>|<I>|</i>","");
+		_name = _name.trim();
 		_id = id;
 		_location = location;
 		_conveners = conveners;
