@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.io.IOException;
 
 import javax.swing.text.html.HTMLEditorKit.ParserCallback;
 import javax.swing.text.html.parser.ParserDelegator;
@@ -33,10 +34,11 @@ import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.match.MemoryMatcher;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
+import org.agu.essi.util.exception.AbstractParserException;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
 import org.agu.essi.web.spotlight.SpotlightAnnotator;
-import org.agu.essi.web.spotlight.SpotlightAnnotation;
+import org.agu.essi.web.spotlight.SpotlightAnnotationToRdfXml;
 
 /**
  * Web Crawler for AGU abstract data
@@ -65,7 +67,7 @@ public class EssiSearchCrawler implements DataSource
 	
 	// annotate with DBpedia Spotlight
 	private boolean annotate = true;
-	private Vector <String> annotationRDF = new Vector <String> ();
+	private SpotlightAnnotationToRdfXml sWriter = new SpotlightAnnotationToRdfXml ();
 	
 	// HTML parser
 	private ParserDelegator parserDelegator = new ParserDelegator();
@@ -108,45 +110,6 @@ public class EssiSearchCrawler implements DataSource
 	public EntityMatcher getEntityMatcher()
 	{
 		return matcher;
-	}
-	
-	private void annotationsToRDF( Vector <org.agu.essi.annotation.Annotation> annotations, 
-		SpotlightAnnotator annotator, Abstract a ) throws EntityMatcherRequiredException
-	{
-		Vector <String> dbpediaURIs = new Vector <String> ();
-		Vector <String> allSurfaceForms = new Vector <String> ();
-		if (matcher == null) matcher = new MemoryMatcher();
-		
-		// provenance rdf about which abstract we are annotating and the date accessed
-		annotationRDF.add( annotator.writeAnnotationProvenanceToRdfXml( matcher.getAbstractId(a) ) ); 
-		  
-		// loop over each annotation associated with this abstract
-		for ( int i=0; i<annotations.size(); i++ ) {
-			
-		  SpotlightAnnotation sa = (SpotlightAnnotation) annotations.get(i);
-		  dbpediaURIs.add(sa.getURI());
-		  allSurfaceForms.add(sa.getSurfaceForm());
-		  
-		  // rdf about the specific annotation - surface form, dbpedia type, etc.
-		  annotationRDF.add( annotator.writeAnnotationTextToRdfXml( sa.getSurfaceForm(), sa.getDBpediaTypes(), 
-			sa.getSimilarityScore(), sa.getPercentSecondRank(), matcher.getAbstractId(a) ) );
-		  
-		}		
-
-		// rdf about all dbpedia URIs and all text selector URIs related to this abstract
-		annotationRDF.add( annotator.writeAnnotationToRdfXml( matcher.getAbstractId(a), dbpediaURIs, allSurfaceForms ) );
-		
-	}
-	
-	private void writeAnnotationToRDFXML( String format, Vector <String> annotationRDF ) {
-		FileWrite fw = new FileWrite();
-		if (format.equals("rdf/xml")) {
-		  fw.newFile(dataDir + "spotlight_annotations.rdf", Utils.writeXmlHeader());
-		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeDocumentEntities());
-		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeRdfHeader());
-		  for ( int i=0; i<annotationRDF.size(); i++ ) { fw.append(dataDir + "spotlight_annotations.rdf", annotationRDF.get(i)); }
-		  fw.append(dataDir + "spotlight_annotations.rdf", Utils.writeRdfFooter());
-		} else {  }
 	}
 	
 	private void writeToRDFXML( ) throws EntityMatcherRequiredException
@@ -216,18 +179,28 @@ public class EssiSearchCrawler implements DataSource
         			_abstracts.add( a );
         			
         			if ( annotate ) {
-        			  System.out.println("creating annotation...");
+        			  System.out.println("Creating Annotation...");
         			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
         			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
-        			  annotationsToRDF( annotations, annotator, a );
+        			  sWriter.annotationsToRDF( annotations, annotator, a );
         			          			  
         			} // end if annotate
         			
         		} 
-        		catch ( Exception e ) 
-        		{ 
-        			//System.err.println("File at " + address + " does not contain AGU abstract HTML.");
-        		}
+        		catch (AbstractParserException e) 
+    			{
+    				System.err.println("File at " + address + " does not contain AGU abstract HTML.");
+    				e.printStackTrace();
+    			}
+    			catch (EntityMatcherRequiredException e) {
+    				System.err.println("Entity Matcher Required Exception when writing annotations.");
+    				e.printStackTrace();
+    			}
+    			catch (IOException e) 
+    			{
+    				System.err.println("IO Exception with: " + address);
+    				e.printStackTrace();
+    			}
         	}
         }
 
@@ -359,7 +332,7 @@ public class EssiSearchCrawler implements DataSource
     			if (format != null && format.equals("rdf/xml")) 
     			{ 
 	    			crawler.writeToRDFXML();
-	    			if ( annotate ) { crawler.writeAnnotationToRDFXML(format, crawler.annotationRDF); }
+	    			if ( annotate ) { crawler.sWriter.writeAnnotationToRDFXML( crawler.dataDir ); }
     			} 
     			else 
     			{ 

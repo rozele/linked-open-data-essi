@@ -22,6 +22,8 @@ import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.AbstractParserException;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
+import org.agu.essi.web.spotlight.SpotlightAnnotator;
+import org.agu.essi.web.spotlight.SpotlightAnnotationToRdfXml;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
@@ -52,14 +54,18 @@ public class AguSessionCrawler implements DataSource
 	private static String sessionLocationRegex = "(.{0,80})";
 	private static String sessionConvenersRegex = "(.{0,350}?)";
 
+	// annotate with DBpedia Spotlight
+	private boolean annotate = true;
+	private SpotlightAnnotationToRdfXml sWriter = new SpotlightAnnotationToRdfXml ();
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public AguSessionCrawler ( String dir ) 
+	public AguSessionCrawler ( String dir, boolean a ) 
 	{
 		_dataDir = dir;
 		_crawled = false;
 		_abstracts = new Vector<Abstract>();
+		annotate = a;
 		crawl();
 	}
 	
@@ -67,6 +73,7 @@ public class AguSessionCrawler implements DataSource
 	{
 		_crawled = false;
 		_abstracts = new Vector<Abstract>();
+		annotate = a;
 		crawl();
 	}
 
@@ -214,11 +221,23 @@ public class AguSessionCrawler implements DataSource
 			}
 			try 
 			{
-				_abstracts.add(new HtmlAbstract(response));
+				Abstract a = new HtmlAbstract(response);
+				_abstracts.add(a);
+				if ( annotate ) {
+      			  System.out.println("Creating Annotation...");
+      			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
+      			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
+      			  sWriter.annotationsToRDF( annotations, annotator, a );
+      			          			  
+      			} // end if annotate
 			} 
 			catch (AbstractParserException e) 
 			{
 				System.err.println("File at " + link + " does not contain AGU abstract HTML.");
+				e.printStackTrace();
+			}
+			catch (EntityMatcherRequiredException e) {
+				System.err.println("Entity Matcher Required Exception when writing annotations.");
 				e.printStackTrace();
 			}
 		} 
@@ -302,6 +321,9 @@ public class AguSessionCrawler implements DataSource
 	  	Options options = new Options();
 	  	options.addOption("outputDirectory", true, "Directory in which to store the retrieved abstracts");
 	  	options.addOption("outputFormat", true, "Serialization format for the resulting data");
+	  	options.addOption("annotate", false, "Turns on calls to DBpedia Spotlight annotation service (default is to not annotate" +
+			"while crawling)");
+	  
 	  	  
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
@@ -332,17 +354,34 @@ public class AguSessionCrawler implements DataSource
 	  		format = cmd.getOptionValue("outputFormat"); 
 	  	} 
 
+	  	// annotate or not
+	  	boolean annotate = false;
+	  	if ( cmd.hasOption("annotate")) { annotate = true; }
+	  	
 	  	if (!error)
 	    {	
 	    	
 	    	// query AGU
-	    	AguSessionCrawler crawler = new AguSessionCrawler ( cmd.getOptionValue("outputDirectory") );
+	    	AguSessionCrawler crawler = new AguSessionCrawler ( cmd.getOptionValue("outputDirectory"), annotate );
+		  	
+	    	// annotations
+		  	if ( annotate ) { 
+		  	  // write the DBpedia Source annotation
+		  	  String source = SpotlightAnnotator.writeSpotlightAgentRDF();
+		  	  FileWrite fw = new FileWrite ();
+		  	  String test = cmd.getOptionValue("outputDirectory").substring(cmd.getOptionValue("outputDirectory").length()-1);
+		  	  String path = cmd.getOptionValue("outputDirectory");
+		  	  if ( !test.equals(java.io.File.separator) ) { path = path + java.io.File.separator; }
+		  	  System.out.println("Spotlight Agent path: " + path);
+		  	  fw.newFile( path, source );
+		  	}
 		  	
 	    	// output abstracts and annotations
     		try {
     			if (format != null && format.equals("rdf/xml")) 
     			{ 
 	    			crawler.writeToRDFXML();
+	    			if ( annotate ) { crawler.sWriter.writeAnnotationToRDFXML( crawler._dataDir ); }
     			} 
     			else 
     			{ 
