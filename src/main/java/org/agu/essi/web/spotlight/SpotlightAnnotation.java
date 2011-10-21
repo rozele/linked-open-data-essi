@@ -14,17 +14,20 @@ public class SpotlightAnnotation implements Annotation
 	private int index;
 	private double similarity;
 	private double secondRankPct;
+	private double confidence;
 	private int support;
 	private Vector <String> types;
 	
-	public SpotlightAnnotation(Node xml)
+	public SpotlightAnnotation(Node xml, double confidence)
 	{
+		this.confidence = confidence;
 		parseDomNode(xml);
 	}
 	
-	public SpotlightAnnotation(String sf, int idx, double sim, double pct, int sup, Vector<String> t)
+	public SpotlightAnnotation(String sf, int idx, double sim, double pct, int sup, Vector<String> t, 
+			double c)
 	{
-		surfaceForm = sf; index = idx; similarity = sim; secondRankPct = pct; support = sup; types = t;
+		surfaceForm = sf; index = idx; similarity = sim; secondRankPct = pct; support = sup; types = t; confidence = c;
 	}
 	
 	public double getSimilarityScore() {
@@ -52,8 +55,7 @@ public class SpotlightAnnotation implements Annotation
 	}
 
 	public double getConfidence() {
-		if (secondRankPct <= 0) return similarity;
-		else return similarity * (1 - secondRankPct);
+		return confidence;
 	}
 	
 	public int getSupport() { return support; }

@@ -52,6 +52,18 @@ public class SpotlightAnnotator implements AnnotatedText
 		annotate();
 	}
 	
+	/**
+	 * Method for changing the confidence used in calls to DBpedia Spotlight (default is 0.5)
+	 * @param c the new confidence level
+	 */
+	public void setConfidence ( double c ) { confidence = c; }
+	
+	/**
+	 * Method for changing the support used in calls to DBpedia Spotlight (default is 0)
+	 * @param s the new support level
+	 */
+	public void setSupport ( int s ) { support = support; }
+	
 	public String getText() 
 	{
 		return text;
@@ -106,7 +118,7 @@ public class SpotlightAnnotator implements AnnotatedText
           NodeList nl = dom.getElementsByTagName("Resource");
           for (int i = 0; i < nl.getLength(); ++i) {
             Node n = nl.item(i);           
-            SpotlightAnnotation annotation = new SpotlightAnnotation(n);
+            SpotlightAnnotation annotation = new SpotlightAnnotation(n, confidence);
             annotations.add(annotation); 
           }
     	} catch ( Exception e ) { System.out.println(e); }
@@ -141,7 +153,8 @@ public class SpotlightAnnotator implements AnnotatedText
 	
 		StringWriter sw = new StringWriter();
 		String sdURI = abstractURI.replace("Abstract", "SourceDocument");
-		String dataType = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\"";
+		String floatType = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#float\"";
+		String stringType = "rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\"";
 		String sfURI = surfaceForm.replace(" ", "_");
 		String annTextURI = abstractURI.replace("Abstract", "AnnotationTextSelector_" + sfURI);
 		
@@ -152,14 +165,15 @@ public class SpotlightAnnotator implements AnnotatedText
 		sw.append( "<rdf:Description rdf:about=\"" + annTextURI + "\">" );
 		sw.append( "  <rdf:type rdf:resource=\"&dbanno;DBpediaSpotlightSelector\"/>" );
 		 
-		sw.append( "  <aos:exact " + dataType + ">" + surfaceForm + "</aos:exact>" );
-		sw.append( "  <dbanno:dbpediaConcept " + dataType + ">" + "<dbanno:dbpediaConcept/>" );
-		sw.append( "  <dbanno:dbpediaSupport " + dataType + ">" + support + "<dbanno:dbpediaSupport/>" );
+		sw.append( "  <aos:exact " + stringType + ">" + surfaceForm + "</aos:exact>" );
+		sw.append( "  <dbanno:dbpediaConcept " + stringType + ">" + "<dbanno:dbpediaConcept/>" );
+		sw.append( "  <dbanno:dbpediaSupport " + floatType + ">" + support + "<dbanno:dbpediaSupport/>" );
+		sw.append( "  <dbanno:dbpediaConfidence " + floatType + ">" + confidence + "<dbanno:dbpediaConfidence/>" );
 		for ( int i=0; i<dbpediaTypes.size(); i++ ) {
-		  sw.append( "  <dbanno:dbpediaType " + dataType + ">" + dbpediaTypes.get(i) + "<dbanno:dbpediaType/>" );
+		  sw.append( "  <dbanno:dbpediaType " + stringType + ">" + dbpediaTypes.get(i) + "<dbanno:dbpediaType/>" );
 		}
-		sw.append( "  <dbanno:dbpediaSimilarityScore " + dataType + ">"+ similarityScore + "<dbanno:dbpediaSimilarityScore/>" );
-		sw.append( "  <dbanno:dbpediaPercentOfSecondRank " + dataType + ">" + psr +  "<dbanno:dbpediaPercentOfSecondRank/>" );
+		sw.append( "  <dbanno:dbpediaSimilarityScore " + floatType + ">"+ similarityScore + "<dbanno:dbpediaSimilarityScore/>" );
+		sw.append( "  <dbanno:dbpediaPercentOfSecondRank " + floatType + ">" + psr +  "<dbanno:dbpediaPercentOfSecondRank/>" );
 		sw.append( "  <aof:onDocument rdf:resource=\"" + abstractURI + "\"/>" );
 		sw.append( "  <ao:onSourceDocument rdf:resource=\"" + sdURI + "\"/>" );
 		sw.append( "</rdf:Description>" );
