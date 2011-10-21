@@ -179,7 +179,6 @@ public class EssiSearchCrawler implements DataSource
         			_abstracts.add( a );
         			
         			if ( annotate ) {
-        			  System.out.println("Creating Annotation...");
         			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
         			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
         			  sWriter.annotationsToRDF( annotations, annotator, a );

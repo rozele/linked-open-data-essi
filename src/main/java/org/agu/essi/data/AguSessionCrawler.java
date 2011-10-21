@@ -224,7 +224,6 @@ public class AguSessionCrawler implements DataSource
 				Abstract a = new HtmlAbstract(response);
 				_abstracts.add(a);
 				if ( annotate ) {
-      			  System.out.println("Creating Annotation...");
       			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
       			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
       			  sWriter.annotationsToRDF( annotations, annotator, a );
