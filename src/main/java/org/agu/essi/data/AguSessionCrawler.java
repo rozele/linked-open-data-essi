@@ -66,6 +66,15 @@ public class AguSessionCrawler implements DataSource
 		_crawled = false;
 		_abstracts = new Vector<Abstract>();
 		annotate = a;
+		if ( annotate ) { 
+			
+			// configure the annotation writer
+		  	sWriter.setOutputDirectory( _dataDir );
+		  		
+		  	// write the DBpedia Source annotation
+		  	sWriter.writeSpotlightProvenance();
+		  				
+		}
 		crawl();
 	}
 	
@@ -74,6 +83,15 @@ public class AguSessionCrawler implements DataSource
 		_crawled = false;
 		_abstracts = new Vector<Abstract>();
 		annotate = a;
+		if ( annotate ) { 
+			
+			// configure the annotation writer
+		  	sWriter.setOutputDirectory( _dataDir );
+		  		
+		  	// write the DBpedia Source annotation
+		  	sWriter.writeSpotlightProvenance();
+		  				
+		}
 		crawl();
 	}
 
@@ -82,6 +100,7 @@ public class AguSessionCrawler implements DataSource
 		if (_matcher == null)
 		{
 			_matcher = new MemoryMatcher();
+			sWriter.setEntityMatcher( _matcher );
 		}
 		
 		//crawl AGU Session pages
@@ -227,7 +246,6 @@ public class AguSessionCrawler implements DataSource
       			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
       			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
       			  sWriter.annotationsToRDF( annotations, annotator, a );
-      			          			  
       			} // end if annotate
 			} 
 			catch (AbstractParserException e) 
@@ -307,6 +325,7 @@ public class AguSessionCrawler implements DataSource
 	public void setEntityMatcher(EntityMatcher m) 
 	{
 		_matcher = m;
+		sWriter.setEntityMatcher( m );
 	}
 
 	public EntityMatcher getEntityMatcher() 
@@ -363,24 +382,11 @@ public class AguSessionCrawler implements DataSource
 	    	// query AGU
 	    	AguSessionCrawler crawler = new AguSessionCrawler ( cmd.getOptionValue("outputDirectory"), annotate );
 		  	
-	    	// annotations
-		  	if ( annotate ) { 
-		  	  // write the DBpedia Source annotation
-		  	  String source = SpotlightAnnotator.writeSpotlightAgentRDF();
-		  	  FileWrite fw = new FileWrite ();
-		  	  String test = cmd.getOptionValue("outputDirectory").substring(cmd.getOptionValue("outputDirectory").length()-1);
-		  	  String path = cmd.getOptionValue("outputDirectory");
-		  	  if ( !test.equals(java.io.File.separator) ) { path = path + java.io.File.separator; }
-		  	  System.out.println("Spotlight Agent path: " + path);
-		  	  fw.newFile( path, source );
-		  	}
-		  	
 	    	// output abstracts and annotations
     		try {
     			if (format != null && format.equals("rdf/xml")) 
     			{ 
 	    			crawler.writeToRDFXML();
-	    			if ( annotate ) { crawler.sWriter.writeAnnotationToRDFXML( crawler._dataDir ); }
     			} 
     			else 
     			{ 

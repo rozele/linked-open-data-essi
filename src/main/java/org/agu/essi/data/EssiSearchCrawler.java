@@ -90,6 +90,15 @@ public class EssiSearchCrawler implements DataSource
 		_abstracts = new Vector<Abstract>();
 		annotate = a;
 		aguDatabases = Utils.getAguDatabases();
+		if ( annotate ) { 
+			  
+			// configure the annotation writer
+		  	sWriter.setOutputDirectory( dataDir );
+		  		
+		  	// write the DBpedia Source annotation
+		  	sWriter.writeSpotlightProvenance();
+		  				
+		}
 		crawl();
 	}
 	
@@ -99,12 +108,22 @@ public class EssiSearchCrawler implements DataSource
 		aguDatabases = Utils.getAguDatabases();
 		annotate = a;
 		crawled = false;
+		if ( annotate ) { 
+			
+			// configure the annotation writer
+		  	sWriter.setOutputDirectory( dataDir );
+		  		
+		  	// write the DBpedia Source annotation
+		  	sWriter.writeSpotlightProvenance();
+		  			
+		}
 		crawl();
 	}
 	
 	public void setEntityMatcher(EntityMatcher m)
 	{
 		matcher = m;
+		sWriter.setEntityMatcher( m );
 	}
 	
 	public EntityMatcher getEntityMatcher()
@@ -181,8 +200,7 @@ public class EssiSearchCrawler implements DataSource
         			if ( annotate ) {
         			  SpotlightAnnotator annotator = new SpotlightAnnotator ( a.getAbstract() );
         			  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
-        			  sWriter.annotationsToRDF( annotations, annotator, a );
-        			          			  
+        			  sWriter.annotationsToRDF( annotations, annotator, a );        			          			  
         			} // end if annotate
         			
         		} 
@@ -217,6 +235,13 @@ public class EssiSearchCrawler implements DataSource
     // call the AGU interface and extract abstracts from all available meetings
 	private void crawl ( ) 
 	{    
+		
+		if (matcher == null)
+		{
+			matcher = new MemoryMatcher();
+			sWriter.setEntityMatcher( matcher );
+		}
+		
 		String url = null;
 		Set <Map.Entry<String, String>> databases = aguDatabases.entrySet();
 		// loop over all the AGU meetings
@@ -313,25 +338,12 @@ public class EssiSearchCrawler implements DataSource
 	    	
 	    	// query AGU
 	    	EssiSearchCrawler crawler = new EssiSearchCrawler ( cmd.getOptionValue("outputDirectory"), annotate );
-	    	
-	    	// annotations
-		  	if ( annotate ) { 
-		  	  // write the DBpedia Source annotation
-		  	  String source = SpotlightAnnotator.writeSpotlightAgentRDF();
-		  	  FileWrite fw = new FileWrite ();
-		  	  String test = cmd.getOptionValue("outputDirectory").substring(cmd.getOptionValue("outputDirectory").length()-1);
-		  	  String path = cmd.getOptionValue("outputDirectory");
-		  	  if ( !test.equals(java.io.File.separator) ) { path = path + java.io.File.separator; }
-		  	  System.out.println("Spotlight Agent path: " + path);
-		  	  fw.newFile( path, source );
-		  	}
 		  	
 	    	// output abstracts and annotations
     		try {
     			if (format != null && format.equals("rdf/xml")) 
     			{ 
 	    			crawler.writeToRDFXML();
-	    			if ( annotate ) { crawler.sWriter.writeAnnotationToRDFXML( crawler.dataDir ); }
     			} 
     			else 
     			{ 

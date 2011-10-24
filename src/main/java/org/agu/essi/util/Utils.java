@@ -89,6 +89,12 @@ public class Utils {
 		sw.write("         xmlns:geo=\"" + Namespaces.geo + "\"\n");
 		sw.write("         xmlns:skos=\"" + Namespaces.skos + "\"\n");
 		sw.write("         xmlns:dbanno=\"" + Namespaces.dbanno + "\"\n");
+		sw.write("		   xmlns:pav=\"" + Namespaces.pav + "\"\n");
+		sw.write("		   xmlns:ao=\"" + Namespaces.ao + "\"\n");
+		sw.write("		   xmlns:aocore=\"" + Namespaces.aocore + "\"\n");
+		sw.write("		   xmlns:aof=\"" + Namespaces.aof + "\"\n");
+		sw.write("		   xmlns:aos=\"" + Namespaces.aos + "\"\n");
+		sw.write("		   xmlns:aot=\"" + Namespaces.aot + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.esip + "\">\n");
 		return sw.toString();
 	}
@@ -106,6 +112,12 @@ public class Utils {
 		sw.write("PREFIX geo: <" + Namespaces.geo + ">\n");
 		sw.write("PREFIX skos: <" + Namespaces.skos + ">\n");
 		sw.write("PREFIX dbanno: <" + Namespaces.dbanno + ">\n");
+		sw.write("PREFIX pav=\"" + Namespaces.pav + "\"\n");
+		sw.write("PREFIX ao=\"" + Namespaces.ao + "\"\n");
+		sw.write("PREFIX aocore=\"" + Namespaces.aocore + "\"\n");
+		sw.write("PREFIX aof=\"" + Namespaces.aof + "\"\n");
+		sw.write("PREFIX aos=\"" + Namespaces.aos + "\"\n");
+		sw.write("PREFIX aot=\"" + Namespaces.aot + "\"\n");
 		return sw.toString();
 	}
 	
@@ -133,6 +145,12 @@ public class Utils {
 		sw.write("  <!ENTITY geo \"" + Namespaces.geo + "\" >\n");
 		sw.write("  <!ENTITY skos \"" + Namespaces.skos + "\" >\n");
 		sw.write("  <!ENTITY dbanno \"" + Namespaces.dbanno + "\" >\n");
+		sw.write("  <!ENTITY pav \"" + Namespaces.pav + "\" >\n");
+		sw.write("  <!ENTITY ao \"" + Namespaces.ao + "\" >\n");
+		sw.write("  <!ENTITY aocore \"" + Namespaces.aocore + "\" >\n");
+		sw.write("  <!ENTITY aof \"" + Namespaces.aof + "\" >\n");
+		sw.write("  <!ENTITY aos \"" + Namespaces.aos + "\" >\n");
+		sw.write("  <!ENTITY aot \"" + Namespaces.aot + "\" >\n");
 		sw.write("]>\n");
 		return sw.toString();	
 	}
