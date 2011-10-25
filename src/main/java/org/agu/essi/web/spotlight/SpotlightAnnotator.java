@@ -215,7 +215,7 @@ public class SpotlightAnnotator implements AnnotatedText
 		}
 
 		// a reference to the AGU abstract we are annotating
-		sw.append( "  <aof:annotatesDocument rdf:resource=\" + abstractURI + \"/>" + newLine );
+		sw.append( "  <aof:annotatesDocument rdf:resource=\"" + abstractURI + "\"/>" + newLine );
 
 		// abstract has the following DBpedia concepts
 		for ( int i=0; i<dbpediaURIs.size(); i++ ) {
