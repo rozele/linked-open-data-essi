@@ -41,6 +41,20 @@
 	</repository>
   </repositories>
   <pluginRepositories>
+  
+    <!-- MAven plugin for license management -->
+  	<pluginRepository>
+    	<id>mc-release</id>
+    	<name>Local Maven repository of releases</name>
+    	<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
+    	<snapshots>
+        	<enabled>false</enabled>
+    	</snapshots>
+    	<releases>
+        	<enabled>true</enabled>
+    	</releases>
+	</pluginRepository>
+	
 	<pluginRepository>
 	  <id>maven2-repository.java.net</id>
 	  <name>Java.net Repository for Maven</name>
@@ -125,6 +139,16 @@
     </resources>
     
     <plugins>
+    
+      <!-- license plugin -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>resources/header.txt</header>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
