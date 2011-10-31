@@ -144,9 +144,26 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
+        <version>1.9.0</version>
         <configuration>
           <header>resources/header.txt</header>
-        </configuration>
+          <!--  build should fail if license headers are missing -->
+          <failIfMissing>true</failIfMissing>
+          <!-- apply license checking to project sub-modules -->
+          <aggregate>false</aggregate>
+          <includes>
+            <include>src/**</include>
+          </includes>
+          <excludes>
+            <exclude>resources/**</exclude>
+            <exclude>license/**</exclude>
+            <exclude>target/**</exclude>
+          </excludes>
+          <!-- by default this plugin will exclude certain types of files even
+               if they are found in the include directories. use this default list? 
+               DEFAULT EXCLUDES: http://code.google.com/p/maven-license-plugin/wiki/Configuration#Default_excludes -->
+          <useDefaultExcludes>true</useDefaultExcludes>
+        </configuration> 
       </plugin>
 
       <plugin>
