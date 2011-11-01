@@ -176,22 +176,23 @@ public class SpotlightAnnotator implements AnnotatedText
 		String sfURI = surfaceForm.replace(" ", "_");
 		String annTextURI = abstractURI.replace("Abstract", "AnnotationTextSelector_" + sfURI);
 		
-		sw.append( "<rdf:Description rdf:about=\"" + annTextURI + "\">" + newLine );
+		sw.append( "<rdf:Description rdf:about=\"" + Utils.cleanXml(annTextURI) + "\">" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&dbanno;DBpediaSpotlightSelector\"/>" + newLine );
 		 
-		sw.append( "  <aos:exact " + stringType + ">" + surfaceForm + "</aos:exact>" + newLine );
+		sw.append( "  <aos:exact " + stringType + ">" + Utils.cleanXml(surfaceForm) + "</aos:exact>" + newLine );
+
 		sw.append( "  <dbanno:dbpediaConcept " + stringType + ">" + "</dbanno:dbpediaConcept>" + newLine );
 		sw.append( "  <dbanno:dbpediaSupport " + floatType + ">" + support + "</dbanno:dbpediaSupport>" + newLine );
 		sw.append( "  <dbanno:dbpediaConfidence " + floatType + ">" + confidence + "</dbanno:dbpediaConfidence>" + newLine );
 		for ( int i=0; i<dbpediaTypes.size(); i++ ) {
-		  sw.append( "  <dbanno:dbpediaType " + stringType + ">" + dbpediaTypes.get(i) + "</dbanno:dbpediaType>" + newLine );
+		  sw.append( "  <dbanno:dbpediaType " + stringType + ">" + Utils.cleanXml(dbpediaTypes.get(i)) + "</dbanno:dbpediaType>" + newLine );
 		}
 		sw.append( "  <dbanno:dbpediaSimilarityScore " + floatType + ">"+ similarityScore + 
 				"</dbanno:dbpediaSimilarityScore>" + newLine );
 		sw.append( "  <dbanno:dbpediaPercentOfSecondRank " + floatType + ">" + psr + 
 				"</dbanno:dbpediaPercentOfSecondRank>" + newLine );
-		sw.append( "  <aof:onDocument rdf:resource=\"" + abstractURI + "\"/>" + newLine );
-		sw.append( "  <ao:onSourceDocument rdf:resource=\"" + sdURI + "\"/>" + newLine );
+		sw.append( "  <aof:onDocument rdf:resource=\"" + Utils.cleanXml(abstractURI) + "\"/>" + newLine );
+		sw.append( "  <ao:onSourceDocument rdf:resource=\"" + Utils.cleanXml(sdURI) + "\"/>" + newLine );
 		sw.append( "</rdf:Description>" + newLine );
     
 		return sw.toString();
@@ -202,9 +203,9 @@ public class SpotlightAnnotator implements AnnotatedText
 	
 		StringWriter sw = new StringWriter();
 		String sdURI = abstractURI.replace("Abstract", "SourceDocument");
-		sw.append( "<rdf:Description rdf:about=\"" + sdURI + "\">" + newLine );
+		sw.append( "<rdf:Description rdf:about=\"" + Utils.cleanXml(sdURI) + "\">" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&pav;SourceDocument\"/>" + newLine );
-		sw.append( "  <pav:retrievedFrom rdf:resource=\"" + abstractURI + "\"/>" + newLine );
+		sw.append( "  <pav:retrievedFrom rdf:resource=\"" + Utils.cleanXml(abstractURI) + "\"/>" + newLine );
 		sw.append( "  <pav:sourceAccessedOn>" + date + "</pav:sourceAccessedOn>" + newLine );
 		sw.append( "</rdf:Description>" + newLine ); 
 		    
@@ -217,7 +218,7 @@ public class SpotlightAnnotator implements AnnotatedText
 		StringWriter sw = new StringWriter();
 		String annotationURI = abstractURI.replace("Abstract","Annotation");
 
-		sw.append( "<rdf:Description rdf:about=\"" + annotationURI + "\">" + newLine );
+		sw.append( "<rdf:Description rdf:about=\"" + Utils.cleanXml(annotationURI) + "\">" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&aot;ExactQualifier\"/>" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&aot;Qualifier\"/>" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&ao;Annotation\"/>" + newLine );
@@ -227,15 +228,15 @@ public class SpotlightAnnotator implements AnnotatedText
 		for ( int i=0; i<surfaceForms.size(); i++ ) {
 		  String sfURI = surfaceForms.get(i).replace(" ", "_");
 		  String annTextURI = abstractURI.replace("Abstract", "AnnotationTextSelector_" + sfURI);
-		  sw.append( "  <ao:context rdf:resource=\"" + annTextURI + "\"/>" + newLine );
+		  sw.append( "  <ao:context rdf:resource=\"" + Utils.cleanXml(annTextURI) + "\"/>" + newLine );
 		}
 
 		// a reference to the AGU abstract we are annotating
-		sw.append( "  <aof:annotatesDocument rdf:resource=\"" + abstractURI + "\"/>" + newLine );
+		sw.append( "  <aof:annotatesDocument rdf:resource=\"" + Utils.cleanXml(abstractURI) + "\"/>" + newLine );
 
 		// abstract has the following DBpedia concepts
 		for ( int i=0; i<dbpediaURIs.size(); i++ ) {
-		  sw.append( "  <ao:hasTopic rdf:resource=\"" + dbpediaURIs.get(i) + "\"/>" + newLine );
+		  sw.append( "  <ao:hasTopic rdf:resource=\"" + Utils.cleanXml(dbpediaURIs.get(i)) + "\"/>" + newLine );
 		}
 
 		// reference to dbpedia spotlight rdf and creation date
