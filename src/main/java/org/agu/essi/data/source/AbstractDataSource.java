@@ -14,12 +14,24 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.agu.essi;
+package org.agu.essi.data.source;
+
+import java.util.Vector;
+
+import org.agu.essi.abstracts.Abstract;
+import org.agu.essi.util.exception.SourceNotReadyException;
 
 /**
- * Enumeration of all the types of AGU abstracts
- * @author Eric Rozell
+ * Interface for specifying sources of AGU abstracts
+ * @author Tom Narock
  */
-public enum AbstractType {
-	PRESENTATION, POSTER, WITHDRAWN, INVITED, DEFAULT
+public interface AbstractDataSource extends DataSource {
+	
+	/**
+	 * Method to retrieve the set of abstracts from the data source
+	 * @return a Vector of Abstract instances
+	 */
+	/* TODO: add exception when source is not ready */
+	public Vector <Abstract> getAbstracts() throws SourceNotReadyException;
+	
 }

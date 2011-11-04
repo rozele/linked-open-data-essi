@@ -16,6 +16,10 @@
  */
 package org.agu.essi;
 
+/**
+ * Enumeration of types of AGU meetings
+ * @author Eric Rozell 
+ */
 public enum MeetingType 
 {
 	FALL 

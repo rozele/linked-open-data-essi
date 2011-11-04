@@ -41,21 +41,28 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class XmlDataSource implements DataSource {
+import org.agu.essi.data.source.AbstractDataSource;
+
+/**
+ * Parser for AGU Abstracts encoded in XML
+ * @author Eric Rozell and Tom Narock
+ *
+ */
+public class XmlAbstractDataSource implements AbstractDataSource {
 	private String directory;
 	private Vector<Abstract> abstracts;
 	private boolean extracted;
 	private EntityMatcher matcher;
 	
-	static final Logger log = Logger.getLogger(org.agu.essi.data.XmlDataSource.class);  
+	static final Logger log = Logger.getLogger(org.agu.essi.data.XmlAbstractDataSource.class);  
 	
-	public XmlDataSource()
+	public XmlAbstractDataSource()
 	{
 		abstracts = new Vector<Abstract>();
 		extracted = false;
 	}
 	
-	public XmlDataSource(String dir) throws Exception
+	public XmlAbstractDataSource(String dir) throws Exception
 	{
 		directory = dir;
 		abstracts = new Vector<Abstract>();
@@ -64,6 +71,10 @@ public class XmlDataSource implements DataSource {
 		extracted = true;
 	}
 	
+	/**
+	 * Method to get the parsed abstracts
+	 * @return Vector <Abstract> abstracts
+	 */
 	public Vector<Abstract> getAbstracts() throws SourceNotReadyException 
 	{	
 		if (!extracted)
@@ -76,16 +87,28 @@ public class XmlDataSource implements DataSource {
 		}
 	}
 	
+	/**
+	 * Method to set the Entity Matcher
+	 * @param Entity Matcher matcher
+	 */
 	public void setEntityMatcher(EntityMatcher m)
 	{
 		matcher = m;
 	}
 	
+	/**
+	 * Method to get the Entity Matcher
+	 * @return Entity Matcher matcher
+	 */
 	public EntityMatcher getEntityMatcher()
 	{
 		return matcher;
 	}
 	
+	/**
+	 * Method to set the directory to parse
+	 * @param String directory
+	 */
 	public void setDirectory(String dir) throws Exception
 	{
 		directory = dir;
@@ -232,7 +255,7 @@ public class XmlDataSource implements DataSource {
 			{
 				if (files[i].isFile())
 				{
-					abstracts.add(XmlDataSource.parseAbstractXml(files[i]));
+					abstracts.add(XmlAbstractDataSource.parseAbstractXml(files[i]));
 				}
 			}
 			extracted = true;
@@ -301,7 +324,7 @@ public class XmlDataSource implements DataSource {
 	    {	
 	    	try
 	    	{
-	    		XmlDataSource data = new XmlDataSource(input);
+	    		XmlAbstractDataSource data = new XmlAbstractDataSource(input);
 	    		Vector<Abstract> abstracts = data.getAbstracts();
 	    		FileWrite fw = new FileWrite();
 	    		for (int i = 0; i < abstracts.size(); ++i)

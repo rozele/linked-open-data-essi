@@ -14,12 +14,32 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.agu.essi;
+package org.agu.essi.data.source;
+
+import org.agu.essi.match.EntityMatcher;
 
 /**
- * Enumeration of all the types of AGU abstracts
+ * Interface for specifying sources of AGU abstracts
  * @author Eric Rozell
  */
-public enum AbstractType {
-	PRESENTATION, POSTER, WITHDRAWN, INVITED, DEFAULT
+public interface DataSource {
+	
+	/**
+	 * Method to determine if source is ready for use
+	 * @return true if source is ready
+	 */
+	public boolean ready();
+	
+	/**
+	 * Method to set the EntityMatcher
+	 * @param m an instance of EntityMatcher
+	 */
+	public void setEntityMatcher(EntityMatcher m);
+	
+	/**
+	 * Method to get the EntityMatcher
+	 * @return an instance of EntityMatcher
+	 */
+	public EntityMatcher getEntityMatcher();
+	
 }

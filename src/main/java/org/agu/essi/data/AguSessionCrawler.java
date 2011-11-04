@@ -45,12 +45,13 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
 import org.apache.log4j.Logger;
+import org.agu.essi.data.source.AbstractDataSource;
 
 /**
  * Crawls AGU Session data
  * @author Eric Rozell
  */
-public class AguSessionCrawler implements DataSource 
+public class AguSessionCrawler implements AbstractDataSource 
 {
 	static final Logger log = Logger.getLogger(org.agu.essi.data.AguSessionCrawler.class);  
 	

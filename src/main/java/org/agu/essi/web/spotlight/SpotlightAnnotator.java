@@ -167,7 +167,7 @@ public class SpotlightAnnotator implements AnnotatedText
 	}
 	
 	public String writeAnnotationTextToRdfXml ( String surfaceForm, Vector <String> dbpediaTypes, 
-		double similarityScore, double psr, String abstractURI ) {
+		double similarityScore, double psr, String abstractURI, String dbpediaConcept, int offset ) {
 	
 		StringWriter sw = new StringWriter();
 		String sdURI = abstractURI.replace("Abstract", "SourceDocument");
@@ -179,9 +179,11 @@ public class SpotlightAnnotator implements AnnotatedText
 		sw.append( "<rdf:Description rdf:about=\"" + Utils.cleanXml(annTextURI) + "\">" + newLine );
 		sw.append( "  <rdf:type rdf:resource=\"&dbanno;DBpediaSpotlightSelector\"/>" + newLine );
 		 
+		sw.append( "  <aos:offset " + floatType + ">" + offset + "</aos:offset>" + newLine );
+		sw.append( "  <aos:range " + floatType + ">" + surfaceForm.length() + "</aos:range>" + newLine );
 		sw.append( "  <aos:exact " + stringType + ">" + Utils.cleanXml(surfaceForm) + "</aos:exact>" + newLine );
-
-		sw.append( "  <dbanno:dbpediaConcept " + stringType + ">" + "</dbanno:dbpediaConcept>" + newLine );
+		
+		sw.append( "  <dbanno:dbpediaConcept " + stringType + ">" + dbpediaConcept + "</dbanno:dbpediaConcept>" + newLine );
 		sw.append( "  <dbanno:dbpediaSupport " + floatType + ">" + support + "</dbanno:dbpediaSupport>" + newLine );
 		sw.append( "  <dbanno:dbpediaConfidence " + floatType + ">" + confidence + "</dbanno:dbpediaConfidence>" + newLine );
 		for ( int i=0; i<dbpediaTypes.size(); i++ ) {

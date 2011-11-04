@@ -14,17 +14,21 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.esipfed.data;
+package org.esipfed.owl;
 
 import java.util.Vector;
 
 import org.agu.essi.util.Utils;
 import org.esipfed.Person;
-import org.esipfed.xml.PeopleParserESIP;
-import org.esipfed.xml.PeopleParserAGU;
-import org.esipfed.owl.SameAs;
+import org.agu.essi.data.XmlAguPeopleDataSource;
+import org.agu.essi.data.XmlEsipPeopleDataSource;
 import org.agu.essi.util.FileWrite;
+import org.agu.essi.match.MemoryMatcher;
 
+/**
+ * Compute OWL sameAs relationships from ESIP and AGU People data
+ * @author Tom Narock
+ */
 public class ComputeSameAs {
 	
 	public static void main (String[] args) {
@@ -41,16 +45,13 @@ public class ComputeSameAs {
 		same.append( Utils.writeRdfHeader() );
 		  
 		// parse the RDF files
-		PeopleParserESIP esipParser = new PeopleParserESIP ();
-		PeopleParserAGU aguParser = new PeopleParserAGU ();
-		Vector <Person> esipPeople = null;
-		Vector <Person> aguPeople = null;
-		try {
-		  System.out.println( "Parsing: " + args[0] );
-		  esipPeople = esipParser.parse( args[0] );
-	      System.out.println( "Parsing: " + args[1] );
-		  aguPeople = aguParser.parse( args[1] );
-		} catch (Exception e) { System.out.println("Exception: " + e); }
+		MemoryMatcher matcher = new MemoryMatcher ();
+		XmlAguPeopleDataSource aguPeopleParser = new XmlAguPeopleDataSource ();
+		XmlEsipPeopleDataSource esipPeopleParser = new XmlEsipPeopleDataSource ();
+		aguPeopleParser.setEntityMatcher( matcher );
+		esipPeopleParser.setEntityMatcher( matcher );
+		Vector <Person> esipPeople = esipPeopleParser.getPeople( args[0] );
+		Vector <Person> aguPeople = aguPeopleParser.getPeople( args[1] );
 	
 		// compute sameAs
 		String aName;

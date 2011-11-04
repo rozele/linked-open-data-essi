@@ -14,41 +14,23 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.agu.essi.data;
+package org.agu.essi.data.source;
 
 import java.util.Vector;
 
-import org.agu.essi.abstracts.Abstract;
-import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.Organization;
 import org.agu.essi.util.exception.SourceNotReadyException;
 
 /**
- * Interface for specifying sources of AGU abstracts
- * @author Eric Rozell
+ * Interface for specifying sources of FOAF Organizations
+ * @author Tom Narock
  */
-public interface DataSource {
-	/**
-	 * Method to retrieve the set of abstracts from the data source
-	 * @return a Vector of Abstract instances
-	 */
-	/* TODO: add exception when source is not ready */
-	public Vector<Abstract> getAbstracts() throws SourceNotReadyException;
+public interface OrganizationDataSource extends DataSource {
 	
 	/**
-	 * Method to determine if source is ready for use
-	 * @return true if source is ready
+	 * Method to retrieve the set of organizations from the data source
+	 * @return a Vector of Organization instances
 	 */
-	public boolean ready();
+	public Vector <Organization> getOrganizations() throws SourceNotReadyException;
 	
-	/**
-	 * Method to set the EntityMatcher
-	 * @param m an instance of EntityMatcher
-	 */
-	public void setEntityMatcher(EntityMatcher m);
-	
-	/**
-	 * Method to get the EntityMatcher
-	 * @return an instance of EntityMatcher
-	 */
-	public EntityMatcher getEntityMatcher();
 }

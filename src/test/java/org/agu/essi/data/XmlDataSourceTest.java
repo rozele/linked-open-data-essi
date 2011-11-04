@@ -16,10 +16,6 @@
  */
 package org.agu.essi.data;
 
-import java.util.Vector;
-
-import org.agu.essi.Abstract;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

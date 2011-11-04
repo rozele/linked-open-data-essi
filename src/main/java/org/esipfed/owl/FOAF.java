@@ -19,7 +19,6 @@ package org.esipfed.owl;
 import java.util.HashMap;
 import java.util.Vector;
 
-import org.esipfed.util.HashFunction;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 import org.esipfed.Person;

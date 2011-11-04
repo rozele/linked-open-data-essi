@@ -21,6 +21,7 @@ import java.util.Vector;
 import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.util.exception.SourceNotReadyException;
+import org.agu.essi.data.source.DataSource;
 
 /**
  * Class for retrieving abstracts from a SPARQL endpoint

@@ -16,6 +16,8 @@
  */
 package org.esipfed.util;
 
+import org.esipfed.owl.HashFunction;
+
 import junit.framework.TestCase;
 
 public class UtilityTest extends TestCase {

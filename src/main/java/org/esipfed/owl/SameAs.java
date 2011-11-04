@@ -20,8 +20,8 @@ public class SameAs {
 	
 	/**
 	 * Method write OWL sameAs statement
-	 * @param String person ID 1
-	 * @param String person ID 2
+	 * @param String ID 1
+	 * @param String ID 2
 	 * @return String OWL/RDF sameAs statement
 	 */
 	public String writeSameAs ( String id1, String id2 ) {

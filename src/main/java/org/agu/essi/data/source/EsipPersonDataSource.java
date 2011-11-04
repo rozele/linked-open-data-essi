@@ -14,12 +14,23 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.agu.essi;
+package org.agu.essi.data.source;
+
+import java.util.Vector;
+
+import org.esipfed.Person;
+import org.agu.essi.util.exception.SourceNotReadyException;
 
 /**
- * Enumeration of all the types of AGU abstracts
- * @author Eric Rozell
+ * Interface for specifying sources of ESIP people
+ * @author Tom Narock
  */
-public enum AbstractType {
-	PRESENTATION, POSTER, WITHDRAWN, INVITED, DEFAULT
+public interface EsipPersonDataSource extends DataSource {
+	
+	/**
+	 * Method to retrieve the set of people from the data source
+	 * @return a Vector of People instances
+	 */
+	public Vector <Person> getPeople( String xmlFile ) throws SourceNotReadyException;
+	
 }

@@ -14,7 +14,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.esipfed.xml;
+package org.esipfed.data;
 
 
 import java.io.FileReader;

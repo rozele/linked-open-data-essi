@@ -55,12 +55,13 @@ import org.agu.essi.util.exception.EntityMatcherRequiredException;
 import org.agu.essi.util.exception.SourceNotReadyException;
 import org.agu.essi.web.spotlight.SpotlightAnnotator;
 import org.agu.essi.web.spotlight.SpotlightAnnotationToRdfXml;
+import org.agu.essi.data.source.AbstractDataSource;
 
 /**
  * Web Crawler for AGU abstract data
  * @author Eric Rozell and Tom Narock
  */
-public class EssiSearchCrawler implements DataSource 
+public class EssiSearchCrawler implements AbstractDataSource 
 {	
 	static final Logger log = Logger.getLogger(org.agu.essi.data.EssiSearchCrawler.class);  
 
