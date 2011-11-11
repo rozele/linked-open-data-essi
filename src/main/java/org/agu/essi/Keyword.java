@@ -158,6 +158,7 @@ public class Keyword
 			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
 			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
 			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
+			sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + _orig + "</dc:description>\n");
 			if (_parent != null)
 			{
 				sw.write("    <skos:broadMatch rdf:resource=\"" + Namespaces.esip + "Keyword_" + _parent.getId() + "\" />\n");

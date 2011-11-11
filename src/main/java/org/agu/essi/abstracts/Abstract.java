@@ -130,7 +130,7 @@ public abstract class Abstract
 		}
 		else
 		{
-			StringWriter sw = new StringWriter();		
+			StringWriter sw = new StringWriter();	
 			sw.write(Utils.writeXmlHeader());
 			sw.write(Utils.writeDocumentEntities());
 			sw.write(Utils.writeRdfHeader());
@@ -159,7 +159,7 @@ public abstract class Abstract
 	{
 		StringWriter sw = new StringWriter();
 		for (int i = 0; i < getAuthors().size(); ++i)
-		{
+		{			
 			Author a = getAuthors().get(i);
 			sw.write("  <rdf:Description rdf:about=\"" + matcher.getPersonId(a.getPerson()) + "\">\n");
 			sw.write("    <tw:hasRole>\n");

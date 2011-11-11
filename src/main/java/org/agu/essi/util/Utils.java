@@ -17,12 +17,20 @@
 package org.agu.essi.util;
 
 import java.io.StringWriter;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Vector;
 
 import org.agu.essi.AbstractType;
+import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.MeetingType;
+import org.agu.essi.Organization;
+import org.agu.essi.Person;
+import org.agu.essi.Section;
+import org.agu.essi.Session;
+import org.agu.essi.util.exception.InvalidAbstractConstraintException;
 import org.apache.commons.lang.StringEscapeUtils;
 
 import com.hp.hpl.jena.query.Query;
@@ -128,12 +136,13 @@ public class Utils {
 		sw.write("PREFIX geo: <" + Namespaces.geo + ">\n");
 		sw.write("PREFIX skos: <" + Namespaces.skos + ">\n");
 		sw.write("PREFIX dbanno: <" + Namespaces.dbanno + ">\n");
-		sw.write("PREFIX pav=\"" + Namespaces.pav + "\"\n");
-		sw.write("PREFIX ao=\"" + Namespaces.ao + "\"\n");
-		sw.write("PREFIX aocore=\"" + Namespaces.aocore + "\"\n");
-		sw.write("PREFIX aof=\"" + Namespaces.aof + "\"\n");
-		sw.write("PREFIX aos=\"" + Namespaces.aos + "\"\n");
-		sw.write("PREFIX aot=\"" + Namespaces.aot + "\"\n");
+		sw.write("PREFIX pav: <" + Namespaces.pav + ">\n");
+		sw.write("PREFIX ao: <" + Namespaces.ao + ">\n");
+		sw.write("PREFIX aocore: <" + Namespaces.aocore + ">\n");
+		sw.write("PREFIX aof: <" + Namespaces.aof + ">\n");
+		sw.write("PREFIX aos: <" + Namespaces.aos + ">\n");
+		sw.write("PREFIX aot: <" + Namespaces.aot + ">\n");
+		sw.write("PREFIX dc: <" + Namespaces.dc + ">\n");
 		return sw.toString();
 	}
 	
@@ -189,10 +198,23 @@ public class Utils {
 		return aguDatabases;
 	}
 	
+	public static Vector<String[]> getAguMeetingsFromInput(String input)
+	{
+		Vector<String[]> meetings = new Vector<String[]>();
+		String[] arr1 = input.split(";");
+		for (int i = 0; i < arr1.length; ++i)
+		{
+			meetings.add(arr1[i].split(","));
+		}
+		return meetings;
+	}
+	
 	public static Vector<String[]> getAguMeetings()
 	{
 		Vector<String[]> meetings = new Vector<String[]>();
-		meetings.add( new String[] { "fm10","IN" } );
+		
+		//IN sessions
+		//meetings.add( new String[] { "fm10","IN" } );
 		meetings.add( new String[] { "ja10","IN" } );
 		meetings.add( new String[] { "fm09","IN" } );
 		meetings.add( new String[] { "ja09","IN" } );
@@ -204,6 +226,49 @@ public class Utils {
 		meetings.add( new String[] { "sm06","IN" } );
 		meetings.add( new String[] { "fm05","IN" } );
 		meetings.add( new String[] { "sm05","IN" } );
+		
+		/*/OS sessions
+		meetings.add( new String[] { "fm10","OS" } );
+		meetings.add( new String[] { "ja10","OS" } );
+		meetings.add( new String[] { "fm09","OS" } );
+		meetings.add( new String[] { "ja09","OS" } );
+		meetings.add( new String[] { "fm08","OS" } );
+		meetings.add( new String[] { "ja08","OS" } );
+		meetings.add( new String[] { "fm07","OS" } );
+		meetings.add( new String[] { "sm07","OS" } );
+		meetings.add( new String[] { "fm06","OS" } );
+		meetings.add( new String[] { "sm06","OS" } );
+		meetings.add( new String[] { "fm05","OS" } );
+		meetings.add( new String[] { "sm05","OS" } );
+		
+		//ED sessions
+		meetings.add( new String[] { "fm10","ED" } );
+		meetings.add( new String[] { "ja10","ED" } );
+		meetings.add( new String[] { "fm09","ED" } );
+		meetings.add( new String[] { "ja09","ED" } );
+		meetings.add( new String[] { "fm08","ED" } );
+		meetings.add( new String[] { "ja08","ED" } );
+		meetings.add( new String[] { "fm07","ED" } );
+		meetings.add( new String[] { "sm07","ED" } );
+		meetings.add( new String[] { "fm06","ED" } );
+		meetings.add( new String[] { "sm06","ED" } );
+		meetings.add( new String[] { "fm05","ED" } );
+		meetings.add( new String[] { "sm05","ED" } );
+		
+		//SH sessions
+		meetings.add( new String[] { "fm10","SH" } );
+		meetings.add( new String[] { "ja10","SH" } );
+		meetings.add( new String[] { "fm09","SH" } );
+		meetings.add( new String[] { "ja09","SH" } );
+		meetings.add( new String[] { "fm08","SH" } );
+		meetings.add( new String[] { "ja08","SH" } );
+		meetings.add( new String[] { "fm07","SH" } );
+		meetings.add( new String[] { "sm07","SH" } );
+		meetings.add( new String[] { "fm06","SH" } );
+		meetings.add( new String[] { "sm06","SH" } );
+		meetings.add( new String[] { "fm05","SH" } );
+		meetings.add( new String[] { "sm05","SH" } );*/
+		
 		return meetings;
 	}
 	
@@ -280,5 +345,141 @@ public class Utils {
 			catch (NumberFormatException e) {}
 		}
 		return year;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public static String buildAbstractConstraintString(Collection constraints, boolean conjunctive) throws InvalidAbstractConstraintException
+	{
+		if (constraints == null) { return ""; }
+		Vector<Person> personConstraints = new Vector<Person>();
+		Vector<Organization> orgConstraints = new Vector<Organization>();
+		Vector<Session> sessionConstraints = new Vector<Session>();
+		Vector<Section> sectionConstraints = new Vector<Section>();
+		Vector<Meeting> meetingConstraints = new Vector<Meeting>();
+		Vector<Keyword> keywordConstraints = new Vector<Keyword>();
+		Vector<AbstractType> typeConstraints = new Vector<AbstractType>();
+		
+		Iterator iter = constraints.iterator();
+		while (iter.hasNext())
+		{
+			Object o = iter.next();
+			if (o.getClass().equals(Person.class))
+			{
+				personConstraints.add((Person)o);
+			}
+			else if (o.getClass().equals(Organization.class))
+			{
+				orgConstraints.add((Organization)o);
+			}
+			else if (o.getClass().equals(Session.class) && !conjunctive)
+			{
+				sessionConstraints.add((Session)o);
+			}	
+			else if (o.getClass().equals(Session.class))
+			{
+				if (sessionConstraints.size() == 0)
+				{
+					sessionConstraints.add((Session)o);
+				}
+				else
+				{
+					throw new InvalidAbstractConstraintException();
+				}
+			}
+			else if (o.getClass().equals(Section.class) && !conjunctive)
+			{
+				sectionConstraints.add((Section)o);
+			}	
+			else if (o.getClass().equals(Section.class))
+			{
+				if (sectionConstraints.size() == 0)
+				{
+					sectionConstraints.add((Section)o);
+				}
+				else
+				{
+					throw new InvalidAbstractConstraintException();
+				}
+			}
+			else if (o.getClass().equals(Meeting.class) && !conjunctive)
+			{
+				meetingConstraints.add((Meeting)o);
+			}	
+			else if (o.getClass().equals(Meeting.class))
+			{
+				if (meetingConstraints.size() == 0)
+				{
+					meetingConstraints.add((Meeting)o);
+				}
+				else
+				{
+					throw new InvalidAbstractConstraintException();
+				}
+			}
+			else if (o.getClass().equals(Keyword.class))
+			{
+				keywordConstraints.add((Keyword)o);
+			}
+			else if (o.getClass().equals(AbstractType.class) && !conjunctive)
+			{
+				typeConstraints.add((AbstractType)o);
+			}	
+			else if (o.getClass().equals(AbstractType.class))
+			{
+				if (typeConstraints.size() == 0)
+				{
+					typeConstraints.add((AbstractType)o);
+				}
+				else
+				{
+					throw new InvalidAbstractConstraintException();
+				}
+			}
+			else
+			{
+				throw new InvalidAbstractConstraintException();
+			}
+		}
+		
+		StringWriter sw = new StringWriter();		
+		if (conjunctive)
+		{
+			
+		}
+		else
+		{
+/*			for (int i = 0; i < personConstraints.size(); ++i)
+			{
+				StringWriter local = new StringWriter();
+				Person p = personConstraints.get(i);
+				sw.write("{ ?abstract tw:hasPersonWithRole ?role . ");
+				sw.write("?person tw:hasRole ?role . ");
+				sw.write("?person foaf:name ?name . ");
+				sw.write(" FILTER (?name = \"" + p.getName() + "\") }");
+				if (i < personConstraints.size() - 1) sw.write(" UNION ");
+			}
+			for (int i = 0; i < orgConstraints.size(); ++i)
+			{
+				StringWriter local = new StringWriter();
+				Organization o = orgConstraints.get(i);
+				sw.write("{ ?abstract tw:hasPersonWithRole ?role . ");
+				sw.write("?role tw:withAffiliation ?org . ");
+				sw.write("?org dc:description ?desc . ");
+				sw.write(" FILTER (?desc = \"" + o.toString() + "\") }");
+				if (i < orgConstraints.size() - 1) sw.write(" UNION ");
+			}
+			for (int i = 0; i < sessionConstraints.size(); ++i)
+			{
+				StringWriter local = new StringWriter();
+				Organization o = orgConstraints.get(i);
+				sw.write("{ ?abstract tw: . ");
+				sw.write("?role tw:withAffiliation ?org . ");
+				sw.write("?org dc:description ?desc . ");
+				sw.write(" FILTER (?desc = \"" + o.toString() + "\") }");
+				if (i < orgConstraints.size() - 1) sw.write(" UNION ");
+			}*/
+		}
+		
+		return sw.toString();
 	}
 }

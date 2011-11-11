@@ -16,6 +16,9 @@
  */
 package org.agu.essi.match;
 
+import java.util.HashMap;
+import java.util.Vector;
+
 import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
@@ -41,6 +44,13 @@ public class SparqlMatcher implements EntityMatcher
 	private static String abstractBaseId = Namespaces.esip + "Abstract_";
 	private static String keywordBaseId = Namespaces.esip + "Keyword_";
 	
+	private Vector<String> meetingIds = new Vector<String>();
+	private Vector<String> sectionIds = new Vector<String>();
+	private Vector<String> sessionIds = new Vector<String>();
+	private Vector<String> keywordIds = new Vector<String>();
+	private HashMap<String,String> personIds = new HashMap<String,String>();
+	private HashMap<String,String> organizationIds = new HashMap<String,String>();
+	
 	private MemoryMatcher newMatches;
 	private String endpoint;
 	
@@ -49,6 +59,7 @@ public class SparqlMatcher implements EntityMatcher
 		newMatches = new MemoryMatcher();
 		endpoint = ep;
 		setStartIndices();
+		getIds();
 	}
 	
 	public String getMeetingId(Meeting meeting)
@@ -56,7 +67,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = meetingBaseId + mt + ((year > 0) ? "_" + year : "");
-		if (!Utils.sparqlAsk(Queries.askMeetingQuery(id), endpoint))
+		if (!meetingIds.contains(id))
 		{
 			newMatches.getMeetingId(meeting);
 		}
@@ -69,7 +80,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = sectionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + section.getId();
-		if (!Utils.sparqlAsk(Queries.askSectionQuery(id), endpoint))
+		if (!sectionIds.contains(id))
 		{
 			newMatches.getSectionId(section);
 		}
@@ -82,7 +93,7 @@ public class SparqlMatcher implements EntityMatcher
 		MeetingType mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
 		String id = sessionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + session.getId();
-		if (!Utils.sparqlAsk(Queries.askSessionQuery(id), endpoint))
+		if (!sessionIds.contains(id))
 		{
 			newMatches.getSessionId(session);
 		}
@@ -91,15 +102,17 @@ public class SparqlMatcher implements EntityMatcher
 
 	public String getPersonId(Person person)
 	{
-		ResultSet personResults = Utils.sparqlSelect(Queries.selectPersonQuery(person.getEmail()), endpoint);
+		boolean newId = true;
 		String id = null;
-		if (personResults.hasNext())
+		if (person.getEmail() != null)
 		{
-			QuerySolution solution = personResults.next();
-			RDFNode node = solution.get("id");
-			id = node.toString();
+			if (personIds.containsKey(person.getEmail().toLowerCase()))
+			{
+				id = personIds.get(person.getEmail().toLowerCase());
+				newId = false;
+			}
 		}
-		else
+		if (newId)
 		{
 			id = newMatches.getPersonId(person);
 		}
@@ -108,13 +121,10 @@ public class SparqlMatcher implements EntityMatcher
 
 	public String getOrganizationId(Organization organization)
 	{
-		ResultSet organizationResults = Utils.sparqlSelect(Queries.selectOrganizationQuery(organization.toString()), endpoint);
 		String id = null;
-		if (organizationResults.hasNext())
+		if (organizationIds.containsKey(organization.toString().toLowerCase()))
 		{
-			QuerySolution solution = organizationResults.next();
-			RDFNode node = solution.get("id");
-			id = node.toString();
+			id = organizationIds.get(organization.toString().toLowerCase());
 		}
 		else
 		{
@@ -126,7 +136,7 @@ public class SparqlMatcher implements EntityMatcher
 	public String getKeywordId(Keyword keyword)
 	{
 		String id = keywordBaseId + keyword.getId();
-		if (!Utils.sparqlAsk(Queries.askKeywordQuery(id), endpoint))
+		if (!keywordIds.contains(id))
 		{
 			newMatches.getKeywordId(keyword);
 		}
@@ -161,17 +171,97 @@ public class SparqlMatcher implements EntityMatcher
 		{
 			QuerySolution solution = peopleResults.next();
 			RDFNode node = solution.get("count");
-			newMatches.setPeopleStartIndex(Integer.parseInt(node.toString()));
+			String count = node.toString().split("\\^\\^")[0];
+			newMatches.setPeopleStartIndex(Integer.parseInt(count));
 		}
 		ResultSet organizationsResults = Utils.sparqlSelect(Queries.countOrganizationsQuery, endpoint);
 		if (organizationsResults.hasNext())
 		{
 			QuerySolution solution = organizationsResults.next();
 			RDFNode node = solution.get("count");
-			newMatches.setOrganizationsStartIndex(Integer.parseInt(node.toString()));
+			String count = node.toString().split("\\^\\^")[0];
+			newMatches.setOrganizationsStartIndex(Integer.parseInt(count));
+		}
+	}
+	
+	private void getIds()
+	{
+		getMeetingIds();
+		getSectionIds();
+		getSessionIds();
+		getKeywordIds();
+		getPersonIds();
+		getOrganizationIds();
+	}
+	
+	private void getMeetingIds()
+	{
+		ResultSet meetingResults = Utils.sparqlSelect(Queries.meetingsQuery, endpoint);
+		while (meetingResults.hasNext())
+		{
+			QuerySolution solution = meetingResults.next();
+			RDFNode node = solution.get("meeting");
+			meetingIds.add(node.toString());
 		}
 	}
 
+	private void getSectionIds()
+	{
+		ResultSet sectionResults = Utils.sparqlSelect(Queries.sectionsQuery, endpoint);
+		while (sectionResults.hasNext())
+		{
+			QuerySolution solution = sectionResults.next();
+			RDFNode node = solution.get("section");
+			sectionIds.add(node.toString());
+		}
+	}
+	
+	private void getSessionIds()
+	{
+		ResultSet sessionResults = Utils.sparqlSelect(Queries.sessionsQuery, endpoint);
+		while (sessionResults.hasNext())
+		{
+			QuerySolution solution = sessionResults.next();
+			RDFNode node = solution.get("session");
+			sessionIds.add(node.toString());
+		}
+	}
+	
+	private void getKeywordIds()
+	{
+		ResultSet keywordResults = Utils.sparqlSelect(Queries.keywordsQuery, endpoint);
+		while (keywordResults.hasNext())
+		{
+			QuerySolution solution = keywordResults.next();
+			RDFNode node = solution.get("keyword");
+			keywordIds.add(node.toString());
+		}
+	}
+	
+	private void getPersonIds()
+	{
+		ResultSet personResults = Utils.sparqlSelect(Queries.peopleQuery, endpoint);
+		while (personResults.hasNext())
+		{
+			QuerySolution solution = personResults.next();
+			RDFNode idNode = solution.get("id");
+			RDFNode emailNode = solution.get("email");
+			personIds.put(emailNode.toString().toLowerCase(), idNode.toString());
+		}
+	}
+
+	private void getOrganizationIds()
+	{
+		ResultSet orgResults = Utils.sparqlSelect(Queries.organizationsQuery, endpoint);
+		while (orgResults.hasNext())
+		{
+			QuerySolution solution = orgResults.next();
+			RDFNode idNode = solution.get("id");
+			RDFNode descNode = solution.get("desc");
+			organizationIds.put(descNode.toString().toLowerCase(), idNode.toString());
+		}
+	}
+	
 	public String writeNewPeople(String format) 
 	{
 		return newMatches.writeNewPeople(format);

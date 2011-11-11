@@ -74,7 +74,7 @@ public class HtmlAbstract extends Abstract
 		endIndex = _rawHtml.indexOf("<br>", index);
 		if (index < 0)
 		{
-			throw new AbstractParserException();
+			//throw new AbstractParserException();
 		}
 		_hour = _rawHtml.substring(index+17, endIndex).trim();
 		

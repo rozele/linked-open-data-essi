@@ -33,6 +33,7 @@ import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.abstracts.HtmlAbstract;
 import org.agu.essi.match.EntityMatcher;
 import org.agu.essi.match.MemoryMatcher;
+import org.agu.essi.match.SparqlMatcher;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.AbstractParserException;
@@ -58,6 +59,7 @@ public class AguSessionCrawler implements AbstractDataSource
 	private EntityMatcher _matcher;
 	private boolean _crawled;
 	private String _dataDir;
+	private Vector<String[]> _meetings;
 	private Vector<Abstract> _abstracts;
 	
 	//AGU URLs
@@ -69,7 +71,7 @@ public class AguSessionCrawler implements AbstractDataSource
 	private static String sessionNameRegex = "(.{0,200})";
 	private static String sessionIdRegex = "([A-Z0-9]{4,6})";
 	private static String sessionLocationRegex = "(.{0,80})";
-	private static String sessionConvenersRegex = "(.{0,350}?)";
+	private static String sessionConvenersRegex = "(.{0,400}?)";
 
 	// annotate with DBpedia Spotlight
 	private boolean annotate = true;
@@ -77,10 +79,11 @@ public class AguSessionCrawler implements AbstractDataSource
 	
 	// class constructor creates a HashMap of AGU meetings/data directory key/value pairs
 	// AGU nomenclature - FM = Fall Meeting, JA = Joint Assembly, SM = Spring Meeting (changed to Joint Assembly in 2008)
-	public AguSessionCrawler ( String dir, boolean a ) 
+	public AguSessionCrawler ( String dir, Vector<String[]> meetings, boolean a ) 
 	{
 		_dataDir = dir;
 		_crawled = false;
+		_meetings = meetings;
 		_abstracts = new Vector<Abstract>();
 		annotate = a;
 		if ( annotate ) { 
@@ -92,7 +95,7 @@ public class AguSessionCrawler implements AbstractDataSource
 		  	sWriter.writeSpotlightProvenance();
 		  				
 		}
-		crawl();
+		//crawl();
 	}
 	
 	public AguSessionCrawler ( boolean a )
@@ -112,7 +115,7 @@ public class AguSessionCrawler implements AbstractDataSource
 		crawl();
 	}
 
-	private void crawl()
+	public void crawl()
 	{
 		if (_matcher == null)
 		{
@@ -120,11 +123,9 @@ public class AguSessionCrawler implements AbstractDataSource
 			sWriter.setEntityMatcher( _matcher );
 		}
 		
-		//crawl AGU Session pages
-		Vector<String[]> meetings = Utils.getAguMeetings();
-		for (int i = 0; i < meetings.size(); ++i)
+		for (int i = 0; i < _meetings.size(); ++i)
 		{
-			String[] arr = meetings.get(i);
+			String[] arr = _meetings.get(i);
 			String meetingId = arr[0];
 			String sectionId = arr[1];
 			String loc = sessionsTemplate.replaceAll("\\{meeting\\}", meetingId);
@@ -153,11 +154,11 @@ public class AguSessionCrawler implements AbstractDataSource
 		}
 		
 		//crawl abstracts known to be skipped
-		Vector<String> skipped = Utils.skippedAbstracts();
+		/*Vector<String> skipped = Utils.skippedAbstracts();
 		for (int i = 0; i < skipped.size(); i++)
 		{
 			getAbstractResponse(skipped.get(i));
-		}
+		}*/
 		_crawled = true;
 	}
 	
@@ -192,7 +193,7 @@ public class AguSessionCrawler implements AbstractDataSource
 			_matcher.getSessionId(s);
 			sessionLinks.add(m.group(2));
 		}
-		
+
 		for (int i = 0; i < sessionLinks.size(); ++i)
 		{
 			getSessionResponse(sessionLinks.get(i));
@@ -227,12 +228,12 @@ public class AguSessionCrawler implements AbstractDataSource
 	
 	private void parseSessionResponse(String content)
 	{
-		Pattern p = Pattern.compile("<font size=-1>  <a href=\"(.{20,30}?)\">Abstract</a></font>");
+		Pattern p = Pattern.compile("<font size=-1>(  |  )<a href=\"(.{20,30}?)\">Abstract</a></font>");
 		Matcher m = p.matcher(content);
 		Vector<String> abstractLinks = new Vector<String>();
 		while(m.find())
 		{
-			abstractLinks.add(m.group(1));
+			abstractLinks.add(m.group(2));
 		}
 		
 		for (int i = 0; i < abstractLinks.size(); ++i)
@@ -358,8 +359,8 @@ public class AguSessionCrawler implements AbstractDataSource
 	  	options.addOption("outputFormat", true, "Serialization format for the resulting data");
 	  	options.addOption("annotate", false, "Turns on calls to DBpedia Spotlight annotation service (default is to not annotate" +
 			"while crawling)");
-	  
-	  	  
+	  	options.addOption("endpoint", true, "SPARQL endpoint with existing data for matching");
+	  	options.addOption("meetings", true, "List of semi-colon separated meetings, with meeting ID and section ID separated by comma (e.g., fm10,IN;fm09,IN");
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
 	  	CommandLineParser parser = new PosixParser();
@@ -375,6 +376,8 @@ public class AguSessionCrawler implements AbstractDataSource
 	  	// Check if the correct options were set
 	  	boolean error = false;
 	  	String format = null;
+	  	String endpoint = null;
+	  	Vector<String[]> meetings = null;
 	  	
 	  	// output directory
 	    if ( !cmd.hasOption("outputDirectory") ) 
@@ -389,6 +392,32 @@ public class AguSessionCrawler implements AbstractDataSource
 	  		format = cmd.getOptionValue("outputFormat"); 
 	  	} 
 
+	    // endpoint location
+	  	if ( cmd.hasOption("endpoint")) 
+	  	{ 
+	  		endpoint = cmd.getOptionValue("endpoint"); 
+	  	}
+	  	
+	  	// meeting IDs
+	  	if (cmd.hasOption("meetings"))
+	  	{
+	  		try 
+	  		{
+	  			meetings = Utils.getAguMeetingsFromInput(cmd.getOptionValue("meetings"));
+	  		}
+	  		catch (Exception e)
+	  		{
+	  			error = true;
+	  			log.error("--meetings argument (" + cmd.getOptionValue("meetings") + ") is invalid, see example: fm10,IN;fm09,IN;...");
+	  		}
+	  	}
+	  	else 
+	  	{
+	  		meetings = Utils.getAguMeetings();
+	  	}
+	  	
+	  	// section strings
+	  		  	
 	  	// annotate or not
 	  	boolean annotate = false;
 	  	if ( cmd.hasOption("annotate")) { annotate = true; }
@@ -397,8 +426,17 @@ public class AguSessionCrawler implements AbstractDataSource
 	    {	
 	    	
 	    	// query AGU
-	    	AguSessionCrawler crawler = new AguSessionCrawler ( cmd.getOptionValue("outputDirectory"), annotate );
+	    	AguSessionCrawler crawler = new AguSessionCrawler ( cmd.getOptionValue("outputDirectory"), meetings, annotate );
 		  	
+	    	if (endpoint != null)
+	    	{
+	    		SparqlMatcher m = new SparqlMatcher(endpoint);
+	    		crawler.setEntityMatcher(m);
+	    	}
+	    	
+	    	crawler.crawl();
+	    	
+	    	//crawler.setEntityMatcher(new SparqlMatcher("http://aquarius.tw.rpi.edu:2025/sparql"));
 	    	// output abstracts and annotations
     		try {
     			if (format != null && format.equals("rdf/xml")) 

@@ -24,7 +24,12 @@ import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.agu.essi.util.Queries;
 import org.agu.essi.util.Utils;
+import org.agu.essi.util.exception.EntityMatcherRequiredException;
+
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
 
 /**
  * Extension of Abstract for handling AGU abstracts in a SPARQL endpoint
@@ -120,8 +125,45 @@ public class SparqlAbstract extends Abstract
 		return null;
 	}
 	
+	@Override
+	public String toString()
+	{
+		lazyLoader();
+		return super.toString();
+	}
+	
+	@Override
+	public String toString(String format) throws EntityMatcherRequiredException
+	{
+		lazyLoader();
+		return super.toString(format);
+	}
+	
 	public void lazyLoader()
 	{
+		String query = Queries.abstractInfoQuery(_uri);
+		ResultSet rs = Utils.sparqlSelect(query, _endpoint);
+		if (rs.hasNext())
+		{
+			QuerySolution qs = rs.next();
+		}
+		else
+		{
+			//TODO: error if no abstract info available
+		}
+		query = Queries.abstractKeywordQuery(_uri);
+		rs = Utils.sparqlSelect(query, _endpoint);
+		while (rs.hasNext())
+		{
+			//TODO: add keywords
+		}
+		query = Queries.abstractAuthorQuery(_uri);
+		rs = Utils.sparqlSelect(query, _endpoint);
+		while (rs.hasNext())
+		{
+			//TODO: add authors
+		}
+		
 		
 	}
 }

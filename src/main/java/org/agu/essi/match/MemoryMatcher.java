@@ -73,6 +73,7 @@ public class MemoryMatcher implements EntityMatcher
 		addKeywordSource(keywordsIndex);
 	}
 	
+
 	/**
 	 * Gets an existing identifier for a meeting, if available, otherwise creates a new identifier
 	 * @param meeting a Meeting instance
