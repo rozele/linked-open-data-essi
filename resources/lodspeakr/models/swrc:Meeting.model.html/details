@@ -1,0 +1,13 @@
+PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+PREFIX swc: <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?title ?id ?meeting ?meetingTitle WHERE {
+ <{{uri}}> swrc:eventTitle ?title .
+ OPTIONAL { <{{uri}}> dcterms:identifier ?id . }
+ OPTIONAL { 
+  <{{uri}}> swc:isSubEventOf ?meeting .
+  ?meeting swrc:eventTitle ?meetingTitle .
+ }
+}
+LIMIT 1

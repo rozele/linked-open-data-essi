@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" 
+    {%endfor%}version="XHTML+RDFa 1.0" xml:lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+  </head>
+  <body>
+      <div data-role="page" id="foo" data-title="Abstract">
+    {% for row in r.details %}
+      <div data-role="header">({{row.id.value}}) {{row.title.value}}</div>
+      <ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+      <li data-role="list-divider">Session</li>
+      <li><a href='{{row.session.value}}'>{{row.sessionTitle.value}}</a></li>
+      <li data-role="list-divider">Abstract</li>
+      <li>{{row.abstract.value}}</li>
+      {% if r.authors %}
+      <li data-role="list-divider">Authors</li>
+      {% for row2 in r.authors %}
+       <li><a href='{{row2.person.value}}'>{{row2.index.value}}. {{row2.name.value}}</a></li>
+      {%endfor%}
+      {%endif%}
+      {% if r.keywords %}
+       <li data-role="list-divider">Keywords</li>
+       {% for row2 in r.keywords %}
+       <li><a href='{{row2.keyword.value}}'>{{row2.term.value}}</a></li>
+       {%endfor%}
+       {%endif%}
+      </ul>
+      </div>
+    {%endfor%}
+    </div>
+  </body>
+</html>

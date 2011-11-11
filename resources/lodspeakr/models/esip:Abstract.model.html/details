@@ -1,0 +1,12 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX swc: <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+
+SELECT ?title ?id ?abstract ?session ?sessionTitle WHERE {
+ <{{uri}}> dcterms:title ?title .
+ <{{uri}}> dcterms:identifier ?id .
+ <{{uri}}> swrc:abstract ?abstract .
+ <{{uri}}> swc:relatedToEvent ?session .
+ ?session dcterms:identifier ?sessionTitle .
+}
+LIMIT 1

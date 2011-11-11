@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECTDIR=/Users/rozele/Projects/linked-open-data-essi/trunk
+PROJECTDIR=/projects/esip/linked-open-data-essi/trunk
 MAINCLASS=org.agu.essi.data.AguSessionCrawler
 FORMAT=rdf/xml
 

@@ -1,0 +1,50 @@
+B1;2c<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" 
+    {%endfor%}version="XHTML+RDFa 1.0" xml:lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+  </head>
+  <body>
+    {% if r.details %}
+    {% for row in r.details %}
+      {% if row.meeting.value == null%}
+      <div data-role="page" id="foo" data-title="Meeting">
+      <div data-role="header">{{row.title.value}}{% if row.id.value != null %} ({{row.id.value}}){%endif%}</div>
+      <ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+      {% if r.sections %}
+        <li data-role="list-divider">Sections</li>
+        {% for row2 in r.sections %}
+          <li><a href='{{row2.section.value}}'>{{row2.title.value}}</a></li>
+        {%endfor%}
+      {%endif%}
+      </ul>
+      </div>
+      </div>
+      {% else %}
+      <div data-role="page" id="foo" data-title="Section">
+      <div data-role="header">{{row.title.value}}{% if row.id.value != null %} ({{row.id.value}}){%endif%}</div>
+      <ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+      {% if row.meeting.value != null%}
+      <li data-role="list-divider">Sub-event of</li>
+      <li><a href='{{row.meeting.value}}'>{{row.meetingTitle.value}}</a></li>
+      {%endif%}
+      {% if r.sessions %}
+        <li data-role="list-divider">Sessions</li>
+        {% for row2 in r.sessions %}
+          <li><a href='{{row2.session.value}}'>{{row2.id.value}}</a></li>
+        {%endfor%}
+      {%endif%}
+      </ul>
+      </div>
+      </div>
+      {%endif%}
+    {%endfor%}
+    {%endif%}
+  </body>
+</html>

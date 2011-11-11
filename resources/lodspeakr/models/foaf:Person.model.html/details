@@ -1,0 +1,7 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?name ?email WHERE{
+  <{{uri}}> foaf:name ?name.
+  OPTIONAL { <{{uri}}> foaf:mbox ?email . }
+}
+LIMIT 1

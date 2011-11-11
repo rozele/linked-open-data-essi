@@ -1,0 +1,8 @@
+PREFIX tw: <http://tw.rpi.edu/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?abstract ?title WHERE {
+  ?author tw:withAffiliation <{{uri}}> .
+  ?abstract tw:hasAgentWithRole ?author .
+  ?abstract dcterms:title ?title .
+} GROUP BY ?abstract ?title
