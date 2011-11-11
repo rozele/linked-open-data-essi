@@ -5,7 +5,7 @@ MAINCLASS=org.agu.essi.data.AguSessionCrawler
 FORMAT=rdf/xml
 
 if [ $# -ne 3 ]; then
-    echo "Usage: crawler [output_dir] [meeting_ids] [endpoint]"
+    echo "Usage: crawler [output_dir] [meeting_ids] [optional_endpoint]"
 else
     DIR=$1
     IDS=$2
