@@ -258,6 +258,9 @@ public class SparqlMatcher implements EntityMatcher
 			QuerySolution solution = orgResults.next();
 			RDFNode idNode = solution.get("id");
 			RDFNode descNode = solution.get("desc");
+			System.out.println("Here");
+			System.out.println(idNode.toString());
+			System.out.println(descNode.toString());
 			organizationIds.put(descNode.toString().toLowerCase(), idNode.toString());
 		}
 	}
