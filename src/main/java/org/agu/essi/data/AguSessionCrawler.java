@@ -228,14 +228,14 @@ public class AguSessionCrawler implements AbstractDataSource
 	
 	private void parseSessionResponse(String content)
 	{
-		Pattern p = Pattern.compile("<font size=-1>(  |  )<a href=\"(.{20,30}?)\">Abstract</a></font>");
+		Pattern p = Pattern.compile("<a href=\"(.{20,30}?)\">Abstract</a></font>");
 		Matcher m = p.matcher(content);
 		Vector<String> abstractLinks = new Vector<String>();
 		while(m.find())
 		{
-			abstractLinks.add(m.group(2));
+			abstractLinks.add(m.group(1));
 		}
-		
+
 		for (int i = 0; i < abstractLinks.size(); ++i)
 		{
 			getAbstractResponse(abstractLinks.get(i));
