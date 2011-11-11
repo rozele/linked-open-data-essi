@@ -1,8 +1,0 @@
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-
-SELECT ?keyword ?term ?id WHERE {
- ?keyword skos:broadMatch <{{uri}}> .
- ?keyword dcterms:subject ?term .
- ?keyword dcterms:identifier ?id .
-}

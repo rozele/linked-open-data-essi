@@ -1,9 +1,0 @@
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-
-SELECT DISTINCT ?keyword ?term ?id WHERE {
- { <{{uri}}> skos:related ?keyword . } UNION
- { ?keyword skos:related <{{uri}}> . } 
- ?keyword dcterms:subject ?term .
- ?keyword dcterms:identifier ?id .
-}

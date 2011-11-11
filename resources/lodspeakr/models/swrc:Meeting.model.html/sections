@@ -1,8 +1,0 @@
-PREFIX swc: <http://data.semanticweb.org/ns/swc/ontology#>
-PREFIX swrc: <http://swrc.ontoware.org/ontology#>
-
-SELECT ?section ?title WHERE {
-  ?section swc:isSubEventOf <{{uri}}> .
-  ?section a swrc:Meeting .
-  ?section swrc:eventTitle ?title .
-}
