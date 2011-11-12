@@ -272,6 +272,44 @@ public class Utils {
 		return meetings;
 	}
 	
+	public static Vector<String> duplicatedAbstracts()
+	{
+		Vector<String> abstracts = new Vector<String>();
+		//2006_Fall_Meeting_SH31A-0393A.rdf
+		//2010_Meeting_of_the_Americas_SH33E-02.rdf
+		//2010_Meeting_of_the_Americas_SH42A-01.rdf
+		//2008_Fall_Meeting_OS12A-08.rdf
+		//2008_Fall_Meeting_OS33A-1318.rdf
+		//2008_Fall_Meeting_OS43D-1327.rdf
+		//2010_Meeting_of_the_Americas_OS23C-02.rdf
+		return abstracts;
+	}
+	
+	public static Vector<String> malformedAbstracts()
+	{
+		Vector<String> abstracts = new Vector<String>();
+		//Fall_Meeting_2005_SH13A-0304.rdf
+		//2009_Fall_Meeting_SH33B-1495.rdf
+		//2008_Fall_Meeting_SH41A-1600.rdf
+		//2008_Fall_Meeting_SH31A-1664.rdf
+		//2006_Fall_Meeting_OS41A-0562.rdf
+		//2006_Joint_Assembly_OS31A-14.rdf
+		//2008_Fall_Meeting_OS31B-1262.rdf
+		return abstracts;
+	}
+	
+	public static Vector<String> unparsedAbstracts()
+	{
+		Vector<String> abstracts = new Vector<String>();
+		//abstracts.add("/cgi-bin/wais?cc=ED13C-03");
+		//abstracts.add("/cgi-bin/wais?mm=SH31B-1678");
+		//abstracts.add("/cgi-bin/wais?mm=SH43A-1643");
+		//abstracts.add("/cgi-bin/wais?cc=OS34A-04");
+		//abstracts.add("/cgi-bin/wais?ii=OS34B-04");
+		//abstracts.add("/cgi-bin/wais?mm=OS11A-1108");
+		return abstracts;
+	}
+	
 	public static Vector<String> skippedAbstracts()
 	{
 		Vector<String> abstracts = new Vector<String>();

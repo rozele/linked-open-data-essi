@@ -72,7 +72,7 @@ public class HtmlAbstract extends Abstract
 		// Hour (time of presentation)
 		index = _rawHtml.indexOf("<span class=\"hr\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			//throw new AbstractParserException();
 		}
@@ -81,7 +81,7 @@ public class HtmlAbstract extends Abstract
 		// Session
 		index = _rawHtml.indexOf("<span class=\"an\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			throw new AbstractParserException();
 		}
@@ -93,7 +93,7 @@ public class HtmlAbstract extends Abstract
 		// Title
 		index = _rawHtml.indexOf("<span class=\"ti\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			throw new AbstractParserException();
 		}
@@ -113,50 +113,52 @@ public class HtmlAbstract extends Abstract
 			endIndex = _rawHtml.indexOf("<br>", index);
 			nextIndex = _rawHtml.indexOf("<span class=\"au\">", endIndex);
 			
-			String name = _rawHtml.substring(index+17, endIndex).trim();
-			boolean add = false;
+			if (endIndex >= 0)
+			{
+				String name = _rawHtml.substring(index+17, endIndex).trim();
+				boolean add = false;
 			
-			if (identifier.containsKey(name))
-			{
-				a = identifier.get(name);
-			}
-			else
-			{
-				a = new Author(name);
-				identifier.put(name,a);
-				add = true;
-			}
+				if (identifier.containsKey(name))
+				{
+					a = identifier.get(name);
+				}
+				else
+				{
+					a = new Author(name);
+					identifier.put(name,a);
+					add = true;
+				}
 		  
-			// Author email
-			emIndex = _rawHtml.indexOf("<span class=\"em\">", endIndex);
-			if ((emIndex < nextIndex || nextIndex == -1) && emIndex >= 0)
-			{
+				// Author email
+				emIndex = _rawHtml.indexOf("<span class=\"em\">", endIndex);
 				emEndIndex = _rawHtml.indexOf("<br>", emIndex);
-				String email = _rawHtml.substring(emIndex+17, emEndIndex).trim();
-				a.getPerson().addEmail(email);
-			}
+				if ((emIndex < nextIndex || nextIndex == -1) && emIndex >= 0 && emEndIndex >= 0)
+				{
+					String email = _rawHtml.substring(emIndex+17, emEndIndex).trim();
+					a.getPerson().addEmail(email);
+				}
 		  
-			// Author affiliation
-			afIndex = _rawHtml.indexOf("<span class=\"af\">", endIndex);
-			if (afIndex < nextIndex && nextIndex >= 0 && afIndex >= 0)
-			{
+				// Author affiliation
+				afIndex = _rawHtml.indexOf("<span class=\"af\">", endIndex);
 				afEndIndex = _rawHtml.indexOf("<br>", afIndex);
-				String affiliation = _rawHtml.substring(afIndex+17, afEndIndex).trim();
-				a.addAffiliation(affiliation);
-			}
+				if (afIndex < nextIndex && nextIndex >= 0 && afIndex >= 0 && afEndIndex >= 0)
+				{
+					String affiliation = _rawHtml.substring(afIndex+17, afEndIndex).trim();
+					a.addAffiliation(affiliation);
+				}
 
-			if (add)
-			{
-				_authors.add(a);
+				if (add)
+				{
+					_authors.add(a);
+				}
+				
+				index = nextIndex;
 			}
-
-			index = nextIndex;
 		}
-		 
 		// Abstract
 		index = _rawHtml.indexOf("<span class=\"ab\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			throw new AbstractParserException();
 		}
@@ -167,14 +169,17 @@ public class HtmlAbstract extends Abstract
 		while (index >= 0) 
 		{
 			endIndex = _rawHtml.indexOf("<br>", index);
-			_keywords.add( new Keyword(_rawHtml.substring(index+17, endIndex).trim()) );
-			index = _rawHtml.indexOf("<span class=\"de\">", endIndex);
+			if (endIndex >= 0)
+			{
+				_keywords.add( new Keyword(_rawHtml.substring(index+17, endIndex).trim()) );
+				index = _rawHtml.indexOf("<span class=\"de\">", endIndex);
+			}
 		}
 		
 		// Section
 		index = _rawHtml.indexOf("<span class=\"sc\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			throw new AbstractParserException();
 		}
@@ -183,12 +188,11 @@ public class HtmlAbstract extends Abstract
 		// AGU Meeting the abstract was submitted to
 		index = _rawHtml.indexOf("<span class=\"mn\">");
 		endIndex = _rawHtml.indexOf("<br>", index);
-		if (index < 0)
+		if (index < 0 || endIndex < 0)
 		{
 			throw new AbstractParserException();
 		}
 		_meetingId = _rawHtml.substring(index+17, endIndex).trim();
-		
 	}
 
 	@Override
