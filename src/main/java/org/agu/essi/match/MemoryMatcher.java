@@ -235,7 +235,7 @@ public class MemoryMatcher implements EntityMatcher
 			for(int i = 0; i < people.size(); ++i)
 			{
 				Person p = people.get(i);
-				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + 1) + "\">\n");
+				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + peopleStartIdx + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Person\" />\n");
 				sw.write("    <foaf:name rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(p.getName()) + "</foaf:name>\n");
 				if (p.getEmail() != null)
@@ -288,7 +288,7 @@ public class MemoryMatcher implements EntityMatcher
 			for(int i = 0; i < organizations.size(); ++i)
 			{
 				Organization o = organizations.get(i);
-				sw.write("  <rdf:Description rdf:about=\"" + organizationBaseId + (i + 1) + "\">\n");
+				sw.write("  <rdf:Description rdf:about=\"" + organizationBaseId + (i + organizationsStartIdx + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Organization\" />\n");
 				sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(o.toString()) + "</dc:description>\n");
 				/*if (o.getCoordinates() != null)

@@ -307,6 +307,12 @@ public class Utils {
 		//abstracts.add("/cgi-bin/wais?cc=OS34A-04");
 		//abstracts.add("/cgi-bin/wais?ii=OS34B-04");
 		//abstracts.add("/cgi-bin/wais?mm=OS11A-1108");
+		//abstracts.add("/cgi-bin/wais?cc=A34A-04");
+		//abstracts.add("/cgi-bin/wais?cc=A34A-05");
+		//abstracts.add("/cgi-bin/wais?cc=A41F-05");
+		//abstracts.add("/cgi-bin/wais?mm=A21D-0219");
+		//abstracts.add("/cgi-bin/wais?mm=A23B-0297");
+		//abstracts.add("/cgi-bin/wais?mm=A23B-0297");
 		return abstracts;
 	}
 	
