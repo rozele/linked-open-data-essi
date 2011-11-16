@@ -16,7 +16,6 @@
  */
 package org.agu.essi.web.spotlight;
 
-import org.agu.essi.match.SparqlMatcher;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
