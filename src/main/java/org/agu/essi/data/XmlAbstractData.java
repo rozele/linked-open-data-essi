@@ -48,21 +48,21 @@ import org.agu.essi.data.source.AbstractDataSource;
  * @author Eric Rozell and Tom Narock
  *
  */
-public class XmlAbstractDataSource implements AbstractDataSource {
+public class XmlAbstractData implements AbstractDataSource {
 	private String directory;
 	private Vector<Abstract> abstracts;
 	private boolean extracted;
 	private EntityMatcher matcher;
 	
-	static final Logger log = Logger.getLogger(org.agu.essi.data.XmlAbstractDataSource.class);  
+	static final Logger log = Logger.getLogger(org.agu.essi.data.XmlAbstractData.class);  
 	
-	public XmlAbstractDataSource()
+	public XmlAbstractData()
 	{
 		abstracts = new Vector<Abstract>();
 		extracted = false;
 	}
 	
-	public XmlAbstractDataSource(String dir) throws Exception
+	public XmlAbstractData(String dir) throws Exception
 	{
 		directory = dir;
 		abstracts = new Vector<Abstract>();
@@ -255,7 +255,7 @@ public class XmlAbstractDataSource implements AbstractDataSource {
 			{
 				if (files[i].isFile())
 				{
-					abstracts.add(XmlAbstractDataSource.parseAbstractXml(files[i]));
+					abstracts.add(XmlAbstractData.parseAbstractXml(files[i]));
 				}
 			}
 			extracted = true;
@@ -324,7 +324,7 @@ public class XmlAbstractDataSource implements AbstractDataSource {
 	    {	
 	    	try
 	    	{
-	    		XmlAbstractDataSource data = new XmlAbstractDataSource(input);
+	    		XmlAbstractData data = new XmlAbstractData(input);
 	    		Vector<Abstract> abstracts = data.getAbstracts();
 	    		FileWrite fw = new FileWrite();
 	    		for (int i = 0; i < abstracts.size(); ++i)

@@ -37,19 +37,19 @@ import com.hp.hpl.jena.query.ResultSet;
  * Class for retrieving abstracts from a SPARQL endpoint
  * @author Eric Rozell
  */
-public class SparqlAbstractDataSource implements DataSource 
+public class SparqlAbstractData implements DataSource 
 {
 	
 	private EntityMatcher matcher;
 	private String endpoint;
 	
-	static final Logger log = Logger.getLogger(org.agu.essi.data.SparqlAbstractDataSource.class);  
+	static final Logger log = Logger.getLogger(org.agu.essi.data.SparqlAbstractData.class);  
 	
 	/**
 	 * Constructor for the SparqlDataSource
 	 * @param ep URL of the SPARQL endpoint
 	 */
-	public SparqlAbstractDataSource(String ep)
+	public SparqlAbstractData(String ep)
 	{
 		matcher = new SparqlMatcher(ep);
 		endpoint = ep;
@@ -105,7 +105,7 @@ public class SparqlAbstractDataSource implements DataSource
 
 	public static void main(String[] args)
 	{
-		SparqlAbstractDataSource data = new SparqlAbstractDataSource("http://aquarius.tw.rpi.edu:2025/sparql");
+		SparqlAbstractData data = new SparqlAbstractData("http://aquarius.tw.rpi.edu:2025/sparql");
 		try 
 		{
 			Vector<Abstract> abstracts = data.getAbstracts();

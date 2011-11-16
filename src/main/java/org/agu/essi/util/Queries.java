@@ -46,7 +46,7 @@ public class Queries {
 	private static String abstractKeywordQuery = prefixes + "SELECT ?keyword WHERE { <{uri}> swc:hasTopic ?keywordId . ?keywordId dc:description ?keyword . }";
 	private static String abstractTypeQuery = prefixes + "SELECT ?type WHERE { <{uri}> a ?type . }";
 	private static String abstractsQuery = prefixes + "SELECT ?abstract WHERE { ?abstract a esip:Abstract . {constraints}}";
-		
+			
 	public static String selectOrganizationQuery(String description)
 	{
 		return selectOrganizationQuery.replaceAll("\\{description\\}", description);

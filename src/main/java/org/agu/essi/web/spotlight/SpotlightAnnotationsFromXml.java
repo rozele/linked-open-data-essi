@@ -16,7 +16,7 @@
  */
 package org.agu.essi.web.spotlight;
 
-import org.agu.essi.data.XmlAbstractDataSource;
+import org.agu.essi.data.XmlAbstractData;
 import org.agu.essi.match.MemoryMatcher;
 import org.agu.essi.abstracts.Abstract;
 import org.apache.commons.cli.CommandLine;
@@ -30,7 +30,7 @@ import java.util.Vector;
  * Read AGU Abstracts from an XML data source and call Spotlight Annotation service
  * @author Tom Narock
  */
-public class RunSpotlightAnnotations {
+public class SpotlightAnnotationsFromXml {
 
 	public static void main ( String[] args ) {
 		
@@ -68,7 +68,7 @@ public class RunSpotlightAnnotations {
 	    	
 	      try {
 	    	    MemoryMatcher matcher = new MemoryMatcher();
-	    		XmlAbstractDataSource data = new XmlAbstractDataSource(input);
+	    		XmlAbstractData data = new XmlAbstractData(input);
 	    		Vector<Abstract> abstracts = data.getAbstracts();
 	    		SpotlightAnnotationToRdfXml sWriter = new SpotlightAnnotationToRdfXml ();
 

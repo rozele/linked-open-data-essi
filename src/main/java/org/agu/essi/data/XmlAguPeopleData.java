@@ -19,10 +19,14 @@ package org.agu.essi.data;
 import org.agu.essi.data.source.EsipPersonDataSource;
 import org.agu.essi.match.EntityMatcher;
 import org.esipfed.Person;
-import org.esipfed.data.PeopleParserESIP;
+import org.esipfed.data.PeopleParserAGU;
 import java.util.Vector;
 
-public class XmlEsipPeopleDataSource implements EsipPersonDataSource {
+/**
+ * Parser for AGU People data encoded in XML
+ * @author Tom Narock
+ */
+public class XmlAguPeopleData implements EsipPersonDataSource {
 	
 	private boolean parsed = false;
 	private EntityMatcher matcher;
@@ -51,7 +55,7 @@ public class XmlEsipPeopleDataSource implements EsipPersonDataSource {
 	 */
 	public Vector <Person> getPeople( String xmlFile ) {
 		
-		PeopleParserESIP parser = new PeopleParserESIP();
+		PeopleParserAGU parser = new PeopleParserAGU();
 		Vector <Person> people = null;
 		try {
 		  people = parser.parse( xmlFile );

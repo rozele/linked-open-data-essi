@@ -20,8 +20,8 @@ import java.util.Vector;
 
 import org.agu.essi.util.Utils;
 import org.esipfed.Person;
-import org.agu.essi.data.XmlAguPeopleDataSource;
-import org.agu.essi.data.XmlEsipPeopleDataSource;
+import org.agu.essi.data.XmlAguPeopleData;
+import org.agu.essi.data.XmlEsipPeopleData;
 import org.agu.essi.util.FileWrite;
 import org.agu.essi.match.MemoryMatcher;
 
@@ -46,8 +46,8 @@ public class ComputeSameAs {
 		  
 		// parse the RDF files
 		MemoryMatcher matcher = new MemoryMatcher ();
-		XmlAguPeopleDataSource aguPeopleParser = new XmlAguPeopleDataSource ();
-		XmlEsipPeopleDataSource esipPeopleParser = new XmlEsipPeopleDataSource ();
+		XmlAguPeopleData aguPeopleParser = new XmlAguPeopleData ();
+		XmlEsipPeopleData esipPeopleParser = new XmlEsipPeopleData ();
 		aguPeopleParser.setEntityMatcher( matcher );
 		esipPeopleParser.setEntityMatcher( matcher );
 		Vector <Person> esipPeople = esipPeopleParser.getPeople( args[0] );

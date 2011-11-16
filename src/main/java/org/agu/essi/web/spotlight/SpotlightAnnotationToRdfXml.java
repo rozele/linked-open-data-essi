@@ -88,6 +88,46 @@ public class SpotlightAnnotationToRdfXml {
 	 * Method to write annotations to RDF/XML
 	 * @param Vector <Annotation> annotations
 	 * @param SpotlightAnnotator annotator
+	 * @param String abstractID
+	 */
+	public void annotationsToRDF( Vector <org.agu.essi.annotation.Annotation> annotations, 
+			SpotlightAnnotator annotator, String id ) {
+		
+			Vector <String> dbpediaURIs = new Vector <String> ();
+			Vector <String> allSurfaceForms = new Vector <String> ();
+			
+			// provenance rdf about which abstract we are annotating and the date accessed
+			annotationRDF.add( annotator.writeAnnotationProvenanceToRdfXml( id ) ); 
+			  
+			// loop over each annotation associated with this abstract
+			for ( int i=0; i<annotations.size(); i++ ) {
+				
+			  SpotlightAnnotation sa = (SpotlightAnnotation) annotations.get(i);
+			  
+			  // check if the abstract already has a reference to this dbpedia uri
+			  // we want to avoid repetitive references, i.e. the abstract mentions
+			  // the same dbpedia concept multiple times
+			  if ( !dbpediaURIs.contains(sa.getURI()) ) { dbpediaURIs.add(sa.getURI()); }
+				  
+			  allSurfaceForms.add(sa.getSurfaceForm());
+			  
+			  // rdf about the specific annotation - surface form, dbpedia type, etc.
+			  annotationRDF.add( annotator.writeAnnotationTextToRdfXml( sa.getSurfaceForm(), sa.getDBpediaTypes(), 
+			    sa.getSimilarityScore(), sa.getPercentSecondRank(), id, sa.getURI(), sa.getIndex() ) );
+			  
+			} // end for		
+
+			// rdf about all dbpedia URIs and all text selector URIs related to this abstract
+			annotationRDF.add( annotator.writeAnnotationToRdfXml( id, dbpediaURIs, allSurfaceForms ) );
+
+			writeAnnotationToRDFXML( );
+
+		}
+	
+	/**
+	 * Method to write annotations to RDF/XML
+	 * @param Vector <Annotation> annotations
+	 * @param SpotlightAnnotator annotator
 	 * @param Abstract abstract
 	 */
 	public void annotationsToRDF( Vector <org.agu.essi.annotation.Annotation> annotations, 
