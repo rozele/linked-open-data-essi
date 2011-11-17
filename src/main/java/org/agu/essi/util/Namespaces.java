@@ -21,8 +21,8 @@ package org.agu.essi.util;
  * @author Eric Rozell
  */
 public class Namespaces {
-	public static String esip = "http://essi-lod.org/instances/";
-	public static String esipOwl = "http://essi-lod.org/ontology#";
+	public static String essi = "http://essi-lod.org/instances/";
+	public static String essiOwl = "http://essi-lod.org/ontology#";
 	public static String xsi = "http://www.w3.org/2001/XMLSchema-instance";
 	public static String essiXsd = "http://www.agu.org/focus_group/essi/schema/agu.xsd";
 	public static String essiSchema = "http://www.agu.org/focus_group/essi/schema";

@@ -42,6 +42,7 @@ public class SparqlAbstractData implements DataSource
 	
 	private EntityMatcher matcher;
 	private String endpoint;
+	private boolean graph;
 	
 	static final Logger log = Logger.getLogger(org.agu.essi.data.SparqlAbstractData.class);  
 	
@@ -49,10 +50,11 @@ public class SparqlAbstractData implements DataSource
 	 * Constructor for the SparqlDataSource
 	 * @param ep URL of the SPARQL endpoint
 	 */
-	public SparqlAbstractData(String ep)
+	public SparqlAbstractData(String ep, boolean g)
 	{
-		matcher = new SparqlMatcher(ep);
+		matcher = new SparqlMatcher(ep, g);
 		endpoint = ep;
+		graph = g;
 	}
 	
 	/**
@@ -70,7 +72,7 @@ public class SparqlAbstractData implements DataSource
 	@SuppressWarnings("rawtypes")
 	public Vector<Abstract> getAbstractsWithConstraints(Collection c, boolean conjunctive) throws SourceNotReadyException, InvalidAbstractConstraintException
 	{
-		String query = Queries.abstractsQuery(c, conjunctive);
+		String query = Queries.abstractsQuery(c, conjunctive, graph);
 		ResultSet results = Utils.sparqlSelect(query, endpoint);
 		Vector<String> abstractIds = new Vector<String>();
 		Vector<Abstract> abstracts = new Vector<Abstract>();
@@ -81,7 +83,7 @@ public class SparqlAbstractData implements DataSource
 		}
 		for (int i = 0; i < abstractIds.size(); ++i)
 		{
-			Abstract abs = new SparqlAbstract(abstractIds.get(i), endpoint);
+			Abstract abs = new SparqlAbstract(abstractIds.get(i), endpoint, graph);
 			abs.setEntityMatcher(matcher);
 			abstracts.add(abs);
 		}
@@ -105,7 +107,7 @@ public class SparqlAbstractData implements DataSource
 
 	public static void main(String[] args)
 	{
-		SparqlAbstractData data = new SparqlAbstractData("http://aquarius.tw.rpi.edu:2025/sparql");
+		SparqlAbstractData data = new SparqlAbstractData("http://aquarius.tw.rpi.edu:2025/sparql", false);
 		try 
 		{
 			Vector<Abstract> abstracts = data.getAbstracts();

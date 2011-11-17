@@ -328,7 +328,7 @@ public class Abstract
 			sw.write(Utils.writeDocumentEntities());
 			sw.write(Utils.writeRdfHeader());
 			sw.write("  <rdf:Description rdf:about=\"" + matcher.getAbstractId(this) + "\">\n");
-			sw.write("    <rdf:type rdf:resource=\"&esip;Abstract\"/>\n");
+			sw.write("    <rdf:type rdf:resource=\"&essi;Abstract\"/>\n");
 			sw.write("    <dc:title rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(_title) + "</dc:title>\n");
 			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(_abstractId) + "</dc:identifier>\n");
 			sw.write("    <swc:relatedToEvent rdf:resource=\"" + matcher.getSessionId(_session) + "\" />\n");

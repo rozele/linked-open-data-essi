@@ -40,6 +40,7 @@ public class SparqlAbstract extends Abstract
 {
 	private String _uri;
 	private String _endpoint;
+	private boolean _graph;
 	private Vector<Keyword> _keywords;
 	private Vector<Author> _authors;
 	private String _abstract;
@@ -49,10 +50,11 @@ public class SparqlAbstract extends Abstract
 	private Meeting _meeting;
 	private String _title;
 
-	public SparqlAbstract(String uri, String ep)
+	public SparqlAbstract(String uri, String ep, boolean g)
 	{
 		_uri = uri;
 		_endpoint = ep;
+		_graph = g;
 	}
 	
 	@Override
@@ -141,7 +143,7 @@ public class SparqlAbstract extends Abstract
 	
 	public void lazyLoader()
 	{
-		String query = Queries.abstractInfoQuery(_uri);
+		String query = Queries.abstractInfoQuery(_uri, _graph);
 		ResultSet rs = Utils.sparqlSelect(query, _endpoint);
 		if (rs.hasNext())
 		{
@@ -151,13 +153,13 @@ public class SparqlAbstract extends Abstract
 		{
 			//TODO: error if no abstract info available
 		}
-		query = Queries.abstractKeywordQuery(_uri);
+		query = Queries.abstractKeywordQuery(_uri, _graph);
 		rs = Utils.sparqlSelect(query, _endpoint);
 		while (rs.hasNext())
 		{
 			//TODO: add keywords
 		}
-		query = Queries.abstractAuthorQuery(_uri);
+		query = Queries.abstractAuthorQuery(_uri, _graph);
 		rs = Utils.sparqlSelect(query, _endpoint);
 		while (rs.hasNext())
 		{

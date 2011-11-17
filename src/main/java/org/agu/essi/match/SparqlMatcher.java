@@ -38,11 +38,11 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 public class SparqlMatcher implements EntityMatcher 
 {
 	//Stores unique identifier bases
-	private static String meetingBaseId = Namespaces.esip + "Meeting_";
-	private static String sectionBaseId = Namespaces.esip + "Section_";	
-	private static String sessionBaseId = Namespaces.esip + "Session_";
-	private static String abstractBaseId = Namespaces.esip + "Abstract_";
-	private static String keywordBaseId = Namespaces.esip + "Keyword_";
+	private static String meetingBaseId = Namespaces.essi + "Meeting_";
+	private static String sectionBaseId = Namespaces.essi + "Section_";	
+	private static String sessionBaseId = Namespaces.essi + "Session_";
+	private static String abstractBaseId = Namespaces.essi + "Abstract_";
+	private static String keywordBaseId = Namespaces.essi + "Keyword_";
 	
 	private Vector<String> meetingIds = new Vector<String>();
 	private Vector<String> sectionIds = new Vector<String>();
@@ -53,11 +53,13 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private MemoryMatcher newMatches;
 	private String endpoint;
+	private boolean graph;
 	
-	public SparqlMatcher(String ep)
+	public SparqlMatcher(String ep, boolean g)
 	{
 		newMatches = new MemoryMatcher();
 		endpoint = ep;
+		graph = g;
 		setStartIndices();
 		getIds();
 	}
@@ -166,7 +168,7 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private void setStartIndices()
 	{
-		ResultSet peopleResults = Utils.sparqlSelect(Queries.countPeopleQuery, endpoint);
+		ResultSet peopleResults = Utils.sparqlSelect(Queries.countPeopleQuery(graph), endpoint);
 		if (peopleResults.hasNext())
 		{
 			QuerySolution solution = peopleResults.next();
@@ -174,7 +176,7 @@ public class SparqlMatcher implements EntityMatcher
 			String count = node.toString().split("\\^\\^")[0];
 			newMatches.setPeopleStartIndex(Integer.parseInt(count));
 		}
-		ResultSet organizationsResults = Utils.sparqlSelect(Queries.countOrganizationsQuery, endpoint);
+		ResultSet organizationsResults = Utils.sparqlSelect(Queries.countOrganizationsQuery(graph), endpoint);
 		if (organizationsResults.hasNext())
 		{
 			QuerySolution solution = organizationsResults.next();
@@ -196,7 +198,7 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private void getMeetingIds()
 	{
-		ResultSet meetingResults = Utils.sparqlSelect(Queries.meetingsQuery, endpoint);
+		ResultSet meetingResults = Utils.sparqlSelect(Queries.meetingsQuery(graph), endpoint);
 		while (meetingResults.hasNext())
 		{
 			QuerySolution solution = meetingResults.next();
@@ -207,7 +209,7 @@ public class SparqlMatcher implements EntityMatcher
 
 	private void getSectionIds()
 	{
-		ResultSet sectionResults = Utils.sparqlSelect(Queries.sectionsQuery, endpoint);
+		ResultSet sectionResults = Utils.sparqlSelect(Queries.sectionsQuery(graph), endpoint);
 		while (sectionResults.hasNext())
 		{
 			QuerySolution solution = sectionResults.next();
@@ -218,7 +220,7 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private void getSessionIds()
 	{
-		ResultSet sessionResults = Utils.sparqlSelect(Queries.sessionsQuery, endpoint);
+		ResultSet sessionResults = Utils.sparqlSelect(Queries.sessionsQuery(graph), endpoint);
 		while (sessionResults.hasNext())
 		{
 			QuerySolution solution = sessionResults.next();
@@ -229,7 +231,7 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private void getKeywordIds()
 	{
-		ResultSet keywordResults = Utils.sparqlSelect(Queries.keywordsQuery, endpoint);
+		ResultSet keywordResults = Utils.sparqlSelect(Queries.keywordsQuery(graph), endpoint);
 		while (keywordResults.hasNext())
 		{
 			QuerySolution solution = keywordResults.next();
@@ -240,7 +242,7 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private void getPersonIds()
 	{
-		ResultSet personResults = Utils.sparqlSelect(Queries.peopleQuery, endpoint);
+		ResultSet personResults = Utils.sparqlSelect(Queries.peopleQuery(graph), endpoint);
 		while (personResults.hasNext())
 		{
 			QuerySolution solution = personResults.next();
@@ -252,7 +254,7 @@ public class SparqlMatcher implements EntityMatcher
 
 	private void getOrganizationIds()
 	{
-		ResultSet orgResults = Utils.sparqlSelect(Queries.organizationsQuery, endpoint);
+		ResultSet orgResults = Utils.sparqlSelect(Queries.organizationsQuery(graph), endpoint);
 		while (orgResults.hasNext())
 		{
 			QuerySolution solution = orgResults.next();

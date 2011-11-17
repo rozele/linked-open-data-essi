@@ -69,7 +69,7 @@ public class TWC {
 		int index = 1;
 		for (String key : meetings.keySet()) {
 			  
-			str.append( "  <rdf:Description rdf:about=\"" + Namespaces.esip + "ESIP_Meeting_" + index + "\"> \n" );	  
+			str.append( "  <rdf:Description rdf:about=\"" + Namespaces.essi + "ESIP_Meeting_" + index + "\"> \n" );	  
 		    str.append( "    <rdf:type rdf:resource=\"&tw;Meeting\" /> \n" );
 		    str.append( "    <tw:Meeting rdf:datatype=\"&xsd;string\">" + key + "</tw:Meeting> \n" );
 		    people = meetings.get(key);

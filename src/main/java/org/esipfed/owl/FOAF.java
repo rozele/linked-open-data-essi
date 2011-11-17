@@ -103,7 +103,7 @@ public class FOAF {
 		// a key value of "" means we do not know the person's organization
 		if ( !key.equals("") ) {
 
-	      str.append( "  <rdf:Description rdf:about=\"" + Namespaces.esip + "ESIP_Organization_" + index + "\"> \n" );	  
+	      str.append( "  <rdf:Description rdf:about=\"" + Namespaces.essi + "ESIP_Organization_" + index + "\"> \n" );	  
 	      str.append( "    <rdf:type rdf:resource=\"&foaf;Organization\" /> \n" );
 	      str.append( "    <foaf:name>" + Utils.cleanXml(key) + "</foaf:name> \n" );
 	      people = orgs.get(key);

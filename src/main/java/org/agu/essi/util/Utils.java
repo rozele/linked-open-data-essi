@@ -102,7 +102,7 @@ public class Utils {
 	public static String writeRdfHeader()
 	{
 		StringWriter sw = new StringWriter();
-		sw.write("<rdf:RDF xmlns=\"" + Namespaces.esipOwl + "\"\n");
+		sw.write("<rdf:RDF xmlns=\"" + Namespaces.essiOwl + "\"\n");
 		sw.write("         xmlns:owl=\"" + Namespaces.owl + "\"\n");
 		sw.write("         xmlns:rdf=\"" + Namespaces.rdf + "\"\n");
 		sw.write("         xmlns:swc=\"" + Namespaces.swc + "\"\n");
@@ -119,7 +119,7 @@ public class Utils {
 		sw.write("		   xmlns:aof=\"" + Namespaces.aof + "\"\n");
 		sw.write("		   xmlns:aos=\"" + Namespaces.aos + "\"\n");
 		sw.write("		   xmlns:aot=\"" + Namespaces.aot + "\"\n");
-		sw.write("         xml:base=\"" + Namespaces.esip + "\">\n");
+		sw.write("         xml:base=\"" + Namespaces.essi + "\">\n");
 		return sw.toString();
 	}
 	
@@ -127,7 +127,7 @@ public class Utils {
 	{
 		StringWriter sw = new StringWriter();
 		sw.write("PREFIX owl: <" + Namespaces.owl + ">\n");
-		sw.write("PREFIX esip: <" + Namespaces.esipOwl + ">\n");
+		sw.write("PREFIX essi: <" + Namespaces.essiOwl + ">\n");
 		sw.write("PREFIX xsd: <" + Namespaces.xsd + ">\n");
 		sw.write("PREFIX tw: <" + Namespaces.tw + ">\n");
 		sw.write("PREFIX foaf: <" + Namespaces.foaf + ">\n");
@@ -161,7 +161,7 @@ public class Utils {
 		StringWriter sw = new StringWriter();
 		sw.write("<!DOCTYPE rdf:RDF [\n");
 		sw.write("  <!ENTITY owl \"" + Namespaces.owl + "\" >\n");
-		sw.write("  <!ENTITY esip \"" + Namespaces.esipOwl + "\" >\n");
+		sw.write("  <!ENTITY essi \"" + Namespaces.essi + "\" >\n");
 		sw.write("  <!ENTITY xsd \"" + Namespaces.xsd + "\" >\n");
 		sw.write("  <!ENTITY tw \"" + Namespaces.tw + "\" >\n");
 		sw.write("  <!ENTITY foaf \"" + Namespaces.foaf + "\" >\n");

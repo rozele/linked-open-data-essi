@@ -154,18 +154,18 @@ public class Keyword
 		if (format.equals("rdf/xml"))
 		{
 			StringWriter sw = new StringWriter();
-			sw.write("  <rdf:Description rdf:about=\"" + Namespaces.esip + "Keyword_" + _id + "\">\n");
+			sw.write("  <rdf:Description rdf:about=\"" + Namespaces.essi + "Keyword_" + _id + "\">\n");
 			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
 			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
 			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
 			sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + _orig + "</dc:description>\n");
 			if (_parent != null)
 			{
-				sw.write("    <skos:broadMatch rdf:resource=\"" + Namespaces.esip + "Keyword_" + _parent.getId() + "\" />\n");
+				sw.write("    <skos:broadMatch rdf:resource=\"" + Namespaces.essi + "Keyword_" + _parent.getId() + "\" />\n");
 			}
 			for (int i = 0; i < _related.size(); ++i)
 			{
-				sw.write("    <skos:related rdf:resource=\"" + Namespaces.esip + "Keyword_" + _related.get(i) + "\" />\n");
+				sw.write("    <skos:related rdf:resource=\"" + Namespaces.essi + "Keyword_" + _related.get(i) + "\" />\n");
 
 			}
 			sw.write("  </rdf:Description>\n");

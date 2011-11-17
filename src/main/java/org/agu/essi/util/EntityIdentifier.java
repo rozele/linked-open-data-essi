@@ -36,13 +36,13 @@ public class EntityIdentifier
 {
 	
 	//Stores unique identifiers
-	private static String meetingBaseId = Namespaces.esip + "Meeting_";
-	private static String sectionBaseId = Namespaces.esip + "Section_";	
-	private static String personBaseId = Namespaces.esip + "Person_";
-	private static String organizationBaseId = Namespaces.esip + "Organization_";
-	private static String sessionBaseId = Namespaces.esip + "Session_";
-	private static String abstractBaseId = Namespaces.esip + "Abstract_";
-	private static String keywordBaseId = Namespaces.esip + "Keyword_";
+	private static String meetingBaseId = Namespaces.essi + "Meeting_";
+	private static String sectionBaseId = Namespaces.essi + "Section_";	
+	private static String personBaseId = Namespaces.essi + "Person_";
+	private static String organizationBaseId = Namespaces.essi + "Organization_";
+	private static String sessionBaseId = Namespaces.essi + "Session_";
+	private static String abstractBaseId = Namespaces.essi + "Abstract_";
+	private static String keywordBaseId = Namespaces.essi + "Keyword_";
 	private static Vector<Person> people = new Vector<Person>();
 	private static Vector<Meeting> meetings = new Vector<Meeting>();
 	private static Vector<Organization> organizations = new Vector<Organization>();
