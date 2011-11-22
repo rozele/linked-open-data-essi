@@ -42,7 +42,7 @@ public class SparqlAbstractData implements DataSource
 	
 	private EntityMatcher matcher;
 	private String endpoint;
-	private boolean graph;
+	private String graph;
 	
 	static final Logger log = Logger.getLogger(org.agu.essi.data.SparqlAbstractData.class);  
 	
@@ -50,7 +50,7 @@ public class SparqlAbstractData implements DataSource
 	 * Constructor for the SparqlDataSource
 	 * @param ep URL of the SPARQL endpoint
 	 */
-	public SparqlAbstractData(String ep, boolean g)
+	public SparqlAbstractData(String ep, String g)
 	{
 		matcher = new SparqlMatcher(ep, g);
 		endpoint = ep;
@@ -107,7 +107,7 @@ public class SparqlAbstractData implements DataSource
 
 	public static void main(String[] args)
 	{
-		SparqlAbstractData data = new SparqlAbstractData("http://aquarius.tw.rpi.edu:2025/sparql", false);
+		SparqlAbstractData data = new SparqlAbstractData("http://aquarius.tw.rpi.edu:2025/sparql", "http://essi-lod.org/instances/");
 		try 
 		{
 			Vector<Abstract> abstracts = data.getAbstracts();

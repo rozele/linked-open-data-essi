@@ -22,7 +22,7 @@ import org.agu.essi.util.exception.InvalidAbstractConstraintException;
 
 public class Queries {
 	private static String prefixes = Utils.writeSparqlPrefixes();
-	private static String from = "FROM <" + Namespaces.essi + ">";
+	private static String from = "FROM <{graph}>";
 	
 	private static String countPeopleQuery = prefixes + "SELECT (count(?person) AS ?count) {from} WHERE { ?person a foaf:Person . }";
 	private static String countOrganizationsQuery = prefixes + "SELECT (count(?organization) AS ?count) {from} WHERE { ?organization a foaf:Organization . }";
@@ -48,129 +48,217 @@ public class Queries {
 	private static String abstractTypeQuery = prefixes + "SELECT ?type {from} WHERE { <{uri}> a ?type . }";
 	private static String abstractsQuery = prefixes + "SELECT ?abstract {from} WHERE { ?abstract a essi:Abstract . {constraints}}";
 			
-	public static String countPeopleQuery(boolean graph)
+	public static String countPeopleQuery(String graph)
 	{
-		if (graph)
-			return countPeopleQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return countPeopleQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return countPeopleQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String countOrganizationsQuery(boolean graph)
+	public static String countOrganizationsQuery(String graph)
 	{
-		if (graph)
-			return countOrganizationsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return countOrganizationsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return countOrganizationsQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String sessionsQuery(boolean graph) 
+	public static String sessionsQuery(String graph) 
 	{
-		if (graph)
-			return sessionsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return sessionsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return sessionsQuery.replaceAll("\\{from\\}", "");
 	}
 
-	public static String sectionsQuery(boolean graph) 
+	public static String sectionsQuery(String graph) 
 	{
-		if (graph)
-			return sectionsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return sectionsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return sectionsQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String meetingsQuery(boolean graph) 
+	public static String meetingsQuery(String graph) 
 	{
-		if (graph)
-			return meetingsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return meetingsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return meetingsQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String keywordsQuery(boolean graph) 
+	public static String keywordsQuery(String graph) 
 	{
-		if (graph)
-			return keywordsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return keywordsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return keywordsQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String peopleQuery(boolean graph) 
+	public static String peopleQuery(String graph) 
 	{
-		if (graph)
-			return peopleQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return peopleQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return peopleQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String organizationsQuery(boolean graph) 
+	public static String organizationsQuery(String graph) 
 	{
-		if (graph)
-			return organizationsQuery.replaceAll("\\{from\\}", from);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			return organizationsQuery.replaceAll("\\{from\\}", graphClause);
+		}
 		else
 			return organizationsQuery.replaceAll("\\{from\\}", "");
 	}
 	
-	public static String selectOrganizationQuery(String description, boolean graph)
+	public static String selectOrganizationQuery(String description, String graph)
 	{
-		return selectOrganizationQuery.replaceAll("\\{description\\}", description);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = selectOrganizationQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{description\\}", description);
+		}
+		else
+			return selectOrganizationQuery.replaceAll("\\{description\\}", description);
 	}
 	
-	public static String selectPersonQuery(String email, boolean graph)
+	public static String selectPersonQuery(String email, String graph)
 	{
-		return selectPersonQuery.replaceAll("\\{email\\}", email);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = selectPersonQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{email\\}", email);
+		}
+		else
+			return selectPersonQuery.replaceAll("\\{email\\}", email);
 	}
 	
-	public static String askMeetingQuery(String uri, boolean graph)
+	public static String askMeetingQuery(String uri, String graph)
 	{
-		return askMeetingQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = askMeetingQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return askMeetingQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String askSectionQuery(String uri, boolean graph)
+	public static String askSectionQuery(String uri, String graph)
 	{
-		return askSectionQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = askSectionQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return askSectionQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String askSessionQuery(String uri, boolean graph)
+	public static String askSessionQuery(String uri, String graph)
 	{
-		return askSessionQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = askSessionQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return askSessionQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String askKeywordQuery(String uri, boolean graph)
+	public static String askKeywordQuery(String uri, String graph)
 	{
-		return askKeywordQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = askKeywordQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return askKeywordQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String askAbstractQuery(String uri, boolean graph)
+	public static String askAbstractQuery(String uri, String graph)
 	{
-		return askAbstractQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = askAbstractQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return askAbstractQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String abstractInfoQuery(String uri, boolean graph)
+	public static String abstractInfoQuery(String uri, String graph)
 	{
-		return abstractInfoQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = abstractInfoQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return abstractInfoQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String abstractAuthorQuery(String uri, boolean graph)
+	public static String abstractAuthorQuery(String uri, String graph)
 	{
-		return abstractAuthorQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = abstractAuthorQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return abstractAuthorQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String abstractKeywordQuery(String uri, boolean graph)
+	public static String abstractKeywordQuery(String uri, String graph)
 	{
-		return abstractKeywordQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = abstractKeywordQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return abstractKeywordQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
-	public static String abstractTypeQuery(String uri, boolean graph)
+	public static String abstractTypeQuery(String uri, String graph)
 	{
-		return abstractTypeQuery.replaceAll("\\{uri\\}", uri);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = abstractTypeQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{uri\\}", uri);
+		}
+		else
+			return abstractTypeQuery.replaceAll("\\{uri\\}", uri);
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public static String abstractsQuery(Collection constraints, boolean conjunctive, boolean graph) throws InvalidAbstractConstraintException
+	public static String abstractsQuery(Collection constraints, boolean conjunctive, String graph) throws InvalidAbstractConstraintException
 	{
 		String constraintString = Utils.buildAbstractConstraintString(constraints, conjunctive);
-		return abstractsQuery.replaceAll("\\{constraints\\}", constraintString);
+		if (graph != null) {
+			String graphClause = from.replaceAll("\\{graph\\}", graph);
+			String query = abstractsQuery.replaceAll("\\{from\\}", graphClause);
+			return query.replaceAll("\\{constraints\\}", constraintString);
+		}
+		else
+			return abstractsQuery.replaceAll("\\{constraints\\}", constraintString);
 	}
 }

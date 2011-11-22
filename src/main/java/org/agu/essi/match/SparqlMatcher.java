@@ -53,9 +53,9 @@ public class SparqlMatcher implements EntityMatcher
 	
 	private MemoryMatcher newMatches;
 	private String endpoint;
-	private boolean graph;
+	private String graph;
 	
-	public SparqlMatcher(String ep, boolean g)
+	public SparqlMatcher(String ep, String g)
 	{
 		newMatches = new MemoryMatcher();
 		endpoint = ep;

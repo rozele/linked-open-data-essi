@@ -28,7 +28,6 @@ import org.agu.essi.util.Queries;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
 
-import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 
 /**
@@ -40,7 +39,7 @@ public class SparqlAbstract extends Abstract
 {
 	private String _uri;
 	private String _endpoint;
-	private boolean _graph;
+	private String _graph;
 	private Vector<Keyword> _keywords;
 	private Vector<Author> _authors;
 	private String _abstract;
@@ -50,7 +49,7 @@ public class SparqlAbstract extends Abstract
 	private Meeting _meeting;
 	private String _title;
 
-	public SparqlAbstract(String uri, String ep, boolean g)
+	public SparqlAbstract(String uri, String ep, String g)
 	{
 		_uri = uri;
 		_endpoint = ep;
@@ -147,7 +146,7 @@ public class SparqlAbstract extends Abstract
 		ResultSet rs = Utils.sparqlSelect(query, _endpoint);
 		if (rs.hasNext())
 		{
-			QuerySolution qs = rs.next();
+			//QuerySolution qs = rs.next();
 		}
 		else
 		{

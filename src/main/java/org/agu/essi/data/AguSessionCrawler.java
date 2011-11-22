@@ -360,7 +360,7 @@ public class AguSessionCrawler implements AbstractDataSource
 	  	options.addOption("annotate", false, "Turns on calls to DBpedia Spotlight annotation service (default is to not annotate" +
 			"while crawling)");
 	  	options.addOption("endpoint", true, "SPARQL endpoint with existing data for matching");
-	  	options.addOption("graph", false, "Use FROM clause to query named graph");
+	  	options.addOption("graph", true, "Use FROM clause to query named graph");
 	  	options.addOption("meetings", true, "List of semi-colon separated meetings, with meeting ID and section ID separated by comma (e.g., fm10,IN;fm09,IN");
 	  	// Parse the command line arguments
 	  	CommandLine cmd = null;
@@ -424,8 +424,8 @@ public class AguSessionCrawler implements AbstractDataSource
 	  	if ( cmd.hasOption("annotate")) { annotate = true; }
 
 	  	// graph or not
-	  	boolean graph = false;
-	  	if ( cmd.hasOption("graph")) { graph = true; }
+	  	String graph = null;
+	  	if ( cmd.hasOption("graph")) { graph = cmd.getOptionValue("graph"); }
 	  	
 	  	if (!error)
 	    {	
