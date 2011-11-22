@@ -102,7 +102,7 @@ public class Utils {
 	public static String writeRdfHeader()
 	{
 		StringWriter sw = new StringWriter();
-		sw.write("<rdf:RDF xmlns=\"" + Namespaces.essiOwl + "\"\n");
+		sw.write("<rdf:RDF xmlns=\"" + Namespaces.essi + "\"\n");
 		sw.write("         xmlns:owl=\"" + Namespaces.owl + "\"\n");
 		sw.write("         xmlns:rdf=\"" + Namespaces.rdf + "\"\n");
 		sw.write("         xmlns:swc=\"" + Namespaces.swc + "\"\n");
@@ -161,7 +161,7 @@ public class Utils {
 		StringWriter sw = new StringWriter();
 		sw.write("<!DOCTYPE rdf:RDF [\n");
 		sw.write("  <!ENTITY owl \"" + Namespaces.owl + "\" >\n");
-		sw.write("  <!ENTITY essi \"" + Namespaces.essi + "\" >\n");
+		sw.write("  <!ENTITY essi \"" + Namespaces.essiOwl + "\" >\n");
 		sw.write("  <!ENTITY xsd \"" + Namespaces.xsd + "\" >\n");
 		sw.write("  <!ENTITY tw \"" + Namespaces.tw + "\" >\n");
 		sw.write("  <!ENTITY foaf \"" + Namespaces.foaf + "\" >\n");
