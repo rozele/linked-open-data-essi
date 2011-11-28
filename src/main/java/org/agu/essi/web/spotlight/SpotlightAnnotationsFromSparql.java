@@ -21,7 +21,6 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
 import org.agu.essi.data.SparqlUnannotatedAbstractData;
-import java.util.Vector;
 
 /**
  * Read AGU Abstracts from a SPARQL endpoint and call Spotlight Annotation service
@@ -33,6 +32,9 @@ public class SpotlightAnnotationsFromSparql {
 		
 		// Object to deal with command line options (Apache CLI)
 	  	Options options = new Options();
+	  	options.addOption("limit", true, "Limit to use in SPARQL query.");
+	  	options.addOption("offset", true, "Offset to use in SPARQL query.");
+	  	options.addOption("port", true, "Port of the SPARQL proxy.");
 	  	options.addOption("outputDirectory", true, "Directory in which to store the annotations.");
 	  	  
 	  	// Parse the command line arguments
@@ -45,12 +47,33 @@ public class SpotlightAnnotationsFromSparql {
 	  	// Check if the correct options were set
 	  	boolean error = false;
 	  	String output = null;
+	  	String limit = null;
+	  	String offset = null;
+	  	String port = null;
 	  	
 	  	// output directory
 	    if ( !cmd.hasOption("outputDirectory") ) {
 	    	error = true;
 	  		System.out.println("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
 	  	} else { output = cmd.getOptionValue("outputDirectory"); }
+	    
+	    // limit
+	    if ( !cmd.hasOption("limit") ) {
+	    	error = true;
+	  		System.out.println("--limit Not Set. Limit to use in the SPARQL Query.");
+	  	} else { limit = cmd.getOptionValue("limit"); }
+	    
+	    // offset
+	    if ( !cmd.hasOption("offset") ) {
+	    	error = true;
+	  		System.out.println("--offset Not Set. Offset to use in the SPARQL Query.");
+	  	} else { offset = cmd.getOptionValue("offset"); }
+	    
+	    // port
+	    if ( !cmd.hasOption("port") ) {
+	    	error = true;
+	  		System.out.println("--port Not Set. Port of the SPARQL endpoint.");
+	  	} else { port = cmd.getOptionValue("port"); }
 	    
 	    // if no errors then proceed
 	    if (!error) {	
@@ -59,21 +82,7 @@ public class SpotlightAnnotationsFromSparql {
 	    	  
 	    	    // POST the SPARQL query to the public endpoint and parse the results
 	    	    SparqlUnannotatedAbstractData abstracts = new SparqlUnannotatedAbstractData ();
-	    	    abstracts.getAbstracts();
-	    	    
-	    	    // Configure the annotation writer
-		    	SpotlightAnnotationToRdfXml sWriter = new SpotlightAnnotationToRdfXml ();
-		    	sWriter.setOutputDirectory( output );
-		    	sWriter.writeSpotlightProvenance();
-	    	    
-	    	    // create annotations
-	    	    for ( int i=0; i<abstracts.ids.size(); i++ ) {
-	    	    	
-	    	      SpotlightAnnotator annotator = new SpotlightAnnotator ( abstracts.abstracts.get(i) );
-	      		  Vector <org.agu.essi.annotation.Annotation> annotations = annotator.getAnnotations();
-	      		  sWriter.annotationsToRDF( annotations, annotator, abstracts.ids.get(i));
-	      		  
-	    		}
+	    	    abstracts.annotate( limit, offset, port, output );
 	    		
 	      } catch ( Exception e ) { System.out.println(e); }
 
