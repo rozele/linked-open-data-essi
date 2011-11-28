@@ -2,7 +2,7 @@
 
 require_once("sparql.php");
 
-$endpoint = "http://aquarius.tw.rpi.edu:8890/sparql";
+$endpoint = "http://aquarius.tw.rpi.edu:8891/sparql";
 $graph = "http://essi-lod.org/instances/";
 
 $keywordsQuery = getPrefixes() .
