@@ -16,7 +16,7 @@ $keywordsQuery = getPrefixes() .
                " ?person foaf:name ?name . " .
                "} " .
                "group by ?keyword ?name " .
-               "order by desc(?count) ";
+               "order by desc(?count)";
 
 function getKey($value, $array)
 {
@@ -30,8 +30,9 @@ $groups = array();
 $nodeArray = array();
 $edgeArray = array();
 
+//echo $keywordsQuery;
+
 $results = sparqlSelect($keywordsQuery, $endpoint);
-echo count($results["results"]);
 
 foreach($results["results"]["bindings"] as $i => $binding)
 {
