@@ -23,7 +23,7 @@ import org.esipfed.Person;
 import org.agu.essi.data.XmlAguPeopleData;
 import org.agu.essi.data.XmlEsipPeopleData;
 import org.agu.essi.util.FileWrite;
-import org.agu.essi.match.MemoryMatcher;
+import org.agu.essi.match.SparqlMatcher;
 
 /**
  * Compute OWL sameAs relationships from ESIP and AGU People data
@@ -45,15 +45,12 @@ public class ComputeSameAs {
 		same.append( Utils.writeRdfHeader() );
 		  
 		// parse the RDF files
-		MemoryMatcher matcher = new MemoryMatcher ();
-		XmlAguPeopleData aguPeopleParser = new XmlAguPeopleData ();
+		SparqlMatcher matcher = new SparqlMatcher ( "http://aquarius.tw.rpi.edu:8890/sparql", "http://essi-lod.org/instances/" );
 		XmlEsipPeopleData esipPeopleParser = new XmlEsipPeopleData ();
-		aguPeopleParser.setEntityMatcher( matcher );
 		esipPeopleParser.setEntityMatcher( matcher );
 		Vector <Person> esipPeople = esipPeopleParser.getPeople( args[0] );
-		Vector <Person> aguPeople = aguPeopleParser.getPeople( args[1] );
 	
-		// compute sameAs
+		/*/ compute sameAs
 		String aName;
 		String eName;
 		Vector <String> aEmail;
@@ -68,7 +65,7 @@ public class ComputeSameAs {
 					same.append( sameAs.writeSameAs( esipPeople.get(i).getID(), aguPeople.get(j).getID() ) ); 
 				}
 			}
-		}
+		}*/
 		
 		// clsoe RDF
 		same.append( Utils.writeRdfFooter() );	  

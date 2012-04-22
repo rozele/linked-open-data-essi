@@ -23,6 +23,8 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.util.Vector;
 
@@ -32,6 +34,8 @@ import java.util.Vector;
  */
 public class SpotlightAnnotationsFromXml {
 
+	private static Log log = LogFactory.getLog(SpotlightAnnotationsFromXml.class);
+	
 	public static void main ( String[] args ) {
 		
 		// Object to deal with command line options (Apache CLI)
@@ -43,7 +47,7 @@ public class SpotlightAnnotationsFromXml {
 	  	CommandLine cmd = null;
 	  	CommandLineParser parser = new PosixParser();
 	  	try { cmd = parser.parse( options, args); } catch ( Exception pe ) { 
-	  	  System.out.println( "Error parsing command line options: " + pe.toString() ); 
+	  	  log.error( "Error parsing command line options: " + pe.toString() ); 
 	  	}
 	  	  
 	  	// Check if the correct options were set
@@ -54,13 +58,13 @@ public class SpotlightAnnotationsFromXml {
 	  	// output directory
 	    if ( !cmd.hasOption("outputDirectory") ) {
 	    	error = true;
-	  		System.out.println("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
+	  		log.error("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
 	  	} else { output = cmd.getOptionValue("outputDirectory"); }
 	    
 	    //input directory
 	    if ( !cmd.hasOption("inputDirectory") ) {
 	    	error = true;
-	    	System.out.println("--inputDirectory Not Set. Directory from which to retrieve existing abstract XML.");
+	    	log.error("--inputDirectory Not Set. Directory from which to retrieve existing abstract XML.");
 	    } else { input = cmd.getOptionValue("inputDirectory"); }
 	    
 	    // if no errors then proceed
@@ -83,7 +87,7 @@ public class SpotlightAnnotationsFromXml {
 	      		  sWriter.annotationsToRDF( annotations, annotator, abstracts.get(i) );
 	    		}
 	    		
-	      } catch ( Exception e ) { System.out.println(e); }
+	      } catch ( Exception e ) { log.error(e); }
 
 	    } // end if
 	    

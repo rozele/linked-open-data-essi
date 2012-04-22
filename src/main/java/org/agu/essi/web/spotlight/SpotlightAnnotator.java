@@ -36,6 +36,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.agu.essi.annotation.AnnotatedText;
 import org.agu.essi.annotation.Annotation;
 import org.agu.essi.util.Utils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -46,6 +48,8 @@ import org.w3c.dom.NodeList;
  */
 public class SpotlightAnnotator implements AnnotatedText
 {
+	static final Log log = LogFactory.getLog(SpotlightAnnotator.class);
+	
 	private static String annotationService = "spotlight.dbpedia.org";
 	private static String annotationPath = "/rest/annotate?text=";
 	private static String annotationEncoding = "text/xml; charset=\"utf-8\"";
@@ -120,10 +124,10 @@ public class SpotlightAnnotator implements AnnotatedText
           }
         
 	    } catch (UnknownHostException e) {
-	    	System.err.println("Unknown host: " + annotationService);
+	    	log.error("Unknown host: " + annotationService);
     	    e.printStackTrace();
     	} catch (UnsupportedEncodingException e) {
-    	    System.err.println("Unsupported Encoding: " + annotationEncoding);
+    	    log.error("Unsupported Encoding: " + annotationEncoding);
     	    e.printStackTrace();
     	} catch (Exception e) { e.printStackTrace(); }	
         
@@ -138,7 +142,7 @@ public class SpotlightAnnotator implements AnnotatedText
             SpotlightAnnotation annotation = new SpotlightAnnotation(n, confidence);
             annotations.add(annotation); 
           }
-    	} catch ( Exception e ) { System.out.println(e); }
+    	} catch ( Exception e ) { log.error(e); }
         
 	}
 	

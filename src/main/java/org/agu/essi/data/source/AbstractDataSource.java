@@ -18,6 +18,7 @@ package org.agu.essi.data.source;
 
 import java.util.Vector;
 
+import org.agu.essi.Person;
 import org.agu.essi.abstracts.Abstract;
 import org.agu.essi.util.exception.SourceNotReadyException;
 

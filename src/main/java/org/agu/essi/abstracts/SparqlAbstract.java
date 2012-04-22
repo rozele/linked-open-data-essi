@@ -18,12 +18,12 @@ package org.agu.essi.abstracts;
 
 import java.util.Vector;
 
-import org.agu.essi.AbstractType;
 import org.agu.essi.Author;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.agu.essi.types.AbstractType;
 import org.agu.essi.util.Queries;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;

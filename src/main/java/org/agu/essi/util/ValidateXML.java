@@ -33,6 +33,8 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Read a directory of XML files and validate against a schema
@@ -40,6 +42,8 @@ import org.apache.commons.cli.PosixParser;
  */
 public class ValidateXML {
 
+	Log log = LogFactory.getLog(ValidateXML.class);
+	
 	public String aguSchema = "http://www.agu.org/focus_group/essi/schema/agu.xsd";
 	private boolean isValid = false;
 	

@@ -19,7 +19,6 @@ package org.agu.essi.abstracts;
 import java.io.StringWriter;
 import java.util.Vector;
 
-import org.agu.essi.AbstractType;
 import org.agu.essi.Author;
 import org.agu.essi.Meeting;
 import org.agu.essi.Keyword;
@@ -27,6 +26,7 @@ import org.agu.essi.Organization;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
 import org.agu.essi.match.EntityMatcher;
+import org.agu.essi.types.AbstractType;
 import org.agu.essi.util.Namespaces;
 import org.agu.essi.util.Utils;
 import org.agu.essi.util.exception.EntityMatcherRequiredException;
@@ -149,13 +149,13 @@ public abstract class Abstract
 				sw.write("    <tw:hasAgentWithRole rdf:nodeID=\"A"+i+"\" />\n");
 			}
 			sw.write("  </rdf:Description>\n");
-			sw.write(writeAuthorRoles());
+			sw.write(writeAuthorRolesRDFXML());
 			sw.write(Utils.writeRdfFooter());
 			return sw.toString();
 		}
 	}
 	
-	private String writeAuthorRoles()
+	private String writeAuthorRolesRDFXML()
 	{
 		StringWriter sw = new StringWriter();
 		for (int i = 0; i < getAuthors().size(); ++i)

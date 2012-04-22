@@ -20,6 +20,8 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.agu.essi.data.SparqlUnannotatedAbstractData;
 
 /**
@@ -27,6 +29,8 @@ import org.agu.essi.data.SparqlUnannotatedAbstractData;
  * @author Tom Narock
  */
 public class SpotlightAnnotationsFromSparql {
+	
+	private static Log log = LogFactory.getLog(SpotlightAnnotationsFromSparql.class);
 	
 	public static void main ( String[] args ) {
 		
@@ -41,7 +45,7 @@ public class SpotlightAnnotationsFromSparql {
 	  	CommandLine cmd = null;
 	  	CommandLineParser parser = new PosixParser();
 	  	try { cmd = parser.parse( options, args); } catch ( Exception pe ) { 
-	  	  System.out.println( "Error parsing command line options: " + pe.toString() ); 
+	  	  log.error( "Error parsing command line options: " + pe.toString() ); 
 	  	}
 	  	  
 	  	// Check if the correct options were set
@@ -54,7 +58,7 @@ public class SpotlightAnnotationsFromSparql {
 	  	// output directory
 	    if ( !cmd.hasOption("outputDirectory") ) {
 	    	error = true;
-	  		System.out.println("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
+	  		log.error("--outputDirectory Not Set. Directory in which to store the retrieved abstracts.");
 	  	} else { output = cmd.getOptionValue("outputDirectory"); }
 	    
 	    // limit
@@ -84,7 +88,7 @@ public class SpotlightAnnotationsFromSparql {
 	    	    SparqlUnannotatedAbstractData abstracts = new SparqlUnannotatedAbstractData ();
 	    	    abstracts.annotate( limit, offset, port, output );
 	    		
-	      } catch ( Exception e ) { System.out.println(e); }
+	      } catch ( Exception e ) { log.error(e); }
 
 	    } // end if
 	    

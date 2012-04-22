@@ -14,7 +14,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this software.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.agu.essi;
+package org.agu.essi.types;
 
 /**
  * Enumeration of types of AGU meetings
@@ -48,6 +48,13 @@ public enum MeetingType
 		public String toString()
 		{
 			return "MA";
+		}
+	},
+	GEOPHYSICS
+	{
+		public String toString()
+		{
+			return "WG";
 		}
 	}
 }

@@ -22,14 +22,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
 
-import org.agu.essi.AbstractType;
 import org.agu.essi.Keyword;
 import org.agu.essi.Meeting;
-import org.agu.essi.MeetingType;
 import org.agu.essi.Organization;
 import org.agu.essi.Person;
 import org.agu.essi.Section;
 import org.agu.essi.Session;
+import org.agu.essi.types.AbstractType;
+import org.agu.essi.types.MeetingType;
 import org.agu.essi.util.exception.InvalidAbstractConstraintException;
 import org.apache.commons.lang.StringEscapeUtils;
 

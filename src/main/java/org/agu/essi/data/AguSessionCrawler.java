@@ -268,11 +268,11 @@ public class AguSessionCrawler implements AbstractDataSource
 			} 
 			catch (AbstractParserException e) 
 			{
-				System.err.println("File at " + link + " does not contain AGU abstract HTML.");
+				log.error("File at " + link + " does not contain AGU abstract HTML.");
 				e.printStackTrace();
 			}
 			catch (EntityMatcherRequiredException e) {
-				System.err.println("Entity Matcher Required Exception when writing annotations.");
+				log.error("Entity Matcher Required Exception when writing annotations.");
 				e.printStackTrace();
 			}
 		} 
@@ -318,8 +318,6 @@ public class AguSessionCrawler implements AbstractDataSource
 			Abstract abstr = _abstracts.get(i);
 			// replace spaces with _ for file name
 			String title = abstr.getId();
-			if (title.contains("Integrating"))
-				System.out.println("here");
 			String meeting = abstr.getMeeting().getName();
 			title = title.replaceAll("\\s+", "_");
 			title = title.replaceAll("\\s", "_");
@@ -334,7 +332,7 @@ public class AguSessionCrawler implements AbstractDataSource
 	{
 		return _abstracts;
 	}
-
+	
 	public boolean ready() 
 	{
 		return _crawled;

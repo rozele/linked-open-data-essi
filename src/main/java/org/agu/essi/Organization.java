@@ -22,6 +22,8 @@ import java.util.List;
 import com.google.code.geocoder.Geocoder;
 import com.google.code.geocoder.model.*;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.geonames.Toponym;
 import org.geonames.WebService;
 
@@ -32,6 +34,8 @@ import org.geonames.WebService;
  */
 public class Organization 
 {
+	private static Log log = LogFactory.getLog(Organization.class);
+	
 	private String _org;
 	private GeocoderResult _geocode;
 	private GeocoderGeometry _geometry;
@@ -91,7 +95,7 @@ public class Organization
 			} 
 			catch (Exception e) 
 			{
-				System.err.println("Can't find address at: " + _geometry.getLocation().getLat().doubleValue() + ", " + _geometry.getLocation().getLng().doubleValue());
+				log.error("Can't find address at: " + _geometry.getLocation().getLat().doubleValue() + ", " + _geometry.getLocation().getLng().doubleValue());
 				e.printStackTrace();
 				return null;
 			}

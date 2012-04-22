@@ -154,7 +154,7 @@ public class Keyword
 		if (format.equals("rdf/xml"))
 		{
 			StringWriter sw = new StringWriter();
-			sw.write("  <rdf:Description rdf:about=\"" + Namespaces.essi + "Keyword_" + _id + "\">\n");
+			sw.write("  <rdf:Description rdf:about=\"&keyword;Keyword_" + _id + "\">\n");
 			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
 			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
 			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
