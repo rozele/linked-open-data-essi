@@ -78,8 +78,10 @@ public class FOAF {
 	  str.append( "    <foaf:firstName>" + person.getFirstName() + "</foaf:firstName> \n" );
 	  str.append( "    <foaf:surname>" + person.getLastName()+ "</foaf:surname> \n" );	
 	  for ( int i=0; i<emailAddresses.size(); i++ ) {
-	    str.append( "    <foaf:mbox>" + emailAddresses.get(i) + "</foaf:mbox> \n" ); 
-	    str.append( "    <foaf:mbox_sha1sum>" + HashFunction.sha1( emailAddresses.get(i) ) + "</foaf:mbox_sha1sum> \n" );
+	    if ( emailAddresses.get(i) != null ) {
+	      str.append( "    <foaf:mbox>" + emailAddresses.get(i) + "</foaf:mbox> \n" ); 
+	      str.append( "    <foaf:mbox_sha1sum>" + HashFunction.sha1( emailAddresses.get(i) ) + "</foaf:mbox_sha1sum> \n" );
+		}
 	  }
 	  str.append( "  </rdf:Description>  \n" );
 		  		  
@@ -122,6 +124,18 @@ public class FOAF {
 	  
       return str.toString();
 
+	}
+	
+	public String writeGroupMembership ( String groupID, String personID ) {
+	
+		StringBuilder str = new StringBuilder();
+		str.append( "  <rdf:Description rdf:about=\"" + groupID + "\"> \n" );	  
+		str.append( "    <foaf:member>\n" );
+		str.append( "      <foaf:Person rdf:about=\"" + personID + "\"/>\n" );
+	    str.append( "    </foaf:member>\n" );
+		str.append( "  </rdf:Description> \n" );
+		return str.toString();
+		
 	}
 
 }
