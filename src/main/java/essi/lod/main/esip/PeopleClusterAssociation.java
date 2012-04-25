@@ -143,7 +143,7 @@ public class PeopleClusterAssociation {
 		    while ( (strLine = br.readLine()) != null )   {
 		      if ( counter != 0 ) { // ignore the first line (header)
 		        parts = strLine.split(",");
-		        cluster = parts[2];
+		        cluster = parts[2].trim();
 		        email = parts[1];
 		        if ( !parts[0].equals("") ) { // ignore lines that don't have names or only first names
 		        	
@@ -169,17 +169,23 @@ public class PeopleClusterAssociation {
 		              // Climate and Energy appears in membership data as Energy and Climate
 		              if ( cluster.equals("Energy and Climate") ) { cluster = "Climate and Energy"; }
 		              
-		              // Executive Committee appears as ExCom
-		              if ( cluster.equals("Executive Committee") ) { cluster = "ExCom"; }
-		              
 		              // Can't have & in RDF/XML
-		              if ( cluster.equals("IT & I") ) { cluster = "IT &amp; I"; }
+		              if ( cluster.equals("IT & I") ) { cluster = "Information Technology and Interoperability"; }
 		              
 		              // Preservation is also called Data Stewardship
 		              if ( cluster.equals("Preservation") ) { cluster = "Data Stewardship"; }
 		              
 		              // Can't use & in Products and Services
 		              if ( cluster.equals("Products & Services") ) { cluster = "Products/Services"; }
+		              
+		              // Replace CF with full name
+		              if ( cluster.equals("CF") ) { cluster = "Climate and Forecast Conventions"; }
+		              
+		              // Replace Cloud with full name
+		              if ( cluster.equals("Cloud") ) { cluster = "Cloud Computing"; }
+		              
+		              // Replace Cloud with full name
+		              if ( cluster.equals("Viz") ) { cluster = "Visualization"; }
 		              
 			          // get the cluster URI
 		        	  String clusterID = getClusterID( cluster, clusters );
