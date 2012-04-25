@@ -17,6 +17,8 @@
 package org.agu.essi.util;
 
 import javax.xml.validation.Schema;
+
+import essi.lod.util.ValidateXML;
 import junit.framework.TestCase;
 import java.io.File;
 

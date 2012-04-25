@@ -16,7 +16,7 @@
  */
 package org.esipfed.util;
 
-import org.esipfed.owl.HashFunction;
+import essi.lod.util.HashFunction;
 
 import junit.framework.TestCase;
 
