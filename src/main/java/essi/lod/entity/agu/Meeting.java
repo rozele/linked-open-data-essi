@@ -16,10 +16,6 @@
  */
 package essi.lod.entity.agu;
 
-import java.io.StringWriter;
-
-import essi.lod.util.Namespaces;
-
 /**
  * Container class for AGU Meeting information
  * @author Eric Rozell
@@ -81,49 +77,6 @@ public class Meeting {
 		else
 		{
 			return false;
-		}
-	}
-	
-	/**
-	 * Method to stringify Keyword
-	 * @return original abstract HTML keyword content
-	 */
-	@Override
-	public String toString()
-	{
-		return _orig;
-	}
-	
-	/**
-	 * Method to stringify Keyword in specific format
-	 * @param format the output format
-	 * @return
-	 */
-	public String toString(String format)
-	{
-		if (format.equals("rdf/xml"))
-		{
-			StringWriter sw = new StringWriter();
-			sw.write("  <rdf:Description rdf:about=\"&meeting;Meeting_" + _id + "\">\n");
-			sw.write("    <rdf:type rdf:resource=\"&swrc;ResearchTopic\" />\n");
-			sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + _id + "</dc:identifier>\n");
-			sw.write("    <dc:subject rdf:datatype=\"&xsd;string\">" + _name + "</dc:subject>\n");
-			sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + _orig + "</dc:description>\n");
-			if (_parent != null)
-			{
-				sw.write("    <skos:broadMatch rdf:resource=\"" + Namespaces.essi + "Keyword_" + _parent.getId() + "\" />\n");
-			}
-			for (int i = 0; i < _related.size(); ++i)
-			{
-				sw.write("    <skos:related rdf:resource=\"" + Namespaces.essi + "Keyword_" + _related.get(i) + "\" />\n");
-
-			}
-			sw.write("  </rdf:Description>\n");
-			return sw.toString();
-		}
-		else
-		{
-			return toString();
 		}
 	}
 }
