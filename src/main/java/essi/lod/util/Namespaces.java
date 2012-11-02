@@ -43,4 +43,5 @@ public class Namespaces {
 	public static String pav = "http://purl.org/pav/";
 	public static String aot = "http://purl.org/ao/types/";
 	public static String aocore = "http://purl.org/ao/core/";
+	public static String agu = "http://agu.org/schema/";
 }

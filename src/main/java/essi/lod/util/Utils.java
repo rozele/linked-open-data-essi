@@ -120,6 +120,7 @@ public class Utils {
 		sw.write("		   xmlns:aof=\"" + Namespaces.aof + "\"\n");
 		sw.write("		   xmlns:aos=\"" + Namespaces.aos + "\"\n");
 		sw.write("		   xmlns:aot=\"" + Namespaces.aot + "\"\n");
+		sw.write("		   xmlns:agu=\"" + Namespaces.agu + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.essi + "\">\n");
 		return sw.toString();
 	}

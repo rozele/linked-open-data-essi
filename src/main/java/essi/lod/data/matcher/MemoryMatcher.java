@@ -32,20 +32,12 @@ import essi.lod.entity.agu.Section;
 import essi.lod.entity.agu.Session;
 import essi.lod.enumeration.MeetingEnumeration;
 import essi.lod.util.KeywordParser;
+import essi.lod.util.Namespace;
 import essi.lod.util.Namespaces;
 import essi.lod.util.Utils;
 
 public class MemoryMatcher implements EntityMatcher 
-{
-	//Stores unique identifier bases
-	private static String meetingBaseId = Namespaces.essi + "Meeting_";
-	private static String sectionBaseId = Namespaces.essi + "Section_";	
-	private static String personBaseId = Namespaces.essi + "Person_";
-	private static String organizationBaseId = Namespaces.essi + "Organization_";
-	private static String sessionBaseId = Namespaces.essi + "Session_";
-	private static String abstractBaseId = Namespaces.essi + "Abstract_";
-	private static String keywordBaseId = Namespaces.essi + "Keyword_";
-	
+{	
 	//index registers for objects
 	private Vector<Person> people;
 	private Vector<Organization> organizations;
@@ -84,7 +76,7 @@ public class MemoryMatcher implements EntityMatcher
 	{	
 		MeetingEnumeration mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
-		String id = meetingBaseId + mt + ((year > 0) ? "_" + year : "");
+		String id = Namespace.essi + "meetings/" + year + "/" + mt;
 		if (!meetings.containsKey(id))
 		{
 			meetings.put(id, meeting);
@@ -102,7 +94,7 @@ public class MemoryMatcher implements EntityMatcher
 		Meeting meeting = section.getMeeting();
 		MeetingEnumeration mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
-		String id = sectionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + section.getId();
+		String id = Namespace.essi + "meetings/" + year + "/" + mt + "/sections/" + section.getId();
 		if (!sections.containsKey(id))
 		{
 			sections.put(id, section);
@@ -121,7 +113,7 @@ public class MemoryMatcher implements EntityMatcher
 		String id = abstr.getId();
 		MeetingEnumeration mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
-		return abstractBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + id; 
+		return Namespace.essi + "meetings/" + year + "/" + mt + "/sections/" + abstr.getSection().getId() + "/sessions/" + abstr.getSession().getId() + "/abstracts/" + id; 
 	}
 	
 	/**
@@ -134,12 +126,12 @@ public class MemoryMatcher implements EntityMatcher
 		if (people.contains(person))
 		{
 			int idx = people.indexOf(person);
-			return personBaseId + (peopleStartIdx + idx + 1);
+			return Namespace.essi + "people/" + (peopleStartIdx + idx + 1);
 		}
 		else
 		{
 			people.add(person);
-			return personBaseId + (peopleStartIdx + people.size());
+			return Namespace.essi + "people/" + (peopleStartIdx + people.size());
 		}
 	}
 	
@@ -153,7 +145,7 @@ public class MemoryMatcher implements EntityMatcher
 		Meeting meeting = session.getSection().getMeeting();
 		MeetingEnumeration mt = Utils.getMeetingType(meeting);
 		int year = Utils.getMeetingYear(meeting);
-		String id = sessionBaseId + mt + ((year > 0) ? "_" + year : "") + "_" + session.getId();
+		String id = Namespace.essi + "meetings/" + year + "/" + mt + "/sections/" + session.getSection().getId() + "/sessions/" + session.getId(); 
 		if (!sessions.containsKey(id))
 		{
 			sessions.put(id, session);
@@ -171,12 +163,12 @@ public class MemoryMatcher implements EntityMatcher
 		if (organizations.contains(org))
 		{
 			int idx = organizations.indexOf(org);
-			return organizationBaseId + (organizationsStartIdx + idx + 1);
+			return Namespaces.essi + "organizations/" + (organizationsStartIdx + idx + 1);
 		}
 		else
 		{
 			organizations.add(org);
-			return organizationBaseId + (organizationsStartIdx + organizations.size());
+			return Namespaces.essi + "organizations/" + (organizationsStartIdx + organizations.size());
 		}
 	}
 	
@@ -187,7 +179,7 @@ public class MemoryMatcher implements EntityMatcher
 	 */
 	public String getKeywordId(Keyword keyword)
 	{
-		String id = keywordBaseId + keyword.getId();
+		String id = Namespaces.essi + "keywords/" + keyword.getId();
 		if (!keywords.containsKey(id))
 		{
 			keywords.put(id,keyword);
@@ -221,7 +213,7 @@ public class MemoryMatcher implements EntityMatcher
 			for(int i = 0; i < people.size(); ++i)
 			{
 				Person p = people.get(i);
-				sw.write("  <rdf:Description rdf:about=\"" + personBaseId + (i + peopleStartIdx + 1) + "\">\n");
+				sw.write("  <rdf:Description rdf:about=\"" + Namespaces.essi + "people/" + (i + peopleStartIdx + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Person\" />\n");
 				sw.write("    <foaf:name rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(p.getName()) + "</foaf:name>\n");
 				if (p.getEmail() != null)
@@ -274,7 +266,7 @@ public class MemoryMatcher implements EntityMatcher
 			for(int i = 0; i < organizations.size(); ++i)
 			{
 				Organization o = organizations.get(i);
-				sw.write("  <rdf:Description rdf:about=\"" + organizationBaseId + (i + organizationsStartIdx + 1) + "\">\n");
+				sw.write("  <rdf:Description rdf:about=\"" + Namespaces.essi + "organizations/" + (i + organizationsStartIdx + 1) + "\">\n");
 				sw.write("    <rdf:type rdf:resource=\"&foaf;Organization\" />\n");
 				sw.write("    <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(o.toString()) + "</dc:description>\n");
 				/*if (o.getCoordinates() != null)
@@ -329,6 +321,11 @@ public class MemoryMatcher implements EntityMatcher
 					sw.write("        <dc:description rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getLocation()) + "</dc:description>\n");
 					sw.write("      </swc:MeetingRoomPlace>\n");
 					sw.write("    </swrc:hasLocation>\n");
+				}
+				if (s.getJointSponsors() != null) {
+					for (Section j : s.getJointSponsors()) {
+						sw.write("    <agu:hasJointSponsor rdf:resource=\"" + getSectionId(j) + "\" />\n");
+					}
 				}
 				sw.write("    <dc:identifier rdf:datatype=\"&xsd;string\">" + Utils.cleanXml(s.getId()) + "</dc:identifier>\n");
 				sw.write("    <swc:isSubEventOf rdf:resource=\"" + getSectionId(s.getSection()) + "\" />\n");
@@ -410,7 +407,7 @@ public class MemoryMatcher implements EntityMatcher
 		Vector<Keyword> k = KeywordParser.parseTerms(src);
 		for (int i = 0; i < k.size(); ++i)
 		{
-			String id = keywordBaseId + k.get(i).getId();
+			String id = Namespaces.essi + "keywords/" + k.get(i).getId();
 			if (!keywords.containsKey(id))
 			{
 				keywords.put(id,k.get(i));

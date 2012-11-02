@@ -69,7 +69,7 @@ public class AguSessionCrawler implements AbstractDataSource
 	
 	//regex variables
 	private static String sessionUrlRegex = "(.{50,60})";
-	private static String sessionNameRegex = "(.{0,200})";
+	private static String sessionNameRegex = "((.{0,200}?)\\s*(\\(joint\\s*with\\s*(.{0,3}(,\\s*.{0,3})+)\\))?)";
 	private static String sessionIdRegex = "([A-Z0-9]{4,6})";
 	private static String sessionLocationRegex = "(.{0,80})";
 	private static String sessionConvenersRegex = "(.{0,400}?)";
@@ -188,8 +188,12 @@ public class AguSessionCrawler implements AbstractDataSource
 		Vector<String> sessionLinks = new Vector<String>();
 		while (m.find())
 		{
-			String title = m.group(5) + ((m.group(10) != null) ? " " + m.group(10) : "");
-			Session s = new Session(title, m.group(3), m.group(4), m.group(14), section);
+			String title = m.group(6) + ((m.group(14) != null) ? " " + m.group(14) : "");
+			Vector<Section> jointWith = new Vector<Section>();
+			for (String s : m.group(8).split(",")) {
+				jointWith.add(new Section(null, s.trim(), meeting));
+			}
+			Session s = new Session(title, m.group(3), m.group(4), m.group(18), section, jointWith);
 			sessions.add(s);
 			_matcher.getSessionId(s);
 			sessionLinks.add(m.group(2));

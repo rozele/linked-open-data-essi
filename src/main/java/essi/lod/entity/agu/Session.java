@@ -29,6 +29,7 @@ public class Session
 	private String _location;
 	private String _conveners;
 	private Vector<Convener> _convenerList;
+	private Vector<Section> _jointSections;
 	private Section _section;
 	
 	/**
@@ -48,7 +49,7 @@ public class Session
 	 * @param id session ID
 	 * @param section AGU section the session occurs in (e.g., ESSI)
 	 */
-	public Session(String name, String id, String location, String conveners, Section section)
+	public Session(String name, String id, String location, String conveners, Section section, Vector<Section> joint)
 	{
 		_name = name;
 		_name = _name.replaceAll("<br( /)?>", " ");
@@ -58,6 +59,7 @@ public class Session
 		_location = location;
 		_conveners = conveners;
 		_section = section;
+		_jointSections = joint;
 		String[] list = _conveners.split(";");
 		_convenerList = new Vector<Convener>();
 		for (int i = 0; i < list.length; ++i)
@@ -73,6 +75,11 @@ public class Session
 	public String getId()
 	{
 		return _id;
+	}
+	
+	public Vector<Section> getJointSponsors()
+	{
+		return _jointSections;
 	}
 	
 	/**
