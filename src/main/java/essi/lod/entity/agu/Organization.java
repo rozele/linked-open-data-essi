@@ -19,8 +19,8 @@ package essi.lod.entity.agu;
 import java.util.Iterator;
 import java.util.List;
 
-import com.google.code.geocoder.Geocoder;
-import com.google.code.geocoder.model.*;
+//import com.google.code.geocoder.Geocoder;
+//import com.google.code.geocoder.model.*;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,8 +37,8 @@ public class Organization
 	private static Log log = LogFactory.getLog(Organization.class);
 	
 	private String _org;
-	private GeocoderResult _geocode;
-	private GeocoderGeometry _geometry;
+//	private GeocoderResult _geocode;
+//	private GeocoderGeometry _geometry;
 	private String _geonames;
 	private boolean googled;
 	
@@ -48,24 +48,27 @@ public class Organization
 		googled = false;
 	}
 	
-	public LatLng getCoordinates()
-	{
-		if (!googled)
-		{
-			getGeocode();
-			googled = true;
-		}
-		if (_geometry != null)
-		{
-			return _geometry.getLocation();
-		}
-		else
-		{
-			return null;
-		}
+//	public LatLng getCoordinates()
+//	{
+//		if (!googled)
+//		{
+//			getGeocode();
+//			googled = true;
+//		}
+//		if (_geometry != null)
+//		{
+//			return _geometry.getLocation();
+//		}
+//		else
+//		{
+//			return null;
+//		}
 		
-	}
+//	}
 	
+	public String getGeoNamesId() { return null; }
+	
+	/**
 	public String getGeoNamesId()
 	{
 		if (!googled)
@@ -105,7 +108,9 @@ public class Organization
 			return null;
 		}
 	}
+	*/
 	
+	/**
 	public String getAddress()
 	{
 		if (!googled)
@@ -122,7 +127,9 @@ public class Organization
 			return null;
 		}
 	}
+	*/
 	
+	/**
 	private void getGeocode()
 	{
 		Geocoder geo = new Geocoder();
@@ -146,6 +153,7 @@ public class Organization
 			//TODO: error handling for Geocoder
 		}
 	}
+	*/
 	
 	/**
 	 * Override of the toString method

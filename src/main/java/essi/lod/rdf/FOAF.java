@@ -18,9 +18,6 @@ package essi.lod.rdf;
 
 import java.util.HashMap;
 import java.util.Vector;
-
-
-import essi.lod.entity.esip.Person;
 import essi.lod.util.HashFunction;
 import essi.lod.util.Namespaces;
 import essi.lod.util.Utils;
@@ -37,7 +34,7 @@ public class FOAF {
 	 * @param people Vector of Person objects
 	 * @return HashMap <String, Vector <String>> where key/value is Organization/People affiliated
 	 */
-	public HashMap <String, Vector <String>> createOrgMap( Vector <Person> people ) {
+	public HashMap <String, Vector <String>> createOrgMap( Vector <essi.lod.entity.esip.Person> people ) {
 
 		Vector <String> pV;
 		Vector <String> affiliations;
@@ -69,7 +66,35 @@ public class FOAF {
 	 * @param person Person object
 	 * @return String FOAF Person profile
 	 */
-	public String writePerson ( Person person ) {
+	public String writePerson ( essi.lod.entity.esip.Person person ) {
+				  
+      StringBuilder str = new StringBuilder();
+      Vector <String> emailAddresses = person.getEmail();
+      
+	  str.append( "  <rdf:Description rdf:about=\"" + person.getID() + "\"> \n" );
+	  str.append( "	   <rdf:type rdf:resource=\"&foaf;Person\" /> \n");
+	  str.append( "    <foaf:name>" + person.getFirstName() + " " + person.getLastName() + "</foaf:name> \n" );
+	  str.append( "    <foaf:firstName>" + person.getFirstName() + "</foaf:firstName> \n" );
+	  str.append( "    <foaf:surname>" + person.getLastName()+ "</foaf:surname> \n" );	
+	  for ( int i=0; i<emailAddresses.size(); i++ ) {
+	    if ( emailAddresses.get(i) != null ) {
+	      str.append( "    <foaf:mbox>" + emailAddresses.get(i) + "</foaf:mbox> \n" ); 
+	      str.append( "    <foaf:mbox_sha1sum>" + HashFunction.sha1( emailAddresses.get(i) ) + "</foaf:mbox_sha1sum> \n" );
+		}
+	  }
+	  str.append( "  </rdf:Description>  \n" );
+		  		  
+	  return str.toString();
+
+	}
+	
+	/**
+	 * Method to take a Person object and 
+	 * write it out as a FOAF string
+	 * @param person Person object
+	 * @return String FOAF Person profile
+	 */
+	public String writePerson ( essi.lod.entity.nsf.Person person ) {
 				  
       StringBuilder str = new StringBuilder();
       Vector <String> emailAddresses = person.getEmail();

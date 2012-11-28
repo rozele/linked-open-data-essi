@@ -47,6 +47,11 @@
   	</developer>
   </developers>  
   <repositories>
+    <repository>
+      <id>maven-repository</id>
+      <name>Maven Repository</name>
+      <url>http://mvnrepository.com/artifact/</url>
+    </repository>
 	<repository>
 	  <id>maven2-repository.java.net</id>
 	  <name>Java.net Repository for Maven</name>
@@ -81,7 +86,7 @@
   </repositories>
   <pluginRepositories>
   
-    <!-- MAven plugin for license management -->
+    <!-- Maven plugin for license management -->
   	<pluginRepository>
     	<id>mc-release</id>
     	<name>Local Maven repository of releases</name>
@@ -140,11 +145,13 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
+    <!-- 
     <dependency>
       <groupId>com.google.code.geocoder-java</groupId>
       <artifactId>geocoder-java</artifactId>
       <version>0.7</version>
     </dependency>
+	-->
     <dependency>
       <groupId>org.geonames</groupId>
       <artifactId>geonames</artifactId>

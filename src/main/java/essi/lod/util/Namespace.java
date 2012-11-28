@@ -52,6 +52,8 @@ public enum Namespace {
 	sections ("http://data.agu.org/sections/"),
 	people ("http://data.agu.org/people/"),
 	organizations ("http://data.agu.org/organization/"),
+	projectFunding ("http://vocab.ox.ac.uk/projectfunding"),
+	umbel ("http://umbel.org/umbel/sc/"),
 	keywords ("http://data.agu.org/keywords/");
 
 	private String _uri;
