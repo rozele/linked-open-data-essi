@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31B-0337</Id>
+  <Keywords>
+    <Keyword>1800  HYDROLOGY</Keyword>
+    <Keyword>1816  Estimation and forecasting</Keyword>
+    <Keyword>3329  Mesoscale meteorology</Keyword>
+    <Keyword>5445  Meteorology</Keyword>
+  </Keywords>
+  <Abstract>NOAA&#8217;s Advanced Weather Interactive Processing System (AWIPS), is a computerized system that manages multiple data sources to allow National Weather Service (NWS) Weather Forecast Offices (WFOs) and River Forecast Centers (RFCs) to generate meteorological and hydrological forecasts and warnings. NOAA is upgrading the current AWIPS system to an improved open system with new capacities for display, visualization, product generation, communications, and access to data. This new system has been given the name AWIPS II. AWIPS II will be a  real time tool for forecasting meteorological events. The AWIPS Development Environment (ADE), the foundation of AWIPS II, currently lacks the capability to ingest all desired data formats. Students have been asked to demonstrate the feasibility of developing a plug-in that will be integrated into the AWIPS II system. This plug-in will allow the AWIPS II ADE 1.0 to ingest and display NASA data in HDF-5 format, such as TRMM 3- hour precipitation data, as well as science results from future missions. Students have also documented their journey with the AWIPS II beta software, creating a tutorial and FAQ, among other documentation. Working within the context of the AWIPS II open source concept, the overall goal of the project is to demonstrate that several NASA product deliverables can be assimilated into the AWIPS II system.</Abstract>
+  <Title>NASA Data Integration Into NOAA&apos;s AWIPS II</Title>
+  <Session>IN31B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Anthony, M R</Name><Email>monica_anthony@ssaihq.com</Email><Affiliations><Affiliation>SSAI, 10210 Greenbelt RD, Suite 600, Lanham, MD 20706, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wright, E E</Name><Email>eric_wright@ssaihq.com</Email><Affiliations><Affiliation>SSAI, 10210 Greenbelt RD, Suite 600, Lanham, MD 20706, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Lutz, R J</Name><Email>Robert.J.Lutz@nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

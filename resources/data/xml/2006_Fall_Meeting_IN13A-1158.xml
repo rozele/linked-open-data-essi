@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN13A-1158</Id>
+  <Keywords>
+    <Keyword>3300  ATMOSPHERIC PROCESSES</Keyword>
+  </Keywords>
+  <Abstract>The Google Earth application provides a unique means to display imagery and data on a 3D globe without the distortions imparted by a flat display. Using Google Earth it is possible to zoom in for a closer look or point- and-click to view a data file or link to additional information.  This poster shows examples of how the Google Earth application run from the Internet and a desktop, can be used to display various meteorological data. Products shown include contours of smoke and dust from the Navy Aerosol Analysis and Prediction System (NAAPS), MODerate Resolution Imaging Spectroradiometer (MODIS) satellite images, and fire locations from Geostationary Operational Environmental Satellite (GOES) and MODIS.</Abstract>
+  <Title>Innovative use of Google Earth to Facilitate Distribution of Meteorological Observations, Forecasts and Analysis via the WWW</Title>
+  <Session>IN13A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Curtis, C A</Name><Email>cindy.curtis@nrlmry.navy.mil</Email><Affiliations><Affiliation>Naval Research Laboratory, Marine Meteorological Division 7 Grace Hopper Avenue, Stop 2, Monterey, CA 93943-5502 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hyer, E J</Name><Email>edward.hyer@nrlmry.navy.mil</Email><Affiliations><Affiliation>Naval Research Laboratory, Marine Meteorological Division 7 Grace Hopper Avenue, Stop 2, Monterey, CA 93943-5502 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Reid, J S</Name><Email>jeffrey.reid@nrlmry.navy.mil</Email><Affiliations><Affiliation>Naval Research Laboratory, Marine Meteorological Division 7 Grace Hopper Avenue, Stop 2, Monterey, CA 93943-5502 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Westphal, D L</Name><Email>douglas.westphal@nrlmry.navy.mil</Email><Affiliations><Affiliation>Naval Research Laboratory, Marine Meteorological Division 7 Grace Hopper Avenue, Stop 2, Monterey, CA 93943-5502 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Jianglong, Z</Name><Email>jingling.zhang@nrlmry.navy.mil</Email><Affiliations><Affiliation>Naval Research Laboratory, Marine Meteorological Division 7 Grace Hopper Avenue, Stop 2, Monterey, CA 93943-5502 United States</Affiliation></Affiliations></Author>
+  </Authors>
+</AGUAbstract>

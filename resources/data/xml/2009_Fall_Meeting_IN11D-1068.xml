@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN11D-1068</Id>
+  <Keywords>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / Data management</Keyword>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / Modeling</Keyword>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / Model verification and validation</Keyword>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>Geoscience research often involves complex models and data analysis designed to test increasingly sophisticated theories. Re-use and improvement of existing models and tools can be more efficient than their re-invention, and this re-use can accelerate knowledge generation and discovery. Open Source Software (OSS) is designed and intended to be re-used, extended, and improved. Hence Earth and Space Science Models (ESSMs) intended for community use are commonly distributed with OSS or OSS-like licenses. Why is it that, despite their permissive licenses, only a relatively small fraction of ESSMs receive community adoption, improvement, and extension? One reason is that developing community geoscience software remains a difficult and perilous exercise for the practicing researcher. This presentation will intercompare the rationale and results of different software management approaches taken in my dozen years as a developer and maintainer of, and participant in, four distinct ESSMs with 10 to 10,000 users. The primary lesson learned is that geoscience research is similar to the wider OSS universe in that most participants are motivated by the desire for greater professional recognition and attribution best summarized as &quot;mindshare&quot;. ESSM adoption often hinges on whether the tension between users and developers for mindshare manifests as cooperation or competition. ESSM project management, therefore, should promote (but not require) recognition of all contributors. More practical model management practices include mailing lists, highly visible documentation, consistent APIs, regression tests, and periodic releases to improve features and fix bugs and builds. However, most ESSMs originate as working incarnations of short-term (~three year) research projects and, as such, lack permanent institutional support. Adhering to best software practices to transition these ESSMs from personal to community models often requires sacrificing research time. Recently, funding agencies have eased this tradeoff by requesting that supported ESSMs be disseminated with OSS licenses. Increasing clarity and transparency about the worth and expectations of community ESSMs among all stakeholders (funding agencies, model developers, promotion and tenure committees, and users) would improve success rates of ESSMs transitioning to community models.</Abstract>
+  <Title>Ancient Secrets of Open-Source Geoscience Software Management (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN11D</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Zender, C S</Name><Email>zender@uci.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

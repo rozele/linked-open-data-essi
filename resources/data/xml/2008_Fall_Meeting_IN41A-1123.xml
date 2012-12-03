@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN41A-1123</Id>
+  <Keywords>
+    <Keyword>1819  Geographic Information Systems</Keyword>
+    <Keyword>4534  Hydrodynamic modeling</Keyword>
+    <Keyword>4564  Tsunamis and storm surges</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>The Geophysical Institute of the University of Alaska Fairbanks participates in the National Tsunami Hazard Mitigation Program by evaluating and mapping potential tsunami inundation of selected coastal communities in Alaska.  Tsunami waves are a threat for many Alaska coastal locations, and community education and preparedness plays an important role in saving lives and property. We develop hypothetical tsunami scenarios based on the parameters of potential underwater earthquakes and landslides for a specified coastal community. The modeling results are delivered to the community for local tsunami hazard planning and construction of evacuation maps. While we spend most of our days mired in processing elevation data and producing predictive models of tsunami events, we are faced with the equally thorny challenge of determining how this data will be disseminated to the general public and emergency officials in at-risk areas.  Distribution of these results is made trickier in Alaska by the small populations and resultant dearth of resources available in many coastal communities, most of which have no local GIS capabilities or dedicated disaster planning staff. Though the bulk of our modeled results are still formally distributed in professional GIS formats and static illustrations, we have found the simplicity and flexibility of the KML platform to be useful in education and circulation to a wider audience, namely those residents, students and community officials most at risk. With a relatively low-end computer and an internet connection, residents can explore the visualizations we produce in 3 and 4 dimensions, gaining a strong impression of what to expect and how to react in the case of a tsunami.  We will demonstrate some of these, including &quot;on-earth&quot; animations of tsunami wave inundation within Resurrection Bay near Seward, Alaska.</Abstract>
+  <Title>Tsunami Inundation Mapping With KML</Title>
+  <Session>IN41A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>West, D</Name><Email>daw@gi.alaska.edu</Email><Affiliations><Affiliation>Geophysical Institute, University of Alaska Fairbanks, 903 Koyukuk Drive, Fairbanks, AK 99775-7320, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Suleimani, E</Name><Email>elena@gi.alaska.edu</Email><Affiliations><Affiliation>Geophysical Institute, University of Alaska Fairbanks, 903 Koyukuk Drive, Fairbanks, AK 99775-7320, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hansen, R</Name><Email>roger@giseis.alaska.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

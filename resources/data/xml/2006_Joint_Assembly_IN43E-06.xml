@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43E-06</Id>
+  <Keywords>
+    <Keyword>6225  Mars</Keyword>
+    <Keyword>6297  Instruments and techniques</Keyword>
+  </Keywords>
+  <Abstract>There are a variety of autonomous rover capabilities currently in development for future in-situ missions. One key capability, autonomous onboard science, continues to grow in importance as rover travel distances dramatically increase. OASIS, the Onboard Autonomous Science Investigation System, is a system designed to maximize mission science by conducting opportunistic science during and at the end of a traverse.  Using the FIDO rover in the Mars Yard at JPL, we have successfully performed closed-loop demonstrations of opportunistic science with rover that includes acquiring image data, identifying features of interest based on several criteria, and autonomously collecting additional data on selected science targets while ensuring all mission constraints are met.  The system can identify targets in individual images as well as detect contact zones between geologic units using information collected from a sequence of images.  We provide test results for autonomous selection of targets for a narrow field of view instrument such as the ChemCam on MSL. Analysis of Hazcam, Navcam, and Pancam Mars Exploration Rover (MER) images have been conducted for selecting targets vs blind targeting as well as initial target prioritization.  In testing on MER images, our automated target selection method can provide a 9X increase in the number of targets selected over blind sampling which was the baseline method for MSL.</Abstract>
+  <Title>Opportunistic Rover Science with the OASIS system</Title>
+  <Session>IN43E</Session>
+  <Hour>15:15h</Hour>
+  <Authors>
+    <Author><Name>Anderson, R C</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Castano, R</Name><Email>rebecca.castano@jpl.nasa.gov</Email><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Estlin, T</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Gaines, D</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Castano, A</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Bornstein, B</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Chouinard, C</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Judd, M</Name></Author>
+  </Authors>
+</AGUAbstract>

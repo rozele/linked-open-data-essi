@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN33A-1169</Id>
+  <Keywords>
+    <Keyword>4262  Ocean observing systems</Keyword>
+  </Keywords>
+  <Abstract>Millions of in-situ ocean observations are now available to scientists through the OPeNDAP network protocol. However, there are few Web applications that support the in-situ OPeNDAP protocol and this has limited access to this data. Several Web browser based technologies (XHTML/CSS/DOM/XML/XSLT and JavaScript) have matured over the last few years to the point where it is now possible to design OPeNDAP compatible Web applications with richer user interfaces than are possible with traditional Web technologies. This paper describes a Web application that takes advantage of this technology to allow interactive selection, browsing, plotting and downloading of in-situ observations from Dapper, an in-situ OPeNDAP server.</Abstract>
+  <Title>DChart: A Remote Scripting Web Application for In-Situ Oceanographic Data</Title>
+  <Session>IN33A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Sirott, J</Name><Email>sirott@sirvin.com</Email></Author>
+  </Authors>
+</AGUAbstract>

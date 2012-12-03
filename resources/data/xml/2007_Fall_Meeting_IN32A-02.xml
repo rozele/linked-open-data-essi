@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN32A-02</Id>
+  <Keywords>
+    <Keyword>0800  EDUCATION</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>The U.S. Geological Survey&apos;s (USGS) Volcano Hazard Program (VHP) is launching a map-based interface to display hazards information using the Google&amp;reg; Map API (Application Program Interface). Map-based interfaces provide a synoptic view of data, making patterns easier to detect and allowing users to quickly ascertain where hazards are in relation to major population and infrastructure centers. Several map-based interfaces are now simple to run on a web server, providing ideal platforms for sharing information with colleagues, emergency managers, and the public. There are three main steps to making data accessible on a map-based interface; formatting the input data, plotting the data on the map, and customizing the user interface. The presentation, &quot;Creating Geospatial RSS and  ATOM feeds for Map-based Interfaces&quot; (Fee and Venezky, this session), reviews key features for map input data. Join us for this presentation on how to plot data in a geographic context and then format the display with images, custom markers, and links to external data. Examples will show how the VHP Volcano Status Map was created and how to plot a field trip with driving directions.</Abstract>
+  <Title>How to Display Hazards and other Scientific Data Using Google Maps</Title>
+  <Session>IN32A</Session>
+  <Hour>10:35h</Hour>
+  <Authors>
+    <Author><Name>Venezky, D Y</Name><Email>dvenezky@usgs.gov</Email><Affiliations><Affiliation>U.S. Geological Survey, 345 Middlefield Road, MS 910, Menlo Park, CA 94025, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fee, J M</Name><Email>jmfee@usgs.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

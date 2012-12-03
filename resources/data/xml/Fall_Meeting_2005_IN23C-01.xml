@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN23C-01</Id>
+  <Keywords>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+    <Keyword>0525  Data management</Keyword>
+  </Keywords>
+  <Abstract>It has been 23 years since the National Research Council&apos;s Committee on Data Management and Computation (CODMAC) published its famous list of principles for successful scientific data management that have provided the framework for modern space science data management. CODMAC outlined seven principles: 1. Scientific Involvement in all aspects of space science missions. 2. Scientific Oversight of all scientific data-management activities. 3. Data Availability - Validated data should be made available to the scientific community in a timely manner. They should include appropriate ancillary data, and complete documentation. 4. Facilities - A proper balance between cost and scientific productivity should be maintained. 5. Software - Transportable well documented software should be available to process and analyze the data. 6. Scientific Data Storage -  The data should be preserved in retrievable form. 7. Data System Funding -  Adequate data funding should be made available at the outset of missions and protected from overruns. In this paper we will review the lessons learned in trying to apply these principles to space derived data. The Planetary Data System created the concept of data curation to carry out the CODMAC principles. Data curators are scientists and technologists who work directly with the mission scientists to create data products.  The efficient application of the CODMAC  principles requires that data curators and the mission team start early in a mission to plan for data access and archiving. To build the data products the planetary discipline adopted data access and documentation standards and has adhered to them. The data curators and mission team work together to produce data products and make them available.  However even with early planning and agreement on standards the needs of the science community frequently far exceed the available resources. This is  especially true for smaller principal investigator run missions. We will argue that one way to make data systems for small missions more effective is for the data curators to provide software tools to help develop the mission data system.</Abstract>
+  <Title>The Principles for Successful Scientific Data Management Revisited</Title>
+  <Session>IN23C</Session>
+  <Hour>13:40h</Hour>
+  <Authors>
+    <Author><Name>Walker, R J</Name><Email>rwalker@igpp.ucla.edu</Email><Affiliations><Affiliation>Institute of Geophysics and Planetary Physics and Department of Earth and Space Science, University of California, Los Angeles, Los Angeles, CA 90095-1567  United States</Affiliation></Affiliations></Author>
+    <Author><Name>King, T A</Name><Email>tking@igpp.ucla.edu</Email><Affiliations><Affiliation>Institute of Geophysics and Planetary Physics, University of California, Los Angeles, Los Angeles, CA 90095-1567  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Joy, S P</Name><Email>sjoy@igpp.ucla.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

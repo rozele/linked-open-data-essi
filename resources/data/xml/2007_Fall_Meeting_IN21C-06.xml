@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN21C-06</Id>
+  <Keywords>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>0599  General or miscellaneous</Keyword>
+    <Keyword>1622  Earth system modeling</Keyword>
+    <Keyword>1626  Global climate models</Keyword>
+    <Keyword>3337  Global climate models</Keyword>
+  </Keywords>
+  <Abstract>All current releases of the Community Climate System Model (CCSM) have employed a concurrent integration scheme where the four main components, the atmosphere, ocean, land and sea ice models, are scheduled to execute concurrently on separate sets of processors. Although in theory this can make more efficient use of large numbers of processors, in practice data serialization between the models leads to idle processors and finding an optimum load balance between models and processors is not straightforward.  For the next release of CCSM, we are developing a version that executes each model in sequence while decomposing the space domain over the same number of processors. The advantages of this system include no idle time, more efficient  use of small numbers of processors and removal of the load-balancing problem. It should also be more straightforward to add new components to the system. We have employed the same coupling software, the Model  Coupling Toolkit, as used in the current CCSM to build the prototype sequential system. The sequential CCSM will support all of the features of the released CCSM including the ability to couple data or full models and coupling the ocean at different frequencies. We are also developing a hybrid integration scheme where the ocean model executes concurrently with a sequential atmosphere, land and sea ice system. This two- component system will be much easier to load balance and can provide the best combination of performance and efficiency on large processor counts.</Abstract>
+  <Title>Software design for sequential/hybrid time integration in the Community Climate System Model</Title>
+  <Session>IN21C</Session>
+  <Hour>09:25h</Hour>
+  <Authors>
+    <Author><Name>Jacob, R</Name><Email>jacob@mcs.anl.gov</Email><Affiliations><Affiliation>Mathematics and Computer Science Division, Argonne National Laboratory, 9700 S. Cass Ave, Argonne, IL 60439, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Vertenstein, M</Name><Email>mvertens@ucar.edu</Email><Affiliations><Affiliation>Climate and Global Dynamics Division, National Center for Atmospheric Research, 1850 Table Mesa Drive, Boulder, CO 80305, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Craig, T</Name><Email>tcraig@ucar.edu</Email><Affiliations><Affiliation>Climate and Global Dynamics Division, National Center for Atmospheric Research, 1850 Table Mesa Drive, Boulder, CO 80305, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Dennis, J</Name><Email>dennis@ucar.edu</Email><Affiliations><Affiliation>Computer Science Section, National Center for Atmospheric Researc, 1850 Table Mesa Drive, Boulder, CO 80305, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kauffman, B</Name><Email>kauff@ucar.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

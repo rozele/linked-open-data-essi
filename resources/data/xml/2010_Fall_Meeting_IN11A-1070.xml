@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN11A-1070</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Data management, preservation, rescue</Keyword>
+    <Keyword>INFORMATICS / Data and information discovery</Keyword>
+    <Keyword>INFORMATICS / Metadata</Keyword>
+    <Keyword>INFORMATICS / Metadata: Quality</Keyword>
+  </Keywords>
+  <Abstract>Metadata are increasingly perceived as an important component of data sharing systems. For instance, metadata accompanying atmospheric model output may indicate the grid size, grid type, and parameter settings used in the model configuration. We conducted a case study of a data portal in the atmospheric sciences using in-depth interviews, document review, and observation. OUr analysis revealed a number of challenges in producing useful metadata. First, creating and managing metadata required considerable effort and expertise, yet responsibility for these tasks was ill-defined and diffused among many individuals, leading to errors, failure to capture metadata, and uncertainty about the quality of the primary data. Second, metadata ended up stored in many different forms and software tools, making it hard to manage versions and transfer between formats. Third, the exact meanings of metadata categories remained unsettled and misunderstood even among a small community of domain experts -- an effect we expect to be exacerbated when scientists from other disciplines wish to use these data. In practice, we found that metadata problems due to these obstacles are often overcome through informal, personal communication, such as conversations or email. We conclude that metadata serve to communicate the context of data production from the people who produce data to those who wish to use it. Thus while formal metadata systems are often public, critical elements of metadata (those embodied in informal communication) may never be recorded. Therefore, efforts to increase data sharing should include ways to facilitate inter-investigator communication. Instead of tackling metadata challenges only on the formal level, we can improve data usability for broader communities by better supporting metadata communication.</Abstract>
+  <Title>Metadata Means Communication: The Challenges of Producing Useful Metadata</Title>
+  <Session>IN11A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Edwards, P N</Name><Email>pne@umich.edu</Email><Affiliations><Affiliation>School of Information, University of Michigan, Ann Arbor, MI, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Batcheller, A L</Name><Email>archerb@umich.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

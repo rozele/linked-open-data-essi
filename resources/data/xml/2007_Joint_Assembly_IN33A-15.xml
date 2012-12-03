@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN33A-15</Id>
+  <Keywords>
+    <Keyword>0399  General or miscellaneous</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+  </Keywords>
+  <Abstract>This poster provides an overview of the computer system that provides community access to atmosphere measurements derived from backscatter ultraviolet sources.  It is funded by NASA&apos;s Advancing Collaborative Connections for Earth-Sun System Science (ACCESS), and is devoted to Measurements of Atmospheric Composition in the Ultraviolet.  The purpose is to provide &quot;one-stop shopping&quot; for data and information of interested to the Backscattered Ultraviolet (BUV) community.  It is built from the well-used, highly successful Total Ozone Mapping Spectrometer (TOMS) web site, and is being evolved into a broader focus for the BUV community.  This effort supports NASA&apos;s evolutionary step toward science measurement processing and analysis systems, and enables the BUV community to easily access information and expertise from multiple sources over a nearly 30 year history of space-based remote sensing of the atmosphere.  It facilitates finding algorithms and scientific results from different parts of the BUV science community as well as from different instruments and missions.  It provides the means to access the products of the Ozone Community Oriented Measurement-based Processing System (ComPS).  The system contains components that store and manage data, manage user access to that data, provide multi-dimensional views of the data and other information, serve data based on user criteria, and facilitate on-line collaboration.  The web site hosts Algorithm Theoretical Basis documents, quality assessment of data products, published papers, instrument descriptions, access to mission information, reports and assessments of events and issues, problem reporting and tracking, a moderated forum, and a user collaboration  area.  Visitors to the web site fall into several categories:  the general public; students, educators, and researchers outside the BUV community; members of the BUV community who validate the measurements; members of the community who develop algorithms and software.  Access to the information, data, and tools hosted on the site is managed based on the category of each visitor.  The general public may view and download only information and data approved by NASA for public release.</Abstract>
+  <Title>Community Access to Atmospheric Measurements</Title>
+  <Session>IN33A</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Marshall, J J</Name><Email>james.marshall@gsfc.nasa.gov</Email><Affiliations><Affiliation>Innovim / NASA Goddard Space Flight Center, Mailstop 614.5, Greenbelt, MD 20771, United  States</Affiliation></Affiliations></Author>
+    <Author><Name>Batluck, G R</Name><Email>georgiann.r.batluck@nasa.gov</Email><Affiliations><Affiliation>NASA Goddard Space Flight Center, Mailstop 613.3, Greenbelt, MD 20771, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Durbin, P B</Name><Email>pdurbin@sesda2.com</Email><Affiliations><Affiliation>ADNET Systems, Inc., 7515 Mission Drive Suite A1C1, Lanham, MD 20706, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Gerard, R</Name><Email>ryan.gerard@gsfc.nasa.gov</Email><Affiliations><Affiliation>Innovim / NASA Goddard Space Flight Center, Mailstop 614.5, Greenbelt, MD 20771, United  States</Affiliation></Affiliations></Author>
+    <Author><Name>Larko, D E</Name><Email>larko@jwocky.gsfc.nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications, Inc., 10210 Greenbelt Road Suite 600, Lanham, MD 20706, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Martin, A</Name><Email>amartin@innovim.com</Email><Affiliations><Affiliation>Innovim, 250 Connecticut Avenue NW, Washington, DC 20036, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Tilmes, C A</Name><Email>curt.a.tilmes@nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

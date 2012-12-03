@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33B-1314</Id>
+  <Keywords>
+    <Keyword>CRYOSPHERE / Glaciology</Keyword>
+    <Keyword>INFORMATICS / Social networks</Keyword>
+    <Keyword>GENERAL OR MISCELLANEOUS / Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>At the Columbia, a tidewater glacier in Alaska&apos;s Prince William Sound, aerial stereophotography has been flown at least twice each year since 1976. After costly capture and careful processing, the images yield snapshots of the elevations and velocities at the ice surface, recounting the story of the glacier&apos;s dynamic retreat in high resolution 3D. Now, recent advances in computer vision may allow us to acquire similar data for much less - we present a technique for quantifying evolving landscapes with nothing more than your camera, with little to no need for ground surveying or existing geospatial data. While well studied, the Columbia Glacier is not alone - the collective response of the countless small glaciers and ice caps has far-reaching impacts on global sea-level rise and the distribution and timing of water resources. As we speak, the millions of camera-bearers among us are undertaking an unprecedented photographic survey of the physical world. Developing scientific applications for digital photography could open the doors for public participation in research on a huge scale, and enable global, detailed and low-budget monitoring of the cryosphere.</Abstract>
+  <Title>Something for Everyone: Quantifying Evolving (Glacial) Landscapes with Your Camera</Title>
+  <Session>IN33B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Welty, E</Name><Email>ethan.welty@colorado.edu</Email><Affiliations><Affiliation>Institute of Arctic and Alpine Research, University of Colorado, Boulder, CO, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Pfeffer, W T</Name><Email>pfeffer@tintin.colorado.edu</Email><Affiliations><Affiliation>Institute of Arctic and Alpine Research, University of Colorado, Boulder, CO, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Ahn, Y</Name><Email>ahnysleo@gmail.com</Email></Author>
+  </Authors>
+</AGUAbstract>

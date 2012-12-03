@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN23B-1361</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Cyberinfrastructure</Keyword>
+    <Keyword>INFORMATICS / GIS science</Keyword>
+    <Keyword>INFORMATICS / High-performance computing</Keyword>
+  </Keywords>
+  <Abstract>In order to effectively tackle many scientific challenges that we are facing today, we have to depend on collaborations among distributed computer systems as well as the synergy among multiple disciplines. We see cloud computing as a promising technology to support such collaborations. In this paper, cloud computing concept is described and a cloud computing framework is proposed. The proposed cloud computing infrastructure enables users to request and manage scalable and virtualized computing resources on demand through a client interface. It supports large-scale scientific applications through offering unparalleled compute capability and storage. Within this infrastructure, Open nebula is used as a cloud computing middleware. In order to test the feasibility of the cloud computing platform for supporting geospatial computing, we deployed a dust storm simulation model on the cloud computing platform. Based on the analysis of performance results of dust storm simulation, we conclude that the cloud computing is emerging as a credible solution for supporting responsive on-demand, data-intensive and memory-intensive geospatial applications.</Abstract>
+  <Title>UTILIZING CLOUD COMPUTING TO SUPPORT EARTH SCIENCE APPLICATIONS</Title>
+  <Session>IN23B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Huang, Q</Name><Email>qhuang1@gmu.edu</Email><Affiliations><Affiliation>George Mason University, Fairfax, VA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Yang, C</Name><Email>cyang3@gmu.edu</Email><Affiliations><Affiliation>George Mason University, Fairfax, VA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Wu, H</Name><Email>hwu8@gmu.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

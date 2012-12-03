@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN41A-0311</Id>
+  <Keywords>
+    <Keyword>0430  Computational methods and data processing</Keyword>
+    <Keyword>0439  Ecosystems, structure and dynamics</Keyword>
+    <Keyword>0466  Modeling</Keyword>
+    <Keyword>0491  Food webs and trophodynamics</Keyword>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+  </Keywords>
+  <Abstract>A great many systems can be modeled in the non-linear dynamical systems framework, as x&amp;#775; = f(x) + &amp;xi;(t), where f(x) is the potential function for the system, and &amp;xi;(t) is the driving noise. Modeling the potential using a set of basis functions, we derive the posterior for the basis coefficients. A more challenging problem is to determine the set of basis functions that are required to model a particular system. We show that using the Bayesian Information Criteria (BIC) to rank models, and the beam search technique, that we can accurately determine the structure of simple non-linear dynamical system models, and the structure of the coupling between non-linear dynamical systems where the individual systems are known. This last case has important ecological applications, for example in predator-prey systems, where the very structure of the coupling between predator-prey pairs can have great ecological significance.</Abstract>
+  <Title>Structure Learning in Stochastic Non-linear Dynamical Systems</Title>
+  <Session>IN41A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Morris, R D</Name><Email>rdm@email.arc.nasa.gov</Email><Affiliations><Affiliation>USRA-RIACS, NASA Ames Resarch Center, MS 269-2, Moffett Field, CA 94035  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Smelyanskiy, V N</Name><Email>vadim@email.arc.nasa.gov</Email><Affiliations><Affiliation>NASA, NASA Ames Research Center, Moffett Field, ca 94035  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Luchinsky, D G</Name><Email>luchinsk@email.arc.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

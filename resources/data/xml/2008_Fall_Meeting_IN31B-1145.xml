@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN31B-1145</Id>
+  <Keywords>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+  </Keywords>
+  <Abstract>In the field of hazard risk assessment, a new generation of tools is needed to allow researchers and practicing engineers the ability to leverage investments in new methodologies and software infrastructure while enabling customization to local conditions.  MAEviz represents such a next generation of seismic risk assessment environment, based on the Mid-America Earthquake (MAE) Center research and designed to be extended, customized, and evolved to meet the needs of specific organizations and regions. It is built upon an extensible Open Services Gateway Initiative (OSGi) based GIS application platform and leverages distributed content management, workflow, and virtual-organization based design concepts. MAEviz has been developed as a collaboration between the Mid-America Earthquake (MAE) Center community and the National Center for Supercomputing Applications (NCSA) and is an implementation of the MAE Centers research Consequence-based Risk Management (CRM) methodology. MAEviz is open source and provides a modern GIS application interface with sophisticated visualization and reporting capabilities.  It also incorporates mechanisms to integrate distributed data sources, provides approximately 50 reusable analyses, and has the ability to save and share scenarios to coordinate work in distributed teams. As an Eclipse Rich Client Platform (RCP) application, MAEviz is composed of multiple plugins and clearly defined extension points that leverage numerous open source libraries such as Geotools,  iText, kTable, JFreeChart and the Visualization Toolkit (VTK) as well as middleware components developed at NCSA. This architecture enables MAEviz to rapidly be extended with new scientific analyses and allows reuse of the base GIS environment capabilities. MAEviz helps bridge the gap between researchers, practitioners and policy-makers by integrating the latest research findings and most accurate data, state-of-the-art methodologies in an extensible open source platform.</Abstract>
+  <Title>MAEviz: Seismic Risk Assessment Environment - bridging the gap between research and practice</Title>
+  <Session>IN31B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Navarro, C</Name><Email>cnavarro@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St., Urbana, IL 61801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Lee, J S</Name><Email>jonglee@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St., Urbana, IL 61801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Tolbert, N</Name><Email>tolbert@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St., Urbana, IL 61801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>hampton, s</Name><Email>shawn@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St., Urbana, IL 61801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>McLaren, T</Name><Email>tmclaren@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St., Urbana, IL 61801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Myers, J</Name><Email>jimmyers@ncsa.uiuc.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

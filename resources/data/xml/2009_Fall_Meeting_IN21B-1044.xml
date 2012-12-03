@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN21B-1044</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Data management, preservation, rescue</Keyword>
+    <Keyword>INFORMATICS / Interoperability</Keyword>
+    <Keyword>INFORMATICS / Real-time and responsive information delivery</Keyword>
+    <Keyword>OCEANOGRAPHY: GENERAL / Instruments and techniques</Keyword>
+  </Keywords>
+  <Abstract>Our shipboard data systems have been using UDP/IP broadcast datagrams for distributing real-time underway data starting on the R/V &lt;i&gt;Conrad&lt;/i&gt; in 1987 and expanding to include the &lt;i&gt;Ewing&lt;/i&gt;, &lt;i&gt;Palmer&lt;/i&gt;, &lt;i&gt;Gould&lt;/i&gt;, &lt;i&gt;Healy&lt;/i&gt; and &lt;i&gt;Langseth&lt;/i&gt; among others. This approach has many advantages including: ease of implementation; simplicity; and isolation of the clients from the real-time loggers. A number of other shipboard data systems have successfully adopted this approach. In the modern era of nearly full-time Internet connectivity for the research fleet, the ability to distribute near-real-time data to shore sites is expanding rapidly and should be done efficiently. For example, the NSF-supported Rolling Deck to Repository (R2R) and Shipboard Automated Meteorological and Oceanographic System (SAMOS) projects are jointly developing a new protocol to transfer high-frequency meteorological and surface oceanographic data from fleet vessels to a shore server for monitoring and quality control. At the same time, we are finding more sophisticated uses for real-time data at sea in addition to our own need to automate on-board real-time data quality checking. In order to facilitate these needs, we are developing a plan to migrate our data system to Multicast datagrams and add an open, standards-based discovery service so that clients connecting to our shipboard network can automatically find and use our data streams. &amp;lt;br/&amp;gt;</Abstract>
+  <Title>Toward an improved distribution approach for real-time data sharing</Title>
+  <Session>IN21B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Chayes, D N</Name><Email>dale@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, Palisades, NY, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Arko, R A</Name><Email>arko@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, Palisades, NY, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Roberts, S D</Name><Email>sroberts@ucar.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

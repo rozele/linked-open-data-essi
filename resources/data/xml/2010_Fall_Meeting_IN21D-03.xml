@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN21D-03</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Cyberinfrastructure</Keyword>
+    <Keyword>INFORMATICS / Software re-use</Keyword>
+    <Keyword>INFORMATICS / Workflow</Keyword>
+    <Keyword>INFORMATICS / General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>e-Science and cyberinfrastucture at their outset tended to focus on &amp;#8216;big science&amp;#8217; and cross-organisational infrastructures, demonstrating complex engineering with the promise of high returns. It soon became evident that the key to researchers harnessing new technology for everyday use is a user-centric approach which empowers the user - both from a developer and an end user viewpoint. For example, this philosophy is demonstrated in workflow systems for systematic data processing and in the Web 2.0 approach as exemplified by the myExperiment social web site for sharing workflows, methods and &amp;#8216;research objects&amp;#8217;. Hence the most disruptive aspect of Cloud and virtualisation is perhaps that they make new computational resources and applications usable, creating a flourishing ecosystem for routine processing and innovation alike - and in this we must consider software sustainability. This talk will discuss the changing nature of e-Science digital ecosystem, focus on the e-infrastructure for cross-disciplinary work, and highlight issues in sustainable software development in this context.</Abstract>
+  <Title>Towards usable and interdisciplinary e-infrastructure (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN21D</Session>
+  <Hour>0838h</Hour>
+  <Authors>
+    <Author><Name>De Roure, D</Name><Email>david.deroure@oerc.ox.ac.uk</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN51A-0807</Id>
+  <Keywords>
+    <Keyword>1724  Ocean sciences</Keyword>
+    <Keyword>3000  MARINE GEOLOGY AND GEOPHYSICS</Keyword>
+  </Keywords>
+  <Abstract>Over the years, and across projects and disciplines, there is an unfortunate tendency for descriptive terminology to wander.  Some of the variation is due to evolution in sensor technology, but some may be due to odd abbreviations, typographical errors on rolling decks, institutional practices, or a momentary inspiration to use a new term.  As a consequence, we now face challenges in searching digital collections, and in designing re-usable tools that can be applied to multiple institutions. Practical experience with the SIOExplorer Digital Library of 700 SIO cruises has allowed us to develop techniques to assess variations in metadata values across collections of more than 100,000 digital objects, including datasets, documents and images spanning more than 50 years.  The assessment helps to guide the development of controlled vocabularies, which in turn can be used to enable automatic detection of metadata errors, and in some cases automatic correction. Controlled vocabularies are playing an essential role in extending the technology to the collections of the Woods Hole Oceanographic Institution, including cruises, Alvin dives and ROV operations. Examples include the names of chief scientists, port names, operational areas, science themes, image types, sample types, data types, and processing steps. Controlled vocabularies underlie an emerging set of tools that support web user interfaces, large-scale automatic harvesting of metadata and data, project status assessment, workflow management and overall quality control.  They are a key resource for user upload code in the IODP Site Survey Data Bank, prompting and enforcing appropriate metadata values for ocean drilling proposal support data. Compared to previous generations of hard-wired code, the access to controlled vocabularies allows a project to evolve with flexibility, and the code to be ported from one project to another. These efforts are supported by a Digital Archiving award from the Library of Congress and NSF (CISE/IIS 0455998), as well as from the IODP-MI Site Survey Data Bank subcontract from NSF (OCE 0432224).</Abstract>
+  <Title>The Role of Controlled Vocabularies in Digital Archiving</Title>
+  <Session>IN51A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Miller, S</Name><Email>spmiller@ucsd.edu</Email><Affiliations><Affiliation>Scripps Institution of Oceanography, UCSD, Geological Data Center 9500 Gilman Dr., La Jolla, CA 92093-0220 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Clark, P D</Name><Email>dclark@ucsd.edu</Email><Affiliations><Affiliation>Scripps Institution of Oceanography, UCSD, Geological Data Center 9500 Gilman Dr., La Jolla, CA 92093-0220 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Neiswender, C</Name><Email>cneiswender@ucsd.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

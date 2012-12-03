@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN33B-1353</Id>
+  <Keywords>
+    <Keyword>0495  Water/energy interactions</Keyword>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0550  Model verification and validation</Keyword>
+    <Keyword>1816  Estimation and forecasting</Keyword>
+    <Keyword>6339  System design</Keyword>
+  </Keywords>
+  <Abstract>This study explores the use of synthetic thermal center pivot irrigation scenes to estimate temperature retrieval accuracy for thermal remote sensed data, such as data acquired from current and proposed Landsat-like thermal systems. Center pivot irrigation is a common practice in the western United States and in other parts of the world where water resources are scarce. Wide-area ET (evapotranspiration) estimates and reliable water management decisions depend on accurate temperature information retrieval from remotely sensed data. Spatial resolution, sensor noise, and the temperature step between a field and its surrounding area impose limits on the ability to retrieve temperature information. Spatial resolution is an interrelationship between GSD (ground sample distance) and a measure of image sharpness, such as edge response or edge slope. Edge response and edge slope are intuitive, and direct measures of spatial resolution are easier to visualize and estimate than the more common Modulation Transfer Function or Point Spread Function. For these reasons, recent data specifications, such as those for the LDCM (Landsat Data Continuity Mission), have used GSD and edge response to specify spatial resolution. For this study, we have defined a 400&#65533;800 m diameter center pivot irrigation area with a large 25 K temperature step associated with a 300 K well-watered field surrounded by an infinite 325 K dry area. In this context, we defined the benchmark problem as an easily modeled, highly common stressing case. By parametrically varying GSD (30&#65533;240 m) and edge slope, we determined the number of pixels and field area fraction that meet a given temperature accuracy estimate for 400 m, 600 m, and 800 m diameter field sizes. Results of this project will help assess the utility of proposed specifications for the LDCM and other future thermal remote sensing missions and for water resource management.</Abstract>
+  <Title>Estimating Temperature Retrieval Accuracy Associated With Thermal Band Spatial Resolution Requirements for Center Pivot Irrigation Monitoring and Management</Title>
+  <Session>IN33B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Ryan, R E</Name><Email>robert.ryan@ssc.nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications, Inc., Building 1105, Stennis Space Center, MS 39529 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Irons, J R</Name><Email>james.r.irons@nasa.gov</Email><Affiliations><Affiliation>Goddard Space Flight Center, National Aeronautics and Space Administration, Greenbelt, MD 20771 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Allen, R</Name><Email>rallen@kimberly.uidaho.edu</Email><Affiliations><Affiliation>Kimberly R &amp;amp; E Center, 3793 N 3600 E, Kimberly, ID 83341 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Spruce, J</Name><Email>joseph.spruce@ssc.nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications, Inc., Building 1105, Stennis Space Center, MS 39529 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Underwood, L W</Name><Email>lauren.underwood@ssc.nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications, Inc., Building 1105, Stennis Space Center, MS 39529 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Pagnutti, M</Name><Email>mary.pagnutti@ssc.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

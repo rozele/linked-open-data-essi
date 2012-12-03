@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN23B-1092</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+  </Keywords>
+  <Abstract>The FLUXNET synthesis data set contains on the order of 960 site-years of sensor data from over 260 sites around the world. This is a living data set; a data update this year should add new site-years from over 200 sites. The data are the ground truth for carbon-climate studies linking models and remote sensing as well as comparative field analyses. Over 65 synthesis teams are using this data to do global and regional scale analyses. The size of the dataset makes browsing the data difficult; for example, a search of the dataset for sites with particular meteorological characteristics would require a download of the complete dataset and then running all of the data through a preliminary analysis. Synthesis studies often need additional non- sensor measurements such as root biomass, soil composition, or fire occurrence; some of these variables require detailed knowledge of the site and the science. The large number of sites makes the assembly, cleaning, and long term curation of the non-sensor data daunting; a virtual conversation between the data providers, data users, and data curators is needed. The large number of sites also makes tracking updates to the site information and communicating with site PIs difficult for synthesis study teams.</Abstract>
+  <Title>Interaction Support for the Global Fluxnet Data Set</Title>
+  <Session>IN23B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Agarwal, D</Name><Email>daagarwal@lbl.gov</Email><Affiliations><Affiliation>Berkeley Water Center, LBNL/University of California, Berkeley 1 Cyclotron Rd, MS 50B-2239, Berkeley, CA 94720, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Humphrey, M</Name><Email>humphrey@cs.virginia.edu</Email><Affiliations><Affiliation>School of Engineering and Applied Science, Olsson Hall 236C, 151 Engineer&apos;s Way, P.O. Box 400740 University of Virginia, Charlottesville, VA 22904, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Beekwilder, N</Name><Email>nfb5z@cs.virginia.edu</Email><Affiliations><Affiliation>School of Engineering and Applied Science, Olsson Hall 236C, 151 Engineer&apos;s Way, P.O. Box 400740 University of Virginia, Charlottesville, VA 22904, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Goode, M</Name><Email>MMGoode@lbl.gov</Email><Affiliations><Affiliation>Berkeley Water Center, LBNL/University of California, Berkeley 1 Cyclotron Rd, MS 50B-2239, Berkeley, CA 94720, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Jackson, K</Name><Email>krjackson@lbl.gov</Email><Affiliations><Affiliation>Berkeley Water Center, LBNL/University of California, Berkeley 1 Cyclotron Rd, MS 50B-2239, Berkeley, CA 94720, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Weber, R</Name><Email>rjweber@lbl.gov</Email><Affiliations><Affiliation>Berkeley Water Center, LBNL/University of California, Berkeley 1 Cyclotron Rd, MS 50B-2239, Berkeley, CA 94720, United States</Affiliation></Affiliations></Author>
+    <Author><Name>van Ingen, C</Name><Email>vaningen@microsoft.com</Email><Affiliations><Affiliation>Microsoft Research, 835 Market Street, San Francisco, CA 94105, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Baldocchi, D</Name><Email>baldocchi@nature.berkeley.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

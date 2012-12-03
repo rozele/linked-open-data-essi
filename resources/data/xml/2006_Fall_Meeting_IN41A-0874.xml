@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN41A-0874</Id>
+  <Keywords>
+    <Keyword>0434  Data sets</Keyword>
+    <Keyword>0442  Estuarine and nearshore processes</Keyword>
+    <Keyword>0475  Permafrost, cryosphere, and high-latitude processes</Keyword>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0799  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>A key element for the ultimate success of the International Polar Year (IPY) effort will be our ability to make the volumes of data collected in this work available and usable to researchers, both now and into the future. Ultimately, the IPY data will reside in a number of different repositories and will be accessed by users from a wide variety of disciplines and with a wide variety of needs. It is therefore important that appropriate informatics tools be developed and made available to the IPY community for indexing, searching, retrieving, and managing distributed polar data. Discovery, Access, and Delivery of Data for the IPY (DADDI) is a NASA-funded project involving multiple institutions, targeted at leveraging and evolving Earth Science informatics tools to meet the Informatics challenges of the IPY effort. To test our approaches, we have selected Arctic coastal data as a focus area for developing a working prototype of an IPY Informatics solution. Coastal areas are undergoing some of the most drastic changes within the polar regions and are also the area of most concentrated human activity at high latitudes. Coastal regions are also of interest to a broad range of disciplines and data customers, so this is an area where there is a high need for a robust Informatics infrastructure. In this presentation, I will review the requirements which we have collected for an information system to manage a dispersed collection of Arctic coastal data. I will then present the current version of the prototype which we are developing, discuss the ways in which the underlying tools can be leveraged out to other IPY- related areas, and discuss the lessons learned in developing this prototype information system.</Abstract>
+  <Title>The DADDI Project: Delivering a Working Prototype for Arctic Coastal Data</Title>
+  <Session>IN41A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Wilson, B E</Name><Email>wilsonbe@ornl.gov</Email><Affiliations><Affiliation>Oak Ridge National Laboratory, 1 Bethel Valley Road Box 2008-MS 6407, Oak Ridge, TN 37831 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Parsons, M A</Name><Email>parsonsm@nsidc.org</Email><Affiliations><Affiliation>National Snow and Ice Data Center, CIRES, 449 UCB University of Colorado, Boulder, CO 80309 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Palanisamy, G</Name><Email>palanisamyg@ornl.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

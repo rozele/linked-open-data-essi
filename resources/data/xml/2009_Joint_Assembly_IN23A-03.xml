@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN23A-03</Id>
+  <Keywords>
+    <Keyword>1225  Global change from geodesy</Keyword>
+  </Keywords>
+  <Abstract>Using a state-of-the-art data assimilation system and surface pressure observations, the Twentieth Century Reanalysis Project is generating a six-hourly, four-dimensional global atmospheric dataset spanning 1891- 2008 to place current atmospheric circulation patterns into a historical perspective.  An important consequence  of climate change is the altered likelihood of weather extremes.  To have confidence in projected changes of such extremes in the twenty-first century, it is first necessary to assess model simulations of such changes throughout the twentieth century, using daily data.  Any such daily verification data must also have quantified estimates of uncertainty to allow a fair quantitative assessment of the simulations.  This paper will describe the  data and NOMADS access paths to these data from the National Climatic Data Center in Asheville, NC.</Abstract>
+  <Title>NOAA National Operational Model Archive and Distribution System (NOMADS) Access to the  Twentieth Century Reanalysis Project</Title>
+  <Session>IN23A</Session>
+  <Hour>14:40h</Hour>
+  <Authors>
+    <Author><Name>Rutledge, G</Name><Email>Glenn.Rutledge@noaa.gov</Email><Affiliations><Affiliation>NOAA National Climatic Data Center, 151 Patton Ave, Asheville, NC 28801, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Compo, G</Name><Email>Gilbert.P.Compo@noaa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

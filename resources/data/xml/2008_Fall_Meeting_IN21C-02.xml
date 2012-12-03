@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN21C-02</Id>
+  <Keywords>
+    <Keyword>0300  ATMOSPHERIC COMPOSITION AND STRUCTURE</Keyword>
+    <Keyword>0400  BIOGEOSCIENCES</Keyword>
+    <Keyword>0500  COMPUTATIONAL GEOPHYSICS</Keyword>
+    <Keyword>1800  HYDROLOGY</Keyword>
+    <Keyword>2100  INTERPLANETARY PHYSICS</Keyword>
+  </Keywords>
+  <Abstract>Ever increasing model resolutions and physical processes in climate models demand continual computing power increases. The IBM Cell processor&apos;s order-of- magnitude peak performance increase over conventional processors makes it very attractive for fulfilling this requirement. However, the Cell&apos;s characteristics: 256KB local memory per SPE and the new low-level communication mechanism, make it very challenging to port an application. We selected the solar radiation component of the NASA GEOS-5 climate model, which: (1) is representative of column physics components (~50% total computation time), (2) has a high computational load relative to data traffic to/from main memory, and (3) performs independent calculations across multiple columns. We converted the baseline code (single-precision, Fortran code) to C and ported it to an IBM BladeCenter QS20, manually SIMDizing 4 independent columns, and found that a Cell  with 8 SPEs can process more than 3000 columns per second.  Compared with the baseline results, the Cell is ~6.76x, ~8.91x, ~9.85x faster than a core on Intel&apos;s Xeon Woodcrest, Dempsey, and Itanium2 respectively. Our analysis shows that the Cell could also speed up the dynamics component (~25% total computation time). We believe this dramatic performance improvement makes the Cell processor very competitive, at least  as an accelerator. We will report our experience in porting both the C and Fortran codes and will discuss our  work in porting other climate model components.</Abstract>
+  <Title>Accelerate Climate Models with the IBM Cell Processor</Title>
+  <Session>IN21C</Session>
+  <Hour>08:15h</Hour>
+  <Authors>
+    <Author><Name>Zhou, S</Name><Email>shujia.zhou@nasa.gov</Email><Affiliations><Affiliation>Northrop Grumman Corporation, 4801 Stonecroft Blvd., Westfields, VA 20151, United States</Affiliation><Affiliation>NASA Goddard Science Flight Center, Code 610, Greenbelt, MD 20771, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Duffy, D</Name><Email>daniel.q.duffy@nasa.gov</Email><Affiliations><Affiliation>Computer Sciences Corporation, 3170 Fairview Park Drive, Falls Church, VA 22042, United States</Affiliation><Affiliation>NASA Goddard Science Flight Center, Code 610, Greenbelt, MD 20771, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Clune, T</Name><Email>tom.clune@nasa.gov</Email><Affiliations><Affiliation>NASA Goddard Science Flight Center, Code 610, Greenbelt, MD 20771, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Williams, S</Name><Email>samw@EECS.Berkeley.EDU</Email><Affiliations><Affiliation>University of California, Berkeley, Dept. of Electrical Eng. and Computer Science, Berkeley, CA 94720, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Suarez, M</Name><Email>max.j.suarez@nasa.gov</Email><Affiliations><Affiliation>NASA Goddard Science Flight Center, Code 610, Greenbelt, MD 20771, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Halem, M</Name><Email>halem@umbc.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

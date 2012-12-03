@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN41C-01</Id>
+  <Keywords>
+    <Keyword>1847  Modeling</Keyword>
+    <Keyword>1848  Monitoring networks</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>National environmental observatories will soon provide large-scale data from diverse sensor networks and community models. While much attention is focused on piping data from sensors to archives and users, truly integrating these resources into the everyday research activities of scientists and engineers across the community, and enabling their results and innovations to be brought back into the observatory, also critical to long-term success of the observatories, is often neglected. This talk will give an overview of the Environmental Cyberinfrastructure Demonstrator (ECID) Cyberenvironment for observatory-centric environmental research and education, under development at the National Center for Supercomputing Applications (NCSA), which is designed to address these issues. Cyberenvironments incorporate collaboratory and grid technologies, web services, and other cyberinfrastructure into an overall framework that balances needs for efficient coordination and the ability to innovate. They are designed to support the full scientific lifecycle both in terms of individual experiments moving from data to workflows to publication and at the macro level where new discoveries lead to additional data, models, tools, and conceptual frameworks that augment and evolve community-scale systems such as observatories.  The ECID cyberenvironment currently integrates five major components &#65533; a collaborative portal, workflow engine, event manager, metadata repository, and social network personalization capabilities - that have novel features inspired by the Cyberenvironment concept and enabling powerful environmental research scenarios. A summary of these components and the overall cyberenvironment will be given in this talk, while other posters will give details on several of the components. The summary will be presented within the context of environmental use case scenarios created in collaboration with researchers from the WATERS (WATer and Environmental Research Systems) Network, a joint National Science Foundation-funded initiative of the hydrology and environmental engineering communities. The use case scenarios include identifying sensor anomalies in point- and streaming sensor data and notifying data managers in near-real time; and referring users of data or data products (e.g., workflows, publications) to related data or data products.</Abstract>
+  <Title>An Integrated Cyberenvironment for Event-Driven Environmental Observatory Research and Education</Title>
+  <Session>IN41C</Session>
+  <Hour>08:00h</Hour>
+  <Authors>
+    <Author><Name>Myers, J</Name><Email>jimmyers@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St Room 1008, Urbana, IL 61801</Affiliation></Affiliations></Author>
+    <Author><Name>Minsker, B</Name><Email>minsker@uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications, 1205 W. Clark St Room 1008, Urbana, IL 61801</Affiliation></Affiliations></Author>
+    <Author><Name>Butler, R</Name><Email>rbutler@ncsa.uiuc.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

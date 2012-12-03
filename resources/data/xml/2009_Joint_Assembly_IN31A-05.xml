@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31A-05</Id>
+  <Keywords>
+    <Keyword>1240  Satellite geodesy: results</Keyword>
+    <Keyword>1241  Satellite geodesy: technical issues</Keyword>
+  </Keywords>
+  <Abstract>Advances in autonomous navigation technologies are essential in order to minimise the cost of operating satellites and maximise their survival capability in harsh conditions. For the last decades, real-time spacecraft navigation based on spaceborne GPS receivers has been a common technique for Low Earth Orbits (LEO) satellites. An extension of this technique to geostationary (GEO) missions has been constrained by the difficulty of GPS receivers to cope with unfavorable conditions in GEO orbits such as poor GPS satellite visibility  and weak signal power. The situation will be improved when multi-constellation GNSSs are fully operational. This paper reports on investigations into a navigation algorithm to determine the GEO state vector in real time, using multi-constellation GNSS pseudorange (PR) measurements. Firstly, the visibilities of the current 31 GPS  satellites, assumed 24 GLONASS satellites, planned 30 GALILEO satellites and possible 27 COMPASS satellites on the earth equatorial ring has been analyzed. Secondly, the extended Kalman filter is used to blend the orbit dynamics with the PR measurements. Thirdly, the clock biases are modeled and added to the system dynamics because the stability of the navigation filter has a significant impact on the overall navigation performance. That is, the clock biases with respect to each GNSS system time are extended in the state vector.  In cases when the number of available satellites is more than four, a satellite signal selection algorithm based on geometry is implemented to ensure only good PDOP measurements are processed. The Monte- Carlo simulation is used to demonstrate the performance of this multiple GNSS-based navigation system using the GEO satellite orbits. Test results with simulated multi-GNSS (including GPS, GLONASS, GALILEO and COMPASS) are presented. It is concluded that this algorithm meets the requirement for GEO satellite&apos;s precise autonomous navigation.</Abstract>
+  <Title>An Algorithm for Autonomous GEO Satellite Navigation Using Multiple GNSS Measurements</Title>
+  <Session>IN31A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Qiao, L</Name><Email>l.qiao@student.unsw.edu.au</Email><Affiliations><Affiliation>Nanjing University, Department of Aeronautics and Astronautics, Nanjing University, Nanjing, 210016, China</Affiliation><Affiliation>The University of New South Wales, School of Surveying and SIS, UNSW, Sydney, NSW 2052, Australia</Affiliation></Affiliations></Author>
+    <Author><Name>Lim, S</Name><Email>s.lim@unsw.edu.au</Email><Affiliations><Affiliation>The University of New South Wales, School of Surveying and SIS, UNSW, Sydney, NSW 2052, Australia</Affiliation></Affiliations></Author>
+    <Author><Name>Rizos, C</Name><Email>c.rizos@unsw.edu.au</Email><Affiliations><Affiliation>The University of New South Wales, School of Surveying and SIS, UNSW, Sydney, NSW 2052, Australia</Affiliation></Affiliations></Author>
+    <Author><Name>Liu, J</Name><Email>Ljyac@nuaa.edu.cn</Email></Author>
+  </Authors>
+</AGUAbstract>

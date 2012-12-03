@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33C-07</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Real-time and responsive information delivery</Keyword>
+    <Keyword>INFORMATICS / Uncertainty</Keyword>
+    <Keyword>SPACE WEATHER</Keyword>
+    <Keyword>SPACE WEATHER / Impacts on technological systems</Keyword>
+  </Keywords>
+  <Abstract>The Space Vehicles Directorate of the Air Force Research Laboratory (AFRL/RVBX) and the Space Environment Division of the Space and Missile Systems Center (AFSPC SYAG/WMLE) have combined efforts to design, develop, test, implement, and validate numerical and graphical products for Air Force Space Command&amp;#8217;s (AFSPC) Space Environmental Effects Fusion System (SEEFS). These products were developed to analyze, specify, and forecast the effects of the near-earth space environment on Department of Defense weapons, navigation, communications, and surveillance systems in real/near-real time. This real-time attribute is the primary factor in allowing for actual operational product output, but it&amp;#8217;s also responsible for a variety of detrimental effects that need to be considered, researched, mitigated, or otherwise eliminated in future/upgrade product applications. This presentation will provide brief overviews of the SEEFS products, along with information and recommendations concerned with their near/real-time data acquisition and use, to include: input data requirements, inputs/outputs ownership, observation cadence, transmission/receipt links and cadence, data latency, quality control, error propagation and associated confidence level applications, and ensemble model run potentials. Validation issues related to real-time data will also be addressed, along with recommendations for new real-time data archiving that should prove operationally beneficial.</Abstract>
+  <Title>Real-Time Data Use for Operational Space Weather Products</Title>
+  <Session>IN33C</Session>
+  <Hour>1510h</Hour>
+  <Authors>
+    <Author><Name>Quigley, S</Name><Email>Stephen.Quigley@hanscom.af.mil</Email><Affiliations><Affiliation>RVBXR, Air Force Research Laboratory, Hanscom AFB, MA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Nobis, T E</Name><Email>timothy.nobis@rl.af.mil</Email></Author>
+  </Authors>
+</AGUAbstract>

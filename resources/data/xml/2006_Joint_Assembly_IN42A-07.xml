@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN42A-07</Id>
+  <Keywords>
+    <Keyword>9810  New fields</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>In the Virtual Solar Terrestrial Observatory (VSTO) project, we are providing an electronic repository of observational, data, theoretical models, and analysis and interpretation results in the solar-terrestrial physics domain.  We are also designing and implementing tools and infrastructure for accessing and using the data. In  this presentation, we describe the next version of the prototype leading to a portal release in late summer along with the supporting scientific and technical infrastructure. We present of collection of use-cases, and what we have learned about the processes involved in developing VSTO, the required semantics, how they influence the evolution of the framework architecture, technologies and development and refinement of service interfaces.VSTO is an NSF/SCI-funded, joint effort between the High Altitude Observatory and the Scientific Computing Division at the National Center for Atmospheric Research (NCAR) and McGuinness Associates Consulting.</Abstract>
+  <Title>The Virtual-Solar Terrestrial Observatory</Title>
+  <Session>IN42A</Session>
+  <Hour>12:15h</Hour>
+  <Authors>
+    <Author><Name>Middleton, D</Name><Email>don@ucar.edu</Email><Affiliations><Affiliation>SCD/NCAR, P.O. BOX 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fox, P</Name><Email>pfox@ucar.edu</Email><Affiliations><Affiliation>HAO/NCAR, P.O. Box 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>McGuinness, D</Name><Email>dlm@ksl.stanford.edu</Email><Affiliations><Affiliation>McGuinness Associates, 20 Peter Coutts Circle, Stanford, CA 94305  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cinquini, L</Name><Email>luca@ucar.edu</Email><Affiliations><Affiliation>SCD/NCAR, P.O. BOX 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Darnell, T</Name><Email>tdarnell@ucar.edu</Email><Affiliations><Affiliation>HAO/NCAR, P.O. Box 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Benedict, J</Name><Email>jbenedict@mcguinnessassociates.com</Email><Affiliations><Affiliation>McGuinness Associates, 20 Peter Coutts Circle, Stanford, CA 94305  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Garcia, J</Name><Email>jgarcia@ucar.edu</Email><Affiliations><Affiliation>HAO/NCAR, P.O. Box 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>West, P</Name><Email>pwest@ucar.edu</Email><Affiliations><Affiliation>HAO/NCAR, P.O. Box 3000, Boulder, CO 80307  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Solomon, S</Name><Email>stans@ucar.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

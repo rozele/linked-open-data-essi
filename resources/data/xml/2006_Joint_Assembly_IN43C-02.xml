@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43C-02</Id>
+  <Keywords>
+    <Keyword>9810  New fields</Keyword>
+  </Keywords>
+  <Abstract>The measurements of Saturn&apos;s magnetic field acquired by the Cassini magnetometer (MAG) to date have provided the basis of numerous pioneering scientific studies of the planet&apos;s magnetic and plasma environs. MAG data is essential for, among other applications, understanding the nature of the particle distributions observed by the plasma instruments onboard Cassini. In order to facilitate interaction and collaboration between instrument teams, we have developed a multi-layered  suite of software to provide an intuitive interface for accessing, visualizing and analysing MAG data from the Cassini spacecraft. In this presentation, we describe architecture and capabilities of the MAG software systems, and how they promote collaboration between subscribing Cassini scientists and other users. The &apos;layered&apos; approach of this software model comproses the following components: (i) MAGDA - A web-based system for locating, retrieving and preliminary visualization of magnetometer (MAG) data, which requires no proprietary client software; (ii) MAGNATE - A package of Matlab routines which allows users to perform more detailed analyses and more &apos;customised&apos; visualization of datasets which they have retrieved using MAGDA. (iii) Data-Handling Libraries - For advanced users who may wish to integrate MAG data-handling with their own applications, we provide a set of Java classes for this purpose (which are platform-independent). The systems described are implemented using industry-standard languages and protocols in order to make them accessible by the widest possible user community.</Abstract>
+  <Title>MAGDA and MAGNATE: Secure Web-Based Data Distribution and Visualization for the                           Cassini Magnetometer</Title>
+  <Session>IN43C</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Seears, T</Name><Email>t.seears@imperial.ac.uk</Email><Affiliations><Affiliation>Blackett Laboratory, Imperial College, Exhibition Road, LONDON, SW7 2AZ  United Kingdom</Affiliation></Affiliations></Author>
+    <Author><Name>Achilleos, N</Name><Email>n.achilleos@imperial.ac.uk</Email><Affiliations><Affiliation>Blackett Laboratory, Imperial College, Exhibition Road, LONDON, SW7 2AZ  United Kingdom</Affiliation></Affiliations></Author>
+    <Author><Name>Kellock, S</Name><Email>s.kellock@imperial.ac.uk</Email><Affiliations><Affiliation>Blackett Laboratory, Imperial College, Exhibition Road, LONDON, SW7 2AZ  United Kingdom</Affiliation></Affiliations></Author>
+    <Author><Name>Slootweg, P</Name><Email>p.slootweg@imperial.ac.uk</Email><Affiliations><Affiliation>Blackett Laboratory, Imperial College, Exhibition Road, LONDON, SW7 2AZ  United Kingdom</Affiliation></Affiliations></Author>
+    <Author><Name>Dougherty, M</Name><Email>m.dougherty@imperial.ac.uk</Email></Author>
+  </Authors>
+</AGUAbstract>

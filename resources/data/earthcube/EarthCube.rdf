@@ -1,0 +1,2209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+  <!ENTITY essi "http://essi-lod.org/ontology#" >
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+  <!ENTITY tw "http://tw.rpi.edu/schema/" >
+  <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+  <!ENTITY swrc "http://swrc.ontoware.org/ontology#" >
+  <!ENTITY swc "http://data.semanticweb.org/ns/swc/ontology#" >
+  <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+  <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+  <!ENTITY dbanno "http://purl.org/annotations/DBpedia/Spotlight" >
+  <!ENTITY pav "http://purl.org/pav/" >
+  <!ENTITY ao "http://purl.org/ao/" >
+  <!ENTITY aocore "http://purl.org/ao/core/" >
+  <!ENTITY aof "http://purl.org/ao/foaf/" >
+  <!ENTITY aos "http://purl.org/ao/selectors/" >
+  <!ENTITY aot "http://purl.org/ao/types/" >
+]>
+
+<rdf:RDF xmlns="http://essi-lod.org/instances/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:swc="http://data.semanticweb.org/ns/swc/ontology#"
+         xmlns:swrc="http://swrc.ontoware.org/ontology#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:tw="http://tw.rpi.edu/schema/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dbanno="http://purl.org/annotations/DBpedia/Spotlight"
+		   xmlns:pav="http://purl.org/pav/"
+		   xmlns:ao="http://purl.org/ao/"
+		   xmlns:aocore="http://purl.org/ao/core/"
+		   xmlns:aof="http://purl.org/ao/foaf/"
+		   xmlns:aos="http://purl.org/ao/selectors/"
+		   xmlns:aot="http://purl.org/ao/types/"
+		   xmlns:agu="http://agu.org/schema/"
+         xml:base="http://essi-lod.org/instances/">
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1677"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3963"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_182"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_705"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_704"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2381"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Brokering"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2805"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_769"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1272"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2579"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3884"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1436"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3868"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2153"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1677"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_33"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2582"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1729"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3041"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_361"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1948"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_937"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1049"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_929"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_198"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3633"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_182"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_156"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4466"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5542"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_584"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_336"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_936"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Governance"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3915"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2455"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4244"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_769"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_712"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3868"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2121"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2385"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3526"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_361"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3625"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3413"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_742"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_937"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_198"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_182"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_704"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1573"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3796"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4466"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1563"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4951"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3946"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3552"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2293"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1046"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Interop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4525"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3915"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3868"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3526"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1760"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3413"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2801"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4951"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Layered_Architecture"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2805"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5330"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3914"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2843"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2621"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_144"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1677"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_745"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4600"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4626"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3594"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3625"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_929"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4537"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3633"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1756"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_441"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3796"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3595"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2805"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4060"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Semantic_Web"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_347"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4240"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_712"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2661"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2385"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_937"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_457"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_182"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2107"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_844"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1046"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Web_Services"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_766"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_ES_Model"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3884"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_ES_Model"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_33"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Education"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2579"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Education"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_156"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Education"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Education"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3635"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Education"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4525"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_ohmf"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4466"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_ohmf"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2402"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_ohmf"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2407"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Dark_data"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Dark_data"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_144"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_Dark_data"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2164"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_39"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3910"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3827"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4951"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1078"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2358"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_146"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_928"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4498"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_194"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2407"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2484"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2801"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3954"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3892"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1814"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1760"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1059"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2107"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5095"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1508"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3135"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4059"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4647"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4178"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3359"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3636"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3635"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2122"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2265"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2293"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2123"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3888"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1563"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_32"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1356"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2956"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_193"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_132"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3548"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4717"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4915"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2033"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4060"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5542"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2661"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_766"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1251"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1635"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2392"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4537"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_33"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_745"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2455"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1573"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_144"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2322"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1708"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2772"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3314"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3552"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2283"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5130"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4039"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1049"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1005"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2121"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2805"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4725"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1214"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3975"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1948"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4504"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_929"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1798"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3812"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4052"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1173"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_122"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3928"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3474"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2379"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1885"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1677"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3962"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_651"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_198"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2386"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4241"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3814"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2016"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2458"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4638"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5550"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3413"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_172"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_361"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3963"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3878"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_339"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_732"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3884"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1729"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2546"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2621"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_711"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3633"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4484"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2071"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4266"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_180"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3944"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1514"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3036"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_810"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2843"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2126"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1756"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3872"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3625"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2608"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3858"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4256"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3817"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2288"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4238"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_892"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_441"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1201"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1030"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3725"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4240"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1032"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_712"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5235"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1436"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_179"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2290"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3956"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2072"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2385"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2835"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_5071"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_584"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4244"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_937"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2450"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2402"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_125"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4600"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3915"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3035"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4466"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4245"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_183"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_704"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_703"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3595"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_742"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_534"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4756"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_808"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3819"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_769"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_182"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_207"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4596"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4830"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1834"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2579"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4525"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3834"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1761"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_156"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3868"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3594"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2219"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1537"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthCube_Ning"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3912"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthChem_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4241"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1856"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4951"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_156"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3962"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_792"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1677"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_144"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3912"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_321"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1948"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_937"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3926"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_PI_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_441"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_846"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1948"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_764"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_769"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_924"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_39"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_2610"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4951"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_1514"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_4551"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_3590"/>
+    </foaf:member>
+  </rdf:Description> 
+
+  <rdf:Description rdf:about="http://essi-lod.org/instances/Group_EarthScope_Workshop"> 
+    <foaf:member>
+      <foaf:Person rdf:about="http://essi-lod.org/instances/Person_509"/>
+    </foaf:member>
+  </rdf:Description> 
+
+</rdf:RDF>
+

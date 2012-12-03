@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN31A-0997</Id>
+  <Keywords>
+    <Keyword>BIOGEOSCIENCES / Remote sensing</Keyword>
+    <Keyword>HYDROLOGY / Irrigation</Keyword>
+    <Keyword>INFORMATICS / Data assimilation, integration and fusion</Keyword>
+    <Keyword>INFORMATICS / Modeling</Keyword>
+  </Keywords>
+  <Abstract>California is in a third year of drought with April snowpack in the Sierra Nevada Mountains, which supplies the majority of water for agriculture in the state, at 60% of normal, impacting growers throughout the San Joaquin Valley. Competing demands from urban and environmental uses create further constraints on agricultural water supplies. Future climate scenarios for the western U.S. consistently predict reduced winter snow pack, earlier snowmelt, and higher temperatures. Such conditions will increase demand for agricultural water use during the summer growing season, while at the same time reducing the reliability of existing water sources for agricultural use. Previous studies have shown that adopting improved irrigation practices can save as much as 10% of agricultural applied water use. Achievement of these potential efficiency gains requires new data and information systems, built upon existing investments, that are capable of delivering estimates of evapotranspiration and irrigation demand to agricultural producers. We present a prototype system for optimization of agricultural water use that utilizes the NASA Terrestrial Observation and Prediction System (TOPS) to integrate satellite observations and meteorological observations with models parameterized for specific crop types to produce forecasts of soil moisture, evapotranspiration, and irrigation demand for multiple crop types in the San Joaquin Valley of California. The system employs wireless sensor networks to validate estimates from the modeling system and calibrate estimates of soil water balance. Irrigation forecasts and in-situ observations are distributed to water districts and agricultural producers via both SMS (text) messages delivered to hand-held devices, as well as via a browser-based irrigation optimization decision support system. A prototype system will be deployed, tested and evaluated in 2010.</Abstract>
+  <Title>Application of the NASA Terrestrial Observation and Prediction System for Optimization of Agricultural Water Use in California</Title>
+  <Session>IN31A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Melton, F S</Name><Email>Forrest.S.Melton@nasa.gov</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Nemani, R R</Name><Email>rama.nemani@nasa.gov</Email><Affiliations><Affiliation>NASA Ames Research Center, Moffett Field, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Johnson, L F</Name><Email>lee.f.johnson@nasa.gov</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Sheffner, E</Name><Email>edwin.j.sheffner@nasa.gov</Email><Affiliations><Affiliation>NASA Ames Research Center, Moffett Field, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Michaelis, A</Name><Email>Andrew.R.Michaelis@nasa.gov</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Votava, P</Name><Email>Petr.Votava-1@nasa.gov</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hiatt, S H</Name><Email>sam_hiatt@csumb.edu</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hashimoto, H</Name><Email>hirofumi.hashimoto@gmail.com</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Milesi, C</Name><Email>cristina.milesi@gmail.com</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Pierce, L</Name><Email>lars_pierce@csumb.edu</Email><Affiliations><Affiliation>California State University Monterey Bay, Seaside, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wang, W</Name><Email>weile.wang@gmail.com</Email></Author>
+  </Authors>
+</AGUAbstract>

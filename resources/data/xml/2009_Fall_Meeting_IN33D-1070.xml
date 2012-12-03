@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33D-1070</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Data assimilation, integration and fusion</Keyword>
+    <Keyword>ATMOSPHERIC PROCESSES / Clouds and cloud feedbacks</Keyword>
+    <Keyword>ATMOSPHERIC PROCESSES / Precipitation</Keyword>
+    <Keyword>ATMOSPHERIC PROCESSES / Remote sensing</Keyword>
+  </Keywords>
+  <Abstract>Cloud Microphysics Data Assimilation System (CMDAS) was developed to improve conditions of water vapor and cloud liquid water content in a numerical weather prediction model by assimilating the brightness temperature data observed by the Advanced Microwave Scanning Radiometer - Earth Observing System (AMSR-E) onboard the earth observation satellite Aqua. The Advanced Regional Prediction System (ARPS) developed by the Center for Analysis and Prediction of Storm (CAPS) at the University of Oklahoma gives the first guess for CMDAS and its microphysics model is used as a model operator in this assimilation scheme. In CMDAS, a radiative transfer model (RTM) for atmosphrere is used as an observation operator and the brightness temperature at 23.8 GHz and 89.0 GHz are assimilated by shuffled complex evolution minimization scheme. The current CMDAS can only be applied over the ocean because of the imperfection of RTM over the land. In the original CMDAS, the sea surface temperature (SST) from ARPS is used as the lower boundary condition of the RTM. At the same time, the sea surface wind (SSW) for the RTM is set to 25 m/s at the whole domain. Those inputs are not optimum to solve the radiative transfer equation. On the other hand, SST and SSW can be estimated from the AMSR-E observation (6.925, 10.65, 23.8 and 36.5 GHz for SST, and 6.925, 10.65 and 36.5 GHz for SSW) and the level 2 products of SST and SSW are published by Japan Aerospace Expolaration Agency (JAXA). Those satellite products can give appropriate boundary conditions at optimum timing. In this work, CMDAS is improved using AMSR-E SST and SSW products in the RTM. The modified CMDAS are applied to several rainfall events around Japan. A comparison of temporal variation of rainfall among in-situ observation, ARPS simulation restarted with CMDAS result without AMSR-E SST, and with AMSR-E SST shows improvement when AMSR-E SST is fed to CMDAS. In a case of Hachijo-Island, which is located to the south of the main land of Japan, the peak time and the amount of rainfall is significantly improved with AMSR-E SST (the RMS error decreased from 3.184 to 2.128). When AMSR-E SSW products are applied to CMDAS, rainfall prediction is slightly improved but the effect is not so large as SST. In the standard algorithm for JAXA&amp;#8217;s AMSR-E SST and SSW, the values are not estimated below rainfall (regarding SST, sun-gritter angle, sea-ice, and radiation from the surface are also considered). For the missing SST/SSW, values from the nearest-time AMSR-E observation is used to fill the gap. In some case, such alternative data does not give adequate information and a result of CMDAS is not effectively improved. Some interpolation method or algorithm to estimate SST/SSW under rainy condition should be developed in future.</Abstract>
+  <Title>Improvement of Cloud Microphysics Data Assimilation System with AMSR-E Sea Surface Products</Title>
+  <Session>IN33D</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Taniguchi, K</Name><Email>taniguti@t.kanazawa-u.ac.jp</Email><Affiliations><Affiliation>Faculty of Environmental Design, Kanazawa University, Kanazawa, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Araki, Y</Name><Email>araki@hydra.t.u-tokyo.ac.jp</Email><Affiliations><Affiliation>Department of Civil Engineering, The University of Tokyo, Tokyo, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Mirza, C</Name><Email>craza@hydra.t.u-tokyo.ac.jp</Email><Affiliations><Affiliation>Department of Civil Engineering, The University of Tokyo, Tokyo, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Koike, T</Name><Email>tkoike@hydra.t.u-tokyo.ac.jp</Email></Author>
+  </Authors>
+</AGUAbstract>

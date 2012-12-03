@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN32A-03</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>8125  Evolution of the Earth</Keyword>
+    <Keyword>8149  Planetary tectonics</Keyword>
+  </Keywords>
+  <Abstract>The Geosciences Network (GEON) project is a collaboration among multiple institutions to develop a cyberinfrastructure (CI) platform in support of integrative geoscience research activities. Taking advantage of the state-of-the-art information technology resources GEON researchers are building a cyberinfrastructure designed to enable data sharing, resource discovery, semantic data integration, high-end computations and 4D visualization in an easy-to-use web-based environment. The cyberinfrastructure in GEON is required to support an inherently distributed system, since the scientists, who are users as well as providers of resources, are themselves distributed. International collaborations are a natural extension of GEON; the geoscience research requires strong international collaborations. The goals of the i-GEON activities are to collaborate with international partners and jointly build a cyberinfrastructure for the geosciences to enable collaborative work environments. International partners can participate in GEON efforts, establish GEON nodes at their universities, institutes, or agencies and also contribute data and tools to the network. Via jointly run cyberinfrastructure workshops, the GEON team also introduces students, scientists, and research professionals to the concepts of IT-based geoscience research and education. Currently, joint activities are underway with the Chinese Academy of Sciences in China, the GEO Grid project at AIST in Japan, and the University of Hyderabad in India (where the activity is funded by the Indo-US Science and Technology Forum).  Several other potential international partnerships are under consideration. iGEON is open to all international partners who are interested in working towards the goal of data sharing, managing and integration via IT-based platforms.  Information about GEON and its international activities can be found at http:www.geongrid.org/</Abstract>
+  <Title>Building an International Geosciences Network (i-GEON) for cyberinfrastructure-based Research and Education</Title>
+  <Session>IN32A</Session>
+  <Hour>11:00h</Hour>
+  <Authors>
+    <Author><Name>Seber, D</Name><Email>seber@sdsc.edu</Email><Affiliations><Affiliation>San Diego Supercomputer Center, University of California, San Diego, 9500 Gilman Drive, MC 0505, La Jolla, CA 92093, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Baru, C</Name><Email>baru@sdsc.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

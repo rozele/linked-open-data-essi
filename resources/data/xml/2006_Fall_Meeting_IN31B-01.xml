@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31B-01</Id>
+  <Keywords>
+    <Keyword>0480  Remote sensing</Keyword>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>1600  GLOBAL CHANGE</Keyword>
+    <Keyword>6309  Decision making under uncertainty</Keyword>
+  </Keywords>
+  <Abstract>NASA&apos;s Earth Science Theme is charged with implementing NASA Strategic Goal 3A to &quot;study Earth from space to advance scientific understanding and meet societal needs.&quot; In the course of meeting this objective, NASA produces research results, such as scientific observatories, research models, advanced sensor and space system technology, data active archives and interoperability technology, high performance computing systems, and knowledge products. These research results have the potential to serve society beyond their intended purpose of answering pressing Earth system science questions. NASA&apos;s Applied Sciences Program systematically evaluates the potential of the portfolio of research results to serve society by conducting projects in partnership with regional/national scale operational partners with the statutory responsibility to inform decision makers. These projects address NASA&apos;s National Applications and the societal benefit areas under the IEOS and GEOSS. Prototyping methods are used in two ways in NASA&apos;s Applied Sciences Program. The first is part of the National Applications program element, referred to as Integrated Systems Solutions (ISS) projects. The approach for these projects is to use high fidelity prototypes to benchmark the assimilation of NASA research results into our partners&apos; decision support systems. The outcome from ISS projects is a prototype system that has been rigorously tested with the partner to understand the scientific uncertainty and improved value of their modified system. In many cases, these completed prototypes are adopted or adapted for use by the operational partners. The second falls under the Crosscutting Solutions program element, referred to as Rapid Prototyping (RP) experiments. The approach for RP experiments is to use low fidelity prototypes that are low cost and quickly produced to evaluate the potential of the breadth of NASA research results to serve society. The outcome from the set of RP experiments is an evaluation of many and varied NASA research results for their potential to be candidates for further development as an ISS project. The intention is to seed the community with many creative ideas for projects that use &quot;un-applied&quot; NASA research results to serve society, such as simulations of future missions.</Abstract>
+  <Title>Evaluating the Potential of NASA&apos;s Earth Science Research Results for Improving Future Operational Systems</Title>
+  <Session>IN31B</Session>
+  <Hour>08:00h</Hour>
+  <Authors>
+    <Author><Name>Frederick, M E</Name><Email>Martin.Frederick-1@nasa.gov</Email><Affiliations><Affiliation>NASA Headquarters, SMD Earth Science Division, Washington, DC 20546 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cox, E L</Name><Email>Elbert.L.Cox@nasa.gov</Email><Affiliations><Affiliation>NASA Headquarters, SMD Earth Science Division, Washington, DC 20546 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Friedl, L A</Name><Email>lfriedl@nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

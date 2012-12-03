@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43B-07</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+  </Keywords>
+  <Abstract>NASA&apos;s GCMD is the one of the most comprehensive metadata directories for locating and accessing Earth Science data. The GCMD focuses on providing direct access to scientific data and related services that can be  used to visualize and analyze relevant data. The metadata format for describing Earth Science data, and the software behind the search and retrieval, is remarkably flexible and can be adapted for describing lunar, planetary, and astronomical data and subsequently linking these to related services. Central to the GCMD are robust hierarchies of controlled Earth Science keywords for search and retrieval. Targeted controlled vocabularies can be created or adopted for use in searching for lunar, planetary, and astronomical data sets in keeping with NASA&apos;s strategic goals.</Abstract>
+  <Title>A Flexible Data-Describing Metadata Format for Earth, Lunar, Planetary and Astronomical                           Sciences</Title>
+  <Session>IN43B</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Major, G R</Name><Email>major@gcmd.nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications, Inc., 10210 Greenbelt Road, Suite 500, Lanham, MD 20706  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Olsen, L M</Name><Email>Lola.M.Olsen@nasa.gov</Email><Affiliations><Affiliation>NASA/Global Change Master Directory, NASA Goddard Space Flight Center Code 610.2, Greenbelt, MD 20771  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Weir, H M</Name><Email>hweir@gcmd.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

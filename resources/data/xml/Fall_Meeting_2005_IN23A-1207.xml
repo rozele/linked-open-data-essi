@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN23A-1207</Id>
+  <Keywords>
+    <Keyword>0714  Clathrate</Keyword>
+    <Keyword>1615  Biogeochemical cycles, processes, and modeling</Keyword>
+    <Keyword>3004  Gas and hydrate systems</Keyword>
+    <Keyword>3022  Marine sediments: processes and transport</Keyword>
+    <Keyword>5100  PHYSICAL PROPERTIES OF ROCKS</Keyword>
+  </Keywords>
+  <Abstract>High-resolution 3D-seismic data has given new insight to the fluid flow regime at the well-documented gas-hydrate system along the northern flank of the Storegga Slide of the passive mid-Norwegian continental margin. Fluids are expelled from a widespread polygonal fault system of fine-grained, Miocene sediments of the lower Kai Formation that contribute to formation of gas hydrates in the study area. Previous work has mainly presumed a diffusive fluid flow regime above the polygonal fault system into the gas hydrate stability zone. However, 3D-seismic data indicates that migrating fluids above the polygonal fault system are focused trough imbricated small-offset fault zones in the upper stratigraphic level of the Kai Formation. Fluids seems to accumulate laterally within the lower level of the overlying Plio-Pleistocene Naust Formation, causing a small-scale dome structure with low frequency content, above the imbricated fault zones. Vertical fluid leakage originates from the extended dome structure causing fracturing in sediments throughout a ~200 m sedimentary sequence. The fluid leakage terminates within strata represented by negative amplitude anomalies located beneath a bottom-simulating reflector (BSR). Free gas in relatively porous media is deflected laterally by impermeable hydrated sediments occurring down-slope, and less permeable glacigenic sediments up-slope. At the upper termination of the fractured sediments within the Plio-Pleistocene formation, a 3 km long channel is recognized showing a geometric shape opposite to the stratigraphic deep-seated dome structure, but having the same lateral extension. The presence of vertical blowout pipes in direct proximity to the channel, indicate high pore pressure build-up. Adding to the complexity of the fluid flow system in gas hydrate settings, the channel might be a seismic artefact due to the presence of gas (pushdown), rather than a morphological feature. Due to the low organic matter content (&amp;lt; 1 %) of sediments within the Plio-Pleistocene Naust Formation, it is unlikely that production of  biogenic methane provides the localized gas pocket resulting in the inferred acoustic artefact.  Instead, deeper sources may  supply thermogenic methane, which are known to exist in sediments of the mid-Norwegian margin.</Abstract>
+  <Title>Fluid Leakages in Gas-Hydrate Systems at the Storegga Slide of the Mid-Norwegian Margin</Title>
+  <Session>IN23A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Hustoft, S</Name><Email>steinar.hustoft@ig.uit.no</Email><Affiliations><Affiliation>Department of Geology, University of Tromsoe, Dramsveien 201, Tromsoe, 9037  Norway</Affiliation></Affiliations></Author>
+    <Author><Name>Mienert, J</Name><Email>juergen.mienert@ig.uit.no</Email><Affiliations><Affiliation>Department of Geology, University of Tromsoe, Dramsveien 201, Tromsoe, 9037  Norway</Affiliation></Affiliations></Author>
+    <Author><Name>Buenz, S</Name><Email>stefan.buenz@ig.uit.no</Email></Author>
+  </Authors>
+</AGUAbstract>

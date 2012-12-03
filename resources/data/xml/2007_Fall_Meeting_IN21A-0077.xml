@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN21A-0077</Id>
+  <Keywords>
+    <Keyword>0794  Instruments and techniques</Keyword>
+    <Keyword>1895  Instruments and techniques: monitoring</Keyword>
+    <Keyword>3394  Instruments and techniques</Keyword>
+    <Keyword>4294  Instruments and techniques</Keyword>
+    <Keyword>7294  Seismic instruments and networks</Keyword>
+  </Keywords>
+  <Abstract>The self-adaptation concept is the central piece of the control theory widely and successfully used in engineering and military systems. Such a system contains a predictor and a measurer. The predictor takes initial condition and makes an initial prediction and the measurer then measures the state of a real world phenomenon. A feedback mechanism is built in that automatically feeds the measurement back to the predictor. The predictor takes the measurement against the prediction to calculate the prediction error and adjust its internal state based on the error. Thus, the predictor learns from the error and makes a more accurate prediction in the next step. By adopting the self-adaptation concept, we proposed the Self-adaptive Earth Predictive System (SEPS) concept for enabling the dynamic coupling between the sensor web and the Earth system models. The concept treats Earth System Models (ESM) and Earth Observations (EO) as integral components of the SEPS coupled by the SEPS framework. EO measures the Earth system state while ESM predicts the evolution of the state. A feedback mechanism processes EO measurements and feeds them into ESM during model runs or as initial conditions. A  feed-forward mechanism analyzes the ESM predictions against science goals for scheduling optimized/targeted observations. The SEPS framework automates the Feedback and Feed-forward mechanisms (the FF-loop). Based on open consensus-based standards, a general SEPS framework can be developed for supporting the dynamic, interoperable coupling between ESMs and EO. Such a framework can support the plug-in-and-play capability of both ESMs and diverse sensors and data systems as long as they support the standard interfaces. This presentation discusses the SEPS concept, the service-oriented architecture (SOA) of SEPS framework, standards of choices for the framework, and the implementation. The presentation also presents examples of SEPS to demonstrate dynamic, interoperable, and live coupling of ESM with the sensor web enabled by the framework.</Abstract>
+  <Title>Enabling the dynamic coupling between sensor web and Earth system models - The Self-Adaptive Earth Predictive Systems (SEPS) framework</Title>
+  <Session>IN21A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Di, L</Name><Email>ldi@gmu.edu</Email><Affiliations><Affiliation>Center for Spatial Information Science and Systems, George Mason University, 6301 Ivy Lane, Suite 620, Greenbelt, MD 20770, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Yu, G</Name><Email>gyu@gmu.edu</Email><Affiliations><Affiliation>Center for Spatial Information Science and Systems, George Mason University, 6301 Ivy Lane, Suite 620, Greenbelt, MD 20770, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Chen, N</Name><Email>nchen3@gmu.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN11B-1025</Id>
+  <Keywords>
+    <Keyword>1640  Remote sensing</Keyword>
+    <Keyword>1655  Water cycles</Keyword>
+    <Keyword>1719  Hydrology</Keyword>
+    <Keyword>6339  System design</Keyword>
+  </Keywords>
+  <Abstract>The Group on Earth Observations (GEO) consists of more than 70 countries and 40 international organizations which are working together to develop the Global Earth Observation System of Systems (GEOSS).  Since its launch in 2004, GEO has stimulated a wide range of activities related to data systems and their architecture, the development of science and technology to support observational programs, user interactions and interfaces, and capacity building.  GEO tasks directed at Water Resources Management, one of the nine GEO Societal Benefit areas, are an integral part of these developments.  They draw heavily upon the activities of the Integrated Global Water Cycle Observations (IGWCO) theme and on the activities and infrastructure provided through GEO and its committees. Within the GEO framework the water related activities have been focused on four specific tasks namely integrated data set development; information for floods, droughts and water management; water quality, and capacity building.  Currently these efforts are being facilitated by the IGWCO theme that was formed under the former Integrated Global Observing Strategy Partnership (IGOS-P).  With the dissolution of this partnership, other mechanisms, including the GEO Water Cycle Community of Practice, are being considered  as new opportunitites for coordinating the work of the theme and the water-related GEO tasks. This talk provides a description of the GEO water tasks and reviews the progress that has been made in addressing them.  It also provides a perspective on new opportunities and briefly describes some of the mechanisms, such as the Water Cycle Community of Practice, that could be expanded to coordinate a more comprehensive set of water tasks and greater community involvement.</Abstract>
+  <Title>GEO Water Cycle Activities and Plans</Title>
+  <Session>IN11B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Lawford, R</Name><Email>lawford@umbc.edu</Email><Affiliations><Affiliation>University of Manitoba, Fort Gary Campus, Winnipeg, MB R3T 2N2, Canada</Affiliation></Affiliations></Author>
+    <Author><Name>Koike, T</Name><Email>tkoike@hydra.t.u-tokyo.ac.jp</Email><Affiliations><Affiliation>University of Tokyo, School of Engineering, Bunkyo-ku, 113-8656, Tokyo, NA NA, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Ishida, C</Name><Email>ishida.chu@jaxa.jp</Email><Affiliations><Affiliation>Japan Aerospace Exploration Agency, NA, Tokyo, NA NA, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Grabs, W</Name><Email>wgrabs@wmo.int</Email></Author>
+  </Authors>
+</AGUAbstract>

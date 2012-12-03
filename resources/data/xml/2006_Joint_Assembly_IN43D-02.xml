@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43D-02</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+  </Keywords>
+  <Abstract>A common problem faced while developing metadata for scientific data archives is that of keywords.  Although keywords are an effective way for searching the resource catalogs, data archive designers may select from one  of many different controlled vocabularies to describe their holdings.  For example, in Earth Science, Climate and Forecasting (CF Convention) is a controlled vocabulary commonly used within the Modeling community. Similarly, the Global Change Master Directory (GCMD) keywords list is the convention used within the NASA Earth Science Program. The use of controlled vocabularies allows searches on the resource catalogs to be accurate and complete, but the burden of framing the precise query falls on the shoulders of the users.  The user has to know the keyword before hand in order to perform a &quot;free text&quot; search.  This might be perfectly acceptable in smaller projects where the users are specialized and have the required knowledge, but is impractical in larger projects where the users may have varied levels of domain knowledge.  One solution to this problem is the use of an ontology, where the ontology contains higher level abstract concepts and the corresponding mapping to the different controlled vocabulary terms.  This use of ontologies eliminates the barrier of entry based on domain knowledge and provides easy-to-use search capabilities to the users. In this presentation, we will describe an ontology designed and created to address this problem.  However, this ontology required re-engineering of higher level ontologies, namely the Semantic Web for Earth and Environmental Terminology (SWEET) ontologies, instead of the initial creation of an ontology.  Since the traditional methodologies for creating an ontology do not account for reengineering and reuse of higher level ontologies, we propose a new modified methodology. This presentation will describe this methodology and also explore some of the issues and challenges involved in the construction of an ontology using this approach.</Abstract>
+  <Title>Ontology Re-engineering Use Case: Extending SWEET to map Climate and Forecasting                           Vocabulary Terms</Title>
+  <Session>IN43D</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Ramachandran, R</Name><Email>rramachandran@itsc.uah.edu</Email><Affiliations><Affiliation>Information Technology and Systems Center The University of Alabama in Huntsville, 301 Sparkman Drive, Huntsville, AL 35899  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Graves, S</Name><Email>sgraves@itsc.uah.edu</Email><Affiliations><Affiliation>Information Technology and Systems Center The University of Alabama in Huntsville, 301 Sparkman Drive, Huntsville, AL 35899  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Raskin, R</Name><Email>raskin@seastar.jpl.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

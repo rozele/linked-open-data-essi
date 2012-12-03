@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN13A-1074</Id>
+  <Keywords>
+    <Keyword>0485  Science policy</Keyword>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>0594  Instruments and techniques</Keyword>
+    <Keyword>0994  Instruments and techniques</Keyword>
+  </Keywords>
+  <Abstract>NSF-owned Research Vessel Marcus G. Langseth is operated by Lamont-Doherty Earth Observatory, providing the tools for full-scale marine seismic surveys to the academic community.  Since inauguration of science operations, Langseth has successfully supported 2D and 3D seismic operations, including offshore- onshore and OBS refraction profiling A significant component of Langseths equipage is the seismic source, comprising four identical linear subarrays which can be combined in a number of configurations according to the needs of each scientific mission.  To ensure a full understanding of the acoustic levels of these sources and in order to mitigate their possible impact upon marine life through accurate determination of safety radii, an extensive program of acoustic calibration was carried out in 2007 and 2008, during Langseths shakedown  exercises. A total of 14000+ airgun array discharges were recorded in three separate locations with water depths varying from 1750  to 45 meters and at source-receiver offsets between near-zero and 17 km. The quantity of data recorded allows significant quantitative analysis of the sound levels produced by the Langseth seismic sources.  A variety of acoustic metrics will be presented and compared, including peak levels and energy-based measures such as RMS, Energy Flux Density and its equivalent, Sound Exposure Level. It is clearly seen that water depth exerts a fundamental control on received sound levels, but also that these effects can be predicted with reasonable accuracy.</Abstract>
+  <Title>Calibration of R/V Marcus G. Langseth Seismic Sources</Title>
+  <Session>IN13A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Diebold, J</Name><Email>johnd@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Tolstoy, M</Name><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Webb, S</Name><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Doermann, L</Name><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Bohenstihl, D</Name><Affiliations><Affiliation>DMEAS, N.C. State University, Raleigh, NC 27695-8208, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Nooner, S</Name><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Crone, T</Name><Affiliations><Affiliation>Lamont-Doherty Earth Observatory, 61 Rte 9W, Palisades, NY 10960, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Holmes, R C</Name></Author>
+  </Authors>
+</AGUAbstract>

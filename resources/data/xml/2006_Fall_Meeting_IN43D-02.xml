@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43D-02</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>9810  New fields</Keyword>
+  </Keywords>
+  <Abstract>Semantic Web technology is beginning to have an impact on foundational cyberinfrastructure for earth and space science.  Ontologies are being used to encode precise meanings of terms, thereby enabling application programs to access resource ontologies to determine how to use terms and when terms in different resource collections may be the same or related.  In our work, we are using semantic technologies to power virtual observatories, currently focused on the domain areas of solar-terrestrial physics. We have designed and implemented an architecture that supports access to  a distributed repository of scientific information.  The scientific data is captured in varying forms, using many instruments, from diverse locations, using different operating modes, and embodying varying (many times unstated) assumptions. We have built ontologies containing terms covering the most critical subject areas - in particular instruments, their operating modes and related properties, observatories, and earth and space science data.  Using these ontologies, our systems guide users through a workflow process aimed at helping them get data relevant to their research. Ontologies are used to filter instruments according to the type of data they can collect, existing scientific data services are used to determine time frames for which data exists, ontologies are used again to determine parameters appropriate for plotting (along with associatedrelated parameters), and finally ontologies are used to determine sensible plot types given the chosen data. We have just deployed our initial implementation and we are currently serving the CEDAR community(Coupling, Energetics and Dynamics of Atmospheric Regions) and the MSLO community (Mauna Loa Solar Observatory).</Abstract>
+  <Title>Semantic Web Cyberinfrastructure for Virtual Observatories</Title>
+  <Session>IN43D</Session>
+  <Hour>14:00h</Hour>
+  <Authors>
+    <Author><Name>McGuinness, D L</Name><Email>dlm@cs.stanford.edu</Email><Affiliations><Affiliation>McGuinness Associates, 20 Peter Coutts Circle, Stanford, CA 94305 United States</Affiliation><Affiliation>Knowledge Systems, Artificial Intelligence Lab, Stanford University, 353 Serra Mall, Stanford, CA 94305 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fox, P</Name><Email>pfox@ucar.edu</Email><Affiliations><Affiliation>HAO/ESSL/NCAR, PO Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cinquini, L</Name><Email>luca@ucar.edu</Email><Affiliations><Affiliation>SCD/CISL/NCAR, PO Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Benedict, J</Name><Email>jbenedict@mcguinnessassociates.com</Email><Affiliations><Affiliation>McGuinness Associates, 20 Peter Coutts Circle, Stanford, CA 94305 United States</Affiliation></Affiliations></Author>
+    <Author><Name>West, P</Name><Email>pwest@ucar.edu</Email><Affiliations><Affiliation>HAO/ESSL/NCAR, PO Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Garcia, J</Name><Email>jgarcia@ucar.edu</Email><Affiliations><Affiliation>HAO/ESSL/NCAR, PO Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Darnell, T</Name><Email>tdarnell@ucar.edu</Email><Affiliations><Affiliation>HAO/ESSL/NCAR, PO Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Middleton, D</Name><Email>don@ucar.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

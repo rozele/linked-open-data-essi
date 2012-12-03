@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33C-1051</Id>
+  <Keywords>
+    <Keyword>ATMOSPHERIC COMPOSITION AND STRUCTURE / Instruments and techniques</Keyword>
+    <Keyword>GLOBAL CHANGE / Remote sensing</Keyword>
+    <Keyword>ATMOSPHERIC PROCESSES / Remote sensing</Keyword>
+    <Keyword>OCEANOGRAPHY: GENERAL / Remote sensing and electromagnetic processes</Keyword>
+  </Keywords>
+  <Abstract>The Cross-Track Infrared Sounder (CrIS) together with the Advanced Technology Microwave Sounder will provide retrievals of atmospheric moisture and temperature profiles for the National Polar-orbiting Operational Environmental Satellite System (NPOESS). The NPOESS is the next generation of low Earth orbiting weather and climate satellites managed by the tri-agency Integrated Program Office, which includes the Department of Commerce, Department of Defense and the National Aeronautics and Space Administration. The CrIS is a Fourier-transform Michelson interferometer covering the spectral range of 3.9 to 15.4 microns (650 to 2550 wavenumbers) developed by ITT under contract to Northrop Grumman Aerospace Systems. The first deployment of the CrIS (Flight Model 1) is scheduled for 2010 on the NPOESS Preparatory Project (NPP) satellite, an early instrument risk reduction component of the NPOESS mission. The analysis and data results from comprehensive TVAC testing of the CrIS FM1 sensor demonstrate a very accurate radiometric and spectral calibration system. We describe instrument performance parameters, and the end-to-end plans and analysis tools for on-orbit verification of sensor characteristics and validation of the SDR radiance products.</Abstract>
+  <Title>Cross-Track Infrared Sounder Science Data Record Pre-launch Calibration and On-Orbit Validation Plans</Title>
+  <Session>IN33C</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Hagan, D E</Name><Email>denise.hagan@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Bingham, G E</Name><Email>gail.bingham@sdl.usu.edu</Email><Affiliations><Affiliation>Space Dynamics Laboratory, Logan, UT, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Predina, J</Name><Email>Joe.Predina@itt.com</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Gu, D</Name><Email>degui.gu@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Sabet-Peyman, F</Name><Email>farhang.sabet-peyman@ugc.gr</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wang, C</Name><Email>Chunming.Wang@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>De Amici, G</Name><Email>giovanni.deamici@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Plonski, M</Name><Email>Michael.plonski@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Farrow, S V</Name><Email>scott.farrow@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hohn, J</Name><Email>joseph.hohn@ngc.com</Email><Affiliations><Affiliation>Northrop Grumman Aerospace Systems, Redondo Beach, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Esplin, M</Name><Email>mark.esplin@sdl.usu.edu</Email><Affiliations><Affiliation>Space Dynamics Laboratory, Logan, UT, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Zavyalov, V</Name><Email>Vladimir.Zavyalov@sdl.usu.edu</Email><Affiliations><Affiliation>Space Dynamics Laboratory, Logan, UT, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fish, C S</Name><Email>chad.fish@sdl.usu.edu</Email><Affiliations><Affiliation>Space Dynamics Laboratory, Logan, UT, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Glumb, R</Name><Email>ronald.glumb@itt.ccom</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wells, S</Name><Email>steven.well@itt.com</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Suwinski, L</Name><Email>lawrence.suwinski@itt.com</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Strong, J</Name><Email>Joseph.strong@itt.com</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Behrens, C</Name><Email>craig.behrens@itt.com</Email><Affiliations><Affiliation>Space System Division ITT, Ft. Wayne, IN, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kilcoyne, H</Name><Email>heather.kilcoyne@noaa.gov</Email><Affiliations><Affiliation>Integrated Program Office, Silver Springs, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Feeley, J</Name><Email>janna.feeley@noaa.gov</Email><Affiliations><Affiliation>Integrated Program Office, Silver Springs, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kratz, G</Name><Email>gene_j_kratz@raytheon.com</Email><Affiliations><Affiliation>Raytheon Information Systems, Riverdale, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Tremblay, D A</Name><Email>dtremblay2004@sbcglobal.net</Email></Author>
+  </Authors>
+</AGUAbstract>

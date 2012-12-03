@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN34A-01</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Cyberinfrastructure</Keyword>
+    <Keyword>INFORMATICS / Emerging informatics technologies</Keyword>
+    <Keyword>OCEANOGRAPHY: BIOLOGICAL AND CHEMICAL / Instruments, sensors, and techniques</Keyword>
+  </Keywords>
+  <Abstract>The ability to characterize the response of small marine organisms to each other, and to their environment, is a demanding observational challenge. Small organisms live in a water reference frame, while existing cable or mooring-based observatories operate in an Earth reference frame. Thus repeated observations from a fixed system observe different populations as currents sweep organisms by the sensors. In contrast, mobile systems are typically optimized for spatial coverage rather than repeated observations of the same water volume. Lagrangian drifters track water mass, but are unable to find or reposition themselves relative to ocean features. We are developing a system capable of finding, following and observing discrete populations of marine organisms over time, leveraging a decade and a half investment in the Autonomous Ocean Sampling Network (AOSN) program. AOSN undertook the development of platforms to enable multi-platform coordinated measurement of ocean properties in the late 1990s, leading to the development of a variety of autonomous underwater vehicles (AUVs) and associated technologies, notably several glider systems, now in common use. Efforts by a number of research groups have focused on methods to employ these networked systems to observe and predict dynamic physical ocean phenomena. For example, periodic large scale field programs in Monterey Bay have progressively integrated these systems with data systems, predictive models, and web-based collaborative portals. We are adapting these approaches to follow and observe the dynamics of marine organisms. Compared to physical processes, the temporal and spatial variability of small marine organisms, particularly micro-organisms, is typical greater. Consequently, while multi-platform observations of physical processes can be coordinated via intermittent communications links from shore, biological observations require a higher degree of adaptability of the observation system in situ. This talk will describe the platform capabilities developed for such observations, the onboard intelligence for finding and observing discrete populations, and the cyberinfrastructure employed to understand and coordinate observations from shore.</Abstract>
+  <Title>Adaptive Observatories for Observing Moving Marine Organisms (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN34A</Session>
+  <Hour>1600h</Hour>
+  <Authors>
+    <Author><Name>Bellingham, J G</Name><Email>jgb@mbari.org</Email><Affiliations><Affiliation>MBARI, Moss Landing, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Scholin, C</Name><Email>scholin@mbari.org</Email><Affiliations><Affiliation>MBARI, Moss Landing, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Zhang, Y</Name><Email>yzhang@mbari.org</Email><Affiliations><Affiliation>MBARI, Moss Landing, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Godin, M A</Name><Email>godin@mbari.org</Email><Affiliations><Affiliation>MBARI, Moss Landing, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Hobson, B</Name><Email>hobson@mbari.org</Email><Affiliations><Affiliation>MBARI, Moss Landing, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Frolov, S</Name><Email>frolovs@mbari.org</Email></Author>
+  </Authors>
+</AGUAbstract>

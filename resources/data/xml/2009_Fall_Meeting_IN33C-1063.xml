@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33C-1063</Id>
+  <Keywords>
+    <Keyword>ATMOSPHERIC COMPOSITION AND STRUCTURE / Instruments and techniques</Keyword>
+    <Keyword>INFORMATICS / Temporal analysis and representation</Keyword>
+  </Keywords>
+  <Abstract>The CERES TOA broadband flux record covers almost 10 years and is an excellent dataset for climate studies. The CERES instrument will be on the upcoming NPOESS satellite platform and will continue the record. The CERES dataset provides consistent MODIS cloud and CERES flux products to the climate modeling community. In order to derive a more robust diurnally averaged flux product, CERES incorporates 3-hourly geostationary (GEO) images to derive broadband fluxes and cloud properties. The GEO derived fluxes and clouds fill the gap between CERES measurements onboard the sun-synchronous Terra orbit with a local equator crossing time of 10:30AM. Although the GEO derived fluxes and clouds are inferior to CERES and MODIS they provide the diurnal signal between CERES measurements. The GEO derived fluxes are normalized to the CERES fluxes to maintain the CERES calibration. CERES will recalibrate the 2000-2009 GEO record for the upcoming Edition 3 products to ensure climate quality fluxes. CERES calibrates the GEO satellite radiances against MODIS as the reference. The GEO MODIS equivalent radiances can then use the same cloud retrieval code. The GEO satellites do not have onboard calibration in the visible. Ray-matched GEO and MODIS radiances are regressed monthly to provide monthly gain coefficients and these are tracked over the lifetime of the satellite to monitor the degradation. The CERES edition2 GEO calibration was updated in 2-3 year increments. For this edition the complete GEO records will be calibrated. The GEO radiances will be calibrated against both Terra and Aqua MODIS radiances for consistency. The calibration gains will be validated using invariant desert sites and deep convective clouds. Progress on these activities will be presented at the meeting.</Abstract>
+  <Title>Climate Calibration of the GEO visible record for CERES Ed3 products</Title>
+  <Session>IN33C</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Bhatt, R</Name><Email>rajendra.bhatt@nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications Inc., Hampton, VA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Doelling, D R</Name><Email>david.r.doelling@nasa.gov</Email><Affiliations><Affiliation>NASA Langley Research Center, Hampton, VA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Spangenberg, D A</Name><Email>Douglas.A.Spangenberg@nasa.gov</Email><Affiliations><Affiliation>Science Systems and Applications Inc., Hampton, VA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Morstad, D</Name><Email>daniel.morstad@sdstate.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN11A-0102</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>1890  Wetlands</Keyword>
+  </Keywords>
+  <Abstract>We have recently developed a wireless sensor system for environmental monitoring. The system is based upon the sensor platform by Telos, soil moisture sensors from Decagon and our own temperature sensors. The system was deployed at the Jug Bay Wetland Sanctuary, around several nests of Eastern Box Turtles (Terrapene carolina). Conditions in the soil where turtles excavate their nests can have a profound effect on egg survival, hatchling survival and on the sex of hatchling turtles. Turtles prefer nesting in sunny areas where solar radiation provides the heat source that warms the developing embryos. Our system has provided a continuous monitoring of all these parameters over a period of several months in the summer of 2007. The data show several interesting phenomena about temperature gradients in the vicinity of the turtle nests. The deployment also served  as a validation of our second generation sensor platform, which performed remarkably well.</Abstract>
+  <Title>Turtle Nest Monitoring with Wireless Sensor Networks</Title>
+  <Session>IN11A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Szlavecz, K</Name><Email>szlavecz@jhu.edu</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Terzis, A</Name><Email>terzis@jhu.edu</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Musaloiu, R</Name><Email>razvanm@cs.jhu.edu</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Liang, C</Name><Email>cliang4@cs.jhu.edu</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cogan, J</Name><Email>joshtron@gmail.com</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Klofas, J</Name><Email>jklofas@gmail.com</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Xia, L</Name><Email>xiaxia@jhu.edu</Email><Affiliations><Affiliation>The Johns Hopkins University, Dept. of Earth and Planetary Sciences, Baltimore, MD 21218, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Swarth, C</Name><Email>rpswar@aacounty.org</Email><Affiliations><Affiliation>Jug Bay Wetlands Sanctuary, 1361 Wrighton Rd, Lothian, MD 20711, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Matthews, S</Name><Email>tortugachip@hotmail.com</Email></Author>
+  </Authors>
+</AGUAbstract>

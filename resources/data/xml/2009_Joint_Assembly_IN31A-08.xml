@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31A-08</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>1819  Geographic Information Systems</Keyword>
+  </Keywords>
+  <Abstract>This study presents a prototype of database system for managing geological data from the Skarn/Porphyry type  ore deposit. The characteristics of geological data obtained from the Skarn/Porphyry mine development were analyzed and categorized to define the schema of database system such as data fields in tables, the relationships between tables and key index fields to create query functions. The database system was also designed to maintain the digital image data for quantitatively analyzing the discontinuities along the mine tunnel routes. Finally, a prototype of effective database management system that can be used in the mining industry was developed in this study.</Abstract>
+  <Title>Development of an Effective Database Management System for the Skarn/Porphyry Type Ore Deposit</Title>
+  <Session>IN31A</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Choi, Y</Name><Email>yspower7@snu.ac.kr</Email><Affiliations><Affiliation>Department of Energy Systems Engineering, Seoul National University, Seoul, 151-744, Korea, Republic of</Affiliation></Affiliations></Author>
+    <Author><Name>Roh, T</Name><Email>realoptimist@hanmail.net</Email><Affiliations><Affiliation>Department of Energy Systems Engineering, Seoul National University, Seoul, 151-744, Korea, Republic of</Affiliation></Affiliations></Author>
+    <Author><Name>Park, H</Name><Email>hpark@snu.ac.kr</Email></Author>
+  </Authors>
+</AGUAbstract>

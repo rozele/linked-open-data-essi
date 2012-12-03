@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43C-0920</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>0599  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>Data holdings are cataloged using different mechanisms. Among them we have ontologies as well as XML based catalogs. In large, complex  holdings the amount of entries to the catalog affects the performance and size of it, thus it may not be desirable to store all entries directly. Rather, an alternative is to use object persistence and allow for the object constructors in the catalog to instantiate at run time the specific object required. Our experience has shown that Relational Databases perform the best when querying for data, given the highly optimize engine as well as the ease of use of the SQL language. This in combination with Data Access Frameworks, such as OPeNDAP, has allowed for the succesful deployment of our latest portals, such as the Earth System Grid (ESG) and the Virtual Solar Terrestial Observatory (VSTO). The purpose of this paper is to present our architecture as well as why the inportance of standardized interfaces among the components of the system.</Abstract>
+  <Title>Object Persistence within Information Systems, how Relational Databases and Data Access Frameworks interoperate with Ontology based Portals.</Title>
+  <Session>IN43C</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Garcia, J H</Name><Email>jgarcia@ucar.edu</Email><Affiliations><Affiliation>NCAR/ESSL/HAO, P.O. Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fox, P</Name><Email>pfox@ucar.edu</Email><Affiliations><Affiliation>NCAR/ESSL/HAO, P.O. Box 3000, Boulder, CO 80307 United States</Affiliation></Affiliations></Author>
+    <Author><Name>West, P</Name><Email>pwest@ucar.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

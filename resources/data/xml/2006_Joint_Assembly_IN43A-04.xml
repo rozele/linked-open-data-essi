@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN43A-04</Id>
+  <Keywords>
+    <Keyword>6225  Mars</Keyword>
+    <Keyword>6297  Instruments and techniques</Keyword>
+  </Keywords>
+  <Abstract>The atmosphere of Mars has been found to be very active. Clouds and dust devils are among the dynamic features that have been observed by spacecraft at Mars, including the Mars Exploration Rovers (MER).  These phenomena have been the subject of considerable study.  Both dust devil and cloud detection campaigns have  been conducted using the MER rovers.  Such campaigns consist of collecting a sequence of images at pre- selected fixed times and returning the data to Earth for analysis. As the phenomena are, in general rare events, the majority of images do not contain dust devils or clouds. A better understanding of atmospheric dynamics can be developed with increased observations of these dynamic phenomena.  One of the most restrictive constraints to obtaining additional observations is the limited  downlink bandwidth available.  To mitigate the effects of this constraint, we have developed a method to analyze the images onboard.  We can identify if an event of interest, in this case either a cloud or dust devil, has been captured and give such images a high downlink priority.  This method enables an increase in atmospheric monitoring time on the surface and can result in a higher density of images returned with events of interest.  Summary information on the number and type of events can be downlinked for images collected that exceed the downlink allocation, providing less detail, but additional information on the occurrence of the phenomena. The code has been integrated and tested with the MER flight software and is scheduled for upload  to the MER rovers as part of the R9.2 software upgrade.  We will describe the detection approach and testing results.  We are adapting the method to supplement ground-based analysis methods and will provide preliminary results on this endeavor.</Abstract>
+  <Title>Detection of Dynamic Features Onboard Mars Rovers</Title>
+  <Session>IN43A</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Castano, R</Name><Email>Rebecca.Castano@jpl.nasa.gov</Email><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Castano, A</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Fukunaga, A</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Chien, S</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Biesiadecki, J</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Schaffer, S</Name><Affiliations><Affiliation>Jet Propulsion Laboratory, 4800 Oak Grove Drive, Pasadena, CA 91109</Affiliation></Affiliations></Author>
+    <Author><Name>Greeley, R</Name><Affiliations><Affiliation>Department of Geological Sciences, Arizona State University Box 871404, Tempe, AZ 85287</Affiliation></Affiliations></Author>
+    <Author><Name>Whelley, P</Name><Affiliations><Affiliation>Department of Geological Sciences, Arizona State University Box 871404, Tempe, AZ 85287</Affiliation></Affiliations></Author>
+    <Author><Name>Neakrase, L</Name><Affiliations><Affiliation>Department of Geological Sciences, Arizona State University Box 871404, Tempe, AZ 85287</Affiliation></Affiliations></Author>
+    <Author><Name>Lemmon, M</Name></Author>
+  </Authors>
+</AGUAbstract>

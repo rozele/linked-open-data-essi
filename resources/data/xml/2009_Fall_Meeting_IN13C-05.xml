@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN13C-05</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Data assimilation, integration and fusion</Keyword>
+    <Keyword>INFORMATICS / Software tools and services</Keyword>
+    <Keyword>GENERAL OR MISCELLANEOUS / Instruments useful in three or more fields</Keyword>
+    <Keyword>GENERAL OR MISCELLANEOUS / Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>In recent years, advances in sensor network technology have shown great promise to revolutionize environmental data collection. Still, wide spread adoption of these systems by domain experts has been lacking, and these have remained the purview of the engineers who design them. While there are many data logging options for basic data collection in the field currently, scientists are often required to visit the deployment sites to retrieve their data and manually import it into spreadsheets. Some advanced commercial software systems do allow scientists to collect data remotely, but most of these systems only allow point-to-point access, and require proprietary hardware. Furthermore, these commercial solutions preclude the use of sensors from other manufacturers or integration with internet based database repositories and compute engines. Therefore, scientists often must download and manually reformat their data before uploading it to the repositories if they wish to share their data. &amp;lt;P&amp;gt; We present an open-source, low-cost, extensible, turnkey solution called Sensor Processing and Acquisition Network (SPAN) which provides a robust and flexible sensor network service. At the deployment site, SPAN leverages low-power generic embedded processors to integrate variety of commercially available sensor hardware to the network of environmental observation systems. By bringing intelligence close to the sensed phenomena, we can remotely control configuration and re-use, establish rules to trigger sensor activity, manage power requirements, and control the two-way flow of sensed data as well as control information to the sensors.&amp;lt;P&amp;gt; Key features of our design include (1) adoption of a hardware agnostic architecture: our solutions are compatible with several programmable platforms, sensor systems, communication devices and protocols. (2) information standardization: our system supports several popular communication protocols and data formats, and (3) extensible data support: our system works with several existing data storage systems, data models and web based services as needed by the domain experts; examples include standard MySQL databases, Sensorbase (from UCLA), as well as SPAN Cloud, a system built using Google&apos;s Application Engine that allows scientists to use Google&apos;s cloud computing cyber-infrastructure. We provide a simple, yet flexible data access control mechanism that allows groups of researchers to share their data in SPAN Cloud.&amp;lt;P&amp;gt; In this talk, we will describe the SPAN architecture, its components, our development plans, our vision for the future and results from current deployments that continue to drive the design of our system. &amp;lt;P&amp;gt;</Abstract>
+  <Title>SPAN: A Network Providing Integrated, End-to-End, Sensor-to-Database Solutions for Environmental Sciences</Title>
+  <Session>IN13C</Session>
+  <Hour>1440h</Hour>
+  <Authors>
+    <Author><Name>Benzel, T</Name><Email>tbenzel@isi.edu</Email><Affiliations><Affiliation>USC Information Sciences Institute, Marina Del Rey, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cho, Y H</Name><Email>youngcho@isi.edu</Email><Affiliations><Affiliation>USC Information Sciences Institute, Marina Del Rey, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>DeSchon, A</Name><Email>deschon@isi.edu</Email><Affiliations><Affiliation>USC Information Sciences Institute, Marina Del Rey, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Gullapalli, S</Name><Email>sridhar@isi.edu</Email><Affiliations><Affiliation>USC Information Sciences Institute, Marina Del Rey, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Silva, F</Name><Email>fabio@isi.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

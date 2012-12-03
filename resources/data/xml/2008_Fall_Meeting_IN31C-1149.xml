@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN31C-1149</Id>
+  <Keywords>
+    <Keyword>0414  Biogeochemical cycles, processes, and modeling</Keyword>
+    <Keyword>0428  Carbon cycling</Keyword>
+    <Keyword>0434  Data sets</Keyword>
+    <Keyword>0480  Remote sensing</Keyword>
+  </Keywords>
+  <Abstract>A major goal of the North American Carbon Program is to resolve uncertainties in understanding and managing the carbon cycle of North America. As carbon modeling tools become more comprehensive and spatially oriented, accurate datasets to spatially quantify carbon emissions from fire are needed, and these data resources need to be accessible to users for decision-making.  Under a new NASA Carbon Cycle Science project, Drs. Nancy French and Tyler Erickson, of the Michigan Technological University, Michigan Tech Research Institute (MTRI), are teaming with specialists with the USDA Forest Service Fire and Environmental Research Applications (FERA) team to provide information for mapping fire-derived carbon emissions to users.  The project focus includes development of a web-based system to provide spatially resolved fire emissions estimates for North America in a user-friendly environment.  The web-based Decision Support System will be based on a variety of open source technologies. The Fuel Characteristic Classification System (FCCS) raster map of fuels and MODIS-derived burned area vector maps will be processed using the Geographic Data Abstraction Library (GDAL) and OGR Simple Features Library. Tabular and spatial project data will be stored in a PostgreSQL/PostGIS, a spatially enabled relational database server. The browser-based user interface will be created using the Django web page framework to allow user input for the decision support system. The OpenLayers mapping framework will be used to provide  users with interactive maps within the browser. In addition, the data products will be made available in standard open data formats such as KML, to allow for easy integration into other spatial models and data systems.</Abstract>
+  <Title>The Wildland Fire Emissions Information System: Providing information for carbon cycle studies with open source geospatial tools</Title>
+  <Session>IN31C</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>French, N H</Name><Email>nancy.french@mtu.edu</Email><Affiliations><Affiliation>Michigan Tech Research Institute, Michigan Technological University, 3600 Green Court Suite 100, Ann Arbor, MI 48105, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Erickson, T</Name><Email>tyler.erickson@mtu.edu</Email><Affiliations><Affiliation>Michigan Tech Research Institute, Michigan Technological University, 3600 Green Court Suite 100, Ann Arbor, MI 48105, United States</Affiliation></Affiliations></Author>
+    <Author><Name>McKenzie, D</Name><Email>donaldmckenzie@fs.fed.us</Email></Author>
+  </Authors>
+</AGUAbstract>

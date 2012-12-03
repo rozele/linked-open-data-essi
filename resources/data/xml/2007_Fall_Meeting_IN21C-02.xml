@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN21C-02</Id>
+  <Keywords>
+    <Keyword>3000  MARINE GEOLOGY AND GEOPHYSICS</Keyword>
+    <Keyword>3040  Plate tectonics</Keyword>
+    <Keyword>3060  Subduction zone processes</Keyword>
+    <Keyword>8150  Plate boundary: general</Keyword>
+  </Keywords>
+  <Abstract>The international geoscience community is engaged in scientifically aligned goals to understand the fundamental  processes of crustal formation, modification and destruction at the Earth&apos;s plate boundaries through broad multi- disciplinary initiatives such as the InterRidge and InterMARGINS programs. These programs involve the collection  of unique data sets during oceanic and terrestrial expeditions and subsequent laboratory work conducted by research institutions around the globe. These international research efforts would benefit significantly if data collections maintained as national efforts could be better linked and broader access were initiated. At present there are no formal agreements within these programs for data sharing between foreign partners. A workshop was convened in May 2007, jointly sponsored and funded by MARGINS, InterMARGINS, InterRidge, Ridge2000, the US National Science Foundation, and the German project &quot;The Future Ocean&quot;, to explore current opportunities and challenges for international data exchange to support marine geoscience research broadly. Participants from 14 countries discussed technological, organizational, and cultural issues for building a global data network and agreed on a set of recommendations regarding science user needs, data documentation, data publication, metadata interoperability, and opportunities and obstacles for international data sharing. They underscored that (1) open public access to data is fundamental to verifiable scientific progress; (2) uniform best practices and standards for data acquisition, data submission to data centers, and data publication need to be developed and used routinely within the international community, facilitated by tools that automate metadata acquisition in the field and in the lab; (3) the proliferation of metadata standards needs to be minimized to achieve  a uniform approach for scientific metadata building upon the work of existing community-based projects; (4) data centers should expose their data resources via web services to enable data access through programmatic interfaces and expand options for data analysis and visualization; (5) international programs and bodies such as GEOSS, eGY, and ICSU should be leveraged to promote an initiative for a global data network; (6) a dedicated task group is needed to advance the implementation of a global data network along with special interest groups to share experience and solutions on issues concerning metadata and interfaces. Several immediate next steps were identified to initiate the implementation of these recommendations.</Abstract>
+  <Title>Building a Global Data Network for Studies of Earth Processes at the World&apos;s Plate Boundaries</Title>
+  <Session>IN21C</Session>
+  <Hour>08:20h</Hour>
+  <Authors>
+    <Author><Name>Lehnert, K A</Name><Email>lehnert@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont-Doherty Earth Observatory of Columbia University, 61 Route 9W, Palisades, NY 10964, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Carbotte, S</Name><Email>carbotte@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont-Doherty Earth Observatory of Columbia University, 61 Route 9W, Palisades, NY 10964, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Tsuboi, S</Name><Email>tsuboi@jamstec.go.jp</Email><Affiliations><Affiliation>Japan Agency for Marine-Earth Science and Technology JAMSTEC, 3173-25 Showa-machi,  Kanazawa-ku, Yokohama, 236-0001, Japan</Affiliation></Affiliations></Author>
+    <Author><Name>Weinrebe, W</Name><Email>wweinrebe@ifm-geomar.de</Email></Author>
+  </Authors>
+</AGUAbstract>

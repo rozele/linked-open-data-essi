@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN21C-1339</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Community standards</Keyword>
+    <Keyword>INFORMATICS / Data assimilation, integration and fusion</Keyword>
+    <Keyword>INFORMATICS / Uncertainty</Keyword>
+  </Keywords>
+  <Abstract>For the past three decades, airborne field studies have been an effective means for advancing fundamental understanding of tropospheric composition and transport and chemical transformation processes, critical elements in climate change and air-quality studies. Airborne observational data has unique value for the atmospheric science community in terms of elucidating detailed atmospheric chemical and/or physical processes, validating satellite measurements, and evaluating models. Compared to satellite data, airborne data provides a longer historical perspective for certain species (e.g., O3), a more extensive suite of observed species/parameters, and higher spatial resolution. One of the major challenges in using airborne data is a lack of well defined uncertainties, especially when multiple platforms and/or instruments measure the same species/parameter. The Tropospheric Airborne Measurement Evaluation Panel (TAbMEP) was established to develop objective, data driven, and systematic procedures to assess measurement uncertainties through analyses of intercomparison data. TAbMEP is comprised of measurement and modeling experts and is sponsored by the NASA MEaSUREs program through a project entitled &amp;#8220;Creating a Unified Airborne Database for Assessment and Validation of Global and Regional Atmospheric Models.&amp;#8221; Presented are the highlights of The ICARTT Field Campaign Observation Assessment Report (www-air.larc.nasa.gov) which demonstrates TAbMEP methods and results in terms of the assessed precision and best estimate bias (BEB) for ICARTT (International Consortium for Atmospheric Research on Transport and Transformation) airborne in-situ measurements. This report is based on analysis of wingtip-to-wingtip intercomparison data collected during the ICARTT airborne field campaign. The TAbMEP method provides an unbiased way to use multiple datasets (generated from multiple aircraft platform/instruments) for integrated analysis and provides Earth System Data Records (ESDR) that are useful to both the modeling and measurement communities.</Abstract>
+  <Title>Objective Assessment of Tropospheric Airborne in-situ Measurement Uncertainties</Title>
+  <Session>IN21C</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Thornhill, A</Name><Email>Amy.thornhill@nasa.gov</Email><Affiliations><Affiliation>SSAI, Hampton, VA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Chen, G</Name><Email>gao.chen@nasa.gov</Email><Affiliations><Affiliation>NASA Langley, Hampton, VA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Kleb, M M</Name><Email>mary.m.kleb@nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

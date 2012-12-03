@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN53B-1209</Id>
+  <Keywords>
+    <Keyword>2799  General or miscellaneous</Keyword>
+    <Keyword>6339  System design</Keyword>
+    <Keyword>7599  General or miscellaneous</Keyword>
+    <Keyword>7899  General or miscellaneous</Keyword>
+    <Keyword>7999  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>There are a variety of data models in the physical sciences, some of which are in overlapping domains. Each of the data models have been derived in different ways. Some have been based on formal ontologies, others on informal ontologies and others on relational schemas. An additional complication is that different international agencies have divided the physical science domains into different sub-domains leading to some confusion as to which data model to adopt. The most prevalent data models in use today are the Planetary Data System (PDS), Space Physics Archive Search and Extract (SPASE), Virtual Solar Terrestrial Observatory (VSTO), the International Virtual Observatory Alliance (IVOA) and the Global Change Master Directory (GCMD). We take a comparative look at the various data models and ask the questions: Can they be reconciled? Is it possible to have a Rosetta Model to translate between each of the models? What role can ontologies play in defining a Rosetta Model?</Abstract>
+  <Title>The Rosetta Model: Can the Different Physical Science Data Models be Reconciled?</Title>
+  <Session>IN53B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>King, T A</Name><Email>tking@igpp.ucla.edu</Email><Affiliations><Affiliation>Insitute of Geophysics and Planetary Physics/UCLA, 2835 Slichter Hall, Los Angeles, CA 90095-1567, United States</Affiliation></Affiliations></Author>
+    <Author><Name>McGuinness, D L</Name><Email>dlm@ksl.stanford.edu</Email><Affiliations><Affiliation>Stanford University, 353 Serra Hall, Stanford, CA 94305, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Walker, R J</Name><Email>rwalker@igpp.ucla.edu</Email><Affiliations><Affiliation>Insitute of Geophysics and Planetary Physics/UCLA, 2835 Slichter Hall, Los Angeles, CA 90095-1567, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Fox, P</Name><Email>pfox@ucar.edu</Email><Affiliations><Affiliation>UCAR, 1850 Table Mesa Drive, Boulder, CO 80305, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Roberts, D A</Name><Email>aaron.roberts@nasa.gov</Email><Affiliations><Affiliation>NASA/NSSDC, Code 692 NASA Goddard Space Flight Center, Greenbelt, MD 20771,</Affiliation></Affiliations></Author>
+    <Author><Name>Harvey, C</Name><Email>christopher.harvey@cesr.fr</Email></Author>
+  </Authors>
+</AGUAbstract>

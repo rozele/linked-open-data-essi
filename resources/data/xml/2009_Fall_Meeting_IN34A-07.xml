@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN34A-07</Id>
+  <Keywords>
+    <Keyword>HYDROLOGY / Precipitation-radar</Keyword>
+    <Keyword>INFORMATICS / Real-time and responsive information delivery</Keyword>
+    <Keyword>INFORMATICS / Visualization and portrayal</Keyword>
+    <Keyword>INFORMATICS / Workflow</Keyword>
+  </Keywords>
+  <Abstract>Urban flooding is responsible for the loss of life and property as well as the release of pathogens and other pollutants into the environment. Previous studies have shown that spatial distribution of intense rainfall significantly impacts the triggering and behavior of urban flooding. However, no general purpose tools yet exist for deriving rainfall data and rendering them in real-time at the resolution of hydrologic units used for analyzing urban flooding. This paper presents a new visual analytics system that derives and renders rainfall data from the NEXRAD weather radar system at the sewershed (i.e. urban hydrologic unit) scale in real-time for a Chicago stormwater management project. We introduce a lightweight Web 2.0 approach which takes advantages of scientific workflow management and publishing capabilities developed at NCSA (National Center for Supercomputing Applications), streaming data-aware semantic content management repository, web-based Google Earth/Map and time-aware KML (Keyhole Markup Language). A collection of polygon-based virtual sensors is created from the NEXRAD Level II data using spatial, temporal and thematic transformations at the sewershed level in order to produce persistent virtual rainfall data sources for the animation. Animated color-coded rainfall map in the sewershed can be played in real-time as a movie using time-aware KML inside the web browser-based Google Earth for visually analyzing the spatiotemporal patterns of the rainfall intensity in the sewershed. Such system provides valuable information for situational awareness and improved decision support during extreme storm events in an urban area. Our further work includes incorporating additional data (such as basement flooding events data) or physics-based predictive models that can be used for more integrated data-driven decision support.</Abstract>
+  <Title>Data-Driven Geospatial Visual Analytics for Real-Time Urban Flooding Decision Support</Title>
+  <Session>IN34A</Session>
+  <Hour>1730h</Hour>
+  <Authors>
+    <Author><Name>Liu, Y</Name><Email>yongliu@ncsa.uiuc.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications (NCSA), University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hill, D</Name><Email>djhill1@illinois.edu</Email><Affiliations><Affiliation>Civil and Environmental Engineering, Rutgers University, Piscataway, NJ, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Rodriguez, A</Name><Email>alejandr@ncsa.illinois.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications (NCSA), University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Marini, L</Name><Email>lmarini@ncsa.illinois.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications (NCSA), University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kooper, R</Name><Email>kooper@ncsa.illinois.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications (NCSA), University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Myers, J</Name><Email>jimmyers@ncsa.illinois.edu</Email><Affiliations><Affiliation>National Center for Supercomputing Applications (NCSA), University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wu, X</Name><Email>wenzi7@illinois.edu</Email><Affiliations><Affiliation>Civil and Environmental Engineering, University of Illinois at Urbana-Champaign, Urbana, IL, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Minsker, B S</Name><Email>minsker@uiuc.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

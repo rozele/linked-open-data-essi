@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN42A-08</Id>
+  <Keywords>
+    <Keyword>1800  HYDROLOGY</Keyword>
+    <Keyword>1819  Geographic Information Systems</Keyword>
+  </Keywords>
+  <Abstract>More frequently society is demanding that earth- and environmental-resource issues be evaluated and addressed by interdisciplinary investigators from the scientific, engineering, planning, and regulatory communities. Often these investigators are required to interact with a larger community of public stakeholders. Also, these investigators, by necessity, develop databases and models derived from disparate data sets that are often large, complex, and vary dramatically in scale and quality. The tools to facilitate the interactions of these communities of individuals have only recently garnered the appropriate sophistication to enable real-time data viewing, encoding, browsing, and modeling. At the same time,  the advent of second-generation internet, or Web 2.0, technologies found in web-based communities and hosted  services (such as social-networking, wikis, weblogs, social bookmarking, podcasts, and RSS web feeds) have fused with the more traditional two- and three-dimensional geographic information systems. This &quot;mash-up&quot; of web-based and stand-alone tools and services creates a highly interactive user environment that is favorable to real-time collaboration, community discussion, and broad public dissemination in a wide-area distributed network. These tools and services are being utilized to facilitate the investigations and conversations of scientists and other stakeholders addressing water resource sustainability issues in the desert southwestern United States. The data and models derived from these investigations are visualized using industry standard tools like ArcGIS, Google Earth, and Google Maps to enable ease-of-use by both the technical and the public stakeholder communities.</Abstract>
+  <Title>Utilizing Internet-based Community Collaboration Tools and Geobrowsers to Address Issues          of Water Resource Sustainability</Title>
+  <Session>IN42A</Session>
+  <Hour>12:05h</Hour>
+  <Authors>
+    <Author><Name>D&apos;Agnese, F A</Name><Email>frank@earthknowledge.net</Email></Author>
+  </Authors>
+</AGUAbstract>

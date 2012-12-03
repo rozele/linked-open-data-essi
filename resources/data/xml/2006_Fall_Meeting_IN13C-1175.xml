@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN13C-1175</Id>
+  <Keywords>
+    <Keyword>0458  Limnology</Keyword>
+    <Keyword>0724  Ice cores</Keyword>
+    <Keyword>3036  Ocean drilling</Keyword>
+    <Keyword>3099  General or miscellaneous</Keyword>
+    <Keyword>3699  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>Corewall is a community computing facility for logging ice, lake, sediment and hard rock cores. It is described as a Collaborative Interactive Core Analysis Environment, allowing dispersed (even international and ship-side / in-the-field) logging and interpretation on  sections of core representing Earth history. Many institutions support Corewall, including NSF. CoreNavigator is a 3D Visual Indexer of core and stratigraphic datasets, necessary because GIS systems available to researchers do not adequately display the vertical stratigraphic structure, or let users browse at will through the stratigraphy. CoreNavigator including its Google Earth extension, is likely to be a primary point of entry for the community into CoreWall. By a combination of 3D VRML and KML visualization technologies CoreNavigator indexes thousands of cores for user selection leading to a variety of actions. By clicking on visual 3D elements of CoreNavigator, users can obtain tables of integrated ready-to-use data (e.g., from dbSEABED, see web). They can also drill down into the original field notes, core photos, equipment types, lab analysis files, calibrations, etc.  They can launch applications including the Corelyzer part of Corewall. [CoreNavigator 3D VRML displays are also editable and publishable, and can have seismic, oceanography, culture objects inserted. In the Geowall environment they are a resource for education.] CoreNavigator will be demonstrated as part of Corewall. By adopting a single spatial - global approach in this way to all types of cored stratigraphic data - ice, sediment, rock sea and lake - researchers will be able to transfer their enquiries and validation exercises in questions of environmental change, across the whole Earth surface.</Abstract>
+  <Title>Spatial Indexing of Datasets for CoreWall: CoreNavigator</Title>
+  <Session>IN13C</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>MORIN, P</Name><Email>lpaul@umn.edu</Email><Affiliations><Affiliation>Limnological Research Center and the Dept. of Geology and Geophysics, University of Minnesota, Minneapolis, MN 55455 United States</Affiliation></Affiliations></Author>
+    <Author><Name>JENKINS, C</Name><Email>chris.jenkins@colorado.edu</Email><Affiliations><Affiliation>INSTAAR, University of Colorado, Boulder, CO 80309 United States</Affiliation></Affiliations></Author>
+    <Author><Name>RAO, A</Name><Email>arao@evl.uic.edu</Email><Affiliations><Affiliation>Electronic Visualization Laboratory and the Dept. of Computer Science, University of Illinois at Chicago, Chicago, IL 60607 United States</Affiliation></Affiliations></Author>
+    <Author><Name>KAMP, B</Name><Email>kamp@iagp.net</Email><Affiliations><Affiliation>Insight Access Group Partners, Ltd, Hamlet Avenue, Apple Valley, MN 55124 United States</Affiliation></Affiliations></Author>
+    <Author><Name>HIGGINS, S</Name><Email>sean@ldeo.columbia.edu</Email><Affiliations><Affiliation>Lamont Doherty Earth Observatory, Borehole Research Group, Columbia University, New York City, NY 10027 United States</Affiliation></Affiliations></Author>
+    <Author><Name>ITO, E</Name><Email>eito@umn.edu</Email><Affiliations><Affiliation>Limnological Research Center and the Dept. of Geology and Geophysics, University of Minnesota, Minneapolis, MN 55455 United States</Affiliation></Affiliations></Author>
+    <Author><Name>JOHNSON, A</Name></Author>
+  </Authors>
+</AGUAbstract>

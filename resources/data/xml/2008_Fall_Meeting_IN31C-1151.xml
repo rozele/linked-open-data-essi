@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN31C-1151</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>3270  Time series analysis</Keyword>
+    <Keyword>3360  Remote sensing</Keyword>
+  </Keywords>
+  <Abstract>The Terrestrial Observation and Prediction System (TOPS) at NASA Ames Research Center is a modeling system that generates a suite of gridded data products in near real-time that are designed to enhance management decisions related to floods, droughts, forest fires, human health, as well as crop, range, and forest production.  While these data products introduce great possibilities for assisting management decisions and informing further research, realization of their full potential is complicated by their shear volume and by the need for a necessary infrastructure for remotely browsing, visualizing, and analyzing the data. In  order to address these difficulties we have built an OGC-compliant WMS and WCS server based on an open source software stack that provides standardized access to our archive of data.  This server is built using the open source Java library GeoTools which achieves efficient I/O and image rendering through Java Advanced Imaging.  We developed spatio-temporal raster management capabilities using the PostGrid raster  indexation engine.  We provide visualization and browsing capabilities through a customized Ajax web interface derived from the kaMap project.  This interface allows resource managers to quickly assess ecosystem conditions and identify significant trends and anomalies from within their web browser without the need to download source data or install special software. Our standardized web services also expose TOPS data to a range of potential clients, from web mapping applications to virtual globes and desktop GIS packages.  However, support for managing the temporal dimension of our data is currently limited in existing software systems.  Future work will attempt to overcome this shortcoming by building time-series visualization and analysis tools that can be integrated with existing geospatial software.</Abstract>
+  <Title>Building Geospatial Web Services for Ecological Monitoring and Forecasting</Title>
+  <Session>IN31C</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Hiatt, S H</Name><Email>samhiatt@gmail.com</Email><Affiliations><Affiliation>Foundation of California State University at Monterey Bay, NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hashimoto, H</Name><Email>hirofumi.hashimoto@gmail.com</Email><Affiliations><Affiliation>Foundation of California State University at Monterey Bay, NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Melton, F S</Name><Email>fmelton@arc.nasa.gov</Email><Affiliations><Affiliation>Foundation of California State University at Monterey Bay, NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Michaelis, A R</Name><Email>amac@hyperplane.org</Email><Affiliations><Affiliation>Foundation of California State University at Monterey Bay, NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Milesi, C</Name><Email>cristina.milesi@gmail.com</Email><Affiliations><Affiliation>Foundation of California State University at Monterey Bay, NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Nemani, R R</Name><Email>rnemani@arc.nasa.gov</Email><Affiliations><Affiliation>NASA Ames Research Center, MS 242-4, Moffett Field, CA 94035, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wang, W</Name><Email>weile.wang@gmail.com</Email></Author>
+  </Authors>
+</AGUAbstract>

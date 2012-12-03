@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN14A-02</Id>
+  <Keywords>
+    <Keyword>5464  Remote sensing</Keyword>
+  </Keywords>
+  <Abstract>InSAR users have voiced interest in assessing the potential cross InSAR capability of a planned joint mission of RADARSAT-1 with its successor satellite RADARSAT-2 to be launched in spring 2007. The motivation is similar than for ESA&apos;s joint mission of ERS and ENVISAT, where both satellites follow the same ground track with a time difference of 30 min. The latter mission has seen application demonstrations for measuring coastal topography and fast ground motion with cross InSAR. Cross InSAR between RADARSAT-1 and 2 is complicated by two factors:  (i) RADARSAT-2 will have a frequency offset of 105 MHz with respect to RADARSAT-1 and (ii) RADARSAT-2 will be yaw steered while RADARSAT-1 is not. The range spectral shift associated with the frequency offset is three times larger than that between ERS-2 and ENVISAT (30 MHz frequency offset), however this disadvantage is partially offset by the considerably larger bandwidth of the RADARSAT satellites (100 MHz for RADARSAST-2). Nevertheless, the much larger spatial baseline necessary to achieve spectral overlap in range effectively translates into a smaller latitude range where conditions for cross InSAR could be met.  Decorrelation with variations of surface slope will also be more severe than for the ERS-ENVISAT case. A bigger problem, however is to achieve azimuth spectral overlap in the face of significant squint angles for the RADARSAT-1 satellite. Squint is due to a superposition of the rotational velocity of the earth surface onto the motion vector of the spacecraft (ERS-2 and ENVISAT both compensate for this effect through yaw steering, and so will RADARSAT-2). Squint angle is  about 4 degrees at the equator and goes to zero at the latitudes where the satellite turns (~80 degrees north and south). The small opening angle of the radar illumination cone (0.3 degrees) will likely limit the latitude band of natural azimuth spectral overlap to ~ few degrees off the turning latitude. This study will analyze the spectral constraints quantitatively and whether possible interferograms can capture typical geophysical signals above error level. We will further investigate whether the necessary orbit configuration (and possibly additional synchronized squint steering of RADARSAT-2) is operationally feasible. We will also look at the possibility to achieve super-resolution products from joint RADARSAT-1 and 2 data in the alternative case of fully non-overlapping azimuth and range spectra.</Abstract>
+  <Title>Feasibility study of a RADARSAT-1 and 2 cross InSAR mission to measure topography and ground deformation</Title>
+  <Session>IN14A</Session>
+  <Hour>16:15h</Hour>
+  <Authors>
+    <Author><Name>rabus, b</Name><Email>brabus@mda.ca</Email><Affiliations><Affiliation>MDA, 13800 Commerce Parkway, Richmond, BC V6V2J3 Canada</Affiliation></Affiliations></Author>
+    <Author><Name>mccardle, a</Name><Email>amcardle@rsi.ca</Email></Author>
+  </Authors>
+</AGUAbstract>

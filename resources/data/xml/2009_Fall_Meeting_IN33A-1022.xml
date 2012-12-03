@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN33A-1022</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Virtual globes</Keyword>
+  </Keywords>
+  <Abstract>Published on Memorial Day 2009, Map the Fallen is a Google Earth visualization of the 5500+ US and international soldiers that have died in Iraq and Afghanistan since 2001. In addition to providing photos, stories and links for each solider, the time-animated map visually connects hometowns to places of death. This novel way of representing casualty data brings the geographic reach and magnitude of the issue into focus together with the very personal nature of individual stories. Innovative visualizations techniques were used that illustrate the spatio-temporal nature of this information and to show the global reach and interconnectivity of this issue. Several of advanced KML techniques employed to create this engaging and performance-conscious map will be discussed during this session. These include: 1) the use of HTML iframes and javascript to minimize the KML size, and extensive cross-linking throughout content; 2) the creation of a time-animated, on-screen casualty counter; 3) the use of parabolic arcs to connect each hometown to place of death; 4) the use of concentric spirals to represent chronological data; and 5) numerous performance optimizations to ensure the 23K placemarks, 2500 screen overlays and nearly 250k line vertices performed well in Google Earth. This session will include a demonstration of the map, conceptual discussions of the techniques used, and some in-depth technical explanation of the KML code.</Abstract>
+  <Title>Visualizing spatio-temporal war casualty data in Google Earth - A case study of Map the Fallen (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN33A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Askay, S</Name><Email>alchemist@google.com</Email></Author>
+  </Authors>
+</AGUAbstract>

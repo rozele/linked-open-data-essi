@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN53B-1202</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>0845  Instructional tools</Keyword>
+    <Keyword>7223  Earthquake interaction, forecasting, and prediction</Keyword>
+  </Keywords>
+  <Abstract>The QuakeSim interdisciplinary research team has developed a federated database system, which records and provides portal-based access to a variety of geoscientific information important to the earthquake study and forecasting process. This includes fault, seismicity, and other information key to modeling earthquakes and tsunamis. Through the QuakeSim portal, scientists can discover relevant information, and access, visualize, and import data to simulation programs and other codes. This is accomplished by utilizing an inter-connected (federated) set of ontologies to describe the semantics of the information and the inter-relationships among the data. Data are recorded in source form with error estimates included, are geotagged as appropriate to specify precisely where on the globe the data were obtained, and are converted as necessary for use by scientists. Data is delivered by the use of a suite of Web Services tied to the semantic metadata (ontology) specifications. A primary goal of the QuakeTables federated database is to provide an integrated resource for simulation and modeling software, such as GeoFest and Virtual California. A key feature of QuakeTables is to allow for multiple fault interpretations, which can be tested in the models and simulations. As such, QuakeTables does not define a  standard set of faults, but allows users to select faults from standard sets, from research publications, or from user-defined attributes. At present, the system is being enhanced to include GPS and InSAR data</Abstract>
+  <Title>Ontology-based Information Management in QuakeSim</Title>
+  <Session>IN53B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Al-Ghanmi, R</Name><Email>alghanmi@usc.edu</Email><Affiliations><Affiliation>University of Southern California, USC, Los Angeles, CA 90089, United States</Affiliation></Affiliations></Author>
+    <Author><Name>McLeod, D</Name><Email>mcleod@usc.edu</Email><Affiliations><Affiliation>University of Southern California, USC, Los Angeles, CA 90089, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Grant, L</Name><Email>lgrant@uci.edu</Email><Affiliations><Affiliation>University of California, Irvine, UCI, Irvine, CA 92697, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Donnellan, A</Name><Email>andrea.donnellan@jpl.nasa.gov</Email><Affiliations><Affiliation>Jet Propulsion Laboratory/California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Parker, J</Name><Email>jay.w.parker@jpl.nasa.gov</Email><Affiliations><Affiliation>Jet Propulsion Laboratory/California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA 91109, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Pierce, M</Name><Email>mpierce@cs.indiana.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

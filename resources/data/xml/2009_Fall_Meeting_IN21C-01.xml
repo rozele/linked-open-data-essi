@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN21C-01</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Data and information discovery</Keyword>
+    <Keyword>INFORMATICS / Software tools and services</Keyword>
+    <Keyword>INFORMATICS / Virtual globes</Keyword>
+    <Keyword>PLANETARY SCIENCES: SOLAR SYSTEM OBJECTS / Moon</Keyword>
+  </Keywords>
+  <Abstract>There is a vast store of planetary geospatial data that has been collected by NASA but is difficult to access and visualize. Virtual globes have revolutionized the way we visualize and understand the Earth, but other planetary bodies including Mars and the Moon can be visualized in similar ways. Extraterrestrial virtual globes are poised to revolutionize planetary science, bring an exciting new dimension to science education, and allow ordinary users to explore imagery being sent back to Earth by planetary science satellites. The original Google Moon Web site was a limited series of maps and Apollo content. The new Moon in Google Earth feature provides a similar virtual planet experience for the Moon as we have for the Earth and Mars. We incorporated existing Clementine and Lunar Orbiter imagery for the basemaps and a combination of Kaguya LALT topography and some terrain created from Apollo Metric and Panoramic images. We also have information about the Apollo landings and other robotic landers on the surface, as well as historic maps and charts, and guided tours. Some of the first-released LROC imagery of the Apollo landing sites has been put in place, and we look forward to incorporating more data as it is released from LRO, Chandraayan-1, and Kaguya. These capabilities have obvious public outreach and education benefits, but the potential benefits of allowing planetary scientists to rapidly explore these large and varied data collections &amp;#8212; in geological context and within a single user interface &amp;#8212; are also becoming evident. Because anyone can produce additional KML content for use in Google Earth, scientists can customize the environment to their needs as well as publish their own processed data and results for others to use. Many scientists and organizations have begun to do this already, resulting in a useful and growing collection of planetary-science-oriented Google Earth layers.&lt;br /&gt;&lt;br /&gt;&lt;BR&gt;&lt;img class=&quot;jpg&quot; border=0 width=600px src=&quot;/meetings/fm09/program/images/IN21C-01_A.jpg&quot;&gt;</Abstract>
+  <Title>Visualizing Moon Data and Imagery with Google Earth</Title>
+  <Session>IN21C</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Weiss-Malik, M</Name><Email>michaelwm@google.com</Email><Affiliations><Affiliation>Google, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Scharff, T</Name><Email>ted.scharff@gmail.com</Email><Affiliations><Affiliation>NASA Ames Research Center, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Nefian, A</Name><Email>ara.nefian@west.cmu.edu</Email><Affiliations><Affiliation>NASA Ames Research Center, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Moratto, Z</Name><Email>zmoratto@gmail.com</Email><Affiliations><Affiliation>NASA Ames Research Center, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kolb, E</Name><Email>ekolb@google.com</Email><Affiliations><Affiliation>Google, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Lundy, M</Name><Email>mike.lundy@nasa.gov</Email><Affiliations><Affiliation>NASA Ames Research Center, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hancher, M</Name><Email>mdh@google.com</Email><Affiliations><Affiliation>Google, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Gorelick, N</Name><Email>gorelick@google.com</Email><Affiliations><Affiliation>Google, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Broxton, M</Name><Email>michael.broxton@nasa.gov</Email><Affiliations><Affiliation>NASA Ames Research Center, Mountain View, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Beyer, R A</Name><Email>Ross.A.Beyer@nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

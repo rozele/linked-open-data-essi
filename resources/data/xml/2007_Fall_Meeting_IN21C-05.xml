@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN21C-05</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>0599  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>Geological surveys in the USA have an estimated 2,000&#65533;3,000 databases that represent one of the largest, long- term information resources on the geology of the United States and collectively constitute a national geoscience data &quot;backbone&quot; for research and applications. An NSF-supported workshop in February, 2007, among representatives of the Association of American State Geologists (AASG) and the USGS, recommended that &quot;the nation&apos;s geological surveys develop a national geoscience information framework that is distributed, interoperable, uses open source standards and common protocols, respects and acknowledges data ownership, fosters communities of practice to grow, and develops new web services and clients.&quot; The AASG and USGS have formally endorsed the workshop recommendations and formed a joint Steering Committee to pursue  design and implementation of the Geoscience Information Network (GIN). GIN is taking a modular approach in assembling the network:  1. Agreement on open-source standards and common protocols through the use of Open Geospatial Consortium (OGC) standards.  2. A data exchange model utilizing the geoscience mark-up language GeoSciML, an OGC GML-based application.  3. A prototype data discovery tool (National Digital Catalogue &#65533; NDC) developing under the National Geological and Geophysical Data Preservation Program run by the USGS.   4. Data integration tools developed or planned by a number of independent projects. A broader NSF-sponsored workshop in March 2007 examined what direction the geoinformatics community in the  US should take towards developing a National Geoinformatics System. The final report stated that, &quot;It was clear that developing such a system should involve a partnership between academia, government, and industry that should be closely connected to the efforts of the U. S. Geological Survey and the state geological surveys&#65533;&quot; The GIN is collaborating with 1-G Europe, a coalition of 27 European geological surveys in the OneGeology initiative that is designing a continental network comparable to GIN.  GIN members are also heavily involved in the  IUGS-CGI Interoperability Working Group, and the NDC project, further ensuring the network will have broad involvement, be globally connected, and be readily accessible.</Abstract>
+  <Title>Geoscience Information Network</Title>
+  <Session>IN21C</Session>
+  <Hour>09:10h</Hour>
+  <Authors>
+    <Author><Name>Allison, M L</Name><Email>lee.allison@azgs.az.gov</Email><Affiliations><Affiliation>Arizona Geological Survey, 416 W. Congress St, #100, Tucson, AZ 85701, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Gundersen, L C</Name><Email>lgundersen@usgs.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

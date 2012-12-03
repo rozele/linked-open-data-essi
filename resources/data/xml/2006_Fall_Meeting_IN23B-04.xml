@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN23B-04</Id>
+  <Keywords>
+    <Keyword>0321  Cloud/radiation interaction</Keyword>
+    <Keyword>0360  Radiation: transmission and scattering</Keyword>
+    <Keyword>0394  Instruments and techniques</Keyword>
+    <Keyword>1640  Remote sensing</Keyword>
+    <Keyword>3359  Radiative processes</Keyword>
+  </Keywords>
+  <Abstract>The In-situ Net FLux within the AtMosphere of the Earth (INFLAME) instrument is designed to make direct measurements of the net radiative flux within the Earth&apos;s atmosphere. Deployed on an uninhabited aerial vehicle (UAV) the INFLAME instruments will record vertical profiles of net radiative flux separately for the visible and infrared streams of radiation within the atmosphere. Upon differentiation of these vertical profiles the divergence of the net flux is obtained, which combined with the atmospheric density yields the rate of radiative heating (Kelvin per day) within the atmosphere. INFLAME offers the advantage of using a Fourier Transform Spectrometer (FTS) to directly measure the net flux, thereby avoiding potentially large errors in the derived heating rate associated with differencing separate measurements of the upwelling and downwelling fluxes of radiation. INFLAME is a new project in NASA&apos;s Instrument Incubator Program (IIP). We will describe the science motivating the measurements, the historical background to the measurements, and the INFLAME instrument now under development at the NASA Langley Research Center.</Abstract>
+  <Title>INFLAME: In-situ net flux within the atmosphere of the Earth</Title>
+  <Session>IN23B</Session>
+  <Hour>14:25h</Hour>
+  <Authors>
+    <Author><Name>Mlynczak, M G</Name><Email>m.g.mlynczak@nasa.gov</Email><Affiliations><Affiliation>NASA Langley Research Center, 100 NASA Road, Hampton, VA 23681 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Johnson, D G</Name><Email>d.g.johnson@larc.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

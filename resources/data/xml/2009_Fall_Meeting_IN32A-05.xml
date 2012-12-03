@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN32A-05</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Community standards</Keyword>
+    <Keyword>ATMOSPHERIC PROCESSES / Remote sensing</Keyword>
+    <Keyword>OCEANOGRAPHY: GENERAL / Ocean optics</Keyword>
+  </Keywords>
+  <Abstract>The National Polar-orbiting Operational Environmental Satellite System (NPOESS) Program, in partnership with National Aeronautical Space Administration (NASA), will launch the NPOESS Preparatory Project (NPP), a risk reduction and data continuity mission, prior to the first operational NPOESS launch. The NPOESS Program, in partnership with Northrop Grumman Aerospace Systems, will execute the NPP Calibration and Validation (Cal/Val) program to ensure the data products comply with the requirements of the sponsoring agencies. The Visible/Infrared Imager/Radiometer Suite will produce 22 EDRs, including Imagery, cloud, aerosol, ocean, and land products. The calibration and validation plans establish science and user community leadership and participation, and demonstrated, cost-effective Cal/Val approaches. This presentation will provide an overview of the NPP Cal/Val plans for the VIIRS environmental data products.</Abstract>
+  <Title>NPOESS Preparatory Project Validation Program for the Visible/Infrared Imager/Radiometer Suite</Title>
+  <Session>IN32A</Session>
+  <Hour>1120h</Hour>
+  <Authors>
+    <Author><Name>Kopp, T</Name><Email>Thomas.J.Kopp@aero.org</Email><Affiliations><Affiliation>Aerospace Corp, Omaha, NE, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Arnone, R A</Name><Email>arnone@nrlssc.navy.mil</Email><Affiliations><Affiliation>NRL, Stennis Space Center, MS, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hutchison, K</Name><Email>keith.hutchison@ngc.com</Email><Affiliations><Affiliation>NGAS, Space Park, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Jackson, J M</Name><Email>sid.jackson@ngc.com</Email><Affiliations><Affiliation>NGAS, Space Park, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Kilcoyne, H</Name><Email>heather.kilcoyne@noaa.gov</Email><Affiliations><Affiliation>NPOESS IPO, Silver Spring, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Plonski, M</Name><Email>Michael.plonski@ngc.com</Email><Affiliations><Affiliation>NGAS, Space Park, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Reed, B</Name><Email>Bonnie.Reed@noaa.gov</Email><Affiliations><Affiliation>NPOESS IPO, Silver Spring, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Sei, A</Name><Email>A.Sei@ngc.com</Email><Affiliations><Affiliation>NGAS, Space Park, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Starr, D</Name><Email>david.starr@nasa.gov</Email><Affiliations><Affiliation>NASA GSFC, Greenbelt, MD, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Wong, E</Name><Email>E.Wong@ngc.com</Email><Affiliations><Affiliation>NGAS, Space Park, CA, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Privette, J L</Name><Email>jeff.privette@noaa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

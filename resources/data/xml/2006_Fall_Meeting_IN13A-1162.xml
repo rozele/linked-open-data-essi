@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN13A-1162</Id>
+  <Keywords>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0530  Data presentation and visualization</Keyword>
+    <Keyword>0599  General or miscellaneous</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>The Applied Sciences Program at NASA focuses on extending the results of NASA&apos;s Earth-Sun system science research beyond the science and research communities to contribute to national priority applications with societal benefits. By employing a systems engineering approach, supporting interoperable data discovery and access, and developing partnerships with federal agencies and national organizations, the Applied Sciences Program facilitates the transition from research to operations in national applications. In particular, the Applied Sciences Program identifies twelve national applications, listed at http://science.hq.nasa.gov/earth-sun/applications/, which can be best served by the results of NASA aerospace research and development of science and technologies. The ability to use and integrate NASA data and science results into these national applications results in enhanced decision support and significant socio-economic benefits for each of the applications. This paper focuses on leveraging the power of interoperability and specifically open standard interfaces in providing efficient discovery, retrieval, and integration of NASA&apos;s science research results. Interoperability (the ability to access multiple, heterogeneous geoprocessing environments, either local or remote by means of open and standard software interfaces) can significantly increase the value of NASA-related data by increasing the opportunities to discover, access and integrate that data in the twelve identified national applications (particularly in non-traditional settings). Furthermore, access to data, observations, and analytical models from diverse sources can facilitate interdisciplinary and exploratory research and analysis. To streamline this process, the NASA GeoSciences Interoperability Office (GIO) is developing the NASA Earth-Sun System Gateway (ESG) to enable access to remote geospatial data, imagery, models, and visualizations through open, standard web protocols. The gateway (online at http://esg.gsfc.nasa.gov) acts as a flexible and searchable registry of NASA-related resources (files, services, models, etc) and allows scientists, decision makers and others to discover and retrieve a wide variety of observations and predictions of natural and human phenomena related to Earth Science from NASA and other sources. To support the goals of the Applied Sciences national applications, GIO staff is also working with the national applications communities to identify opportunities where open standards-based discovery and access to NASA data can enhance the decision support process of the national applications. This paper describes the work performed to-date on that front, and summarizes key findings in terms of identified data sources and benefiting national applications. The paper also highlights the challenges encountered in making NASA-related data accessible in a cross-cutting fashion and identifies areas where interoperable approaches can be leveraged.</Abstract>
+  <Title>Leveraging Web Services in Providing Efficient Discovery, Retrieval, and Integration of NASA-Sponsored Observations and Predictions</Title>
+  <Session>IN13A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Bambacus, M</Name><Email>Myra.J.Bambacus@nasa.gov</Email><Affiliations><Affiliation>NASA Geosciences Interoperability Office, GSFC MS 610, Greenbelt, MD 20771 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Alameh, N</Name><Email>Nadine.S.Alameh.1@gsfc.nasa.gov</Email><Affiliations><Affiliation>NASA Geosciences Interoperability Office, GSFC MS 610, Greenbelt, MD 20771 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Cole, M</Name><Email>Marjorie.C.Cole.1@gsfc.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

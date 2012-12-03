@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31B-1157</Id>
+  <Keywords>
+    <Keyword>7599  General or miscellaneous</Keyword>
+    <Keyword>7899  General or miscellaneous</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>What is the best way to move data from point A to point B? That all depends on what connects the two points and what kind of data you are trying to move. Selecting the right technology requires a careful consideration of the problem, an awareness of existing solutions and knowledge of appropriate standards. When moving a solution through the design, implementation and deployment stages there are a variety of development methods. Matching the development method to the scale of the task is important. Some of the technology challenges that the science community must address overlap with our commercial counterparts. However, there are some technology challenges which are unique to science and require new and innovative approaches. Based on our experience developing solutions for NASA&apos;s Planetary Data System (PDS), Dawn Science Center, and the  Space Physics Archive Search and Extract (SPASE) project we have considerable experience in what does and does not work. We present an assessment of the adoption threshold of selected standards, technology and development methods. We will discuss how changing expectations and evolving requirements impact the effectiveness of chosen solutions.</Abstract>
+  <Title>The Buzzword Puzzle: Finding the Right Technology for the Problem</Title>
+  <Session>IN31B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>King, T A</Name><Email>tking@igpp.ucla.edu</Email><Affiliations><Affiliation>Institute of Geophysics and Planetary Physics, UCLA, 3846 Slichter Hall, Los Angeles, CA 9009-1567</Affiliation></Affiliations></Author>
+    <Author><Name>Walker, R J</Name><Email>rwalker@igpp.ucla.edu</Email><Affiliations><Affiliation>Institute of Geophysics and Planetary Physics, UCLA, 3846 Slichter Hall, Los Angeles, CA 9009-1567</Affiliation></Affiliations></Author>
+    <Author><Name>Joy, S P</Name><Email>sjoy@igpp.ucla.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN23B-1078</Id>
+  <Keywords>
+    <Keyword>0700  CRYOSPHERE</Keyword>
+  </Keywords>
+  <Abstract>GeoTIFF is an important and often requested format for raster data but challenges exist in representing remote sensing data in this format.  Challenges result from coordinate system definition differences between the GeoTIFF format and most remote sensing raster data. The Geographic Coordinate System (GCS) and the Projected Coordinate System (PCS) are necessary to geolocate raster data.  The GCS defines the coordinate values of locations (usually latitude and longitude) on a specified spheriod (i.e. a sphere or oblate ellipsoid). It defines the datum, unit of measurement and a prime meridian. One example of a GCS is WGS84. The PCS defines a map projection and the mapping of coordinate points to the x,y plane. GeoTIFF headers can define the GCS and a map projection but not a full PCS.  Most GIS software uses the GCS to define important characteristics of the PCS, in particular the projection spheroid used by the PCS. However, many remote sensing datasets use two different spheroids in their GCS and PCS definitions and thus cannot be fully represented by GeoTIFF or GIS software.  This paper discusses implications of the limitations described above, proposes possible modifications to the GeoTIFF format, and presents an imperfect solution which uses the open source GDAL and PROJ.4 utilities to create GeoTIFFs usable by GIS applications.</Abstract>
+  <Title>Using GeoTIFFs for Data Sharing: Limitations and Solutions</Title>
+  <Session>IN23B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Billingsley, B</Name><Email>brendan.billingsley@nsidc.org</Email><Affiliations><Affiliation>National Snow and Ice Data Center CIRES, 449 UCB, Boulder, CO 80309, United States</Affiliation></Affiliations></Author>
+    <Author><Name>Haran, T</Name><Email>tharan@nsidc.org</Email></Author>
+  </Authors>
+</AGUAbstract>

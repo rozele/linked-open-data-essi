@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN14A-08</Id>
+  <Keywords>
+    <Keyword>0480  Remote sensing</Keyword>
+  </Keywords>
+  <Abstract>Many of the direct influences of disturbances such as fire or insects on ecosystem function are well known. In contrast, the interactions among disturbances are less well understood. In the forests of the western United States, the interaction between bark beetle outbreaks and subsequent fires is a pressing management concern for a diverse political, economic, and ecological community but the disturbance interaction is generally unknown. For example, although conventional wisdom holds that bark beetle outbreaks will increase fire risk, limited field studies suggest the opposite may be true. To our knowledge, no study has attempted to study bark beetle - fire interactions over the entire western United States. Here, using five years (2000-2004) of manually collected aerial detection survey (ADS) polygons depicting the extent of bark beetle outbreaks and five years (2001-2005) of Moderate Resolution Imaging Spectroradiometer (MODIS) 1km fire images (MOD14), we calculated the influence of bark beetle outbreaks on one-year-lagged subsequent fire occurrence across the entire western United States. We converted the ADS polygons to raster format and co-registered all imagery to the Albers Equal Area projection. We then calculated the conditional probability of fire given bark beetle presence P(fire|bark beetles presence) and the conditional probability of fire given bark beetle absence P(fire|bark beetle absence). The presence of bark beetles increased the probability of one-year-lagged subsequent fire occurrence by 17% to 115% with an average value of 65%, strongly suggesting that bark beetle outbreaks in one year will increase the risk of fire in the next year. Key words: bark beetles, fire, disturbance interaction, conditional probability</Abstract>
+  <Title>Bark Beetle Outbreaks Increase Fire Probability in Western United States Forests</Title>
+  <Session>IN14A</Session>
+  <Hour>17:45h</Hour>
+  <Authors>
+    <Author><Name>Bisrat, S A</Name><Email>sabisrat@cc.usu.edu</Email><Affiliations><Affiliation>Department of Watershed Sciences, Utah State University, 5210 Old Main Hill, Logan, UT 84322 United States</Affiliation></Affiliations></Author>
+    <Author><Name>White, M A</Name><Email>mikew@cc.usu.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

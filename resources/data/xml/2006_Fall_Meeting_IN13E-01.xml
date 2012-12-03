@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2006 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN13E-01</Id>
+  <Keywords>
+    <Keyword>0300  ATMOSPHERIC COMPOSITION AND STRUCTURE</Keyword>
+    <Keyword>0345  Pollution: urban and regional</Keyword>
+    <Keyword>0368  Troposphere: constituent transport and chemistry</Keyword>
+    <Keyword>0520  Data analysis: algorithms and implementation</Keyword>
+    <Keyword>0525  Data management</Keyword>
+  </Keywords>
+  <Abstract>Data on atmospheric composition relevant to air quality are collected by numerous organizations through a variety of surface and based and remote sensors. The users of such data include managers, scientist and educators, also spread over the many organizations as they participate in broad programs and pursue specific projects. Emerging IS architectures, and technologies now offer the opportunity to augment the traditional end- to-end &#65533;stovepipe&apos; information systems. Standards-based data access opens the data flow for networking and leads to reuse. Modularizing data processing components encourages broader participation and software reuse by lowering the entry threshold. The use of workflow software for the creation of applications tends to at &#65533;flatten&apos; information systems by ignoring organizational boundaries. The full value of these emerging developments is hard to evaluate at this time but in principle they offer the possibilities for integrating future air quality information systems. Application examples and major impediments will be discussed.</Abstract>
+  <Title>Emerging Approaches to the Integration of Autonomous Heterogeneous Air Quality Information Systems</Title>
+  <Session>IN13E</Session>
+  <Hour>13:40h</Hour>
+  <Authors>
+    <Author><Name>Husar, R B</Name><Email>rhusar@me.wustl.edu</Email><Affiliations><Affiliation>Wshington University, 1 Brookings Drive, St. Louis, MO 63130 United States</Affiliation></Affiliations></Author>
+    <Author><Name>Scheffe, R</Name><Email>Scheffe.Rich@epamail.epa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Meeting of the Americas</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN23A-02</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Emerging informatics technologies</Keyword>
+    <Keyword>INFORMATICS / International collaboration</Keyword>
+    <Keyword>INFORMATICS / Software tools and services</Keyword>
+    <Keyword>INFORMATICS / Web Services</Keyword>
+  </Keywords>
+  <Abstract>To meet the future needs of the ever-broadening user community and address the strategic climate-water-weather issues on a national and international basis, the weather service implemented (2009FEB) the NOAA Operational Model Archive and Distribution System (NOMADS). NOMADS is designed to provide real-time and retrospective format independent access to climate, ocean and weather model data. NOMADS delivers high availability content services as part of NOAA&amp;#8217;s official real time data dissemination at its Web Operations Center (WOC) server. A goal is to foster collaborations among the research and education communities, value added content makers, and public access for science and development efforts aimed at advancing modeling and GEO-related tasks. A case in point is a project, &amp;#8220;New Uses for Global Forecasts&amp;#8221; which has benefited from cooperation between the National Weather Service and the World Bank. Mobile platforms (cell phones) are emerging as the single most powerful way to extend information and communication technology opportunities and key services to millions of people. Our goal is to increase smallholder productivity and incomes by reducing uncertainty for variables of interest of agricultural importance. In this case we use forecasts from weather service operational Global Forecast System (GFS) global model ensemble (GENS) to alert agriculture users if and when their selected weather events will occur. This process begins with forecasts from the GFS GENS model ensemble and the operational real time delivery of the model output data to high availability weather service content servers. The ability to aggregate the matrix of model output offers access to probability and calibrating information for real time decision making based on weather element event probabilities. A description of how this system framework operates and how it can be implemented using existing NOMADS content services and applications is described.</Abstract>
+  <Title>A Cell Phone Weather Alert Application for Agriculture uses from Reliable Real Time Access to High Availability NOMADS Environmental Model Data (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN23A</Session>
+  <Hour>1425h</Hour>
+  <Authors>
+    <Author><Name>Alpert, J C</Name><Email>jordan.alpert@noaa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

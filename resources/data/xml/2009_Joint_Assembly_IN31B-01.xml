@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Joint Assembly</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN31B-01</Id>
+  <Keywords>
+    <Keyword>9810  New fields</Keyword>
+  </Keywords>
+  <Abstract>The mission of the Committee on Data for Science and Technology (CODATA), established by the International  Council for Science (ICSU), is to strengthen international science for the benefit of society by promoting improved scientific and technical data management and use.  An overview of CODATA and its international activities in promoting informatics collaborations and projects will be presented, as well as some highlights from the 21st International CODATA conference, held in Kyiv, Ukraine in October 2008.</Abstract>
+  <Title>CODATA, and International Activities</Title>
+  <Session>IN31B</Session>
+  <Hour>08:00h</Hour>
+  <Authors>
+    <Author><Name>Graves, S J</Name><Email>sgraves@itsc.uah.edu</Email><Affiliations><Affiliation>CODATA Executive Committee, Committee on Data for Science and Technology, 5 Rue Auguste Vacquerie, Paris, FR 75016, France</Affiliation></Affiliations></Author>
+  </Authors>
+</AGUAbstract>

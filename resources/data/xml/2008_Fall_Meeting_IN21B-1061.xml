@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2008 Fall Meeting</Meeting>
+  <Section>Earth and Space Informatics [IN]</Section>
+  <Id>IN21B-1061</Id>
+  <Keywords>
+    <Keyword>1622  Earth system modeling</Keyword>
+    <Keyword>4255  Numerical modeling</Keyword>
+  </Keywords>
+  <Abstract>There has been a recent effort in the ocean model community to use a set of generic FORTRAN library routines for advection of scalar tracers in the ocean. In a collaborative project called Hybrid Ocean Model Environement (HOME), vastly different advection schemes (space-differencing schemes for advection equation) become available to modelers in the form of subroutine calls (kernels). In this talk we explore the possibility of utilizing ESMF data structures in wrapping these kernels so that they can be readily used in ESMF gridded components.</Abstract>
+  <Title>Utilizing Kernelized Advection Schemes in Ocean Models</Title>
+  <Session>IN21B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Zadeh, N</Name><Email>Niki.Zadeh@noaa.gov</Email><Affiliations><Affiliation>GFDL/NOAA, Princeton University Forrestal Campus, Princeton, NJ 08540,</Affiliation></Affiliations></Author>
+    <Author><Name>Balaji, V</Name><Email>V.Balaji@noaa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

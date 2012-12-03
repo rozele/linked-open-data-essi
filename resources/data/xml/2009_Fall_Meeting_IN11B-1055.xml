@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2009 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN11B-1055</Id>
+  <Keywords>
+    <Keyword>INFORMATICS / Ontologies</Keyword>
+  </Keywords>
+  <Abstract>An ontology provides semantic descriptions that are analogous to those in a dictionary, but are readable by both computers and humans. A data or service is semantically annotated when it is formally associated with elements of an ontology. The ESIP Federation Semantic Web Cluster has developed a set of ontologies to describe datatypes and data services that can be used to support automated data fusion. The service ontology includes descriptors of the service function, its inputs/outputs, and its invocation method. The datatype descriptors resemble typical metadata fields (data format, data model, data structure, originator, etc.) augmented with descriptions of the meaning of the data. These ontologies, in combination with the SWEET science ontology, enable a registered data fusion service to be chained together and implemented that is scientifically meaningful based on machine understanding of the associated data and services. This presentation describes initial results and experiences in automated data fusion.</Abstract>
+  <Title>Ontology-aided Data Fusion (&lt;i&gt;Invited&lt;/i&gt;)</Title>
+  <Session>IN11B</Session>
+  <Hour>0800h</Hour>
+  <Authors>
+    <Author><Name>Raskin, R</Name><Email>raskin@jpl.nasa.gov</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN23A-1351</Id>
+  <Keywords>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / Data presentation and visualization</Keyword>
+    <Keyword>INFORMATICS / Software tools and services</Keyword>
+    <Keyword>INFORMATICS / Visualization and portrayal</Keyword>
+  </Keywords>
+  <Abstract>Earthquake simulations produce large vector fields that raise challenging visualization issues. Prior visualization strategies have typically focused on slices and volumetric rendering of scalar fields, which limits the scope of observable phenomena. We present a new interactive glyph visualization application called &quot;GlyphSea&quot; that allows exploration of seismic velocity fields. This work draws from a large body of glyph rendering techniques to focus on time-dependent seismic vector fields. Glyphs are capable of encoding multivariate data into a concise visual representation, which can be interpreted easily. However, that they occupy a large amount of display space, a severe drawback when dealing with dense data sets. We demonstrate how shading and texturing glyphs can alleviate this issue and provide insight into the data. We show that proper shading, positioning, scaling, and context techniques reveal features of the wave fields which are not immediately noticeable through standard vector and scalar visualization approaches. Visualization is further enhanced by using screen space ambient occlusion, jitter, halos, and displacement. These techniques are flexibly interchanged with a realtime, fully interactive, cross platform software system that runs on workstations and laptops alike. Successful design decisions stemming from collaboration between domain experts in visualization and seismology highlight the substantial benefits of interactive displays.&lt;br /&gt;&lt;br /&gt;&lt;BR&gt;&lt;img class=&quot;jpg&quot; border=0 width=600px src=&quot;/meetings/fm10/program/images/IN23A-1351_A.jpg&quot;&gt;</Abstract>
+  <Title>GlyphSea: Interactive Exploration of Seismic Wave Fields Using Shaded Glyphs</Title>
+  <Session>IN23A</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>McQuinn, E</Name><Email>emcquinn@ucsd.edu</Email><Affiliations><Affiliation>University of California, San Diego, La Jolla, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Chourasia, A</Name><Email>amit@sdsc.edu</Email><Affiliations><Affiliation>San Diego Supercomputer Center, La Jolla, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Minster, J H</Name><Email>jbminster@ucsd.edu</Email><Affiliations><Affiliation>Institute of Geophysics and Planetary Physics, La Jolla, CA, USA</Affiliation></Affiliations></Author>
+    <Author><Name>Schulze, J</Name><Email>jschulze@ucsd.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

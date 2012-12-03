@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN32A-05</Id>
+  <Keywords>
+    <Keyword>0820  Curriculum and laboratory design</Keyword>
+    <Keyword>0845  Instructional tools</Keyword>
+  </Keywords>
+  <Abstract>The popularity of projects such as &#65533;Crisis in Darfur&apos; and the IPY (International Polar Year) network link show the potential of using the rich functionality of Virtual Globes for science outreach purposes.  However, the structure of outreach projects in Virtual Globes varies widely. Consider an analogy: If you pick up a science journal you immediately know where to find the contents page and what the title and cover story are meant to communicate.  That is because journals have a well defined set of norms that they follow in terms of layout and design.  Currently, science projects presented in virtual globes have, at best, weakly defined norms, there are little common structural elements beyond those imposed by the constraints of the virtual globe system.  This is not a criticism of the science community, it is to be expected since norms take time to develop for any new technology.  An example of the development of norms are pages on the web: when they first started appearing structure was unguided but over the last few years structural elements such as a left hand side navigation system and a bread crumb trail near the header have become common. In this paper I shall describe the developing norms of structure I have observed in one area of virtual globe development; Google Earth science outreach projects.  These norms include text introductions, video introductions, use of folders and overlay presentation.  I shall go on to examine how best to use these norms to build a clear and engaging outreach project and describe some cartographic best practices that we should also consider adopting as norms. I also will briefly explain why I think norms in science outreach aid creativity rather than limiting it despite the counter intuitive nature of this concept.</Abstract>
+  <Title>Science Outreach in Virtual Globes; Best Practices</Title>
+  <Session>IN32A</Session>
+  <Hour>11:20h</Hour>
+  <Authors>
+    <Author><Name>Treves, R W</Name><Email>pentadij@gmail.com</Email></Author>
+  </Authors>
+</AGUAbstract>

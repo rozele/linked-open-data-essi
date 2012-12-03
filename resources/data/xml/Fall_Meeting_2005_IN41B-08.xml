@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>Fall Meeting 2005</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN41B-08</Id>
+  <Keywords>
+    <Keyword>7594  Instruments and techniques</Keyword>
+    <Keyword>7899  General or miscellaneous</Keyword>
+    <Keyword>7999  General or miscellaneous</Keyword>
+  </Keywords>
+  <Abstract>Future NASA missions involving constellation of spacecraft (e.g. Leonardo, MAGCON), offer a unique opportunity for better coordinated scientific observations and for deeper understanding of the earth, sun, and their connections as a set of interacting systems.  Such missions also present several unique challenges to make the data system work. These include the need to integrate and assimilate data spanning multiple sensors and missions and the need to fuse and present this data to researchers in a seamless, timely and efficient manner. Advances in semantic modeling of services (includes webservices) and resources via semantic markup languages and exploitation of underlying ontologies provides a promising direction for naming services and developing interfaces, tools and middleware infrastuctures for goal-driven science operations. In our Collaborative Sun-Earth Connector (COSEC) project - we have been developing a core ontology for space science operations and have developed a middleware infrastructure that exploit such ontologies in addressing the above challenges. This talk will present our current insights and progress in developing such a system.</Abstract>
+  <Title>Semantic Modeling for Goal-driven Distributed Data Assimilation and Collaboration</Title>
+  <Session>IN41B</Session>
+  <Hour>09:45h</Hour>
+  <Authors>
+    <Author><Name>Bose, P</Name><Email>prasanta.bose@lmco.com</Email><Affiliations><Affiliation>Lockheed Martin Advanced Technology Center, O/ADBS, B252 3251 Hanover St, Palo Alto, CA 94304  United States</Affiliation></Affiliations></Author>
+    <Author><Name>Hurlburt, N</Name><Email>hurlburt@lmssal.com</Email></Author>
+  </Authors>
+</AGUAbstract>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN53B-1210</Id>
+  <Keywords>
+    <Keyword>0525  Data management</Keyword>
+    <Keyword>0545  Modeling</Keyword>
+    <Keyword>9810  New fields</Keyword>
+    <Keyword>9820  Techniques applicable in three or more fields</Keyword>
+  </Keywords>
+  <Abstract>Informal ontologies can result from the successive extraction of RDF (Resource Description Framework) from XML and then OWL (Web Ontology Language) from RDF. This two-stage extraction affords separate and distinct opportunities for the development of an integrated ontology. Working directly with RDF, resulting integrated informal ontologies are shaped heavily by relationships. The RDF-centric approach also allows inconsistencies and redundancies to be resolved. In contrast, the class/property/individual bias inherent in informal ontologies represented via OWL affords a very different, more traditional perspective for ontology integration. Using a semantic framework developed for the Global Geodynamics Project (GGP), the RDF-centric approach for ontology  integration is illustrated. And although this approach is effective and efficient on balance, the incorporation of feature-based annotations illustrates how integrated ontologies may challenge the computational completeness and decidability of the resulting representation in OWL.</Abstract>
+  <Title>Relationship-Centric Ontology Integration</Title>
+  <Session>IN53B</Session>
+  <Hour>1340h</Hour>
+  <Authors>
+    <Author><Name>Lumb, L I</Name><Email>ian@yorku.ca</Email><Affiliations><Affiliation>Earth &amp;amp; Space Science and Engineering, York University, 4700 Keele Street, Toronto, ONT M3J 1P3, Canada</Affiliation></Affiliations></Author>
+    <Author><Name>Freemantle, J R</Name><Email>james.freemantle@rogers.com</Email><Affiliations><Affiliation>Earth &amp;amp; Space Science and Engineering, York University, 4700 Keele Street, Toronto, ONT M3J 1P3, Canada</Affiliation></Affiliations></Author>
+    <Author><Name>Lederman, J I</Name><Email>jerusha@yorku.ca</Email><Affiliations><Affiliation>Earth &amp;amp; Space Science and Engineering, York University, 4700 Keele Street, Toronto, ONT M3J 1P3, Canada</Affiliation></Affiliations></Author>
+    <Author><Name>Aldridge, K D</Name><Email>keith@yorku.ca</Email></Author>
+  </Authors>
+</AGUAbstract>

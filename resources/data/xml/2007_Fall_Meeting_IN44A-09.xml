@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2007 Fall Meeting</Meeting>
+  <Section>Earth and Space Science Informatics [IN]</Section>
+  <Id>IN44A-09</Id>
+  <Keywords>
+    <Keyword>0315  Biosphere/atmosphere interactions</Keyword>
+    <Keyword>0434  Data sets</Keyword>
+    <Keyword>1853  Precipitation-radar</Keyword>
+    <Keyword>3364  Synoptic-scale meteorology</Keyword>
+    <Keyword>4262  Ocean observing systems</Keyword>
+  </Keywords>
+  <Abstract>Web Service registry, as a key infrastructural component and cornerstone for Service-Oriented-Architecture deployments, meets the critical need to register, discover, and govern available Web services that provide a promising plan to promote the online discovering and sharing of massive valuable geospatial data. The Global Earth Observation System of Systems (GEOSS) Registry System includes mechanisms to register components and have them approved by the GEO Secretariat, to register services and associate them with GEOSS-recognized standards -- and special arrangements for implementations using non-recognized approaches. A taxonomy of standard types is also proposed to assist in the discovery and classification of GEOSS service implementations. This GEOSS registry exposes Universal Description, Discovery and Integration (UDDI), OASIS ebXML-ebRS, and OpenGIS Consortium (OGC) Catalogue Service for Web (CSW) interfaces to be accessed by other applications, including GEOSS Web Portal solutions. Clearinghouse implementations can use the GEOSS registry to register and locate GEOSS catalog services as a basis for evaluation, configuration, harvest, and distributed query. The details of the system design and implementation will be presented, along with the lessons learned from this effort to promote the discovery and system integration of geospatial Web Services worldwide.</Abstract>
+  <Title>GEOSS Registry System: Enabling the Registering and Discovering of Geospatial Web Services Worldwide</Title>
+  <Session>IN44A</Session>
+  <Hour>17:42h</Hour>
+  <Authors>
+    <Author><Name>Bai, Y</Name><Email>ybai1@gmu.edu</Email><Affiliations><Affiliation>Center for Spatial Information Science and Systems, George Mason University, 6301 Ivy Ln,  STE 620, Greenbelt, MD 20770,</Affiliation></Affiliations></Author>
+    <Author><Name>Di, L</Name><Email>ldi@gmu.edu</Email><Affiliations><Affiliation>Center for Spatial Information Science and Systems, George Mason University, 6301 Ivy Ln,  STE 620, Greenbelt, MD 20770,</Affiliation></Affiliations></Author>
+    <Author><Name>Nebert, D</Name><Email>ddnebert@usgs.gov</Email><Affiliations><Affiliation>U.S. Geological Survey - Federal Geographic Data Committee, 12201 Sunrise Valley Drive, Mail Stop 590, Reston, VA 20192,</Affiliation></Affiliations></Author>
+    <Author><Name>Wei, Y</Name><Email>ywei@gmu.edu</Email></Author>
+  </Authors>
+</AGUAbstract>

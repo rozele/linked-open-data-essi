@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AGUAbstract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.agu.org/focus_group/essi/schema" xsi:schemaLocation="http://www.agu.org/focus_group/essi/schema http://www.agu.org/focus_group/essi/schema/agu.xsd">
+  <Meeting>2010 Meeting of the Americas</Meeting>
+  <Section>Earth and Space Science Informatics</Section>
+  <Id>IN13A-21</Id>
+  <Keywords>
+    <Keyword>ATMOSPHERIC COMPOSITION AND STRUCTURE / Instruments and techniques</Keyword>
+    <Keyword>COMPUTATIONAL GEOPHYSICS / Neural networks, fuzzy logic, machine learning</Keyword>
+    <Keyword>EXPLORATION GEOPHYSICS / Data processing</Keyword>
+    <Keyword>MATHEMATICAL GEOPHYSICS / Inverse theory</Keyword>
+  </Keywords>
+  <Abstract>Radio-occultation (RO) is the phenomenon in which a celestial body can be seen even under the occlusion of another celestial body. A method based on Artificial Neural Network (ANN) to retrieve temperature and humidity profiles from GPS (Global Positioning System) data is presented. This technique establishes a non-linear relationship with the meteorological variables. The bending angle and refractivity index from RO were chosen as the input vectors and temperature and vapor pressure as the output vector of a Multilayer Perceptron (MLP) designed to estimate atmospheric variables in each point of the observation placed on a Low-Earth Orbiting (LEO) satellite. The radio occultation data from German CHAMP (CHAllenging Minisatellite Payload) was from March 15, 2004 up to April 15, 2004 at the region of Brasil in the South America. The data area is between 34S up to 5N of latitude and 34E up to 73W of longitude. These retrievals were compared with the corresponding ones from the CHAMP-ISCD (CHAMP Geoscientific Research and Application), and shows that ANN is convenient and an accurate tool to get profiles until high layers of atmosphere. The conventional atmospheric observations offer a very limited space covering, particularly in the South Hemisphere, and South America, in particular. Therefore, ANN is the important and fast method to estimate moisture and temperature in the atmosphere from satellite data. Mainly above the stratosphere, where there is the high atmosphere, which is important because it contains special elements and ionized layers, and acts as the way of for satellite communications. Retrievals of satellite data are necessary due to the unique combination of high accuracy, global coverage, high vertical resolution, long-term stability and weather independent capability the technique has a wide spectrum of applications in climate monitoring, weather forecast and atmospheric research (Melbourne et al., 1994; Kursinski et al., 1997; Cintra et al., 2007 ).</Abstract>
+  <Title>GPS RADIO OCCULTATION DATA TO RETRIEVE ATMOSPHERIC PROFILES USING ARTIFICIAL NEURAL NETWORK</Title>
+  <Session>IN13A</Session>
+  <Hour>1400h</Hour>
+  <Authors>
+    <Author><Name>Cintra, R S</Name><Email>rosamgela.cintra@lac.inpe.br</Email><Affiliations><Affiliation>Laboratory of computing and mathematics application, Brazilian National Institute of Space Research, S&amp;#227;o Jos&amp;#233; dos Campos, Brazil</Affiliation></Affiliations></Author>
+    <Author><Name>Campos Velho, H F</Name><Email>haroldo@lac.inpe.br</Email><Affiliations><Affiliation>Laboratory of computing and mathematics application, Brazilian National Institute of Space Research, S&amp;#227;o Jos&amp;#233; dos Campos, Brazil</Affiliation></Affiliations></Author>
+    <Author><Name>da Silva, J S</Name><Email>dem&#237;sio@lac.inpe.br</Email></Author>
+  </Authors>
+</AGUAbstract>
