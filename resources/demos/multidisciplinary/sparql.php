@@ -7,7 +7,7 @@ $prefixes = array(
 	"swc" => "http://data.semanticweb.org/ns/swc/ontology#",
 	"swrc" => "http://swrc.ontoware.org/ontology#",
 	"owl" => "http://www.w3.org/2002/07/owl#",
-	"dc" => "http://purl.org/dc/terms/",
+	"dcterms" => "http://purl.org/dc/terms/",
 	"xsd" => "http://www.w3.org/2001/XMLSchema#",
 	"tw" => "http://tw.rpi.edu/schema/",
 	"foaf" => "http://xmlns.com/foaf/0.1/",
@@ -54,6 +54,24 @@ function sparqlSelect($query, $endpoint)
 	 $content = curl_exec($curl);
 	 curl_close($curl);
 	 return json_decode($content, true);
+}
+
+/**
+ * Converts a PHP object containing SPARQL results to a simple array
+ * @param string $results SPARQL results object created from SPARQL JSON response
+ * @return a PHP array containing the results (without datatypes)
+ */
+function sparqlToArray($results)
+{
+	$array = array();
+	foreach($results['results']['bindings'] as $i => $binding)
+	{
+		$element = array();
+		foreach($binding as $key => $obj)
+			$element[$key] = $obj["value"];
+		$array[] = $element;
+	}
+	return $array;
 }
 
 /**

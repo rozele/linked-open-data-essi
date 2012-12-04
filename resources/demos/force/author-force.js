@@ -1,15 +1,15 @@
-var w = 5000,
-    h = 2500,
+var w = 16000,
+    h = 8000,
     fill = d3.scale.category20();
 
 var vis = d3.select("#chart").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("keywords.json", function(json) {
+d3.json("authors.json", function(json) {
   var force = d3.layout.force()
-      .charge(-100)
-      .linkDistance(25)
+      .charge(-150)
+      .linkDistance(15)
       .nodes(json.nodes)
       .links(json.links)
       .size([w, h])

@@ -2,7 +2,7 @@
 
 require_once("sparql.php");
 
-$endpoint = "http://aquarius.tw.rpi.edu:8891/sparql";
+$endpoint = "http://aquarius.tw.rpi.edu:8890/sparql";
 $graph = "http://essi-lod.org/instances/";
 $query = getPrefixes() .
        "select ?s1 ?s2 (count(?person) as ?count) " .
@@ -22,6 +22,8 @@ $query = getPrefixes() .
        "}" .
        "group by ?s1 ?s2 " .
        "order by desc(?count)";
+
+echo $query;
 
 function getKey($value, $array)
 {
@@ -56,7 +58,7 @@ foreach ($results["results"]["bindings"] as $i => $binding)
 		$nodeArray[] = array( "name" => $section2, "group" => count($sections) - 1 );
 	}
 	else $id2 = getKey($section2, $sections);
-	$val = round(intval($binding["count"]["value"]) / 2000) ;
+	$val = round(intval($binding["count"]["value"]) / 10000) ;
 	if ($val > 0)
 	{
 		$edgeArray[] = array( "source" => $id1, "target" => $id2, "value" => $val );
