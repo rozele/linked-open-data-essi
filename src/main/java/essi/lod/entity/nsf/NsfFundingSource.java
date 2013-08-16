@@ -26,8 +26,8 @@ import essi.lod.util.Namespaces;
  */
 public class NsfFundingSource {
 	
-	private String _fundingID = "";
-    private String _nsfDivision = "";
+	private String _fundingID;
+    private String _nsfDivision;
     private Vector <String> _projectIDs = new Vector <String> ();
     
 	/**
@@ -44,7 +44,7 @@ public class NsfFundingSource {
 	 * Method to create an id for an existing NSF Funding Source
 	 * @param index an integer index to use in the id
 	 */
-	private void createID (int index) { _fundingID = Namespaces.essi + "NSF_Funding_Source_" + index; }
+	private void createID (int index) { _fundingID = Namespaces.aws + "NSF/FundingSource/" + index; }
 	
 	/**
 	 * Method to set an id for an existing person

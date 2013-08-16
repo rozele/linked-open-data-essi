@@ -53,7 +53,7 @@ public class Person {
 	 * Method to create an id for an existing person
 	 * @param index an integer index to use in the id
 	 */
-	public void createID(int index) { _id = Namespaces.essi + "NSF_Person_" + index; }
+	public void createID(int index) { _id = Namespaces.aws + "NSF/Person/" + index; }
 	
 	/**
 	 * Method to set an id for an existing person

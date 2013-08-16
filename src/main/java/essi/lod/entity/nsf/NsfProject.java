@@ -79,7 +79,7 @@ public class NsfProject {
 	 * Method to create an id for an existing NSF Project
 	 * @param index an integer index to use in the id
 	 */
-	private void createID (int index) { _id = Namespaces.essi + "NSF_Project_" + index; }
+	private void createID (int index) { _id = Namespaces.aws + "NSF/Project/" + index; }
 	
 	/**
 	 * Method to set an id for an existing project

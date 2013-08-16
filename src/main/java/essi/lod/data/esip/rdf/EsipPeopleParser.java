@@ -89,7 +89,11 @@ public class EsipPeopleParser extends DefaultHandler {
       if ( name.equals("surname") ) { this.lastName = d; }
       if ( name.equals("mbox") ) { this.mbox.add(d); }
       if ( name.equals("Description") ) {
-    	  this.p = new Person ( this.firstName, this.lastName, "", this.mbox.get(0), "");
+    	  if ( this.mbox.size() > 0 ) {
+    		  this.p = new Person ( this.firstName, this.lastName, "", this.mbox.get(0), "");
+    	  } else {
+    		  this.p = new Person ( this.firstName, this.lastName, "", null, "");
+    	  }
     	  this.p.setID( this.personID );
     	  for (int i=1; i<this.mbox.size(); i++) { p.addEmail(this.mbox.get(i)); }
     	  this.esipPeople.add( p );

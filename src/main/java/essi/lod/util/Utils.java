@@ -121,6 +121,8 @@ public class Utils {
 		sw.write("		   xmlns:aos=\"" + Namespaces.aos + "\"\n");
 		sw.write("		   xmlns:aot=\"" + Namespaces.aot + "\"\n");
 		sw.write("		   xmlns:agu=\"" + Namespaces.agu + "\"\n");
+		sw.write("         xmlns:projectFunding=\"" + Namespaces.projectFunding + "\"\n");
+		sw.write("         xmlns:umbel=\"" + Namespaces.umbel + "\"\n");
 		sw.write("         xml:base=\"" + Namespaces.essi + "\">\n");
 		return sw.toString();
 	}

@@ -44,4 +44,10 @@ public class Namespaces {
 	public static String aot = "http://purl.org/ao/types/";
 	public static String aocore = "http://purl.org/ao/core/";
 	public static String agu = "http://agu.org/schema/";
+	public static String projectFunding = "http://vocab.ox.ac.uk/projectfunding#";
+	public static String umbel = "http://umbel.org/umbel/sc/";
+	
+	// AWS for ESIP Testbed Project - this is a static AWS Elastic IP
+	public static String aws = "http://ec2-54-225-124-3.compute-1.amazonaws.com/"; 	
+	
 }

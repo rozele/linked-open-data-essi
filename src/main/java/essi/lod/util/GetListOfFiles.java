@@ -7,6 +7,8 @@ public class GetListOfFiles {
   
   Vector <String> files = new Vector <String> ();
 
+  public void clear () { files.clear(); }
+  
   public Vector <String> Process ( File aFile ) {
    
     if ( aFile.isFile() ) { files.add( aFile.toString() ); }

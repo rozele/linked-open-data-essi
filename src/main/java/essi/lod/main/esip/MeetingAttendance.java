@@ -95,13 +95,17 @@ public class MeetingAttendance {
 		    int counter = 0; 
 		    while ( (strLine = br.readLine()) != null )   {
 		      if ( counter != 0 ) { // ignore the first line (header)
+		    	  
+		    	if ( strLine.contains("mikecamponovo@gmail.com") ) {
+		    		System.out.println(strLine);
+		    	}
 		        parts = strLine.split(",");
-		        firstName = parts[2];
-		        lastName = parts[3];
-		        affiliation = parts[5];
+		        firstName = parts[0];
+		        lastName = parts[1];
+		        affiliation = parts[2];
 		        affiliation = affiliation.replace("\"", ""); // some affiliations in original ESIP data have erroneous " values
-		        emailAddress = parts[14];
-		        meeting = parts[15];
+		        emailAddress = parts[3];
+		        meeting = parts[4];
 		        
 		        // create a new person object
 		        Person p = new Person(firstName, lastName, affiliation, emailAddress, meeting);

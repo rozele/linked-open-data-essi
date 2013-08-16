@@ -72,7 +72,7 @@ public class FOAF {
       Vector <String> emailAddresses = person.getEmail();
       
 	  str.append( "  <rdf:Description rdf:about=\"" + person.getID() + "\"> \n" );
-	  str.append( "	   <rdf:type rdf:resource=\"&foaf;Person\" /> \n");
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.foaf + "Person\" /> \n");
 	  str.append( "    <foaf:name>" + person.getFirstName() + " " + person.getLastName() + "</foaf:name> \n" );
 	  str.append( "    <foaf:firstName>" + person.getFirstName() + "</foaf:firstName> \n" );
 	  str.append( "    <foaf:surname>" + person.getLastName()+ "</foaf:surname> \n" );	
@@ -100,7 +100,7 @@ public class FOAF {
       Vector <String> emailAddresses = person.getEmail();
       
 	  str.append( "  <rdf:Description rdf:about=\"" + person.getID() + "\"> \n" );
-	  str.append( "	   <rdf:type rdf:resource=\"&foaf;Person\" /> \n");
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.foaf + "Person\" /> \n");
 	  str.append( "    <foaf:name>" + person.getFirstName() + " " + person.getLastName() + "</foaf:name> \n" );
 	  str.append( "    <foaf:firstName>" + person.getFirstName() + "</foaf:firstName> \n" );
 	  str.append( "    <foaf:surname>" + person.getLastName()+ "</foaf:surname> \n" );	
@@ -133,7 +133,7 @@ public class FOAF {
 		if ( !key.equals("") ) {
 
 	      str.append( "  <rdf:Description rdf:about=\"" + Namespaces.essi + "ESIP_Organization_" + index + "\"> \n" );	  
-	      str.append( "    <rdf:type rdf:resource=\"&foaf;Organization\" /> \n" );
+	      str.append( "    <rdf:type rdf:resource=\"" + Namespaces.foaf + "Organization\" /> \n" );
 	      str.append( "    <foaf:name>" + Utils.cleanXml(key) + "</foaf:name> \n" );
 	      people = orgs.get(key);
 	      for ( int i=0; i<people.size(); i++ ) { 

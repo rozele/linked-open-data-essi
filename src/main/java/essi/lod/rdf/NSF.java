@@ -18,6 +18,8 @@ package essi.lod.rdf;
 
 import java.util.Vector;
 
+import essi.lod.util.Namespaces;
+
 public class NSF {
 	
 	/**
@@ -43,8 +45,8 @@ public class NSF {
 	  StringBuilder str = new StringBuilder();      
 	  
 	  str.append( "  <rdf:Description rdf:about=\"" + projectID + "\">" + newLine );
-	  str.append( "	   <rdf:type rdf:resource=\"&projectFunding;Project\"/>" + newLine );
-	  str.append( "	   <rdf:type rdf:resource=\"&umbel;ResearchProject\"/>" + newLine );
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.projectFunding + "Project\"/>" + newLine );
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.umbel + "ResearchProject\"/>" + newLine );
 	  str.append( "    <projectFunding:hasPrincipalInvestigator rdf:resource=\"" + principalInvestigator + "\"/>" + newLine );
 
 	  // the program ID may not be available - not all NSF xml files have this field populated
@@ -90,7 +92,7 @@ public class NSF {
 	  StringBuilder str = new StringBuilder();      
 	 
 	  str.append( "  <rdf:Description rdf:about=\"" + fundingID + "\">" + newLine );
-	  str.append( "	   <rdf:type rdf:resource=\"&projectFunding;FundingBody\"/>" + newLine );
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.projectFunding + "FundingBody\"/>" + newLine );
 	  
 	  for ( int i=0; i<projectIDs.size(); i++ ) {
 		str.append( "    <projectFunding:funds rdf:resource=\"" + projectIDs.get(i) + "\"/>" + newLine );  
@@ -116,7 +118,7 @@ public class NSF {
 	  StringBuilder str = new StringBuilder();      
 	 
 	  str.append( "  <rdf:Description rdf:about=\"" + programID + "\">" + newLine );
-	  str.append( "	   <rdf:type rdf:resource=\"&tw;Program\"/>" + newLine );	  
+	  str.append( "	   <rdf:type rdf:resource=\"" + Namespaces.tw + "Program\"/>" + newLine );	  
 	  str.append( "    <dc:description " + stringType + ">" + programName + "</dc:description>" + newLine );
 	  str.append( "  </rdf:Description>  \n" );
 		  		  

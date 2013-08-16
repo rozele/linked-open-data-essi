@@ -8,14 +8,30 @@ import essi.lod.entity.nsf.*;
 import essi.lod.rdf.NSF;
 import essi.lod.util.FileWrite;
 import essi.lod.rdf.FOAF;
+import essi.lod.util.Utils;
 
 public class Nsf2RDF { 
+	
+	private String createFullRDF ( String input ) 
+	{
+		String rdf = Utils.writeRdfHeader();
+		rdf = rdf + input;
+		rdf = rdf + Utils.writeRdfFooter();
+		return rdf;
+	}
 	
 	public static void main (String[] args) {
 	
 		// inputs
 		String xmlDir = args[0];
 		String outputDir = args[1];
+				
+		Nsf2RDF nsf = new Nsf2RDF ();
+		nsf.createRDF( xmlDir, outputDir );
+		
+	}
+	
+	public void createRDF( String xmlDir, String outputDir ) {
 		
 		// file writer
 		FileWrite fw = new FileWrite ();
@@ -72,7 +88,7 @@ public class Nsf2RDF {
 
 				// if the program code doesn't exist in the data (it is not consistently reported)
 				// then don't bother checking for it's existence in our list of programs
-				if ( !program.getProgramCode().equals("") ) {
+				if ( program.getProgramCode() != null ) {
 					if ( !program.exists( programs ) ) {
 						programIndex++;
 						programs.add( program );
@@ -82,7 +98,7 @@ public class Nsf2RDF {
 				
 				// if the funding source doesn't exist in the data (it is not consistently reported)
 				// then don't bother checking for it's existence in our list of funding sources
-				if ( !fs.getDivisionName().equals("") ) {
+				if ( fs.getDivisionName() != null ) {
 					// if the funding source does exist then a link to the project will be added
 					if ( !fs.exists( fundingSources, project.getID() ) ) {
 						sourceIndex++;
@@ -97,32 +113,32 @@ public class Nsf2RDF {
 		
 		// Output RDF/XML
 		xmlFiles = null;
-		//System.out.println("There are " + people.size() + " people.");
-		//System.out.println("There are " + programs.size() + " NSF Programs.");
-		//System.out.println("There are " + projects.size() + " NSF Projects.");
-		//System.out.println("There are " + fundingSources.size() + " NSF Funding Sources.");
+		System.out.println("There are " + people.size() + " people.");
+		System.out.println("There are " + programs.size() + " NSF Programs.");
+		System.out.println("There are " + projects.size() + " NSF Projects.");
+		System.out.println("There are " + fundingSources.size() + " NSF Funding Sources.");
 		NSF nsf = new NSF ();
 		for ( int i=0; i<fundingSources.size(); i++ ) {
 			NsfFundingSource fs = fundingSources.get(i);
 			String[] parts = fs.getID().split("/");
 			String fname = parts[parts.length-1] + ".rdf";
-			String rdf = nsf.writeFundingBody(fs.getID(), fs.getProjects(), fs.getDivisionName());
+			String rdf = createFullRDF( nsf.writeFundingBody(fs.getID(), fs.getProjects(), fs.getDivisionName()) );
 			fw.newFile(outputDir + "FundingSources/" + fname, rdf);
 		}
 		for ( int i=0; i<projects.size(); i++ ) {
 			NsfProject project = projects.get(i);
 			String[] parts = project.getID().split("/");
 			String fname = parts[parts.length-1] + ".rdf";
-			String rdf = nsf.writeProject(project.getID(), 
+			String rdf = createFullRDF( nsf.writeProject(project.getID(), 
 					project.getPIid(), project.getAwardID(), project.getStartDate(), 
-					project.getEndDate(), project.getAbstract(), project.getProgramID());
+					project.getEndDate(), project.getAbstract(), project.getProgramID()) );
 			fw.newFile(outputDir + "Projects/" + fname, rdf);
 		}
 		for ( int i=0; i<programs.size(); i++ ) {
 			NsfProgram program = programs.get(i);
 			String[] parts = program.getID().split("/");
 			String fname = parts[parts.length-1] + ".rdf";
-			String rdf = nsf.writeProgram(program.getID(), program.getProgramName());
+			String rdf = createFullRDF( nsf.writeProgram(program.getID(), program.getProgramName()) );
 			fw.newFile(outputDir + "Programs/" + fname, rdf);
 		}
 		for ( int i=0; i<people.size(); i++ ) {
@@ -130,7 +146,7 @@ public class Nsf2RDF {
 			Person p = people.get(i);
 			String[] parts = p.getID().split("/");
 			String fname = parts[parts.length-1] + ".rdf";
-			String rdf = foaf.writePerson(p);
+			String rdf = createFullRDF( foaf.writePerson(p) );
 			fw.newFile(outputDir + "People/" + fname, rdf);
 		}
 		

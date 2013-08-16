@@ -45,7 +45,7 @@ public class Person {
 		_firstName = firstName;
 		_lastName = lastName;
 		_affiliations.add( affiliation );
-		_emailAddresses.add( emailAddress );
+		if ( emailAddress != null ) { _emailAddresses.add( emailAddress ); }
 		_meetingsAttended.add( meeting );
 	}
 	
@@ -53,7 +53,7 @@ public class Person {
 	 * Method to create an id for an existing person
 	 * @param index an integer index to use in the id
 	 */
-	public void createID(int index) { _id = Namespaces.essi + "ESIP_Person_" + index; }
+	public void createID(int index) { _id = Namespaces.aws + "ESIP/Person/" + index; }
 	
 	/**
 	 * Method to set an id for an existing person

@@ -40,8 +40,12 @@ public class NsfData extends DefaultHandler {
     String _endDate;
     String _awardID;
     String _title;
-    String _piFirstName;
-    String _piLastName;
+    
+    // there are cases where the NSF data does not contain the PI name
+    // let's equate these to an "Unknown" person
+    String _piFirstName = "Unknown";
+    String _piLastName = "Unknown";
+    
     String _email;
     String _affiliation;
     String _programName;

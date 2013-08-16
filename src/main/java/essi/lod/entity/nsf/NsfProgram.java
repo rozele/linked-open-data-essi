@@ -26,9 +26,9 @@ import essi.lod.util.Namespaces;
  */
 public class NsfProgram {
 	
-	private String _programName = "";
-    private String _programCode = "";
-    private String _id = "";
+	private String _programName;
+    private String _programCode;
+    private String _id;
     
 	/**
 	 * Construct NSF Program
@@ -46,7 +46,7 @@ public class NsfProgram {
 	 * Method to create an id for an existing NSF Program
 	 * @param index an integer index to use in the id
 	 */
-	private void createID (int index) { _id = Namespaces.essi + "NSF_Program_" + index; }
+	private void createID (int index) { _id = Namespaces.aws + "NSF/Program/" + index; }
 	
 	/**
 	 * Method to set an id for an existing person

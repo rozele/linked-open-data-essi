@@ -52,8 +52,9 @@ public enum Namespace {
 	sections ("http://data.agu.org/sections/"),
 	people ("http://data.agu.org/people/"),
 	organizations ("http://data.agu.org/organization/"),
-	projectFunding ("http://vocab.ox.ac.uk/projectfunding"),
+	projectFunding ("http://vocab.ox.ac.uk/projectfunding#"),
 	umbel ("http://umbel.org/umbel/sc/"),
+	aws ("http://ec2-54-225-124-3.compute-1.amazonaws.com/"), // AWS for ESIP Testbed project - Elastic IP
 	keywords ("http://data.agu.org/keywords/");
 
 	private String _uri;
