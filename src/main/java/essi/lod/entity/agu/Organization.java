@@ -16,16 +16,16 @@
  */
 package essi.lod.entity.agu;
 
-import java.util.Iterator;
-import java.util.List;
+//import java.util.Iterator;
+//import java.util.List;
 
 //import com.google.code.geocoder.Geocoder;
 //import com.google.code.geocoder.model.*;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.geonames.Toponym;
-import org.geonames.WebService;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+//import org.geonames.Toponym;
+//import org.geonames.WebService;
 
 /**
  * Organization parser
@@ -34,18 +34,18 @@ import org.geonames.WebService;
  */
 public class Organization 
 {
-	private static Log log = LogFactory.getLog(Organization.class);
+//	private static Log log = LogFactory.getLog(Organization.class);
 	
 	private String _org;
 //	private GeocoderResult _geocode;
 //	private GeocoderGeometry _geometry;
-	private String _geonames;
-	private boolean googled;
+//	private String _geonames;
+//	private boolean googled;
 	
 	public Organization(String orgString)
 	{
 		_org = orgString;
-		googled = false;
+//		googled = false;
 	}
 	
 //	public LatLng getCoordinates()

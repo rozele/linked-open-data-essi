@@ -38,7 +38,7 @@
   	<developer>
   		<id>narock</id>
   		<name>Tom Narock</name>
-  		<email>tnarock@umbc.edu</email>
+  		<email>tnarock@marymount.edu</email>
   	</developer>
   	<developer>
   		<id>rozele</id>
@@ -50,7 +50,7 @@
     <repository>
       <id>maven-repository</id>
       <name>Maven Repository</name>
-      <url>http://mvnrepository.com/artifact/</url>
+      <url> http://repo1.maven.org/maven2/</url>
     </repository>
 	<repository>
 	  <id>maven2-repository.java.net</id>

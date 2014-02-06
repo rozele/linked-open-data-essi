@@ -123,6 +123,9 @@ public class SpotlightAnnotator implements AnnotatedText
    	          if ( test.equals("<?xml") ) { httpHeader = false; result = result + line; }
    	        } else { result = result + line; }     
           }
+          
+          // close the socket
+          sock.close();
         
 	    } catch (UnknownHostException e) {
 	    	log.error("Unknown host: " + annotationService);

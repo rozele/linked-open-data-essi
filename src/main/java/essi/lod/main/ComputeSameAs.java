@@ -16,12 +16,12 @@
  */
 package essi.lod.main;
 
-import java.util.Vector;
+//import java.util.Vector;
 
 import essi.lod.data.esip.EsipPeopleData;
 import essi.lod.data.matcher.SparqlMatcher;
-import essi.lod.entity.esip.Person;
-import essi.lod.rdf.SameAs;
+//import essi.lod.entity.esip.Person;
+//import essi.lod.rdf.SameAs;
 import essi.lod.util.FileWrite;
 import essi.lod.util.Utils;
 
@@ -37,7 +37,7 @@ public class ComputeSameAs {
 		// 0 = ESIP People RDF file
 		// 1 = AGU People RDF file
 		// 2 = output filename
-		SameAs sameAs = new SameAs ();
+//		SameAs sameAs = new SameAs ();
 		FileWrite fw = new FileWrite ();
 		StringBuilder same = new StringBuilder();  
 	    same.append( Utils.writeXmlHeader() );
@@ -48,7 +48,7 @@ public class ComputeSameAs {
 		SparqlMatcher matcher = new SparqlMatcher ( "http://aquarius.tw.rpi.edu:8890/sparql", "http://essi-lod.org/instances/" );
 		EsipPeopleData esipPeopleParser = new EsipPeopleData ();
 		esipPeopleParser.setEntityMatcher( matcher );
-		Vector <Person> esipPeople = esipPeopleParser.getPeople( args[0] );
+//		Vector <Person> esipPeople = esipPeopleParser.getPeople( args[0] );
 	
 		/*/ compute sameAs
 		String aName;
