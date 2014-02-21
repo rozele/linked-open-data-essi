@@ -15,6 +15,8 @@ public class OutputTurtle
 			Vector <Pre2000Data> abstracts)
 	{
 		
+		String section = "default";
+		
 		int counter = 0;
 		FileWrite fw = new FileWrite();
 		String newLine = "\r\n";
@@ -48,15 +50,19 @@ public class OutputTurtle
 			if ( s.getSessionName() != null ) {
 			  if ( !s.getSessionName().equals("") ) {
 			
-				String section = s.getSessionID().substring(0,2).trim();
-				String test = section.substring(1);
-				if (test.matches(".*\\d.*")) { 
-					section = s.getSessionID().substring(0,1);
-				} else {
-					// not a number and thus part of the section
-				}
+				// Sections can be one or two characters long
+				// Here we test both possibilities
+				if ( s.getSessionID().length() >=2 ) { 
+				  section = s.getSessionID().substring(0,2).trim();
+				  String test = section.substring(1);
+				  if (test.matches(".*\\d.*")) { 
+					 section = s.getSessionID().substring(0,1);
+				  } else {
+						// not a number and thus part of the section
+				  }
+				} else { section = s.getSessionID().trim(); }
 					
-				String prefix = "<http://abstracts.agu.org/meetings/" + year + "/FM/" + section + "/sessions/";
+				String prefix = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/";
 
 				String sessionUri = prefix + s.getSessionID() + ">";
 			
@@ -107,7 +113,7 @@ public class OutputTurtle
 			Pre2000Data d = abstracts.get(i);
 			
 			// see if the section if available
-			String section = d.getSection();
+			section = d.getSection();
 			
 			// if section not available then try to 
 			// determine the section from the abstract ID
@@ -135,12 +141,12 @@ public class OutputTurtle
 			    } else {
 			      // not a number and thus part of the section
 			    }
-			  } else { section = "unknown" + String.valueOf(counter); counter++; }
+			  } else { section = "default"; }
 			 
-			 } else { section = "unknown" + String.valueOf(counter); counter++; }
+			 } else { } // section is not null and not "" so use it
 			 
 			// the case when we don't have an abstract number or a section available
-			} else { section = "unknown" + String.valueOf(counter); counter++; }
+			} else { section = "default"; }
 			
 			// there is no linkage between the abstracts and the sessions
 			// we can try to guess it when we have the abstract number
@@ -149,14 +155,23 @@ public class OutputTurtle
 				if ( !session.equals("") ) {
 					String[] parts = session.split("-");
 					session = parts[0];
-				} else { session = "unknown" + String.valueOf(counter); counter++; }				
-			} else { session = "unknown" + String.valueOf(counter); counter++; }
+				} else { session = "default"; }				
+			} else { session = "default"; }
 				
+			// if no abstract number then use title 
+			if ( d.getAbstractNumber() != null ) {
+			  if ( d.getAbstractNumber().equals("") ) {	
+				if ( !d.getTitle().equals("") ) {
+					d.setAbstractNumber(d.getTitle().replace(" ", "_"));
+				} else { d.setAbstractNumber("AbstractID" + String.valueOf(counter)); counter++; }
+			  }
+			} else { d.setAbstractNumber("AbstractID" + String.valueOf(counter)); counter++; }
+			
 			String sessionUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + "> . ";
-			String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/" + section + "/" + session + "/abstracts/" +
-		       d.getAbstractNumber() + "> ";
+			String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + 
+					"/abstracts/" + d.getAbstractNumber();
 		
-			line = abstractUri + "<http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> " + sessionUri;
+			line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> " + sessionUri;
 			fw.append( outputFileName, line);
 			fw.append( outputFileName, newLine );
 			
@@ -164,14 +179,12 @@ public class OutputTurtle
 			for ( int j=0; j<authors.size(); j++) {
 
 				int authorIndex = j+1;
-				line = abstractUri + " <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
-					"<http://abstracts.agu.org/meetings/" + year + "/FM/" + section + "/" + session + "/abstracts/" +
-				       d.getAbstractNumber() + "/authors/" + String.valueOf(authorIndex) + "> . ";
+				line = abstractUri + "> <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
+					abstractUri + "/authors/" + String.valueOf(authorIndex) + "> . ";
 				fw.append( outputFileName, line);
 				fw.append( outputFileName, newLine );
 				
-				String authorUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/" + section + "/" + session + "/abstracts/" +
-					       d.getAbstractNumber() + "/authors/" + String.valueOf(authorIndex) + "> ";
+				String authorUri = abstractUri + "/authors/" + String.valueOf(authorIndex) + "> ";
 				
 				line = authorUri + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://tw.rpi.edu/schema/Author> . ";
 				fw.append( outputFileName, line);
@@ -191,7 +204,7 @@ public class OutputTurtle
 				
 			}
 			
-			line = abstractUri + " <http://purl.org/dc/terms/title> \"" + d.getTitle() + "\"@en .";
+			line = abstractUri + "> <http://purl.org/dc/terms/title> \"" + d.getTitle() + "\"@en .";
 			fw.append( outputFileName, line);
 			fw.append( outputFileName, newLine );
 			
@@ -200,20 +213,21 @@ public class OutputTurtle
 			for ( int j=0; j<keywords.size(); j++ )
 			{
 			  // is the keyword all numbers?
-			  if (keywords.get(j).matches(".*\\d.*")) { 
-			    line = abstractUri + " <http://data.semanticweb.org/ns/swc/ontology#hasTopic> " + 
+			  String regex = "[0-9]+";	
+			  if (keywords.get(j).matches(regex)) { 
+			    line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#hasTopic> " + 
 			       "<http://abstracts.agu.org/keywords/" + keywords.get(j) + "> .";
 			    fw.append( outputFileName, line);
 			    fw.append( outputFileName, newLine );
 			  }
 			}
 			
-			line = abstractUri + " <http://swrc.ontoware.org/ontology#abstract> \"" + 
+			line = abstractUri + "> <http://swrc.ontoware.org/ontology#abstract> \"" + 
 			   d.getAbstractText() + "\"@en .";
 			fw.append( outputFileName, line);
 			fw.append( outputFileName, newLine );
 			
-			line = abstractUri + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
+			line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
 			fw.append( outputFileName, line);
 			fw.append( outputFileName, newLine );
 			

@@ -16,18 +16,18 @@ public class AguPre2000AbstractsParser {
 	public boolean allowedTag ( String tag )
 	{
 		boolean result = false;
-		if ( tag.equals("HR") ) { result = true; }
-		if ( tag.equals("AN") ) { result = true; }
-		if ( tag.equals("TI") ) { result = true; }
-		if ( tag.equals("AU") ) { result = true; }
-		if ( tag.equals("EM") ) { result = true; }
-		if ( tag.equals("AF") ) { result = true; }
-		if ( tag.equals("AB") ) { result = true; }
-		if ( tag.equals("DE") ) { result = true; }
-		if ( tag.equals("SC") ) { result = true; }
-		if ( tag.equals("MN") ) { result = true; }
-		if ( tag.equals("PH") ) { result = true; }
-		if ( tag.equals("--") ) { result = true; }
+		if ( tag.equals("HR:") ) { result = true; }
+		if ( tag.equals("AN:") ) { result = true; }
+		if ( tag.equals("TI:") ) { result = true; }
+		if ( tag.equals("AU:") ) { result = true; }
+		if ( tag.equals("EM:") ) { result = true; }
+		if ( tag.equals("AF:") ) { result = true; }
+		if ( tag.equals("AB:") ) { result = true; }
+		if ( tag.equals("DE:") ) { result = true; }
+		if ( tag.equals("SC:") ) { result = true; }
+		if ( tag.equals("MN:") ) { result = true; }
+		if ( tag.equals("PH:") ) { result = true; }
+		if ( tag.equals("---") ) { result = true; }
 		return result;
 	}
 	
@@ -61,23 +61,23 @@ public class AguPre2000AbstractsParser {
     		  
     	     if ( line.length() > 4 ) {
     	    	 
-	    	    currentTag = line.substring(0,2);
+	    	    currentTag = line.substring(0,3);
 	    	    if ( !allowedTag(currentTag) ) { currentTag = previousTag; }
 	    	    
 	    	    // Fields are: HR, AN, TI, AU, EM, AF, AB, DE, SC, MN, ignoring phone (PH) for now
-	    	    if ( currentTag.equals("HR") ) { 
+	    	    if ( currentTag.equals("HR:") ) { 
 	    	    	if ( hour.equals("") ) { hour = line.substring(3).trim(); } else { hour += " " + line.trim(); }
 	    	    }
 	    	    
-	    	    if ( currentTag.equals("AN") ) { 
+	    	    if ( currentTag.equals("AN:") ) { 
 	    	    	if ( abNumber.equals("") ) { abNumber = line.substring(3).trim(); } else { abNumber += " " + line.trim(); }
 	    	    }
 	    	    
-	    	    if ( currentTag.equals("TI") ) { 
+	    	    if ( currentTag.equals("TI:") ) { 
 	    	    	if ( title.equals("") ) { title = line.substring(3).trim(); } else { title += " " + line.trim(); }
 	    	    }
 	    	    
-	    	    if ( currentTag.equals("AU") ) { authorNames.add( line.substring(3).trim() ); }
+	    	    if ( currentTag.equals("AU:") ) { authorNames.add( line.substring(3).trim() ); }
 	    	    	
 	    	    	// submit the previous author if there is one
 	    	    	//if ( !aDetails.equals("") ) { authorDetails.add( aDetails ); }
@@ -90,25 +90,25 @@ public class AguPre2000AbstractsParser {
 	    	  
 	    	    //if ( currentTag.equals("AF") ) { aDetails += ";AF:" + line.substring(3).trim(); }
 	    	    
-	    	    if ( currentTag.equals("AB") ) { 
+	    	    if ( currentTag.equals("AB:") ) { 
 	    	    	if ( abstractText.equals("") ) { 
 	    	    		abstractText = line.substring(3).trim(); 
 	    	    	} else { abstractText += " " + line.trim(); }
 	    	    }
 	    	    
-	    	    if ( currentTag.equals("DE") ) { keyword.add( line.substring(3).trim() ); }
+	    	    if ( currentTag.equals("DE:") ) { keyword.add( line.substring(3).trim() ); }
 	    	    
-	    	    if ( currentTag.equals("SC") ) { 
+	    	    if ( currentTag.equals("SC:") ) { 
 	    	    	if ( section.equals("") ) { section = line.substring(3).trim(); } else { section += " " + line.trim(); }
 	    	    }
 	    	    
-	    	    if ( currentTag.equals("MN") ) { 
+	    	    if ( currentTag.equals("MN:") ) { 
 	    	    	if ( meeting.equals("") ) { meeting = line.substring(3).trim(); } else { meeting += " " + line.trim(); }
 	    	    }
 		    	
 		    	// Determine if we've reached the end of a given abstract
 		    	// Some files start with -- as well as uses -- to separate abstracts
-		    	if ( currentTag.equals("--") && (counter > 0) ) {	
+		    	if ( currentTag.equals("---") && (counter > 0) ) {	
 		    	   
 		      	   // fill in the data
 		      	   for ( int i=0; i<authorNames.size(); i++ ) {
@@ -123,15 +123,34 @@ public class AguPre2000AbstractsParser {
 		      		  //     if ( tag.equals("EM") ) em = parts[j].substring(3).trim();
 		      		  //     if ( tag.equals("AF") ) af = parts[j].substring(3).trim();
 		      		  // }
-		      		  author = new Author ( authorNames.get(i), "", "");
+		      		  String aname = authorNames.get(i);
+		      		  aname = aname.replaceAll("\\\\", ""); // remove \ which are interpreted as escape characters
+		      		  aname = aname.replaceAll("\"",""); // remove " from abstract text
+		      		  aname = aname.replaceAll("\\{", "");
+		      		  aname = aname.replaceAll("\\}", "");
+		      		  aname = aname.replaceAll(">", "_gt_");
+		      		  aname = aname.replaceAll("<", "_lt_");
+		      		  author = new Author ( aname, "", "");
 		      		  dataObject.addAuthor(author);
 		      	   }
 		      	   for ( int i=0; i<keyword.size(); i++ ) { dataObject.addKeyword( keyword.get(i) ); }
 		      	   dataObject.setAbstractNumber( abNumber );
+		      	   abstractText = abstractText.replaceAll("\\\\", ""); // remove \ which are interpreted as escape characters
+		      	   abstractText = abstractText.replaceAll("\"",""); // remove " from abstract text
+		      	   abstractText = abstractText.replaceAll("\\{", "");
+		      	   abstractText = abstractText.replaceAll("\\}", "");
+		       	   abstractText = abstractText.replaceAll(">", "_gt_");
+		      	   abstractText = abstractText.replaceAll("<", "_lt_");
 		      	   dataObject.setAbstractText( abstractText );
 		      	   dataObject.setMeeting( meeting );
 		      	   dataObject.setSection( section );
 		      	   dataObject.setTime( hour );
+		      	   title = title.replaceAll("\\\\", ""); // remove \ which are interpreted as escape characters
+		      	   title = title.replaceAll("\"", "");
+		      	   title = title.replaceAll("\\{", "");
+		      	   title = title.replaceAll("\\}", "");
+		      	   title = title.replaceAll(">", "_gt_");
+		      	   title = title.replaceAll("<", "_lt_");
 		      	   dataObject.setTitle( title );
 		      	   
 		      	   // don't add unless we have a title
