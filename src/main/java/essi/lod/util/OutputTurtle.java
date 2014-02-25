@@ -171,65 +171,74 @@ public class OutputTurtle
 			String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + 
 					"/abstracts/" + d.getAbstractNumber();
 		
-			line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> " + sessionUri;
-			fw.append( outputFileName, line);
-			fw.append( outputFileName, newLine );
+			// if abstract is null and title is null then ignore
+			if ( (d.getTitle() != null) && (d.getAbstractText() != null) ) {
+				
+			  // if uri contains spaces then ignore it
+			  if ( abstractUri.matches("\\s+") ) {
+			   
+			   line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> " + sessionUri;
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
 			
-			Vector <Author> authors = d.getAuthors();
-			for ( int j=0; j<authors.size(); j++) {
+			   Vector <Author> authors = d.getAuthors();
+			   for ( int j=0; j<authors.size(); j++) {
 
-				int authorIndex = j+1;
-				line = abstractUri + "> <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
+				 int authorIndex = j+1;
+				 line = abstractUri + "> <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
 					abstractUri + "/authors/" + String.valueOf(authorIndex) + "> . ";
-				fw.append( outputFileName, line);
-				fw.append( outputFileName, newLine );
+				 fw.append( outputFileName, line);
+				 fw.append( outputFileName, newLine );
 				
-				String authorUri = abstractUri + "/authors/" + String.valueOf(authorIndex) + "> ";
+				 String authorUri = abstractUri + "/authors/" + String.valueOf(authorIndex) + "> ";
 				
-				line = authorUri + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://tw.rpi.edu/schema/Author> . ";
-				fw.append( outputFileName, line);
-				fw.append( outputFileName, newLine );
+				 line = authorUri + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://tw.rpi.edu/schema/Author> . ";
+				 fw.append( outputFileName, line);
+				 fw.append( outputFileName, newLine );
 				
-				line = authorUri + " <http://abstracts.agu.org/ontology#isCorrespondingAuthor> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> . ";
-				fw.append( outputFileName, line);
-				fw.append( outputFileName, newLine );
+				 line = authorUri + " <http://abstracts.agu.org/ontology#isCorrespondingAuthor> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> . ";
+				 fw.append( outputFileName, line);
+				 fw.append( outputFileName, newLine );
 				
-				line = authorUri + " <http://tw.rpi.edu/schema/index> \"" + authorIndex + "\"^^<http://www.w3.org/2001/XMLSchema#positiveInteger> . ";
-				fw.append( outputFileName, line);
-				fw.append( outputFileName, newLine );
+				 line = authorUri + " <http://tw.rpi.edu/schema/index> \"" + authorIndex + "\"^^<http://www.w3.org/2001/XMLSchema#positiveInteger> . ";
+				 fw.append( outputFileName, line);
+				 fw.append( outputFileName, newLine );
 				
-				line = authorUri + " <http://purl.org/dc/terms/identifier> \"" + d.getAbstractNumber() + "\" . ";
-				fw.append( outputFileName, line);
-				fw.append( outputFileName, newLine );
+				 line = authorUri + " <http://purl.org/dc/terms/identifier> \"" + d.getAbstractNumber() + "\" . ";
+				 fw.append( outputFileName, line);
+				 fw.append( outputFileName, newLine );
 				
-			}
+			   }
 			
-			line = abstractUri + "> <http://purl.org/dc/terms/title> \"" + d.getTitle() + "\"@en .";
-			fw.append( outputFileName, line);
-			fw.append( outputFileName, newLine );
+			   line = abstractUri + "> <http://purl.org/dc/terms/title> \"" + d.getTitle() + "\"@en .";
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
 			
-			// keywords
-			Vector <String> keywords = d.getKeywords();
-			for ( int j=0; j<keywords.size(); j++ )
-			{
-			  // is the keyword all numbers?
-			  String regex = "[0-9]+";	
-			  if (keywords.get(j).matches(regex)) { 
-			    line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#hasTopic> " + 
-			       "<http://abstracts.agu.org/keywords/" + keywords.get(j) + "> .";
-			    fw.append( outputFileName, line);
-			    fw.append( outputFileName, newLine );
-			  }
-			}
+			   // keywords
+			   Vector <String> keywords = d.getKeywords();
+			   for ( int j=0; j<keywords.size(); j++ )
+			   {
+			      // is the keyword all numbers?
+			      String regex = "[0-9]+";	
+			      if (keywords.get(j).matches(regex)) { 
+			        line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#hasTopic> " + 
+			          "<http://abstracts.agu.org/keywords/" + keywords.get(j) + "> .";
+			        fw.append( outputFileName, line);
+			        fw.append( outputFileName, newLine );
+			      }
+			   }
 			
-			line = abstractUri + "> <http://swrc.ontoware.org/ontology#abstract> \"" + 
-			   d.getAbstractText() + "\"@en .";
-			fw.append( outputFileName, line);
-			fw.append( outputFileName, newLine );
+			   line = abstractUri + "> <http://swrc.ontoware.org/ontology#abstract> \"" + 
+			     d.getAbstractText() + "\"@en .";
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
 			
-			line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
-			fw.append( outputFileName, line);
-			fw.append( outputFileName, newLine );
+			   line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
+			
+			} // end if abstract contains spaces
+		  } // end if title and abstract are both null
 			
 		} // end for abstracts
 		
