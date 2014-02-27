@@ -171,11 +171,13 @@ public class OutputTurtle
 			String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + 
 					"/abstracts/" + d.getAbstractNumber();
 		
+			if ( abstractUri.contains("INVITED") ) { abstractUri = abstractUri.replace(" INVITED", ""); }
+			
 			// if abstract is null and title is null then ignore
-			if ( (d.getTitle() != null) && (d.getAbstractText() != null) ) {
+			if ( ((d.getTitle() != null) && (d.getAbstractText() != null)) && ((d.getTitle() != "") && (d.getAbstractText() != "")) ) {
 				
 			  // if uri contains spaces then ignore it
-			  if ( abstractUri.matches("\\s+") ) {
+			  if ( !abstractUri.matches("\\s+") ) {
 			   
 			   line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> " + sessionUri;
 			   fw.append( outputFileName, line);
