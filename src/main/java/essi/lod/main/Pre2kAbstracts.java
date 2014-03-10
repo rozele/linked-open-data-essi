@@ -15,11 +15,12 @@ public class Pre2kAbstracts {
 		String inputFile = args[0];
 		String outputFile = args[1];
 		String year = args[2];
+		boolean sessionsFromAbstracts = Boolean.valueOf(args[3]);
 		Pre2kAbstracts p = new Pre2kAbstracts ();
-		p.createTurtle( inputFile, outputFile, year );		
+		p.createTurtle( inputFile, outputFile, year, sessionsFromAbstracts );		
 	}
 	
-	public void createTurtle (String inputFile, String outputFile, String year) {
+	public void createTurtle (String inputFile, String outputFile, String year, boolean createSessionsFromAbstracts ) {
 		
 		AguPre2000AbstractsParser p = new AguPre2000AbstractsParser ();
 		String exception = null;
@@ -41,7 +42,7 @@ public class Pre2kAbstracts {
 		System.out.println( "There are " + sessions.size() + " session for " + year );
 		
 		OutputTurtle turtle = new OutputTurtle ();
-		turtle.write(outputFile, year, sessions, abstracts);
+		turtle.write(outputFile, year, sessions, abstracts, createSessionsFromAbstracts);
 		
 	}
 	
