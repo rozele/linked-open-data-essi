@@ -231,6 +231,10 @@ public class OutputTurtle
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
 			
+			   line = abstractUri + "> <http://purl.org/dc/terms/identifier> \"" + d.getAbstractNumber() + "\" . ";
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
+				 
 			   Vector <Author> authors = d.getAuthors();
 			   for ( int j=0; j<authors.size(); j++) {
 
@@ -254,10 +258,6 @@ public class OutputTurtle
 				 fw.append( outputFileName, line);
 				 fw.append( outputFileName, newLine );
 				
-				 line = authorUri + " <http://purl.org/dc/terms/identifier> \"" + d.getAbstractNumber() + "\" . ";
-				 fw.append( outputFileName, line);
-				 fw.append( outputFileName, newLine );
-				
 			   }
 			
 			   line = abstractUri + "> <http://purl.org/dc/terms/title> \"" + d.getTitle() + "\"@en .";
@@ -278,11 +278,17 @@ public class OutputTurtle
 			      }
 			   }
 			
+			   // Abstract Text
 			   line = abstractUri + "> <http://swrc.ontoware.org/ontology#abstract> \"" + 
 			     d.getAbstractText() + "\"@en .";
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
 			
+			   // Abstract Text for Quick Search (text search feature)
+			   line = abstractUri + "> <http://abstracts.agu.org/ontology#raw> \"" + d.getAbstractText() + "\"@en .";
+			   fw.append( outputFileName, line);
+			   fw.append( outputFileName, newLine );
+			   
 			   line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
