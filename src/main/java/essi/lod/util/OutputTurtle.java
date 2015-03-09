@@ -32,7 +32,7 @@ public class OutputTurtle
 				
 		  if ( !title.equals("default") ) {
 			  
-		     String line = sessionUri + " <http://data.semanticweb.org/ns/swc/ontology#isSubEventOf> <http://abstracts.agu.org/meetings/" + 
+		     String line = sessionUri + " <http://data.semanticweb.org/ns/swc/ontology#isSubEventOf> <http://abstractsearch.agu.org/meetings/" + 
 		       year.trim() + "/FM> . ";
 		     fw.append( outputFileName, line);
 		     fw.append( outputFileName, newLine );
@@ -41,8 +41,8 @@ public class OutputTurtle
 		     fw.append( outputFileName, line);
 		     fw.append( outputFileName, newLine );
 
-		     String section = parts[7];
-		     line = sessionUri + " <http://abstracts.agu.org/ontology#section> <http://abstracts.agu.org/sections/" + section + "> . ";
+		     String section = parts[6];
+		     line = sessionUri + " <http://abstractsearch.agu.org/ontology#section> <http://abstractsearch.agu.org/sections/" + section + " . ";
 		     fw.append( outputFileName, line);
 		     fw.append( outputFileName, newLine );
 
@@ -67,11 +67,11 @@ public class OutputTurtle
 		int counter = 0;
 		FileWrite fw = new FileWrite();
 		
-		String uri = "<http://abstracts.agu.org/meetings/" + year + "/FM>"; 
+		String uri = "<http://abstractsearch.agu.org/meetings/" + year + "/FM>"; 
 		fw.append( outputFileName, uri);
 		fw.append( outputFileName, newLine );
 		
-		String line = "<http://abstracts.agu.org/ontology#meetingCode> \"FM\"^^<http://www.w3.org/2001/XMLSchema#string> . ";
+		String line = "<http://abstractsearch.agu.org/ontology#meetingCode> \"FM\"^^<http://www.w3.org/2001/XMLSchema#string> . ";
 		fw.append( outputFileName, line);
 		fw.append( outputFileName, newLine );
 		
@@ -108,7 +108,7 @@ public class OutputTurtle
 				  }
 				} else { section = s.getSessionID().trim(); }
 					
-				String prefix = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/";
+				String prefix = "<http://abstractsearch.agu.org/meetings/" + year + "/FM/";
 
 				String sessionUri = prefix + s.getSessionID() + ">";
 			
@@ -117,21 +117,21 @@ public class OutputTurtle
 				fw.append( outputFileName, newLine );
 			
 				line = sessionUri + " <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
-						prefix + s.getSessionID() + "/conveners/1> . ";
+						prefix + s.getSessionID() + "/convener1> . ";
 				fw.append( outputFileName, line);
 				fw.append( outputFileName, newLine );
 			
-				line = prefix + s.getSessionID() + "/conveners/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "
-					+ "<http://abstracts.agu.org/ontology#ConvenerRole> . ";
+				line = prefix + s.getSessionID() + "/convener1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "
+					+ "<http://abstractsearch.agu.org/ontology#ConvenerRole> . ";
 				fw.append( outputFileName, line);
 				fw.append( outputFileName, newLine );
 			
-				line = prefix + s.getSessionID() + "/conveners/1> <http://tw.rpi.edu/schema/index> \"1\"^^"
+				line = prefix + s.getSessionID() + "/convener1> <http://tw.rpi.edu/schema/index> \"1\"^^"
 					+ "<http://www.w3.org/2001/XMLSchema#positiveInteger> . ";
 				fw.append( outputFileName, line);
 				fw.append( outputFileName, newLine );
 			
-				line = sessionUri + " <http://abstracts.agu.org/ontology#section> <http://abstracts.agu.org/sections/" + section + "> . ";
+				line = sessionUri + " <http://abstractsearch.agu.org/ontology#section> <http://abstractsearch.agu.org/sections/" + section + "> . ";
 				fw.append( outputFileName, line);
 				fw.append( outputFileName, newLine );
 			
@@ -212,9 +212,8 @@ public class OutputTurtle
 			
 			} else { d.setAbstractNumber("AbstractID" + String.valueOf(counter)); counter++; }
 			
-			String sessionUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + "> . ";
-			String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + session + 
-					"/abstracts/" + d.getAbstractNumber();
+			String sessionUri = "<http://abstractsearch.agu.org/meetings/" + year + "/FM/" + session + "> . ";
+			String abstractUri = "<http://abstractsearch.agu.org/meetings/" + year + "/FM/" + d.getAbstractNumber();
 		
 			// special session creation method for some years
 			if ( sessionsFromAbstracts ) { writeSessionData( sessionUri, year, outputFileName, fw ); }
@@ -240,17 +239,17 @@ public class OutputTurtle
 
 				 int authorIndex = j+1;
 				 line = abstractUri + "> <http://tw.rpi.edu/schema/hasAgentWithRole> " + 
-					abstractUri + "/authors/" + String.valueOf(authorIndex) + "> . ";
+					abstractUri + "/author" + String.valueOf(authorIndex) + "> . ";
 				 fw.append( outputFileName, line);
 				 fw.append( outputFileName, newLine );
 				
-				 String authorUri = abstractUri + "/authors/" + String.valueOf(authorIndex) + "> ";
+				 String authorUri = abstractUri + "/author" + String.valueOf(authorIndex) + "> ";
 				
 				 line = authorUri + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://tw.rpi.edu/schema/Author> . ";
 				 fw.append( outputFileName, line);
 				 fw.append( outputFileName, newLine );
 				
-				 line = authorUri + " <http://abstracts.agu.org/ontology#isCorrespondingAuthor> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> . ";
+				 line = authorUri + " <http://abstractsearch.agu.org/ontology#isCorrespondingAuthor> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> . ";
 				 fw.append( outputFileName, line);
 				 fw.append( outputFileName, newLine );
 				
@@ -272,7 +271,7 @@ public class OutputTurtle
 			      String regex = "[0-9]+";	
 			      if (keywords.get(j).matches(regex)) { 
 			        line = abstractUri + "> <http://data.semanticweb.org/ns/swc/ontology#hasTopic> " + 
-			          "<http://abstracts.agu.org/keywords/" + keywords.get(j) + "> .";
+			          "<http://abstractsearch.agu.org/keywords/" + keywords.get(j) + "> .";
 			        fw.append( outputFileName, line);
 			        fw.append( outputFileName, newLine );
 			      }
@@ -285,7 +284,7 @@ public class OutputTurtle
 			   fw.append( outputFileName, newLine );
 			
 			   // Abstract Text for Quick Search (text search feature)
-			   line = abstractUri + "> <http://abstracts.agu.org/ontology#raw> \"" + d.getAbstractText() + "\"@en .";
+			   line = abstractUri + "> <http://abstractsearch.agu.org/ontology#raw> \"" + d.getAbstractText() + "\"@en .";
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
 			   

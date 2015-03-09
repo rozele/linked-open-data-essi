@@ -3,6 +3,7 @@ package essi.lod.main;
 import java.util.Vector;
 
 import essi.lod.util.OutputTurtle;
+import essi.lod.util.OutputTurtlePeople;
 import essi.lod.data.agu.AguPre2000AbstractsParser;
 import essi.lod.data.agu.AguPre2000SessionParser;
 import essi.lod.data.agu.Pre2000Data;
@@ -43,6 +44,10 @@ public class Pre2kAbstracts {
 		
 		OutputTurtle turtle = new OutputTurtle ();
 		turtle.write(outputFile, year, sessions, abstracts, createSessionsFromAbstracts);
+		
+		// As 3-9-2015 we write the people to the same file
+		OutputTurtlePeople turtlePeople = new OutputTurtlePeople ();
+		turtlePeople.write(outputFile, year, abstracts, sessions);
 		
 	}
 	

@@ -35,7 +35,7 @@ public class OutputTurtlePeople
 				  // create the person ID 
 				  personID = "FM" + year.substring(2).trim() + "_" + s.getSessionID().trim() + "_convener_" +  
 					convenor.replace(" ", "_");  
-				  String uri = "<http://abstracts.agu.org/people/" + personID + ">";
+				  String uri = "<http://abstractsearch.agu.org/people/" + personID + ">";
 			  
 				  line = "";
 				
@@ -52,8 +52,7 @@ public class OutputTurtlePeople
 					 }
 				  } else { section = s.getSessionID().trim(); }
 				
-				  String sessionStmt = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + 
-						  "/sessions/" + s.getSessionID() + "/conveners/1> . ";
+				  String sessionStmt = "<http://abstractsearch.agu.org/meetings/" + year + "/FM/" + s.getSessionID() + "/convener1> . ";
 				
 				  line = uri + " <http://tw.rpi.edu/schema/hasRole> " + sessionStmt;
 				  fw.append( outputFileName, line );
@@ -105,7 +104,7 @@ public class OutputTurtlePeople
 				   }	 
 		   
 				   // if we have the email then use that in the URI otherwise use the person name
-				   String uri = "<http://abstracts.agu.org/people/";
+				   String uri = "<http://abstractsearch.agu.org/people/";
 				   if ( person.getEmail().equals("") ) { 
 					   uri += personID + ">";
 				   } else { uri += person.getEmail() + ">"; }
@@ -158,10 +157,9 @@ public class OutputTurtlePeople
 					   }
 				   } else { d.setAbstractNumber("AbstractID" + String.valueOf(counter)); counter++; }
 						
-				   String abstractUri = "<http://abstracts.agu.org/meetings/" + year + "/FM/sections/" + section + "/sessions/" + 
-						   session + "/abstracts/" + d.getAbstractNumber();
+				   String abstractUri = "<http://abstractsearch.agu.org/meetings/" + year + "/FM/" + d.getAbstractNumber();
 			
-				   line = uri + " <http://tw.rpi.edu/schema/hasRole> " + abstractUri + "/authors/" + 
+				   line = uri + " <http://tw.rpi.edu/schema/hasRole> " + abstractUri + "/author" + 
 						   String.valueOf(authorIndex+1).trim() + "> . ";
 
 				   fw.append( outputFileName, line );
