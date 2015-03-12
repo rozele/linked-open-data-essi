@@ -42,7 +42,23 @@ public class OutputTurtle
 		     fw.append( outputFileName, newLine );
 
 		     String section = parts[6];
-		     line = sessionUri + " <http://abstractsearch.agu.org/ontology#section> <http://abstractsearch.agu.org/sections/" + section + " . ";
+		     
+		     if ( section.length() >= 2 ) {
+			      section = section.substring(0,2);
+			      String test = section.substring(1);
+			      // if second character is a number then this is a one
+			      // character section name. if second character is a 
+			      // letter then it is also part of the section name.
+			      // test both cases
+			      if (test.matches(".*\\d.*")) { 
+			        section = section.substring(0,1);
+			      } else {
+			        // not a number and thus part of the section
+			      }
+			 }
+		     
+		     line = sessionUri + " <http://abstractsearch.agu.org/ontology#section> <http://abstractsearch.agu.org/sections/" + section + "> . ";
+		     //System.out.println(line);
 		     fw.append( outputFileName, line);
 		     fw.append( outputFileName, newLine );
 
