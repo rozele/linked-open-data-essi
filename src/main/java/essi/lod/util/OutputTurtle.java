@@ -304,7 +304,7 @@ public class OutputTurtle
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
 			   
-			   line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstracts.agu.org/ontology#Abstract> .";
+			   line = abstractUri + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://abstractsearch.agu.org/ontology#Abstract> .";
 			   fw.append( outputFileName, line);
 			   fw.append( outputFileName, newLine );
 			
